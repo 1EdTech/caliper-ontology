@@ -421,6 +421,22 @@
     "@id" : "http://purl.imsglobal.org/caliper/v1/Entity"
   } ]
 }, {
+  "@id" : "http://purl.imsglobal.org/caliper/v1/Message",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "caliper:"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Message"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/v1/DigitalResource"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@value" : "sioc:Post"
+  } ]
+}, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/MultipleChoiceResponse",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
