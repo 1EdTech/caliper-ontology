@@ -423,6 +423,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/Message",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper Message is a digital form of written communication sent to a recipient. A series of Messages may constitute a Thread if they share a common subject and are connected by a reply or by date relationships. It is analogous to an sioc:Post."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@value" : "caliper:"
   } ],
@@ -1594,6 +1598,26 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#double"
+  } ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/v1/replyTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The prior Message, if any, that prompted the posting of this Message in the form of a reply or response. Analogous to sioc:reply_of."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/v1/Message"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "caliper:"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "replyTo"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/v1/Message"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/roles",
