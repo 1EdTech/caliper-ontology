@@ -1,0 +1,13 @@
+# Intellij
+.idea/
+*.iml
+*.ipr
+*.iws
+*.uml
+out/
+
+# Mac
+.DS_Store
+
+# Sublime
+*.sublime*
