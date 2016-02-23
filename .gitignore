@@ -13,4 +13,4 @@ out/
 *.sublime*
 
 # Protege
-catalog*.xml
+catalog*.*
