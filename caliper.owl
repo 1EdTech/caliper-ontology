@@ -79,7 +79,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Represents a caliper:Entity that can initiate or perform an action.  It is analogous to a foaf:Agent.  caliper:Agent is considered a generic class that lacks the type specificity rendered explicit in its several subclasses.  It is RECOMMENDED that only subclasses of caliper:Agent be used to represent a caliper:actor.  These include: caliperLis:Person, caliperW3c:Organization and caliper:SoftwareApplication."
+    "@value" : "A caliper:Agent is a generic class that represents a caliper:Entity that can initiate or perform an action. It is analogous to a foaf:Agent. Given that caliper:Agent represents a generic type it is recommended that only subclasses of caliper:Agent be used to represent a Caliper:actor."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@value" : "caliper:"
@@ -98,6 +98,7 @@
   "@id" : "http://purl.imsglobal.org/caliper/v1/Annotation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#short",
     "@value" : "caliper:"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
@@ -245,6 +246,28 @@
     "@id" : "http://purl.imsglobal.org/caliper/v1/Annotation"
   } ]
 }, {
+  "@id" : "http://purl.imsglobal.org/caliper/v1/Collection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A caliper:Collection is a generic class that represents a grouping of entities.  It is analogous to a dcmitype.Collection or a sioc.Container.  Given that caliper:Collection represents a generic type it is *recommended* that only subclasses of caliper:Collection be employed to represent nodes in the learning graph."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "caliper:"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Collection"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/v1/Entity"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@value" : "dcmitype:Collection"
+  }, {
+    "@value" : "sioc:Container"
+  } ]
+}, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/DigitalResource",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
@@ -261,13 +284,18 @@
   "@id" : "http://purl.imsglobal.org/caliper/v1/Entity",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A Caliper Entity represents a generic class that lacks the type specificity rendered explicit in its several subclasses.  It is analogous to an sdo:Thing.  It is RECOMMENDED that only subclasses of Entity be employed to represent nodes in the learning graph.  Caliper entities should be provisioned with a globally-scoped, dereferenceable IRI in order to ensure that Caliper Event data can be linked and shared across contexts.  In cases where an IRI is inappropriate, an Entity can be assigned a blank node identifier."
+    "@language" : "en",
+    "@value" : "A caliper:Entity represents a generic class that is analogous to an sdo:Thing. Given that a caliper:Entity represents a generic type it is recommended that only subclasses of caliper:Entity be employed to represent nodes in the learning graph.  A caliper:Entity should be provisioned with a globally-scoped, dereferenceable IRI in order to ensure that caliper:Event data can be linked and shared.  In cases where an IRI is inappropriate, a caliper:Entity can be assigned a blank node identifier."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@value" : "caliper:"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
     "@value" : "Entity"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@value" : "sdo:Thing"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/Envelope",
@@ -303,6 +331,26 @@
     "@id" : "http://purl.imsglobal.org/caliper/v1/Response"
   } ]
 }, {
+  "@id" : "http://purl.imsglobal.org/caliper/v1/Forum",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A caliper:Forum is a channel or virtual space in which group discussions take place.  A caliper:Forum typically includes one or more threaded discussions to which members can subscribe, post messages and reply to other messages.  It is analogous to an sioc.Forum."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "caliper:"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Forum"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/v1/Collection"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@value" : "sioc:Forum"
+  } ]
+}, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/Frame",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
@@ -314,10 +362,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/v1/DigitalResource"
-  } ],
-  "http://www.w3.org/2002/07/owl#deprecated" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
-    "@value" : "true"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/HighlightAnnotation",
@@ -386,10 +430,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/v1/DigitalResource"
-  } ],
-  "http://www.w3.org/2002/07/owl#deprecated" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
-    "@value" : "true"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/MediaObject",
@@ -625,7 +665,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Represents a computer program, application, module, platform or system.  caliper:SoftwareApplication is analogous to a sdo:SoftwareApplication or dcmitype:Software."
+    "@value" : "a caliper:SoftwareApplication represents a computer program, application, module, platform or system. It is analogous to a sdo:SoftwareApplication or dcmitype:Software."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@value" : "caliper:"
@@ -638,6 +678,8 @@
     "@id" : "http://purl.imsglobal.org/caliper/v1/Agent"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@value" : "dcmitype:Software"
+  }, {
     "@value" : "sdo:SoftwareApplication"
   } ]
 }, {
@@ -672,6 +714,26 @@
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@value" : "oa:textPositionSelector"
+  } ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/v1/Thread",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A caliper:Thread represents a series of one or more messages that share a common subject and are connected by a reply or by date relationships. It is analogous to a sioc:Thread."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "caliper:"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Thread"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/v1/Collection"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@value" : "sioc:Thread"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/TrueFalseResponse",
@@ -1320,6 +1382,26 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#int"
   } ]
 }, {
+  "@id" : "http://purl.imsglobal.org/caliper/v1/isChildOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The parent caliper:Collection of this caliper:Collection. Analogous to sioc:has_parent."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/v1/Collection"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "isChildOf"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/v1/Collection"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@value" : "sioc:has_parent"
+  } ]
+}, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/isPartOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -1353,6 +1435,25 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/v1/items",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The set of one or more entities that comprise a caliper:Collection."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/v1/Collection"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "items"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/v1/Collection"
+  }, {
+    "@id" : "http://purl.imsglobal.org/caliper/v1/Entity"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/keywords",
@@ -1424,7 +1525,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Represents a human being, alive or deceased, real or imaginary.  caliperLis:Person is analogous to a foaf:Person."
+    "@value" : "A caliperlis:Person epresents a human being, alive or deceased, real or imaginary.  caliperlis:Person is analogous to a foaf:Person."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@value" : "caliper:"
@@ -1435,6 +1536,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/v1/Agent"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@value" : "foaf:Person"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/maxAttempts",
@@ -1735,6 +1839,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/subOrganizationOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The parent organization of a caliper:Organization."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid4"
   } ],
@@ -1795,7 +1903,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Represents a group of people organized into a community or other social, commercial, educational or political structure.  The group has a common purpose or reason for existence that spans beyond the set of people belonging to it and can act as a caliper:Agent. Organizations are often decomposable into hierarchical structures.  It is analogous to a org:Organization."
+    "@value" : "A caliper:Organization represents a group of people organized into a community or some other social, commercial, educational or political structure. The group has a common purpose or reason for existence that spans beyond the set of people belonging to it and can act as a caliper:Agent. A caliper:Organizations are often decomposable into hierarchical structures. It is analogous to a org:Organization."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@value" : "caliper:"
