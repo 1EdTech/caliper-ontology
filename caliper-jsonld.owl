@@ -151,6 +151,16 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
+      "@id" : "http://purl.imsglobal.org/caliper/v1/AssignableDigitalResource"
+    }, {
+      "@id" : "http://purl.imsglobal.org/caliper/v1/DigitalResourceCollection"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid56",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
       "@id" : "http://purl.imsglobal.org/caliper/v1/Collection"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/v1/DigitalResource"
@@ -227,7 +237,7 @@
     "@value" : "Assessment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/v1/AssignableDigitalResource"
+    "@id" : "_:genid53"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/AssessmentEvent",
@@ -317,6 +327,16 @@
     "@id" : "http://purl.imsglobal.org/caliper/v1/Annotation"
   } ]
 }, {
+  "@id" : "http://purl.imsglobal.org/caliper/v1/Chapter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Chapter"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/v1/DigitalResource"
+  } ]
+}, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/Collection",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -370,7 +390,17 @@
   "@id" : "http://purl.imsglobal.org/caliper/v1/DigitalResourceCollection",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid53"
+    "@id" : "_:genid56"
+  } ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/v1/Document",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Document"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/v1/DigitalResource"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/Entity",
@@ -399,9 +429,6 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Event"
-  } ],
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "http://purl.org/dc/dcmitype/Event"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/FillinBlankResponse",
@@ -491,7 +518,7 @@
     "@value" : "LearningObjective"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/v1/Entity"
+    "@id" : "http://purl.imsglobal.org/caliper/v1/DigitalResource"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/LtiSession",
@@ -631,6 +658,16 @@
     "@id" : "http://purl.imsglobal.org/caliper/v1/Event"
   } ]
 }, {
+  "@id" : "http://purl.imsglobal.org/caliper/v1/Page",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Page"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/v1/DigitalResource"
+  } ]
+}, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/Person",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -656,6 +693,10 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/v1/DigitalResource"
+  } ],
+  "http://www.w3.org/2002/07/owl#deprecated" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/ReadingEvent",
@@ -1275,26 +1316,28 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "epubChapter"
+    "@value" : "EpubChapter"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/v1/DigitalResource"
   } ],
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "https://idpf.github.io/epub-vocabs/structure/#chapter"
+  "http://www.w3.org/2002/07/owl#deprecated" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/epubPart",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "epubPart"
+    "@value" : "EpubPart"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/v1/DigitalResource"
   } ],
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "https://idpf.github.io/epub-vocabs/structure/#part"
+  "http://www.w3.org/2002/07/owl#deprecated" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/epubSubChapter",
@@ -1304,7 +1347,7 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "epubSubChapter"
+    "@value" : "EpubSubChapter"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/v1/DigitalResource"
@@ -1312,22 +1355,20 @@
   "http://www.w3.org/2002/07/owl#deprecated" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
     "@value" : "true"
-  } ],
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "https://idpf.github.io/epub-vocabs/structure/#subchapter"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/epubVolume",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "epubVolume"
+    "@value" : "EpubVolume"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/v1/DigitalResource"
   } ],
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "https://idpf.github.io/epub-vocabs/structure/#volume"
+  "http://www.w3.org/2002/07/owl#deprecated" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/v1/eventTime",
@@ -1915,9 +1956,6 @@
   "@id" : "http://purl.org/dc/dcmitype/Collection",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "http://purl.org/dc/dcmitype/Event",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
   "@id" : "http://rdfs.org/sioc/spec/#term_Forum",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
@@ -1948,18 +1986,6 @@
   "@id" : "http://xmlns.com/foaf/spec/#term_Person",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://idpf.github.io/epub-vocabs/structure/#chapter",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://idpf.github.io/epub-vocabs/structure/#part",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://idpf.github.io/epub-vocabs/structure/#subchapter",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://idpf.github.io/epub-vocabs/structure/#volume",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
   "@id" : "https://schema.org/AudioObject",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
@@ -1976,7 +2002,11 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "https://schema.org/Thing",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Thing"
+  } ]
 }, {
   "@id" : "https://schema.org/VideoObject",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
