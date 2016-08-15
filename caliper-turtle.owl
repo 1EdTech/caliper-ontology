@@ -642,7 +642,11 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/v1/Assessment
 :Assessment rdf:type owl:Class ;
-            rdfs:subClassOf :AssignableDigitalResource ;
+            rdfs:subClassOf [ owl:intersectionOf ( :AssignableDigitalResource
+                                                   :DigitalResourceCollection
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
             rdfs:label "Assessment"@en .
 
 
@@ -696,6 +700,12 @@ xsd:duration rdf:type rdfs:Datatype .
                     rdfs:label "BookmarkAnnotation"@en .
 
 
+###  http://purl.imsglobal.org/caliper/v1/Chapter
+:Chapter rdf:type owl:Class ;
+         rdfs:subClassOf :DigitalResource ;
+         rdfs:label "Chapter"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/v1/Collection
 :Collection rdf:type owl:Class ;
             owl:equivalentClass <http://purl.org/dc/dcmitype/Collection> ;
@@ -732,11 +742,17 @@ xsd:duration rdf:type rdfs:Datatype .
                                            ] .
 
 
+###  http://purl.imsglobal.org/caliper/v1/Document
+:Document rdf:type owl:Class ;
+          rdfs:subClassOf :DigitalResource ;
+          rdfs:label "Document"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/v1/Entity
 :Entity rdf:type owl:Class ;
-        owl:equivalentClass <https://schema.org/Thing> ;
         rdfs:comment "A caliper:Entity represents a generic class that is analogous to an sdo:Thing. Given that a caliper:Entity represents a generic type it is recommended that only subclasses of caliper:Entity be employed to represent nodes in the learning graph.  A caliper:Entity should be provisioned with a globally-scoped, dereferenceable IRI in order to ensure that caliper:Event data can be linked and shared.  In cases where an IRI is inappropriate, a caliper:Entity can be assigned a blank node identifier."@en ;
-        rdfs:label "Entity"@en .
+        rdfs:label "Entity"@en ;
+        owl:equivalentClass <https://schema.org/Thing> .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Envelope
@@ -746,7 +762,6 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/v1/Event
 :Event rdf:type owl:Class ;
-       owl:equivalentClass <http://purl.org/dc/dcmitype/Event> ;
        rdfs:label "Event"@en .
 
 
@@ -797,7 +812,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/v1/LearningObjective
 :LearningObjective rdf:type owl:Class ;
-                   rdfs:subClassOf :Entity ;
+                   rdfs:subClassOf :DigitalResource ;
                    rdfs:label "LearningObjective"@en .
 
 
@@ -878,6 +893,12 @@ xsd:duration rdf:type rdfs:Datatype .
               rdfs:label "OutcomeEvent"@en .
 
 
+###  http://purl.imsglobal.org/caliper/v1/Page
+:Page rdf:type owl:Class ;
+      rdfs:subClassOf :DigitalResource ;
+      rdfs:label "Page"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/v1/Person
 :Person rdf:type owl:Class ;
         owl:equivalentClass <http://xmlns.com/foaf/spec/#term_Person> ;
@@ -889,7 +910,8 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/v1/Reading
 :Reading rdf:type owl:Class ;
          rdfs:subClassOf :DigitalResource ;
-         rdfs:label "Reading"@en .
+         rdfs:label "Reading"@en ;
+         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/ReadingEvent
@@ -1017,40 +1039,35 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/v1/epubChapter
 :epubChapter rdf:type owl:Class ;
-             owl:equivalentClass <https://idpf.github.io/epub-vocabs/structure/#chapter> ;
              rdfs:subClassOf :DigitalResource ;
-             rdfs:label "epubChapter"@en .
+             rdfs:label "EpubChapter"@en ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/epubPart
 :epubPart rdf:type owl:Class ;
-          owl:equivalentClass <https://idpf.github.io/epub-vocabs/structure/#part> ;
           rdfs:subClassOf :DigitalResource ;
-          rdfs:label "epubPart"@en .
+          rdfs:label "EpubPart"@en ;
+          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/epubSubChapter
 :epubSubChapter rdf:type owl:Class ;
-                owl:equivalentClass <https://idpf.github.io/epub-vocabs/structure/#subchapter> ;
                 rdfs:subClassOf :DigitalResource ;
                 rdfs:comment "Deprecated by IDPF as of 26 April 2016.  See https://idpf.github.io/epub-vocabs/structure/"^^xsd:string ;
-                rdfs:label "epubSubChapter"@en ;
+                rdfs:label "EpubSubChapter"@en ;
                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/epubVolume
 :epubVolume rdf:type owl:Class ;
-            owl:equivalentClass <https://idpf.github.io/epub-vocabs/structure/#volume> ;
             rdfs:subClassOf :DigitalResource ;
-            rdfs:label "epubVolume"@en .
+            rdfs:label "EpubVolume"@en ;
+            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.org/dc/dcmitype/Collection
 <http://purl.org/dc/dcmitype/Collection> rdf:type owl:Class .
-
-
-###  http://purl.org/dc/dcmitype/Event
-<http://purl.org/dc/dcmitype/Event> rdf:type owl:Class .
 
 
 ###  http://rdfs.org/sioc/spec/#term_Forum
@@ -1081,22 +1098,6 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://xmlns.com/foaf/spec/#term_Person> rdf:type owl:Class .
 
 
-###  https://idpf.github.io/epub-vocabs/structure/#chapter
-<https://idpf.github.io/epub-vocabs/structure/#chapter> rdf:type owl:Class .
-
-
-###  https://idpf.github.io/epub-vocabs/structure/#part
-<https://idpf.github.io/epub-vocabs/structure/#part> rdf:type owl:Class .
-
-
-###  https://idpf.github.io/epub-vocabs/structure/#subchapter
-<https://idpf.github.io/epub-vocabs/structure/#subchapter> rdf:type owl:Class .
-
-
-###  https://idpf.github.io/epub-vocabs/structure/#volume
-<https://idpf.github.io/epub-vocabs/structure/#volume> rdf:type owl:Class .
-
-
 ###  https://schema.org/AudioObject
 <https://schema.org/AudioObject> rdf:type owl:Class .
 
@@ -1118,7 +1119,8 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  https://schema.org/Thing
-<https://schema.org/Thing> rdf:type owl:Class .
+<https://schema.org/Thing> rdf:type owl:Class ;
+                           rdfs:label "Thing"@en .
 
 
 ###  https://schema.org/VideoObject
