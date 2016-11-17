@@ -50,13 +50,6 @@ xsd:duration rdf:type rdfs:Datatype .
        rdfs:label "actor"@en .
 
 
-###  http://purl.imsglobal.org/caliper/alignedLearningObjective
-:alignedLearningObjective rdf:type owl:ObjectProperty ;
-                          rdfs:domain :DigitalResource ;
-                          rdfs:range :LearningObjective ;
-                          rdfs:label "alignedLearningObjective"@en .
-
-
 ###  http://purl.imsglobal.org/caliper/annotated
 :annotated rdf:type owl:ObjectProperty ;
            rdfs:domain :Annotation ;
@@ -156,6 +149,13 @@ xsd:duration rdf:type rdfs:Datatype .
 :keywords rdf:type owl:ObjectProperty ;
           rdfs:domain :DigitalResource ;
           rdfs:label "keywords"@en .
+
+
+###  http://purl.imsglobal.org/caliper/learningObjectives
+:learningObjectives rdf:type owl:ObjectProperty ;
+                    rdfs:domain :DigitalResource ;
+                    rdfs:range :LearningObjective ;
+                    rdfs:label "learningObjectives"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/member
