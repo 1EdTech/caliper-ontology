@@ -103,7 +103,11 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/v1/extensions
 :extensions rdf:type owl:ObjectProperty ;
-            rdfs:domain :Entity ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Entity
+                                        :Event
+                                      )
+                        ] ;
             rdfs:label "extensions"@en .
 
 
@@ -112,6 +116,14 @@ xsd:duration rdf:type rdfs:Datatype .
                   rdfs:domain :Event ;
                   rdfs:range :LtiSession ;
                   rdfs:label "federatedSession"@en .
+
+
+###  http://purl.imsglobal.org/caliper/v1/fromResource
+:fromResource rdf:type owl:ObjectProperty ;
+              rdfs:domain :NavigationEvent ;
+              rdfs:range :DigitalResource ;
+              rdfs:label "fromResource"@en ;
+              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/generated
@@ -159,12 +171,6 @@ xsd:duration rdf:type rdfs:Datatype .
         rdfs:range :Entity ;
         rdfs:comment "A caliper:object is a caliper:Entity that is related to the caliper:actor by way of the relationship described by the caliper:action."@en ;
         rdfs:label "object"@en .
-
-
-###  http://purl.imsglobal.org/caliper/v1/objectType
-:objectType rdf:type owl:ObjectProperty ;
-            rdfs:label "objectType"@en ;
-            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/organization
@@ -455,6 +461,13 @@ xsd:duration rdf:type rdfs:Datatype .
                   rdfs:label "extraCreditScore"@en .
 
 
+###  http://purl.imsglobal.org/caliper/v1/id
+:id rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:string ;
+    rdfs:label "id"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/v1/index
 :index rdf:type owl:DatatypeProperty ;
        rdfs:domain :Frame ;
@@ -518,6 +531,13 @@ xsd:duration rdf:type rdfs:Datatype .
              rdfs:label "normalScore"@en .
 
 
+###  http://purl.imsglobal.org/caliper/v1/objectType
+:objectType rdf:type owl:DatatypeProperty ;
+            rdfs:domain :DigitalResource ;
+            rdfs:label "objectType"@en ;
+            owl:deprecated "true"^^xsd:boolean .
+
+
 ###  http://purl.imsglobal.org/caliper/v1/penaltyScore
 :penaltyScore rdf:type owl:DatatypeProperty ;
               rdfs:domain :Result ;
@@ -559,6 +579,13 @@ xsd:duration rdf:type rdfs:Datatype .
             rdfs:domain :Result ;
             rdfs:range xsd:double ;
             rdfs:label "totalScore"@en .
+
+
+###  http://purl.imsglobal.org/caliper/v1/uuid
+:uuid rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Event ;
+      rdfs:range xsd:string ;
+      rdfs:label "uuid"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/value
@@ -750,9 +777,9 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/v1/Entity
 :Entity rdf:type owl:Class ;
+        owl:equivalentClass <https://schema.org/Thing> ;
         rdfs:comment "A caliper:Entity represents a generic class that is analogous to an sdo:Thing. Given that a caliper:Entity represents a generic type it is recommended that only subclasses of caliper:Entity be employed to represent nodes in the learning graph.  A caliper:Entity should be provisioned with a globally-scoped, dereferenceable IRI in order to ensure that caliper:Event data can be linked and shared.  In cases where an IRI is inappropriate, a caliper:Entity can be assigned a blank node identifier."@en ;
-        rdfs:label "Entity"@en ;
-        owl:equivalentClass <https://schema.org/Thing> .
+        rdfs:label "Entity"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Envelope
@@ -917,7 +944,8 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/v1/ReadingEvent
 :ReadingEvent rdf:type owl:Class ;
               rdfs:subClassOf :Event ;
-              rdfs:label "ReadingEvent"@en .
+              rdfs:label "ReadingEvent"@en ;
+              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Response
