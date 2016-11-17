@@ -1,15 +1,15 @@
-@prefix : <http://purl.imsglobal.org/caliper/v1/> .
+@prefix : <http://purl.imsglobal.org/caliper/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://purl.imsglobal.org/caliper/v1/> .
+@base <http://purl.imsglobal.org/caliper/> .
 
-<http://purl.imsglobal.org/caliper/v1/> rdf:type owl:Ontology ;
-                                         rdfs:comment "IMS Caliper Analytics defines a standard for enabling the collection of rich contextual data about learning interactions and a Sensor API capturing and reporting this data.  The IMS Caliper Framework is designed to establish a means for consistently capturing and presenting measures of learning activity, which will enable more efficient development of learning analytics features in learning environments; define a common language for labeling learning data, in order to set the stage for an ecosystem of higher-order applications of learning analytics; provide a standard way of measuring learning activities and effectiveness that will enable designers and providers of curriculum to measure, compare and improve quality; leverage data science methods, standards and technologies; and build upon existing IMS standards."@en ;
-                                         rdfs:label "Caliper Analytics Ontology"@en ;
-                                         rdfs:seeAlso "http://www.imsglobal.org/caliper"^^xsd:string .
+<http://purl.imsglobal.org/caliper/> rdf:type owl:Ontology ;
+                                      rdfs:comment "IMS Caliper Analytics defines a standard for enabling the collection of rich contextual data about learning interactions and a Sensor API capturing and reporting this data.  The IMS Caliper Framework is designed to establish a means for consistently capturing and presenting measures of learning activity, which will enable more efficient development of learning analytics features in learning environments; define a common language for labeling learning data, in order to set the stage for an ecosystem of higher-order applications of learning analytics; provide a standard way of measuring learning activities and effectiveness that will enable designers and providers of curriculum to measure, compare and improve quality; leverage data science methods, standards and technologies; and build upon existing IMS standards."@en ;
+                                      rdfs:label "Caliper Analytics Ontology"@en ;
+                                      rdfs:seeAlso "http://www.imsglobal.org/caliper"^^xsd:string .
 
 #################################################################
 #    Annotation properties
@@ -36,244 +36,244 @@ xsd:duration rdf:type rdfs:Datatype .
 #################################################################
 
 ###  http://purl.imsglobal.org/caliper/v1/actor
-:actor rdf:type owl:ObjectProperty ;
-       rdfs:domain :Event ,
-                   [ rdf:type owl:Class ;
-                     owl:unionOf ( :Attempt
-                                   :Event
-                                   :Response
-                                   :Result
-                                 )
-                   ] ;
-       rdfs:range :Agent ;
-       rdfs:comment "The participant in an action or process."@en ;
-       rdfs:label "actor"@en .
+:v1/actor rdf:type owl:ObjectProperty ;
+          rdfs:domain :v1/Event ,
+                      [ rdf:type owl:Class ;
+                        owl:unionOf ( :v1/Attempt
+                                      :v1/Event
+                                      :v1/Response
+                                      :v1/Result
+                                    )
+                      ] ;
+          rdfs:range :v1/Agent ;
+          rdfs:comment "The participant in an action or process."@en ;
+          rdfs:label "actor"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/alignedLearningObjective
-:alignedLearningObjective rdf:type owl:ObjectProperty ;
-                          rdfs:domain :DigitalResource ;
-                          rdfs:range :LearningObjective ;
-                          rdfs:label "alignedLearningObjective"@en .
+:v1/alignedLearningObjective rdf:type owl:ObjectProperty ;
+                             rdfs:domain :v1/DigitalResource ;
+                             rdfs:range :v1/LearningObjective ;
+                             rdfs:label "alignedLearningObjective"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/annotated
-:annotated rdf:type owl:ObjectProperty ;
-           rdfs:domain :Annotation ;
-           rdfs:range :DigitalResource ;
-           rdfs:label "annotated"@en .
+:v1/annotated rdf:type owl:ObjectProperty ;
+              rdfs:domain :v1/Annotation ;
+              rdfs:range :v1/DigitalResource ;
+              rdfs:label "annotated"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/assignable
-:assignable rdf:type owl:ObjectProperty ;
-            rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( :Attempt
-                                        :Response
-                                        :Result
-                                      )
-                        ] ;
-            rdfs:range :DigitalResource ;
-            rdfs:label "assignable"@en .
+:v1/assignable rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :v1/Attempt
+                                           :v1/Response
+                                           :v1/Result
+                                         )
+                           ] ;
+               rdfs:range :v1/DigitalResource ;
+               rdfs:label "assignable"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/attempt
-:attempt rdf:type owl:ObjectProperty ;
-         rdfs:domain [ rdf:type owl:Class ;
-                       owl:unionOf ( :Response
-                                     :Result
-                                   )
-                     ] ;
-         rdfs:range :Attempt ;
-         rdfs:label "attempt"@en .
+:v1/attempt rdf:type owl:ObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :v1/Response
+                                        :v1/Result
+                                      )
+                        ] ;
+            rdfs:range :v1/Attempt ;
+            rdfs:label "attempt"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/creators
-:creators rdf:type owl:ObjectProperty ;
-          rdfs:domain :DigitalResource ;
-          rdfs:range :Agent ;
-          rdfs:label "creators"@en .
+:v1/creators rdf:type owl:ObjectProperty ;
+             rdfs:domain :v1/DigitalResource ;
+             rdfs:range :v1/Agent ;
+             rdfs:label "creators"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/edApp
-:edApp rdf:type owl:ObjectProperty ;
-       rdfs:domain :Event ;
-       rdfs:range :SoftwareApplication ;
-       rdfs:label "edApp"@en .
+:v1/edApp rdf:type owl:ObjectProperty ;
+          rdfs:domain :v1/Event ;
+          rdfs:range :v1/SoftwareApplication ;
+          rdfs:label "edApp"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/extensions
-:extensions rdf:type owl:ObjectProperty ;
-            rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( :Entity
-                                        :Event
-                                      )
-                        ] ;
-            rdfs:label "extensions"@en .
+:v1/extensions rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :v1/Entity
+                                           :v1/Event
+                                         )
+                           ] ;
+               rdfs:label "extensions"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/federatedSession
-:federatedSession rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Event ;
-                  rdfs:range :LtiSession ;
-                  rdfs:label "federatedSession"@en .
+:v1/federatedSession rdf:type owl:ObjectProperty ;
+                     rdfs:domain :v1/Event ;
+                     rdfs:range :v1/LtiSession ;
+                     rdfs:label "federatedSession"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/fromResource
-:fromResource rdf:type owl:ObjectProperty ;
-              rdfs:domain :NavigationEvent ;
-              rdfs:range :DigitalResource ;
-              rdfs:label "fromResource"@en ;
-              owl:deprecated "true"^^xsd:boolean .
+:v1/fromResource rdf:type owl:ObjectProperty ;
+                 rdfs:domain :v1/NavigationEvent ;
+                 rdfs:range :v1/DigitalResource ;
+                 rdfs:label "fromResource"@en ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/generated
-:generated rdf:type owl:ObjectProperty ;
-           rdfs:domain :Event ;
-           rdfs:range :Entity ;
-           rdfs:label "generated"@en .
+:v1/generated rdf:type owl:ObjectProperty ;
+              rdfs:domain :v1/Event ;
+              rdfs:range :v1/Entity ;
+              rdfs:label "generated"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/isPartOf
-:isPartOf rdf:type owl:ObjectProperty ;
-          rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( :Collection
-                                      :DigitalResource
-                                    )
-                      ] ;
-          rdfs:range :DigitalResource ;
-          rdfs:label "isPartOf"@en .
+:v1/isPartOf rdf:type owl:ObjectProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :v1/Collection
+                                         :v1/DigitalResource
+                                       )
+                         ] ;
+             rdfs:range :v1/DigitalResource ;
+             rdfs:label "isPartOf"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/items
-:items rdf:type owl:ObjectProperty ;
-       rdfs:domain :Collection ;
-       rdfs:range :Entity ;
-       rdfs:comment "The set of one or more entities that comprise a caliper:Collection."@en ;
-       rdfs:label "items"@en .
+:v1/items rdf:type owl:ObjectProperty ;
+          rdfs:domain :v1/Collection ;
+          rdfs:range :v1/Entity ;
+          rdfs:comment "The set of one or more entities that comprise a caliper:Collection."@en ;
+          rdfs:label "items"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/keywords
-:keywords rdf:type owl:ObjectProperty ;
-          rdfs:domain :DigitalResource ;
-          rdfs:label "keywords"@en .
+:v1/keywords rdf:type owl:ObjectProperty ;
+             rdfs:domain :v1/DigitalResource ;
+             rdfs:label "keywords"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/member
-:member rdf:type owl:ObjectProperty ;
-        rdfs:domain :Membership ;
-        rdfs:range :Person ;
-        rdfs:label "member"@en .
+:v1/member rdf:type owl:ObjectProperty ;
+           rdfs:domain :v1/Membership ;
+           rdfs:range :v1/Person ;
+           rdfs:label "member"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/object
-:object rdf:type owl:ObjectProperty ;
-        rdfs:domain :Event ;
-        rdfs:range :Entity ;
-        rdfs:comment "A caliper:object is a caliper:Entity that is related to the caliper:actor by way of the relationship described by the caliper:action."@en ;
-        rdfs:label "object"@en .
+:v1/object rdf:type owl:ObjectProperty ;
+           rdfs:domain :v1/Event ;
+           rdfs:range :v1/Entity ;
+           rdfs:comment "A caliper:object is a caliper:Entity that is related to the caliper:actor by way of the relationship described by the caliper:action."@en ;
+           rdfs:label "object"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/organization
-:organization rdf:type owl:ObjectProperty ;
-              rdfs:domain :Membership ;
-              rdfs:range :Organization ;
-              rdfs:label "organization"@en .
+:v1/organization rdf:type owl:ObjectProperty ;
+                 rdfs:domain :v1/Membership ;
+                 rdfs:range :v1/Organization ;
+                 rdfs:label "organization"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/referrer
-:referrer rdf:type owl:ObjectProperty ;
-          rdfs:domain :Event ;
-          rdfs:range :Entity ;
-          rdfs:label "referrer"@en .
+:v1/referrer rdf:type owl:ObjectProperty ;
+             rdfs:domain :v1/Event ;
+             rdfs:range :v1/Entity ;
+             rdfs:label "referrer"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/replyTo
-:replyTo rdf:type owl:ObjectProperty ;
-         rdfs:domain :Message ;
-         rdfs:range :Message ;
-         rdfs:comment "The prior Message, if any, that prompted the posting of this Message in the form of a reply or response. Analogous to sioc:reply_of."@en ;
-         rdfs:label "replyTo"@en .
+:v1/replyTo rdf:type owl:ObjectProperty ;
+            rdfs:domain :v1/Message ;
+            rdfs:range :v1/Message ;
+            rdfs:comment "The prior Message, if any, that prompted the posting of this Message in the form of a reply or response. Analogous to sioc:reply_of."@en ;
+            rdfs:label "replyTo"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/roles
-:roles rdf:type owl:ObjectProperty ;
-       rdfs:domain :Membership ;
-       rdfs:range :Role ;
-       rdfs:label "roles"@en .
+:v1/roles rdf:type owl:ObjectProperty ;
+          rdfs:domain :v1/Membership ;
+          rdfs:range :v1/Role ;
+          rdfs:label "roles"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/scoredBy
-:scoredBy rdf:type owl:ObjectProperty ;
-          rdfs:domain :Result ;
-          rdfs:range :Agent ;
-          rdfs:label "scoredBy"@en .
+:v1/scoredBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :v1/Result ;
+             rdfs:range :v1/Agent ;
+             rdfs:label "scoredBy"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/selection
-:selection rdf:type owl:ObjectProperty ;
-           rdfs:domain :HighlightAnnotation ;
-           rdfs:range :TextPositionSelector ;
-           rdfs:label "selection"@en .
+:v1/selection rdf:type owl:ObjectProperty ;
+              rdfs:domain :v1/HighlightAnnotation ;
+              rdfs:range :v1/TextPositionSelector ;
+              rdfs:label "selection"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/session
-:session rdf:type owl:ObjectProperty ;
-         rdfs:domain :Event ;
-         rdfs:range :Session ;
-         rdfs:label "session"@en .
+:v1/session rdf:type owl:ObjectProperty ;
+            rdfs:domain :v1/Event ;
+            rdfs:range :v1/Session ;
+            rdfs:label "session"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/status
-:status rdf:type owl:ObjectProperty ;
-        rdfs:domain :Membership ;
-        rdfs:range :Status ;
-        rdfs:label "status"@en .
+:v1/status rdf:type owl:ObjectProperty ;
+           rdfs:domain :v1/Membership ;
+           rdfs:range :v1/Status ;
+           rdfs:label "status"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/subOrganizationOf
-:subOrganizationOf rdf:type owl:ObjectProperty ;
-                   rdfs:domain [ rdf:type owl:Class ;
-                                 owl:unionOf ( :CourseOffering
-                                               :CourseSection
-                                               :Group
-                                               :Organization
-                                             )
-                               ] ;
-                   rdfs:range :Organization ;
-                   rdfs:comment "The parent organization of a caliper:Organization."@en ;
-                   rdfs:label "subOrganizationOf"@en .
+:v1/subOrganizationOf rdf:type owl:ObjectProperty ;
+                      rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( :v1/CourseOffering
+                                                  :v1/CourseSection
+                                                  :v1/Group
+                                                  :v1/Organization
+                                                )
+                                  ] ;
+                      rdfs:range :v1/Organization ;
+                      rdfs:comment "The parent organization of a caliper:Organization."@en ;
+                      rdfs:label "subOrganizationOf"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/tags
-:tags rdf:type owl:ObjectProperty ;
-      rdfs:domain :TagAnnotation ;
-      rdfs:label "tags"@en .
+:v1/tags rdf:type owl:ObjectProperty ;
+         rdfs:domain :v1/TagAnnotation ;
+         rdfs:label "tags"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/target
-:target rdf:type owl:ObjectProperty ;
-        rdfs:domain :Event ;
-        rdfs:range :Entity ;
-        rdfs:label "target"@en .
+:v1/target rdf:type owl:ObjectProperty ;
+           rdfs:domain :v1/Event ;
+           rdfs:range :v1/Entity ;
+           rdfs:label "target"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/values
-:values rdf:type owl:ObjectProperty ;
-        rdfs:domain [ rdf:type owl:Class ;
-                      owl:unionOf ( :FillinBlankResponse
-                                    :MultipleResponseResponse
-                                    :SelectTextResponse
-                                  )
-                    ] ;
-        rdfs:label "values"@en .
+:v1/values rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :v1/FillinBlankResponse
+                                       :v1/MultipleResponseResponse
+                                       :v1/SelectTextResponse
+                                     )
+                       ] ;
+           rdfs:label "values"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/withAgents
-:withAgents rdf:type owl:ObjectProperty ;
-            rdfs:domain :SharedAnnotation ;
-            rdfs:range :Agent ;
-            rdfs:comment "A list of caliper agents with whom a resource is shared. Each caliper:Agent listed may represent a human, organization or a software application.  The list SHOULD include 1 or more agents but may be omitted or left empty if the agent list is intended to be anonymous.  It is RECOMMENDED that the following terms be used to describe an agent: caliperLis:Person, caliperW3c:Organization or caliper:SoftwareApplication."@en ;
-            rdfs:label "withAgents"@en .
+:v1/withAgents rdf:type owl:ObjectProperty ;
+               rdfs:domain :v1/SharedAnnotation ;
+               rdfs:range :v1/Agent ;
+               rdfs:comment "A list of caliper agents with whom a resource is shared. Each caliper:Agent listed may represent a human, organization or a software application.  The list SHOULD include 1 or more agents but may be omitted or left empty if the agent list is intended to be anonymous.  It is RECOMMENDED that the following terms be used to describe an agent: caliperLis:Person, caliperW3c:Organization or caliper:SoftwareApplication."@en ;
+               rdfs:label "withAgents"@en .
 
 
 #################################################################
@@ -281,366 +281,366 @@ xsd:duration rdf:type rdfs:Datatype .
 #################################################################
 
 ###  http://purl.imsglobal.org/caliper/v1/academicSession
-:academicSession rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :CourseOffering ;
-                 rdfs:range xsd:string ;
-                 rdfs:label "academicSession"@en .
+:v1/academicSession rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :v1/CourseOffering ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "academicSession"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/action
-:action rdf:type owl:DatatypeProperty ;
-        rdfs:domain :Event ;
-        rdfs:range xsd:string ;
-        rdfs:label "action"@en .
+:v1/action rdf:type owl:DatatypeProperty ;
+           rdfs:domain :v1/Event ;
+           rdfs:range xsd:string ;
+           rdfs:label "action"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/bookmarkNotes
-:bookmarkNotes rdf:type owl:DatatypeProperty ;
-               rdfs:domain :BookmarkAnnotation ;
-               rdfs:range xsd:string ;
-               rdfs:comment "An optional textual note or comment provided by an actor who annotates a caliper:DigitalResource with a caliper:Bookmark."@en ;
-               rdfs:label "bookmarkNotes"@en .
+:v1/bookmarkNotes rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :v1/BookmarkAnnotation ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "An optional textual note or comment provided by an actor who annotates a caliper:DigitalResource with a caliper:Bookmark."@en ;
+                  rdfs:label "bookmarkNotes"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/category
-:category rdf:type owl:DatatypeProperty ;
-          rdfs:domain :CourseSection ;
-          rdfs:range xsd:string ;
-          rdfs:isDefinedBy "caliper:"^^xsd:string ;
-          rdfs:label "category"@en .
+:v1/category rdf:type owl:DatatypeProperty ;
+             rdfs:domain :v1/CourseSection ;
+             rdfs:range xsd:string ;
+             rdfs:isDefinedBy "caliper:"^^xsd:string ;
+             rdfs:label "category"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/comment
-:comment rdf:type owl:DatatypeProperty ;
-         rdfs:domain :Result ;
-         rdfs:range xsd:string ;
-         rdfs:label "comment"@en .
+:v1/comment rdf:type owl:DatatypeProperty ;
+            rdfs:domain :v1/Result ;
+            rdfs:range xsd:string ;
+            rdfs:label "comment"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/count
-:count rdf:type owl:DatatypeProperty ;
-       rdfs:domain :Attempt ;
-       rdfs:range xsd:nonNegativeInteger ;
-       rdfs:label "count"@en .
+:v1/count rdf:type owl:DatatypeProperty ;
+          rdfs:domain :v1/Attempt ;
+          rdfs:range xsd:nonNegativeInteger ;
+          rdfs:label "count"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/courseNumber
-:courseNumber rdf:type owl:DatatypeProperty ;
-              rdfs:domain :CourseSection ;
-              rdfs:range xsd:string ;
-              rdfs:label "courseNumber"@en .
+:v1/courseNumber rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :v1/CourseSection ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "courseNumber"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/currentTime
-:currentTime rdf:type owl:DatatypeProperty ;
-             rdfs:domain :MediaLocation ;
-             rdfs:range xsd:duration ;
-             rdfs:label "currentTime"@en .
+:v1/currentTime rdf:type owl:DatatypeProperty ;
+                rdfs:domain :v1/MediaLocation ;
+                rdfs:range xsd:duration ;
+                rdfs:label "currentTime"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/curveFactor
-:curveFactor rdf:type owl:DatatypeProperty ;
-             rdfs:domain :Result ;
-             rdfs:range xsd:double ;
-             rdfs:label "curveFactor"@en .
+:v1/curveFactor rdf:type owl:DatatypeProperty ;
+                rdfs:domain :v1/Result ;
+                rdfs:range xsd:double ;
+                rdfs:label "curveFactor"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/curvedTotalScore
-:curvedTotalScore rdf:type owl:DatatypeProperty ;
-                  rdfs:domain :Result ;
-                  rdfs:range xsd:double ;
-                  rdfs:label "curvedTotalScore"@en .
+:v1/curvedTotalScore rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :v1/Result ;
+                     rdfs:range xsd:double ;
+                     rdfs:label "curvedTotalScore"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/dateCreated
-:dateCreated rdf:type owl:DatatypeProperty ;
-             rdfs:domain :Entity ;
-             rdfs:range xsd:dateTime ;
-             rdfs:label "dateCreated"@en ;
-             owl:equivalentProperty "sdo:dateCreated"^^xsd:string .
+:v1/dateCreated rdf:type owl:DatatypeProperty ;
+                rdfs:domain :v1/Entity ;
+                rdfs:range xsd:dateTime ;
+                rdfs:label "dateCreated"@en ;
+                owl:equivalentProperty "sdo:dateCreated"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/dateModified
-:dateModified rdf:type owl:DatatypeProperty ;
-              rdfs:domain :Entity ;
-              rdfs:range xsd:dateTime ;
-              rdfs:label "dateModified"@en ;
-              owl:equivalentProperty "sdo:dateModified"^^xsd:string .
+:v1/dateModified rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :v1/Entity ;
+                 rdfs:range xsd:dateTime ;
+                 rdfs:label "dateModified"@en ;
+                 owl:equivalentProperty "sdo:dateModified"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/datePublished
-:datePublished rdf:type owl:DatatypeProperty ;
-               rdfs:domain :DigitalResource ;
-               rdfs:range xsd:dateTime ;
-               rdfs:label "datePublished"@en .
+:v1/datePublished rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :v1/DigitalResource ;
+                  rdfs:range xsd:dateTime ;
+                  rdfs:label "datePublished"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/dateToActivate
-:dateToActivate rdf:type owl:DatatypeProperty ;
-                rdfs:domain :AssignableDigitalResource ;
-                rdfs:range xsd:dateTime ;
-                rdfs:label "dateToActivate"@en .
+:v1/dateToActivate rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :v1/AssignableDigitalResource ;
+                   rdfs:range xsd:dateTime ;
+                   rdfs:label "dateToActivate"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/dateToShow
-:dateToShow rdf:type owl:DatatypeProperty ;
-            rdfs:domain :AssignableDigitalResource ;
-            rdfs:range xsd:dateTime ;
-            rdfs:label "dateToShow"@en .
+:v1/dateToShow rdf:type owl:DatatypeProperty ;
+               rdfs:domain :v1/AssignableDigitalResource ;
+               rdfs:range xsd:dateTime ;
+               rdfs:label "dateToShow"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/dateToStartOn
-:dateToStartOn rdf:type owl:DatatypeProperty ;
-               rdfs:domain :AssignableDigitalResource ;
-               rdfs:range xsd:dateTime ;
-               rdfs:label "dateToStartOn"@en .
+:v1/dateToStartOn rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :v1/AssignableDigitalResource ;
+                  rdfs:range xsd:dateTime ;
+                  rdfs:label "dateToStartOn"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/dateToSubmit
-:dateToSubmit rdf:type owl:DatatypeProperty ;
-              rdfs:domain :AssignableDigitalResource ;
-              rdfs:range xsd:dateTime ;
-              rdfs:label "dateToSubmit"@en .
+:v1/dateToSubmit rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :v1/AssignableDigitalResource ;
+                 rdfs:range xsd:dateTime ;
+                 rdfs:label "dateToSubmit"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/description
-:description rdf:type owl:DatatypeProperty ;
-             rdfs:domain :Entity ;
-             rdfs:range xsd:string ;
-             rdfs:label "description"@en .
+:v1/description rdf:type owl:DatatypeProperty ;
+                rdfs:domain :v1/Entity ;
+                rdfs:range xsd:string ;
+                rdfs:label "description"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/duration
-:duration rdf:type owl:DatatypeProperty ;
-          rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( :Attempt
-                                      :MediaObject
-                                      :Response
-                                      :Session
-                                    )
-                      ] ;
-          rdfs:range xsd:duration ;
-          rdfs:label "duration"@en .
+:v1/duration rdf:type owl:DatatypeProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :v1/Attempt
+                                         :v1/MediaObject
+                                         :v1/Response
+                                         :v1/Session
+                                       )
+                         ] ;
+             rdfs:range xsd:duration ;
+             rdfs:label "duration"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/end
-:end rdf:type owl:DatatypeProperty ;
-     rdfs:domain :TextPositionSelector ;
-     rdfs:range xsd:nonNegativeInteger ;
-     rdfs:comment "The end position of a segment of text. The first character in the full text is position 0. The character indicated at position caliper:end is NOT included within the selected segment.  See caliper:TextPositionSelector."@en ;
-     rdfs:label "end"@en ;
-     owl:equivalentProperty "oa:end"^^xsd:string .
+:v1/end rdf:type owl:DatatypeProperty ;
+        rdfs:domain :v1/TextPositionSelector ;
+        rdfs:range xsd:nonNegativeInteger ;
+        rdfs:comment "The end position of a segment of text. The first character in the full text is position 0. The character indicated at position caliper:end is NOT included within the selected segment.  See caliper:TextPositionSelector."@en ;
+        rdfs:label "end"@en ;
+        owl:equivalentProperty "oa:end"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/endedAtTime
-:endedAtTime rdf:type owl:DatatypeProperty ;
-             rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( :Attempt
-                                         :Response
-                                         :Session
-                                       )
-                         ] ;
-             rdfs:range xsd:dateTime ;
-             rdfs:label "endedAtTime"@en ;
-             owl:equivalentProperty "prov:endedAtTime"^^xsd:string .
+:v1/endedAtTime rdf:type owl:DatatypeProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :v1/Attempt
+                                            :v1/Response
+                                            :v1/Session
+                                          )
+                            ] ;
+                rdfs:range xsd:dateTime ;
+                rdfs:label "endedAtTime"@en ;
+                owl:equivalentProperty "prov:endedAtTime"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/eventTime
-:eventTime rdf:type owl:DatatypeProperty ;
-           rdfs:domain :Event ;
-           rdfs:range xsd:dateTime ;
-           rdfs:comment "A combined date and time representation (including milliseconds) of when an event occurred formatted in accordance with the ISO 8601 standard."@en ;
-           rdfs:label "eventTime"@en ;
-           owl:equivalentProperty "prov:startedAtTime"^^xsd:string .
+:v1/eventTime rdf:type owl:DatatypeProperty ;
+              rdfs:domain :v1/Event ;
+              rdfs:range xsd:dateTime ;
+              rdfs:comment "A combined date and time representation (including milliseconds) of when an event occurred formatted in accordance with the ISO 8601 standard."@en ;
+              rdfs:label "eventTime"@en ;
+              owl:equivalentProperty "prov:startedAtTime"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/extraCreditScore
-:extraCreditScore rdf:type owl:DatatypeProperty ;
-                  rdfs:domain :Result ;
-                  rdfs:range xsd:double ;
-                  rdfs:label "extraCreditScore"@en .
+:v1/extraCreditScore rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :v1/Result ;
+                     rdfs:range xsd:double ;
+                     rdfs:label "extraCreditScore"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/id
-:id rdf:type owl:DatatypeProperty ;
-    rdfs:domain :Event ;
-    rdfs:range xsd:string ;
-    rdfs:label "id"@en .
+:v1/id rdf:type owl:DatatypeProperty ;
+       rdfs:domain :v1/Event ;
+       rdfs:range xsd:string ;
+       rdfs:label "id"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/index
-:index rdf:type owl:DatatypeProperty ;
-       rdfs:domain :Frame ;
-       rdfs:range xsd:long ;
-       rdfs:label "index"@en .
+:v1/index rdf:type owl:DatatypeProperty ;
+          rdfs:domain :v1/Frame ;
+          rdfs:range xsd:long ;
+          rdfs:label "index"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/isTimeDependent
-:isTimeDependent rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :AssessmentItem ;
-                 rdfs:range xsd:boolean ;
-                 rdfs:label "isTimeDependent"@en .
+:v1/isTimeDependent rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :v1/AssessmentItem ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:label "isTimeDependent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/maxAttempts
-:maxAttempts rdf:type owl:DatatypeProperty ;
-             rdfs:domain :AssignableDigitalResource ;
-             rdfs:range xsd:nonNegativeInteger ;
-             rdfs:label "maxAttempts"@en .
+:v1/maxAttempts rdf:type owl:DatatypeProperty ;
+                rdfs:domain :v1/AssignableDigitalResource ;
+                rdfs:range xsd:nonNegativeInteger ;
+                rdfs:label "maxAttempts"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/maxScore
-:maxScore rdf:type owl:DatatypeProperty ;
-          rdfs:domain :AssignableDigitalResource ;
-          rdfs:range xsd:double ;
-          rdfs:label "maxScore"@en .
+:v1/maxScore rdf:type owl:DatatypeProperty ;
+             rdfs:domain :v1/AssignableDigitalResource ;
+             rdfs:range xsd:double ;
+             rdfs:label "maxScore"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/maxSubmits
-:maxSubmits rdf:type owl:DatatypeProperty ;
-            rdfs:domain :AssignableDigitalResource ;
-            rdfs:range xsd:nonNegativeInteger ;
-            rdfs:label "maxSubmits"@en .
+:v1/maxSubmits rdf:type owl:DatatypeProperty ;
+               rdfs:domain :v1/AssignableDigitalResource ;
+               rdfs:range xsd:nonNegativeInteger ;
+               rdfs:label "maxSubmits"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/mediaType
-:mediaType rdf:type owl:DatatypeProperty ;
-           rdfs:domain :DigitalResource ;
-           rdfs:range xsd:string ;
-           rdfs:label "mediaType"@en .
+:v1/mediaType rdf:type owl:DatatypeProperty ;
+              rdfs:domain :v1/DigitalResource ;
+              rdfs:range xsd:string ;
+              rdfs:label "mediaType"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/muted
-:muted rdf:type owl:DatatypeProperty ;
-       rdfs:domain :AudioObject ;
-       rdfs:range xsd:boolean ;
-       rdfs:label "muted"@en .
+:v1/muted rdf:type owl:DatatypeProperty ;
+          rdfs:domain :v1/AudioObject ;
+          rdfs:range xsd:boolean ;
+          rdfs:label "muted"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/name
-:name rdf:type owl:DatatypeProperty ;
-      rdfs:domain :Entity ;
-      rdfs:range xsd:string ;
-      rdfs:label "name"@en .
+:v1/name rdf:type owl:DatatypeProperty ;
+         rdfs:domain :v1/Entity ;
+         rdfs:range xsd:string ;
+         rdfs:label "name"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/normalScore
-:normalScore rdf:type owl:DatatypeProperty ;
-             rdfs:domain :Result ;
-             rdfs:range xsd:double ;
-             rdfs:label "normalScore"@en .
+:v1/normalScore rdf:type owl:DatatypeProperty ;
+                rdfs:domain :v1/Result ;
+                rdfs:range xsd:double ;
+                rdfs:label "normalScore"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/objectType
-:objectType rdf:type owl:DatatypeProperty ;
-            rdfs:domain :DigitalResource ;
-            rdfs:label "objectType"@en ;
-            owl:deprecated "true"^^xsd:boolean .
+:v1/objectType rdf:type owl:DatatypeProperty ;
+               rdfs:domain :v1/DigitalResource ;
+               rdfs:label "objectType"@en ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/penaltyScore
-:penaltyScore rdf:type owl:DatatypeProperty ;
-              rdfs:domain :Result ;
-              rdfs:range xsd:double ;
-              rdfs:label "penaltyScore"@en .
+:v1/penaltyScore rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :v1/Result ;
+                 rdfs:range xsd:double ;
+                 rdfs:label "penaltyScore"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/selectionText
-:selectionText rdf:type owl:DatatypeProperty ;
-               rdfs:domain :HighlightAnnotation ;
-               rdfs:range xsd:string ;
-               rdfs:label "selectionText"@en .
+:v1/selectionText rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :v1/HighlightAnnotation ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "selectionText"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/start
-:start rdf:type owl:DatatypeProperty ;
-       rdfs:domain :TextPositionSelector ;
-       rdfs:range xsd:nonNegativeInteger ;
-       rdfs:comment "The starting position of a segment of text. The first character in the full text is position 0. The character indicated at position caliper:start is included within the selected segment. See caliper:TextPositionSelector."@en ;
-       rdfs:label "start"@en ;
-       owl:equivalentProperty "oa:start"^^xsd:string .
+:v1/start rdf:type owl:DatatypeProperty ;
+          rdfs:domain :v1/TextPositionSelector ;
+          rdfs:range xsd:nonNegativeInteger ;
+          rdfs:comment "The starting position of a segment of text. The first character in the full text is position 0. The character indicated at position caliper:start is included within the selected segment. See caliper:TextPositionSelector."@en ;
+          rdfs:label "start"@en ;
+          owl:equivalentProperty "oa:start"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/startedAtTime
-:startedAtTime rdf:type owl:DatatypeProperty ;
-               rdfs:domain [ rdf:type owl:Class ;
-                             owl:unionOf ( :Attempt
-                                           :Response
-                                           :Session
-                                         )
-                           ] ;
-               rdfs:range xsd:dateTime ;
-               rdfs:label "startedAtTime"@en ;
-               owl:equivalentProperty "prov:startedAtTime"^^xsd:string .
+:v1/startedAtTime rdf:type owl:DatatypeProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :v1/Attempt
+                                              :v1/Response
+                                              :v1/Session
+                                            )
+                              ] ;
+                  rdfs:range xsd:dateTime ;
+                  rdfs:label "startedAtTime"@en ;
+                  owl:equivalentProperty "prov:startedAtTime"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/totalScore
-:totalScore rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Result ;
-            rdfs:range xsd:double ;
-            rdfs:label "totalScore"@en .
+:v1/totalScore rdf:type owl:DatatypeProperty ;
+               rdfs:domain :v1/Result ;
+               rdfs:range xsd:double ;
+               rdfs:label "totalScore"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/uuid
-:uuid rdf:type owl:DatatypeProperty ;
-      rdfs:domain :Event ;
-      rdfs:range xsd:string ;
-      rdfs:label "uuid"@en .
+:v1/uuid rdf:type owl:DatatypeProperty ;
+         rdfs:domain :v1/Event ;
+         rdfs:range xsd:string ;
+         rdfs:label "uuid"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/value
-:value rdf:type owl:DatatypeProperty ;
-       rdfs:domain [ rdf:type owl:Class ;
-                     owl:unionOf ( :MultipleChoiceResponse
-                                   :TrueFalseResponse
-                                 )
-                   ] ;
-       rdfs:range xsd:string ;
-       rdfs:label "value"@en .
+:v1/value rdf:type owl:DatatypeProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :v1/MultipleChoiceResponse
+                                      :v1/TrueFalseResponse
+                                    )
+                      ] ;
+          rdfs:range xsd:string ;
+          rdfs:label "value"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/version
-:version rdf:type owl:DatatypeProperty ;
-         rdfs:domain [ rdf:type owl:Class ;
-                       owl:unionOf ( :DigitalResource
-                                     :SoftwareApplication
-                                   )
-                     ] ;
-         rdfs:range xsd:string ;
-         rdfs:label "version"@en .
+:v1/version rdf:type owl:DatatypeProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :v1/DigitalResource
+                                        :v1/SoftwareApplication
+                                      )
+                        ] ;
+            rdfs:range xsd:string ;
+            rdfs:label "version"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/volumeLevel
-:volumeLevel rdf:type owl:DatatypeProperty ;
-             rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( :AudioObject
-                                         <https://schema.org/VideoObject>
-                                       )
-                         ] ;
-             rdfs:range xsd:string ;
-             rdfs:label "volumeLevel"@en .
+:v1/volumeLevel rdf:type owl:DatatypeProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :v1/AudioObject
+                                            <https://schema.org/VideoObject>
+                                          )
+                            ] ;
+                rdfs:range xsd:string ;
+                rdfs:label "volumeLevel"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/volumeMax
-:volumeMax rdf:type owl:DatatypeProperty ;
-           rdfs:domain [ rdf:type owl:Class ;
-                         owl:unionOf ( :AudioObject
-                                       <https://schema.org/VideoObject>
-                                     )
-                       ] ;
-           rdfs:range xsd:string ;
-           rdfs:label "volumeMax"@en .
+:v1/volumeMax rdf:type owl:DatatypeProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :v1/AudioObject
+                                          <https://schema.org/VideoObject>
+                                        )
+                          ] ;
+              rdfs:range xsd:string ;
+              rdfs:label "volumeMax"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/volumeMin
-:volumeMin rdf:type owl:DatatypeProperty ;
-           rdfs:domain [ rdf:type owl:Class ;
-                         owl:unionOf ( :AudioObject
-                                       <https://schema.org/VideoObject>
-                                     )
-                       ] ;
-           rdfs:range xsd:string ;
-           rdfs:label "volumeMin"@en .
+:v1/volumeMin rdf:type owl:DatatypeProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :v1/AudioObject
+                                          <https://schema.org/VideoObject>
+                                        )
+                          ] ;
+              rdfs:range xsd:string ;
+              rdfs:label "volumeMin"@en .
 
 
 #################################################################
@@ -648,450 +648,450 @@ xsd:duration rdf:type rdfs:Datatype .
 #################################################################
 
 ###  http://purl.imsglobal.org/caliper/v1/Agent
-:Agent rdf:type owl:Class ;
-       owl:equivalentClass <http://xmlns.com/foaf/spec/#term_Agent> ;
-       rdfs:subClassOf :Entity ;
-       rdfs:comment "A caliper:Agent is a generic class that represents a caliper:Entity that can initiate or perform an action. It is analogous to a foaf:Agent. Given that caliper:Agent represents a generic type it is recommended that only subclasses of caliper:Agent be used to represent a Caliper:actor."@en ;
-       rdfs:label "Agent"@en .
+:v1/Agent rdf:type owl:Class ;
+          owl:equivalentClass <http://xmlns.com/foaf/spec/#term_Agent> ;
+          rdfs:subClassOf :v1/Entity ;
+          rdfs:comment "A caliper:Agent is a generic class that represents a caliper:Entity that can initiate or perform an action. It is analogous to a foaf:Agent. Given that caliper:Agent represents a generic type it is recommended that only subclasses of caliper:Agent be used to represent a Caliper:actor."@en ;
+          rdfs:label "Agent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Annotation
-:Annotation rdf:type owl:Class ;
-            rdfs:subClassOf :Entity ;
-            rdfs:label "Annotation"@en .
+:v1/Annotation rdf:type owl:Class ;
+               rdfs:subClassOf :v1/Entity ;
+               rdfs:label "Annotation"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/AnnotationEvent
-:AnnotationEvent rdf:type owl:Class ;
-                 rdfs:subClassOf :Event ;
-                 rdfs:label "AnnotationEvent"@en .
+:v1/AnnotationEvent rdf:type owl:Class ;
+                    rdfs:subClassOf :v1/Event ;
+                    rdfs:label "AnnotationEvent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Assessment
-:Assessment rdf:type owl:Class ;
-            rdfs:subClassOf [ owl:intersectionOf ( :AssignableDigitalResource
-                                                   :DigitalResourceCollection
-                                                 ) ;
-                              rdf:type owl:Class
-                            ] ;
-            rdfs:label "Assessment"@en .
+:v1/Assessment rdf:type owl:Class ;
+               rdfs:subClassOf [ owl:intersectionOf ( :v1/AssignableDigitalResource
+                                                      :v1/DigitalResourceCollection
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+               rdfs:label "Assessment"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/AssessmentEvent
-:AssessmentEvent rdf:type owl:Class ;
-                 rdfs:subClassOf :Event ;
-                 rdfs:label "AssessmentEvent"@en .
+:v1/AssessmentEvent rdf:type owl:Class ;
+                    rdfs:subClassOf :v1/Event ;
+                    rdfs:label "AssessmentEvent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/AssessmentItem
-:AssessmentItem rdf:type owl:Class ;
-                rdfs:subClassOf :AssignableDigitalResource ;
-                rdfs:label "AssessmentItem"@en .
+:v1/AssessmentItem rdf:type owl:Class ;
+                   rdfs:subClassOf :v1/AssignableDigitalResource ;
+                   rdfs:label "AssessmentItem"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/AssessmentItemEvent
-:AssessmentItemEvent rdf:type owl:Class ;
-                     rdfs:subClassOf :Event ;
-                     rdfs:label "AssessmentItemEvent"@en .
+:v1/AssessmentItemEvent rdf:type owl:Class ;
+                        rdfs:subClassOf :v1/Event ;
+                        rdfs:label "AssessmentItemEvent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/AssignableDigitalResource
-:AssignableDigitalResource rdf:type owl:Class ;
-                           rdfs:subClassOf :DigitalResource ;
-                           rdfs:label "AssignableDigitalResource"@en .
+:v1/AssignableDigitalResource rdf:type owl:Class ;
+                              rdfs:subClassOf :v1/DigitalResource ;
+                              rdfs:label "AssignableDigitalResource"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/AssignableEvent
-:AssignableEvent rdf:type owl:Class ;
-                 rdfs:subClassOf :Event ;
-                 rdfs:label "AssignableEvent"@en .
+:v1/AssignableEvent rdf:type owl:Class ;
+                    rdfs:subClassOf :v1/Event ;
+                    rdfs:label "AssignableEvent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Attempt
-:Attempt rdf:type owl:Class ;
-         rdfs:subClassOf :Entity ;
-         rdfs:comment "Provides a count of the number of times a caliper:Agent interacts with a caliper:AssignableDigitalResource.  A caliper:Attempt is generated as the result of an action such as starting a caliper:Assessment. In the case of an caliper:OutcomeEvent graded action, the caliper:Attempt constitutes the object of the interaction."@en ;
-         rdfs:label "Attempt"@en .
+:v1/Attempt rdf:type owl:Class ;
+            rdfs:subClassOf :v1/Entity ;
+            rdfs:comment "Provides a count of the number of times a caliper:Agent interacts with a caliper:AssignableDigitalResource.  A caliper:Attempt is generated as the result of an action such as starting a caliper:Assessment. In the case of an caliper:OutcomeEvent graded action, the caliper:Attempt constitutes the object of the interaction."@en ;
+            rdfs:label "Attempt"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/AudioObject
-:AudioObject rdf:type owl:Class ;
-             owl:equivalentClass <https://schema.org/AudioObject> ;
-             rdfs:subClassOf :MediaObject ;
-             rdfs:label "AudioObject"@en .
+:v1/AudioObject rdf:type owl:Class ;
+                owl:equivalentClass <https://schema.org/AudioObject> ;
+                rdfs:subClassOf :v1/MediaObject ;
+                rdfs:label "AudioObject"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/BookmarkAnnotation
-:BookmarkAnnotation rdf:type owl:Class ;
-                    rdfs:subClassOf :Annotation ;
-                    rdfs:label "BookmarkAnnotation"@en .
+:v1/BookmarkAnnotation rdf:type owl:Class ;
+                       rdfs:subClassOf :v1/Annotation ;
+                       rdfs:label "BookmarkAnnotation"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Chapter
-:Chapter rdf:type owl:Class ;
-         rdfs:subClassOf :DigitalResource ;
-         rdfs:label "Chapter"@en .
+:v1/Chapter rdf:type owl:Class ;
+            rdfs:subClassOf :v1/DigitalResource ;
+            rdfs:label "Chapter"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Collection
-:Collection rdf:type owl:Class ;
-            owl:equivalentClass <http://purl.org/dc/dcmitype/Collection> ;
-            rdfs:subClassOf :Entity ;
-            rdfs:comment "A caliper:Collection is a generic class that represents a grouping of entities.  It is analogous to a dcmitype:Collection or a sioc:Container.  Given that caliper:Collection represents a generic type it is *recommended* that only subclasses of caliper:Collection be employed to represent nodes in the learning graph."@en ;
-            rdfs:label "Collection"@en .
+:v1/Collection rdf:type owl:Class ;
+               owl:equivalentClass <http://purl.org/dc/dcmitype/Collection> ;
+               rdfs:subClassOf :v1/Entity ;
+               rdfs:comment "A caliper:Collection is a generic class that represents a grouping of entities.  It is analogous to a dcmitype:Collection or a sioc:Container.  Given that caliper:Collection represents a generic type it is *recommended* that only subclasses of caliper:Collection be employed to represent nodes in the learning graph."@en ;
+               rdfs:label "Collection"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/CourseOffering
-:CourseOffering rdf:type owl:Class ;
-                rdfs:subClassOf :Organization ;
-                rdfs:label "CourseOffering"@en .
+:v1/CourseOffering rdf:type owl:Class ;
+                   rdfs:subClassOf :v1/Organization ;
+                   rdfs:label "CourseOffering"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/CourseSection
-:CourseSection rdf:type owl:Class ;
-               rdfs:subClassOf :Organization ;
-               rdfs:label "CourseSection"@en .
+:v1/CourseSection rdf:type owl:Class ;
+                  rdfs:subClassOf :v1/Organization ;
+                  rdfs:label "CourseSection"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/DigitalResource
-:DigitalResource rdf:type owl:Class ;
-                 owl:equivalentClass <https://schema.org/CreativeWork> ;
-                 rdfs:subClassOf :Entity ;
-                 rdfs:label "DigitalResource"@en .
+:v1/DigitalResource rdf:type owl:Class ;
+                    owl:equivalentClass <https://schema.org/CreativeWork> ;
+                    rdfs:subClassOf :v1/Entity ;
+                    rdfs:label "DigitalResource"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/DigitalResourceCollection
-:DigitalResourceCollection rdf:type owl:Class ;
-                           rdfs:subClassOf [ owl:intersectionOf ( :Collection
-                                                                  :DigitalResource
-                                                                ) ;
-                                             rdf:type owl:Class
-                                           ] .
+:v1/DigitalResourceCollection rdf:type owl:Class ;
+                              rdfs:subClassOf [ owl:intersectionOf ( :v1/Collection
+                                                                     :v1/DigitalResource
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Document
-:Document rdf:type owl:Class ;
-          rdfs:subClassOf :DigitalResource ;
-          rdfs:label "Document"@en .
+:v1/Document rdf:type owl:Class ;
+             rdfs:subClassOf :v1/DigitalResource ;
+             rdfs:label "Document"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Entity
-:Entity rdf:type owl:Class ;
-        owl:equivalentClass <https://schema.org/Thing> ;
-        rdfs:comment "A caliper:Entity represents a generic class that is analogous to an sdo:Thing. Given that a caliper:Entity represents a generic type it is recommended that only subclasses of caliper:Entity be employed to represent nodes in the learning graph.  A caliper:Entity should be provisioned with a globally-scoped, dereferenceable IRI in order to ensure that caliper:Event data can be linked and shared.  In cases where an IRI is inappropriate, a caliper:Entity can be assigned a blank node identifier."@en ;
-        rdfs:label "Entity"@en .
+:v1/Entity rdf:type owl:Class ;
+           owl:equivalentClass <https://schema.org/Thing> ;
+           rdfs:comment "A caliper:Entity represents a generic class that is analogous to an sdo:Thing. Given that a caliper:Entity represents a generic type it is recommended that only subclasses of caliper:Entity be employed to represent nodes in the learning graph.  A caliper:Entity should be provisioned with a globally-scoped, dereferenceable IRI in order to ensure that caliper:Event data can be linked and shared.  In cases where an IRI is inappropriate, a caliper:Entity can be assigned a blank node identifier."@en ;
+           rdfs:label "Entity"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Envelope
-:Envelope rdf:type owl:Class ;
-          rdfs:label "Envelope"@en .
+:v1/Envelope rdf:type owl:Class ;
+             rdfs:label "Envelope"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Event
-:Event rdf:type owl:Class ;
-       rdfs:label "Event"@en .
+:v1/Event rdf:type owl:Class ;
+          rdfs:label "Event"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/FillinBlankResponse
-:FillinBlankResponse rdf:type owl:Class ;
-                     rdfs:subClassOf :Response ;
-                     rdfs:label "FillinBlankResponse"@en .
+:v1/FillinBlankResponse rdf:type owl:Class ;
+                        rdfs:subClassOf :v1/Response ;
+                        rdfs:label "FillinBlankResponse"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Forum
-:Forum rdf:type owl:Class ;
-       owl:equivalentClass <http://rdfs.org/sioc/spec/#term_Forum> ;
-       rdfs:subClassOf :DigitalResourceCollection ;
-       rdfs:comment "A caliper:Forum is a channel or virtual space in which group discussions take place.  A caliper:Forum typically includes one or more threaded discussions to which members can subscribe, post messages and reply to other messages.  It is analogous to an sioc.Forum."@en ;
-       rdfs:label "Forum"@en .
+:v1/Forum rdf:type owl:Class ;
+          owl:equivalentClass <http://rdfs.org/sioc/spec/#term_Forum> ;
+          rdfs:subClassOf :v1/DigitalResourceCollection ;
+          rdfs:comment "A caliper:Forum is a channel or virtual space in which group discussions take place.  A caliper:Forum typically includes one or more threaded discussions to which members can subscribe, post messages and reply to other messages.  It is analogous to an sioc.Forum."@en ;
+          rdfs:label "Forum"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/ForumEvent
-:ForumEvent rdf:type owl:Class ;
-            rdfs:subClassOf :Event ;
-            rdfs:label "ForumEvent"@en .
+:v1/ForumEvent rdf:type owl:Class ;
+               rdfs:subClassOf :v1/Event ;
+               rdfs:label "ForumEvent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Frame
-:Frame rdf:type owl:Class ;
-       rdfs:subClassOf :DigitalResource ;
-       rdfs:label "Frame"@en .
+:v1/Frame rdf:type owl:Class ;
+          rdfs:subClassOf :v1/DigitalResource ;
+          rdfs:label "Frame"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Group
-:Group rdf:type owl:Class ;
-       rdfs:subClassOf :Organization ;
-       rdfs:label "Group"@en .
+:v1/Group rdf:type owl:Class ;
+          rdfs:subClassOf :v1/Organization ;
+          rdfs:label "Group"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/HighlightAnnotation
-:HighlightAnnotation rdf:type owl:Class ;
-                     rdfs:subClassOf :Annotation ;
-                     rdfs:label "HighlightAnnotation"@en .
+:v1/HighlightAnnotation rdf:type owl:Class ;
+                        rdfs:subClassOf :v1/Annotation ;
+                        rdfs:label "HighlightAnnotation"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/ImageObject
-:ImageObject rdf:type owl:Class ;
-             owl:equivalentClass <https://schema.org/ImageObject> ;
-             rdfs:subClassOf :MediaObject ;
-             rdfs:label "ImageObject"@en .
+:v1/ImageObject rdf:type owl:Class ;
+                owl:equivalentClass <https://schema.org/ImageObject> ;
+                rdfs:subClassOf :v1/MediaObject ;
+                rdfs:label "ImageObject"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/LearningObjective
-:LearningObjective rdf:type owl:Class ;
-                   rdfs:subClassOf :DigitalResource ;
-                   rdfs:label "LearningObjective"@en .
+:v1/LearningObjective rdf:type owl:Class ;
+                      rdfs:subClassOf :v1/DigitalResource ;
+                      rdfs:label "LearningObjective"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/LtiSession
-:LtiSession rdf:type owl:Class ;
-            rdfs:subClassOf :Session ;
-            rdfs:label "LtiSession"@en .
+:v1/LtiSession rdf:type owl:Class ;
+               rdfs:subClassOf :v1/Session ;
+               rdfs:label "LtiSession"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/MediaEvent
-:MediaEvent rdf:type owl:Class ;
-            rdfs:subClassOf :Event ;
-            rdfs:label "MediaEvent"@en .
+:v1/MediaEvent rdf:type owl:Class ;
+               rdfs:subClassOf :v1/Event ;
+               rdfs:label "MediaEvent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/MediaLocation
-:MediaLocation rdf:type owl:Class ;
-               rdfs:subClassOf :DigitalResource ;
-               rdfs:label "MediaLocation"@en .
+:v1/MediaLocation rdf:type owl:Class ;
+                  rdfs:subClassOf :v1/DigitalResource ;
+                  rdfs:label "MediaLocation"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/MediaObject
-:MediaObject rdf:type owl:Class ;
-             owl:equivalentClass <https://schema.org/MediaObject> ;
-             rdfs:subClassOf :DigitalResource ;
-             rdfs:label "MediaObject"@en .
+:v1/MediaObject rdf:type owl:Class ;
+                owl:equivalentClass <https://schema.org/MediaObject> ;
+                rdfs:subClassOf :v1/DigitalResource ;
+                rdfs:label "MediaObject"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Membership
-:Membership rdf:type owl:Class ;
-            rdfs:subClassOf :Entity ;
-            rdfs:label "Membership"@en .
+:v1/Membership rdf:type owl:Class ;
+               rdfs:subClassOf :v1/Entity ;
+               rdfs:label "Membership"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Message
-:Message rdf:type owl:Class ;
-         owl:equivalentClass <http://rdfs.org/sioc/spec/#term_Post> ;
-         rdfs:subClassOf :DigitalResource ;
-         rdfs:comment "A Caliper Message is a digital form of written communication sent to a recipient. A series of Messages may constitute a Thread if they share a common subject and are connected by a reply or by date relationships. It is analogous to an sioc:Post."@en ;
-         rdfs:label "Message"@en .
+:v1/Message rdf:type owl:Class ;
+            owl:equivalentClass <http://rdfs.org/sioc/spec/#term_Post> ;
+            rdfs:subClassOf :v1/DigitalResource ;
+            rdfs:comment "A Caliper Message is a digital form of written communication sent to a recipient. A series of Messages may constitute a Thread if they share a common subject and are connected by a reply or by date relationships. It is analogous to an sioc:Post."@en ;
+            rdfs:label "Message"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/MessageEvent
-:MessageEvent rdf:type owl:Class ;
-              rdfs:subClassOf :Event ;
-              rdfs:label "MessageEvent"@en .
+:v1/MessageEvent rdf:type owl:Class ;
+                 rdfs:subClassOf :v1/Event ;
+                 rdfs:label "MessageEvent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/MultipleChoiceResponse
-:MultipleChoiceResponse rdf:type owl:Class ;
-                        rdfs:subClassOf :Response ;
-                        rdfs:label "MultipleChoiceResponse"@en .
+:v1/MultipleChoiceResponse rdf:type owl:Class ;
+                           rdfs:subClassOf :v1/Response ;
+                           rdfs:label "MultipleChoiceResponse"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/MultipleResponseResponse
-:MultipleResponseResponse rdf:type owl:Class ;
-                          rdfs:subClassOf :Response ;
-                          rdfs:label "MultipleResponseResponse"@en .
+:v1/MultipleResponseResponse rdf:type owl:Class ;
+                             rdfs:subClassOf :v1/Response ;
+                             rdfs:label "MultipleResponseResponse"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/NavigationEvent
-:NavigationEvent rdf:type owl:Class ;
-                 rdfs:subClassOf :Event ;
-                 rdfs:label "NavigationEvent"@en .
+:v1/NavigationEvent rdf:type owl:Class ;
+                    rdfs:subClassOf :v1/Event ;
+                    rdfs:label "NavigationEvent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Organization
-:Organization rdf:type owl:Class ;
-              owl:equivalentClass <http://www.w3.org/ns/org#Organization> ;
-              rdfs:subClassOf :Agent ;
-              rdfs:comment "A caliper:Organization represents a group of people organized into a community or some other social, commercial, educational or political structure. The group has a common purpose or reason for existence that spans beyond the set of people belonging to it and can act as a caliper:Agent. A caliper:Organizations are often decomposable into hierarchical structures. It is analogous to a org:Organization."@en ;
-              rdfs:label "Organization"@en .
+:v1/Organization rdf:type owl:Class ;
+                 owl:equivalentClass <http://www.w3.org/ns/org#Organization> ;
+                 rdfs:subClassOf :v1/Agent ;
+                 rdfs:comment "A caliper:Organization represents a group of people organized into a community or some other social, commercial, educational or political structure. The group has a common purpose or reason for existence that spans beyond the set of people belonging to it and can act as a caliper:Agent. A caliper:Organizations are often decomposable into hierarchical structures. It is analogous to a org:Organization."@en ;
+                 rdfs:label "Organization"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/OutcomeEvent
-:OutcomeEvent rdf:type owl:Class ;
-              rdfs:subClassOf :Event ;
-              rdfs:label "OutcomeEvent"@en .
+:v1/OutcomeEvent rdf:type owl:Class ;
+                 rdfs:subClassOf :v1/Event ;
+                 rdfs:label "OutcomeEvent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Page
-:Page rdf:type owl:Class ;
-      rdfs:subClassOf :DigitalResource ;
-      rdfs:label "Page"@en .
+:v1/Page rdf:type owl:Class ;
+         rdfs:subClassOf :v1/DigitalResource ;
+         rdfs:label "Page"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Person
-:Person rdf:type owl:Class ;
-        owl:equivalentClass <http://xmlns.com/foaf/spec/#term_Person> ;
-        rdfs:subClassOf :Agent ;
-        rdfs:comment "A caliper:Person represents a human being, alive or deceased, real or imaginary.  caliper:Person is analogous to a foaf:Person."@en ;
-        rdfs:label "Person"@en .
+:v1/Person rdf:type owl:Class ;
+           owl:equivalentClass <http://xmlns.com/foaf/spec/#term_Person> ;
+           rdfs:subClassOf :v1/Agent ;
+           rdfs:comment "A caliper:Person represents a human being, alive or deceased, real or imaginary.  caliper:Person is analogous to a foaf:Person."@en ;
+           rdfs:label "Person"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Reading
-:Reading rdf:type owl:Class ;
-         rdfs:subClassOf :DigitalResource ;
-         rdfs:label "Reading"@en ;
-         owl:deprecated "true"^^xsd:boolean .
+:v1/Reading rdf:type owl:Class ;
+            rdfs:subClassOf :v1/DigitalResource ;
+            rdfs:label "Reading"@en ;
+            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/ReadingEvent
-:ReadingEvent rdf:type owl:Class ;
-              rdfs:subClassOf :Event ;
-              rdfs:label "ReadingEvent"@en ;
-              owl:deprecated "true"^^xsd:boolean .
+:v1/ReadingEvent rdf:type owl:Class ;
+                 rdfs:subClassOf :v1/Event ;
+                 rdfs:label "ReadingEvent"@en ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Response
-:Response rdf:type owl:Class ;
-          rdfs:subClassOf :Entity ;
-          rdfs:label "Response"@en .
+:v1/Response rdf:type owl:Class ;
+             rdfs:subClassOf :v1/Entity ;
+             rdfs:label "Response"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Result
-:Result rdf:type owl:Class ;
-        rdfs:subClassOf :Entity ;
-        rdfs:label "Result"@en .
+:v1/Result rdf:type owl:Class ;
+           rdfs:subClassOf :v1/Entity ;
+           rdfs:label "Result"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Role
-:Role rdf:type owl:Class ;
-      rdfs:subClassOf :Entity .
+:v1/Role rdf:type owl:Class ;
+         rdfs:subClassOf :v1/Entity .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/SelectTextResponse
-:SelectTextResponse rdf:type owl:Class ;
-                    rdfs:subClassOf :Response ;
-                    rdfs:label "SelectTextResponse"@en .
+:v1/SelectTextResponse rdf:type owl:Class ;
+                       rdfs:subClassOf :v1/Response ;
+                       rdfs:label "SelectTextResponse"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Selector
-:Selector rdf:type owl:Class ;
-          rdfs:subClassOf :Entity ;
-          rdfs:comment "A resource which describes the segment of interest in a representation of a Source resource. This class is not used directly in Annotations, only its subclasses.  The nature of the Selector will be dependent on the type of the representation for which the segment is conveyed. The specific type of selector should be indicated using a subclass of caliper:Selector.  The Specifier's description MAY be conveyed as an external or embedded resource or as RDF properties within the graph. The description SHOULD use existing standards whenever possible. If the Specifier has an HTTP URI, then its description, and only its description, MUST be returned when the URI is dereferenced."@en ;
-          rdfs:label "Selector"@en ;
-          owl:equivalentClass "oa:Selector"^^xsd:string .
+:v1/Selector rdf:type owl:Class ;
+             rdfs:subClassOf :v1/Entity ;
+             rdfs:comment "A resource which describes the segment of interest in a representation of a Source resource. This class is not used directly in Annotations, only its subclasses.  The nature of the Selector will be dependent on the type of the representation for which the segment is conveyed. The specific type of selector should be indicated using a subclass of caliper:Selector.  The Specifier's description MAY be conveyed as an external or embedded resource or as RDF properties within the graph. The description SHOULD use existing standards whenever possible. If the Specifier has an HTTP URI, then its description, and only its description, MUST be returned when the URI is dereferenced."@en ;
+             rdfs:label "Selector"@en ;
+             owl:equivalentClass "oa:Selector"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Session
-:Session rdf:type owl:Class ;
-         rdfs:subClassOf :Entity ;
-         rdfs:comment "Represents a Web application user session.  caliper:SessionEvent log in actions generate a caliper:Session.  Log out actions treat the caliper:Session as the target of the interaction while in the case of a time out, the caliper:Session constitutes the object of the interaction."@en ;
-         rdfs:label "Session"@en .
+:v1/Session rdf:type owl:Class ;
+            rdfs:subClassOf :v1/Entity ;
+            rdfs:comment "Represents a Web application user session.  caliper:SessionEvent log in actions generate a caliper:Session.  Log out actions treat the caliper:Session as the target of the interaction while in the case of a time out, the caliper:Session constitutes the object of the interaction."@en ;
+            rdfs:label "Session"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/SessionEvent
-:SessionEvent rdf:type owl:Class ;
-              rdfs:subClassOf :Event ;
-              rdfs:label "SessionEvent"@en .
+:v1/SessionEvent rdf:type owl:Class ;
+                 rdfs:subClassOf :v1/Event ;
+                 rdfs:label "SessionEvent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/SharedAnnotation
-:SharedAnnotation rdf:type owl:Class ;
-                  rdfs:subClassOf :Annotation ;
-                  rdfs:label "SharedAnnotation"@en .
+:v1/SharedAnnotation rdf:type owl:Class ;
+                     rdfs:subClassOf :v1/Annotation ;
+                     rdfs:label "SharedAnnotation"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/SoftwareApplication
-:SoftwareApplication rdf:type owl:Class ;
-                     owl:equivalentClass <https://schema.org/SoftwareApplication> ;
-                     rdfs:subClassOf :Agent ;
-                     rdfs:comment "a caliper:SoftwareApplication represents a computer program, application, module, platform or system. It is analogous to a sdo:SoftwareApplication or dcmitype:Software."@en ;
-                     rdfs:label "SoftwareApplication"@en .
+:v1/SoftwareApplication rdf:type owl:Class ;
+                        owl:equivalentClass <https://schema.org/SoftwareApplication> ;
+                        rdfs:subClassOf :v1/Agent ;
+                        rdfs:comment "a caliper:SoftwareApplication represents a computer program, application, module, platform or system. It is analogous to a sdo:SoftwareApplication or dcmitype:Software."@en ;
+                        rdfs:label "SoftwareApplication"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Status
-:Status rdf:type owl:Class ;
-        rdfs:subClassOf :Entity .
+:v1/Status rdf:type owl:Class ;
+           rdfs:subClassOf :v1/Entity .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/TagAnnotation
-:TagAnnotation rdf:type owl:Class ;
-               rdfs:subClassOf :Annotation ;
-               rdfs:label "TagAnnotation"@en .
+:v1/TagAnnotation rdf:type owl:Class ;
+                  rdfs:subClassOf :v1/Annotation ;
+                  rdfs:label "TagAnnotation"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/TextPositionSelector
-:TextPositionSelector rdf:type owl:Class ;
-                      owl:equivalentClass <http://www.w3.org/ns/oa#TextPositionSelector> ;
-                      rdfs:subClassOf :Selector ;
-                      rdfs:comment "A caliper:TextPositionSelector describes a range of text based on its start and end positions.  The text MUST be normalized before counting characters. Each caliper:TextPositionSelector MUST have exactly 1 caliper:start property and exactly 1 caliper:end property."@en ;
-                      rdfs:label "TextPositionSelector"@en .
+:v1/TextPositionSelector rdf:type owl:Class ;
+                         owl:equivalentClass <http://www.w3.org/ns/oa#TextPositionSelector> ;
+                         rdfs:subClassOf :v1/Selector ;
+                         rdfs:comment "A caliper:TextPositionSelector describes a range of text based on its start and end positions.  The text MUST be normalized before counting characters. Each caliper:TextPositionSelector MUST have exactly 1 caliper:start property and exactly 1 caliper:end property."@en ;
+                         rdfs:label "TextPositionSelector"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/Thread
-:Thread rdf:type owl:Class ;
-        owl:equivalentClass <http://rdfs.org/sioc/spec/#term_Thread> ;
-        rdfs:subClassOf :DigitalResourceCollection ;
-        rdfs:comment "A caliper:Thread represents a series of one or more messages that share a common subject and are connected by a reply or by date relationships. It is analogous to a sioc:Thread."@en ;
-        rdfs:label "Thread"@en .
+:v1/Thread rdf:type owl:Class ;
+           owl:equivalentClass <http://rdfs.org/sioc/spec/#term_Thread> ;
+           rdfs:subClassOf :v1/DigitalResourceCollection ;
+           rdfs:comment "A caliper:Thread represents a series of one or more messages that share a common subject and are connected by a reply or by date relationships. It is analogous to a sioc:Thread."@en ;
+           rdfs:label "Thread"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/ThreadEvent
-:ThreadEvent rdf:type owl:Class ;
-             rdfs:subClassOf :Event ;
-             rdfs:label "ThreadEvent"@en .
+:v1/ThreadEvent rdf:type owl:Class ;
+                rdfs:subClassOf :v1/Event ;
+                rdfs:label "ThreadEvent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/TrueFalseResponse
-:TrueFalseResponse rdf:type owl:Class ;
-                   rdfs:subClassOf :Response ;
-                   rdfs:label "TrueFalseResponse"@en .
+:v1/TrueFalseResponse rdf:type owl:Class ;
+                      rdfs:subClassOf :v1/Response ;
+                      rdfs:label "TrueFalseResponse"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/VideoObject
-:VideoObject rdf:type owl:Class ;
-             owl:equivalentClass <https://schema.org/VideoObject> ;
-             rdfs:subClassOf :MediaObject ;
-             rdfs:label "VideoObject"@en .
+:v1/VideoObject rdf:type owl:Class ;
+                owl:equivalentClass <https://schema.org/VideoObject> ;
+                rdfs:subClassOf :v1/MediaObject ;
+                rdfs:label "VideoObject"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/ViewEvent
-:ViewEvent rdf:type owl:Class ;
-           rdfs:subClassOf :Event ;
-           rdfs:label "ViewEvent"@en .
+:v1/ViewEvent rdf:type owl:Class ;
+              rdfs:subClassOf :v1/Event ;
+              rdfs:label "ViewEvent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/WebPage
-:WebPage rdf:type owl:Class ;
-         owl:equivalentClass <https://schema.org/WebPage> ;
-         rdfs:subClassOf :DigitalResource ;
-         rdfs:label "WebPage"@en .
+:v1/WebPage rdf:type owl:Class ;
+            owl:equivalentClass <https://schema.org/WebPage> ;
+            rdfs:subClassOf :v1/DigitalResource ;
+            rdfs:label "WebPage"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/v1/epubChapter
-:epubChapter rdf:type owl:Class ;
-             rdfs:subClassOf :DigitalResource ;
-             rdfs:label "EpubChapter"@en ;
-             owl:deprecated "true"^^xsd:boolean .
-
-
-###  http://purl.imsglobal.org/caliper/v1/epubPart
-:epubPart rdf:type owl:Class ;
-          rdfs:subClassOf :DigitalResource ;
-          rdfs:label "EpubPart"@en ;
-          owl:deprecated "true"^^xsd:boolean .
-
-
-###  http://purl.imsglobal.org/caliper/v1/epubSubChapter
-:epubSubChapter rdf:type owl:Class ;
-                rdfs:subClassOf :DigitalResource ;
-                rdfs:comment "Deprecated by IDPF as of 26 April 2016.  See https://idpf.github.io/epub-vocabs/structure/"^^xsd:string ;
-                rdfs:label "EpubSubChapter"@en ;
+:v1/epubChapter rdf:type owl:Class ;
+                rdfs:subClassOf :v1/DigitalResource ;
+                rdfs:label "EpubChapter"@en ;
                 owl:deprecated "true"^^xsd:boolean .
 
 
+###  http://purl.imsglobal.org/caliper/v1/epubPart
+:v1/epubPart rdf:type owl:Class ;
+             rdfs:subClassOf :v1/DigitalResource ;
+             rdfs:label "EpubPart"@en ;
+             owl:deprecated "true"^^xsd:boolean .
+
+
+###  http://purl.imsglobal.org/caliper/v1/epubSubChapter
+:v1/epubSubChapter rdf:type owl:Class ;
+                   rdfs:subClassOf :v1/DigitalResource ;
+                   rdfs:comment "Deprecated by IDPF as of 26 April 2016.  See https://idpf.github.io/epub-vocabs/structure/"^^xsd:string ;
+                   rdfs:label "EpubSubChapter"@en ;
+                   owl:deprecated "true"^^xsd:boolean .
+
+
 ###  http://purl.imsglobal.org/caliper/v1/epubVolume
-:epubVolume rdf:type owl:Class ;
-            rdfs:subClassOf :DigitalResource ;
-            rdfs:label "EpubVolume"@en ;
-            owl:deprecated "true"^^xsd:boolean .
+:v1/epubVolume rdf:type owl:Class ;
+               rdfs:subClassOf :v1/DigitalResource ;
+               rdfs:label "EpubVolume"@en ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.org/dc/dcmitype/Collection
