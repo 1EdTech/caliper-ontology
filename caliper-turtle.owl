@@ -128,20 +128,16 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/isPartOf
 :isPartOf rdf:type owl:ObjectProperty ;
-          rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( :Collection
-                                      :DigitalResource
-                                    )
-                      ] ;
           rdfs:range :DigitalResource ;
           rdfs:label "isPartOf"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/items
-:items rdf:type owl:ObjectProperty ;
-       rdfs:domain :Collection ;
-       rdfs:range :Entity ;
-       rdfs:comment "The set of one or more entities that comprise a caliper:Collection."@en ;
+:items rdf:type owl:ObjectProperty ,
+                owl:FunctionalProperty ;
+       rdfs:domain :DigitalResourceCollection ;
+       rdfs:range :DigitalResource ;
+       rdfs:comment "The set of one or more entities that comprise a collection."@en ;
        rdfs:label "items"@en .
 
 
@@ -163,6 +159,13 @@ xsd:duration rdf:type rdfs:Datatype .
         rdfs:domain :Membership ;
         rdfs:range :Person ;
         rdfs:label "member"@en .
+
+
+###  http://purl.imsglobal.org/caliper/members
+:members rdf:type owl:ObjectProperty ;
+         rdfs:domain :Organization ;
+         rdfs:range :Agent ;
+         rdfs:label "members"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/object
@@ -733,14 +736,6 @@ xsd:duration rdf:type rdfs:Datatype .
          rdfs:label "Chapter"@en .
 
 
-###  http://purl.imsglobal.org/caliper/Collection
-:Collection rdf:type owl:Class ;
-            owl:equivalentClass <http://purl.org/dc/dcmitype/Collection> ;
-            rdfs:subClassOf :Entity ;
-            rdfs:comment "A caliper:Collection is a generic class that represents a grouping of entities.  It is analogous to a dcmitype:Collection or a sioc:Container.  Given that caliper:Collection represents a generic type it is *recommended* that only subclasses of caliper:Collection be employed to represent nodes in the learning graph."@en ;
-            rdfs:label "Collection"@en .
-
-
 ###  http://purl.imsglobal.org/caliper/CourseOffering
 :CourseOffering rdf:type owl:Class ;
                 rdfs:subClassOf :Organization ;
@@ -762,11 +757,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/DigitalResourceCollection
 :DigitalResourceCollection rdf:type owl:Class ;
-                           rdfs:subClassOf [ owl:intersectionOf ( :Collection
-                                                                  :DigitalResource
-                                                                ) ;
-                                             rdf:type owl:Class
-                                           ] .
+                           rdfs:subClassOf :DigitalResource .
 
 
 ###  http://purl.imsglobal.org/caliper/Document
