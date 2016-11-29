@@ -133,10 +133,11 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/items
-:items rdf:type owl:ObjectProperty ;
+:items rdf:type owl:ObjectProperty ,
+                owl:FunctionalProperty ;
        rdfs:domain :DigitalResourceCollection ;
        rdfs:range :DigitalResource ;
-       rdfs:comment "The set of one or more entities that comprise a caliper:Collection."@en ;
+       rdfs:comment "The set of one or more entities that comprise a collection."@en ;
        rdfs:label "items"@en .
 
 
