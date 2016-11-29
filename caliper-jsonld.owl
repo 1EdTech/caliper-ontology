@@ -37,16 +37,6 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "http://purl.imsglobal.org/caliper/Collection"
-    }, {
-      "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid19",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
       "@id" : "http://purl.imsglobal.org/caliper/CourseOffering"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/CourseSection"
@@ -57,7 +47,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid24",
+  "@id" : "_:genid21",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -69,7 +59,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid28",
+  "@id" : "_:genid25",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -83,7 +73,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid33",
+  "@id" : "_:genid30",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -95,7 +85,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid37",
+  "@id" : "_:genid34",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -107,7 +97,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid41",
+  "@id" : "_:genid38",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -117,13 +107,23 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid44",
+  "@id" : "_:genid41",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
       "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/SoftwareApplication"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid44",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://purl.imsglobal.org/caliper/AudioObject"
+    }, {
+      "@id" : "https://schema.org/VideoObject"
     } ]
   } ]
 }, {
@@ -149,31 +149,11 @@
 }, {
   "@id" : "_:genid53",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://purl.imsglobal.org/caliper/AudioObject"
-    }, {
-      "@id" : "https://schema.org/VideoObject"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid56",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "http://purl.imsglobal.org/caliper/AssignableDigitalResource"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/DigitalResourceCollection"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid59",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://purl.imsglobal.org/caliper/Collection"
-    }, {
-      "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
     } ]
   } ]
 }, {
@@ -247,7 +227,7 @@
     "@value" : "Assessment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid56"
+    "@id" : "_:genid53"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/AssessmentEvent",
@@ -347,23 +327,6 @@
     "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
   } ]
 }, {
-  "@id" : "http://purl.imsglobal.org/caliper/Collection",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A caliper:Collection is a generic class that represents a grouping of entities.  It is analogous to a dcmitype:Collection or a sioc:Container.  Given that caliper:Collection represents a generic type it is *recommended* that only subclasses of caliper:Collection be employed to represent nodes in the learning graph."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Collection"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/Entity"
-  } ],
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "http://purl.org/dc/dcmitype/Collection"
-  } ]
-}, {
   "@id" : "http://purl.imsglobal.org/caliper/CourseOffering",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
@@ -400,7 +363,7 @@
   "@id" : "http://purl.imsglobal.org/caliper/DigitalResourceCollection",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid59"
+    "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Document",
@@ -1254,7 +1217,7 @@
   "@id" : "http://purl.imsglobal.org/caliper/duration",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid28"
+    "@id" : "_:genid25"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1300,7 +1263,7 @@
   "@id" : "http://purl.imsglobal.org/caliper/endedAtTime",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid33"
+    "@id" : "_:genid30"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1486,9 +1449,6 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/isPartOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid16"
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "isPartOf"
@@ -1517,14 +1477,14 @@
     "@value" : "The set of one or more entities that comprise a caliper:Collection."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/Collection"
+    "@id" : "http://purl.imsglobal.org/caliper/DigitalResourceCollection"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "items"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/Entity"
+    "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/keywords",
@@ -1613,6 +1573,19 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Person"
+  } ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/members",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/Organization"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "members"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/Agent"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/muted",
@@ -1829,7 +1802,7 @@
   "@id" : "http://purl.imsglobal.org/caliper/startedAtTime",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid37"
+    "@id" : "_:genid34"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1862,7 +1835,7 @@
     "@value" : "The parent organization of a caliper:Organization."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid19"
+    "@id" : "_:genid16"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1924,7 +1897,7 @@
   "@id" : "http://purl.imsglobal.org/caliper/value",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid41"
+    "@id" : "_:genid38"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1937,7 +1910,7 @@
   "@id" : "http://purl.imsglobal.org/caliper/values",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid24"
+    "@id" : "_:genid21"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1947,7 +1920,7 @@
   "@id" : "http://purl.imsglobal.org/caliper/version",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid44"
+    "@id" : "_:genid41"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1960,7 +1933,7 @@
   "@id" : "http://purl.imsglobal.org/caliper/volumeLevel",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid47"
+    "@id" : "_:genid44"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1973,7 +1946,7 @@
   "@id" : "http://purl.imsglobal.org/caliper/volumeMax",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid50"
+    "@id" : "_:genid47"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1986,7 +1959,7 @@
   "@id" : "http://purl.imsglobal.org/caliper/volumeMin",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid53"
+    "@id" : "_:genid50"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
