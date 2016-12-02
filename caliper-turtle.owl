@@ -126,6 +126,13 @@ xsd:duration rdf:type rdfs:Datatype .
            rdfs:label "generated"@en .
 
 
+###  http://purl.imsglobal.org/caliper/group
+:group rdf:type owl:ObjectProperty ;
+       rdfs:domain :Event ;
+       rdfs:range :Organization ;
+       rdfs:label "group"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/isPartOf
 :isPartOf rdf:type owl:ObjectProperty ;
           rdfs:range :DigitalResource ;
@@ -166,6 +173,13 @@ xsd:duration rdf:type rdfs:Datatype .
          rdfs:domain :Organization ;
          rdfs:range :Agent ;
          rdfs:label "members"@en .
+
+
+###  http://purl.imsglobal.org/caliper/membership
+:membership rdf:type owl:ObjectProperty ;
+            rdfs:domain :Event ;
+            rdfs:range :Membership ;
+            rdfs:label "membership"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/object
