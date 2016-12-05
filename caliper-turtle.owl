@@ -69,6 +69,13 @@ xsd:duration rdf:type rdfs:Datatype .
             rdfs:label "assignable"@en .
 
 
+###  http://purl.imsglobal.org/caliper/attachments
+:attachments rdf:type owl:ObjectProperty ;
+             rdfs:domain :Message ;
+             rdfs:range :DigitalResource ;
+             rdfs:comment "attachments"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/attempt
 :attempt rdf:type owl:ObjectProperty ;
          rdfs:domain [ rdf:type owl:Class ;
@@ -309,6 +316,13 @@ xsd:duration rdf:type rdfs:Datatype .
         rdfs:domain :Event ;
         rdfs:range xsd:string ;
         rdfs:label "action"@en .
+
+
+###  http://purl.imsglobal.org/caliper/body
+:body rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Message ;
+      rdfs:range xsd:string ;
+      rdfs:label "body"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/bookmarkNotes
