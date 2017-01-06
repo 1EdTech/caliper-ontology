@@ -850,6 +850,16 @@
     "@id" : "http://purl.imsglobal.org/caliper/Event"
   } ]
 }, {
+  "@id" : "http://purl.imsglobal.org/caliper/ToolUseEvent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ToolUseEvent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/Event"
+  } ]
+}, {
   "@id" : "http://purl.imsglobal.org/caliper/TrueFalseResponse",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
