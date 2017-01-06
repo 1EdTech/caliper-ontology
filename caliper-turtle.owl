@@ -1058,6 +1058,12 @@ xsd:duration rdf:type rdfs:Datatype .
              rdfs:label "ThreadEvent"@en .
 
 
+###  http://purl.imsglobal.org/caliper/ToolUseEvent
+:ToolUseEvent rdf:type owl:Class ;
+              rdfs:subClassOf :Event ;
+              rdfs:label "ToolUseEvent"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/TrueFalseResponse
 :TrueFalseResponse rdf:type owl:Class ;
                    rdfs:subClassOf :Response ;
