@@ -1,0 +1,1757 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.imsglobal.org/caliper/"
+     xml:base="http://purl.imsglobal.org/caliper/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://purl.imsglobal.org/caliper/">
+        <rdfs:comment xml:lang="en">IMS Caliper Analytics defines a standard for enabling the collection of rich contextual data about learning interactions and a Sensor API capturing and reporting this data.  The IMS Caliper Framework is designed to establish a means for consistently capturing and presenting measures of learning activity, which will enable more efficient development of learning analytics features in learning environments; define a common language for labeling learning data, in order to set the stage for an ecosystem of higher-order applications of learning analytics; provide a standard way of measuring learning activities and effectiveness that will enable designers and providers of curriculum to measure, compare and improve quality; leverage data science methods, standards and technologies; and build upon existing IMS standards.</rdfs:comment>
+        <rdfs:label xml:lang="en">Caliper Analytics Ontology</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/caliper</rdfs:seeAlso>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#equivalentClass -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#equivalentClass"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#equivalentProperty -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#equivalentProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#duration -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#duration"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/actor -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/actor">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+        <rdfs:comment xml:lang="en">The participant in an action or process.</rdfs:comment>
+        <rdfs:label xml:lang="en">actor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/annotated -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/annotated">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Annotation"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">annotated</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/annotator -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/annotator">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Annotation"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+        <rdfs:label xml:lang="en">annotator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/assignable -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/assignable">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Attempt"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">assignable</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/assignee -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/assignee">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Attempt"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+        <rdfs:label xml:lang="en">assignee</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/attachments -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/attachments">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Message"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:comment xml:lang="en">attachments</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/attempt -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/attempt">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Response"/>
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Result"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Attempt"/>
+        <rdfs:label xml:lang="en">attempt</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/creators -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/creators">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+        <rdfs:label xml:lang="en">creators</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/edApp -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/edApp">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/SoftwareApplication"/>
+        <rdfs:label xml:lang="en">edApp</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/extensions -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/extensions">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Entity"/>
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Event"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:label xml:lang="en">extensions</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/federatedSession -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/federatedSession">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/LtiSession"/>
+        <rdfs:label xml:lang="en">federatedSession</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/fromResource -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/fromResource">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/NavigationEvent"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">fromResource</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/generated -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/generated">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:label xml:lang="en">generated</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/group -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/group">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Organization"/>
+        <rdfs:label xml:lang="en">group</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/isPartOf">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Attempt"/>
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/DigitalResource"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:label xml:lang="en">isPartOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/items -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/items">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/DigitalResourceCollection"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:comment xml:lang="en">The set of one or more entities that comprise a collection.</rdfs:comment>
+        <rdfs:label xml:lang="en">items</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/keywords -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/keywords">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">keywords</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/learningObjectives -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/learningObjectives">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/LearningObjective"/>
+        <rdfs:label xml:lang="en">learningObjectives</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/member -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/member">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Membership"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Person"/>
+        <rdfs:label xml:lang="en">member</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/members -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/members">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Organization"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+        <rdfs:label xml:lang="en">members</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/membership -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/membership">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Membership"/>
+        <rdfs:label xml:lang="en">membership</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/object -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/object">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:comment xml:lang="en">A caliper:object is a caliper:Entity that is related to the caliper:actor by way of the relationship described by the caliper:action.</rdfs:comment>
+        <rdfs:label xml:lang="en">object</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/organization -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/organization">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Membership"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Organization"/>
+        <rdfs:label xml:lang="en">organization</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/referrer -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/referrer">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:label xml:lang="en">referrer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/replyTo -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/replyTo">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Message"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Message"/>
+        <rdfs:comment xml:lang="en">The prior Message, if any, that prompted the posting of this Message in the form of a reply or response. Analogous to sioc:reply_of.</rdfs:comment>
+        <rdfs:label xml:lang="en">replyTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/roles -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/roles">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Membership"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Role"/>
+        <rdfs:label xml:lang="en">roles</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/scoredBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/scoredBy">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Result"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+        <rdfs:label xml:lang="en">scoredBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/selection -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/selection">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/HighlightAnnotation"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/TextPositionSelector"/>
+        <rdfs:label xml:lang="en">selection</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/session -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/session">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Session"/>
+        <rdfs:label xml:lang="en">session</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/status -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/status">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Membership"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Status"/>
+        <rdfs:label xml:lang="en">status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/subOrganizationOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/subOrganizationOf">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Organization"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Organization"/>
+        <rdfs:comment xml:lang="en">The parent organization of a caliper:Organization.</rdfs:comment>
+        <rdfs:label xml:lang="en">subOrganizationOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/tags -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/tags">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/TagAnnotation"/>
+        <rdfs:label xml:lang="en">tags</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/target -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/target">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:label xml:lang="en">target</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/user -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/user">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Session"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+        <rdfs:label xml:lang="en">user</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/values -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/values">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/FillinBlankResponse"/>
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/MultipleResponseResponse"/>
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/SelectTextResponse"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:label xml:lang="en">values</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/withAgents -->
+
+    <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/withAgents">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/SharedAnnotation"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+        <rdfs:comment xml:lang="en">A list of caliper agents with whom a resource is shared. Each caliper:Agent listed may represent a human, organization or a software application.  The list SHOULD include 1 or more agents but may be omitted or left empty if the agent list is intended to be anonymous.  It is RECOMMENDED that the following terms be used to describe an agent: caliperLis:Person, caliperW3c:Organization or caliper:SoftwareApplication.</rdfs:comment>
+        <rdfs:label xml:lang="en">withAgents</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/academicSession -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/academicSession">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/CourseOffering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">academicSession</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/action -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/action">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">action</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/body -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/body">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Message"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">body</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/bookmarkNotes -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/bookmarkNotes">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/BookmarkAnnotation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">An optional textual note or comment provided by an actor who annotates a caliper:DigitalResource with a caliper:Bookmark.</rdfs:comment>
+        <rdfs:label xml:lang="en">bookmarkNotes</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/category -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/category">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/CourseSection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">caliper:</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">category</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/comment -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/comment">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">comment</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/count -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/count">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Attempt"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:label xml:lang="en">count</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/courseNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/courseNumber">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/CourseSection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">courseNumber</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/currentTime -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/currentTime">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/MediaLocation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+        <rdfs:label xml:lang="en">currentTime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/curveFactor -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/curveFactor">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label xml:lang="en">curveFactor</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/curvedTotalScore -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/curvedTotalScore">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label xml:lang="en">curvedTotalScore</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/dateCreated -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/dateCreated">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">dateCreated</rdfs:label>
+        <owl:equivalentProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sdo:dateCreated</owl:equivalentProperty>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/dateModified -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/dateModified">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">dateModified</rdfs:label>
+        <owl:equivalentProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sdo:dateModified</owl:equivalentProperty>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/datePublished -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/datePublished">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">datePublished</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/dateToActivate -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/dateToActivate">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">dateToActivate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/dateToShow -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/dateToShow">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">dateToShow</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/dateToStartOn -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/dateToStartOn">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">dateToStartOn</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/dateToSubmit -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/dateToSubmit">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">dateToSubmit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/description -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/description">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/duration -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/duration">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Attempt"/>
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/MediaObject"/>
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Response"/>
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Session"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+        <rdfs:label xml:lang="en">duration</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/end -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/end">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/TextPositionSelector"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment xml:lang="en">The end position of a segment of text. The first character in the full text is position 0. The character indicated at position caliper:end is NOT included within the selected segment.  See caliper:TextPositionSelector.</rdfs:comment>
+        <rdfs:label xml:lang="en">end</rdfs:label>
+        <owl:equivalentProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oa:end</owl:equivalentProperty>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/endedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/endedAtTime">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Attempt"/>
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Response"/>
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Session"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">endedAtTime</rdfs:label>
+        <owl:equivalentProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prov:endedAtTime</owl:equivalentProperty>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/eventTime -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/eventTime">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">A combined date and time representation (including milliseconds) of when an event occurred formatted in accordance with the ISO 8601 standard.</rdfs:comment>
+        <rdfs:label xml:lang="en">eventTime</rdfs:label>
+        <owl:equivalentProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prov:startedAtTime</owl:equivalentProperty>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/extraCreditScore -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/extraCreditScore">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label xml:lang="en">extraCreditScore</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/id -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/id">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/index -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/index">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Frame"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:label xml:lang="en">index</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/isTimeDependent -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/isTimeDependent">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/AssessmentItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">isTimeDependent</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/maxAttempts -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/maxAttempts">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:label xml:lang="en">maxAttempts</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/maxScore -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/maxScore">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label xml:lang="en">maxScore</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/maxSubmits -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/maxSubmits">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:label xml:lang="en">maxSubmits</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/mediaType -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/mediaType">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">mediaType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/muted -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/muted">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/AudioObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">muted</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/name -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/name">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/normalScore -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/normalScore">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label xml:lang="en">normalScore</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/objectType -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/objectType">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">objectType</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/penaltyScore -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/penaltyScore">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label xml:lang="en">penaltyScore</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/selectionText -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/selectionText">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/HighlightAnnotation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">selectionText</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/start -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/start">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/TextPositionSelector"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment xml:lang="en">The starting position of a segment of text. The first character in the full text is position 0. The character indicated at position caliper:start is included within the selected segment. See caliper:TextPositionSelector.</rdfs:comment>
+        <rdfs:label xml:lang="en">start</rdfs:label>
+        <owl:equivalentProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oa:start</owl:equivalentProperty>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/startedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/startedAtTime">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Attempt"/>
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Response"/>
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Session"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">startedAtTime</rdfs:label>
+        <owl:equivalentProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prov:startedAtTime</owl:equivalentProperty>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/totalScore -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/totalScore">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label xml:lang="en">totalScore</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/uuid -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/uuid">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">uuid</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/value -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/value">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/MultipleChoiceResponse"/>
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/TrueFalseResponse"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/version -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/version">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/DigitalResource"/>
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/SoftwareApplication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">version</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/volumeLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/volumeLevel">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/AudioObject"/>
+                    <rdf:Description rdf:about="https://schema.org/VideoObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">volumeLevel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/volumeMax -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/volumeMax">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/AudioObject"/>
+                    <rdf:Description rdf:about="https://schema.org/VideoObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">volumeMax</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/volumeMin -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/volumeMin">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/AudioObject"/>
+                    <rdf:Description rdf:about="https://schema.org/VideoObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">volumeMin</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Agent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Agent">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/spec/#term_Agent"/>
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:comment xml:lang="en">A caliper:Agent is a generic class that represents a caliper:Entity that can initiate or perform an action. It is analogous to a foaf:Agent. Given that caliper:Agent represents a generic type it is recommended that only subclasses of caliper:Agent be used to represent a Caliper:actor.</rdfs:comment>
+        <rdfs:label xml:lang="en">Agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Annotation -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Annotation">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:label xml:lang="en">Annotation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/AnnotationEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/AnnotationEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:label xml:lang="en">AnnotationEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Assessment -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Assessment">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/DigitalResourceCollection"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Assessment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/AssessmentEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/AssessmentEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:label xml:lang="en">AssessmentEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/AssessmentItem -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/AssessmentItem">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
+        <rdfs:label xml:lang="en">AssessmentItem</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/AssessmentItemEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/AssessmentItemEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:label xml:lang="en">AssessmentItemEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/AssignableDigitalResource -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/AssignableDigitalResource">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">AssignableDigitalResource</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/AssignableEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/AssignableEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:label xml:lang="en">AssignableEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Attempt -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Attempt">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:comment xml:lang="en">Provides a count of the number of times a caliper:Agent interacts with a caliper:AssignableDigitalResource.  A caliper:Attempt is generated as the result of an action such as starting a caliper:Assessment. In the case of an caliper:OutcomeEvent graded action, the caliper:Attempt constitutes the object of the interaction.</rdfs:comment>
+        <rdfs:label xml:lang="en">Attempt</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/AudioObject -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/AudioObject">
+        <owl:equivalentClass rdf:resource="https://schema.org/AudioObject"/>
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/MediaObject"/>
+        <rdfs:label xml:lang="en">AudioObject</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/BookmarkAnnotation -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/BookmarkAnnotation">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Annotation"/>
+        <rdfs:label xml:lang="en">BookmarkAnnotation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Chapter -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Chapter">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">Chapter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/CourseOffering -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/CourseOffering">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Organization"/>
+        <rdfs:label xml:lang="en">CourseOffering</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/CourseSection -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/CourseSection">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Organization"/>
+        <rdfs:label xml:lang="en">CourseSection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/DigitalResource -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/DigitalResource">
+        <owl:equivalentClass rdf:resource="https://schema.org/CreativeWork"/>
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:label xml:lang="en">DigitalResource</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/DigitalResourceCollection -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/DigitalResourceCollection">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Document -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Document">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">Document</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Entity -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Entity">
+        <owl:equivalentClass rdf:resource="https://schema.org/Thing"/>
+        <rdfs:comment xml:lang="en">A caliper:Entity represents a generic class that is analogous to an sdo:Thing. Given that a caliper:Entity represents a generic type it is recommended that only subclasses of caliper:Entity be employed to represent nodes in the learning graph.  A caliper:Entity should be provisioned with a globally-scoped, dereferenceable IRI in order to ensure that caliper:Event data can be linked and shared.  In cases where an IRI is inappropriate, a caliper:Entity can be assigned a blank node identifier.</rdfs:comment>
+        <rdfs:label xml:lang="en">Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Envelope -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Envelope">
+        <rdfs:label xml:lang="en">Envelope</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Event -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Event">
+        <rdfs:label xml:lang="en">Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/FillinBlankResponse -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/FillinBlankResponse">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Response"/>
+        <rdfs:label xml:lang="en">FillinBlankResponse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Forum -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Forum">
+        <owl:equivalentClass rdf:resource="http://rdfs.org/sioc/spec/#term_Forum"/>
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResourceCollection"/>
+        <rdfs:comment xml:lang="en">A caliper:Forum is a channel or virtual space in which group discussions take place.  A caliper:Forum typically includes one or more threaded discussions to which members can subscribe, post messages and reply to other messages.  It is analogous to an sioc.Forum.</rdfs:comment>
+        <rdfs:label xml:lang="en">Forum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/ForumEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ForumEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:label xml:lang="en">ForumEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Frame -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Frame">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">Frame</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Group -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Group">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Organization"/>
+        <rdfs:label xml:lang="en">Group</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/HighlightAnnotation -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/HighlightAnnotation">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Annotation"/>
+        <rdfs:label xml:lang="en">HighlightAnnotation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/ImageObject -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ImageObject">
+        <owl:equivalentClass rdf:resource="https://schema.org/ImageObject"/>
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/MediaObject"/>
+        <rdfs:label xml:lang="en">ImageObject</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/LearningObjective -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/LearningObjective">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">LearningObjective</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/LtiSession -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/LtiSession">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Session"/>
+        <rdfs:label xml:lang="en">LtiSession</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/MediaEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/MediaEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:label xml:lang="en">MediaEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/MediaLocation -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/MediaLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">MediaLocation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/MediaObject -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/MediaObject">
+        <owl:equivalentClass rdf:resource="https://schema.org/MediaObject"/>
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">MediaObject</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Membership -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Membership">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:label xml:lang="en">Membership</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Message -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Message">
+        <owl:equivalentClass rdf:resource="http://rdfs.org/sioc/spec/#term_Post"/>
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:comment xml:lang="en">A Caliper Message is a digital form of written communication sent to a recipient. A series of Messages may constitute a Thread if they share a common subject and are connected by a reply or by date relationships. It is analogous to an sioc:Post.</rdfs:comment>
+        <rdfs:label xml:lang="en">Message</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/MessageEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/MessageEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:label xml:lang="en">MessageEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/MultipleChoiceResponse -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/MultipleChoiceResponse">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Response"/>
+        <rdfs:label xml:lang="en">MultipleChoiceResponse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/MultipleResponseResponse -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/MultipleResponseResponse">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Response"/>
+        <rdfs:label xml:lang="en">MultipleResponseResponse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/NavigationEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/NavigationEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:label xml:lang="en">NavigationEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Organization -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Organization">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/org#Organization"/>
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+        <rdfs:comment xml:lang="en">A caliper:Organization represents a group of people organized into a community or some other social, commercial, educational or political structure. The group has a common purpose or reason for existence that spans beyond the set of people belonging to it and can act as a caliper:Agent. A caliper:Organizations are often decomposable into hierarchical structures. It is analogous to a org:Organization.</rdfs:comment>
+        <rdfs:label xml:lang="en">Organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/OutcomeEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/OutcomeEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:label xml:lang="en">OutcomeEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Page -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Page">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">Page</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Person -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Person">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/spec/#term_Person"/>
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+        <rdfs:comment xml:lang="en">A caliper:Person represents a human being, alive or deceased, real or imaginary.  caliper:Person is analogous to a foaf:Person.</rdfs:comment>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Reading -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Reading">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">Reading</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/ReadingEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ReadingEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:label xml:lang="en">ReadingEvent</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Response -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Response">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:label xml:lang="en">Response</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Result -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Result">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:label xml:lang="en">Result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Role -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Role">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/SelectTextResponse -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/SelectTextResponse">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Response"/>
+        <rdfs:label xml:lang="en">SelectTextResponse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Selector -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Selector">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:comment xml:lang="en">A resource which describes the segment of interest in a representation of a Source resource. This class is not used directly in Annotations, only its subclasses.  The nature of the Selector will be dependent on the type of the representation for which the segment is conveyed. The specific type of selector should be indicated using a subclass of caliper:Selector.  The Specifier&apos;s description MAY be conveyed as an external or embedded resource or as RDF properties within the graph. The description SHOULD use existing standards whenever possible. If the Specifier has an HTTP URI, then its description, and only its description, MUST be returned when the URI is dereferenced.</rdfs:comment>
+        <rdfs:label xml:lang="en">Selector</rdfs:label>
+        <owl:equivalentClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oa:Selector</owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Session -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Session">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <rdfs:comment xml:lang="en">Represents a Web application user session.  caliper:SessionEvent log in actions generate a caliper:Session.  Log out actions treat the caliper:Session as the target of the interaction while in the case of a time out, the caliper:Session constitutes the object of the interaction.</rdfs:comment>
+        <rdfs:label xml:lang="en">Session</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/SessionEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/SessionEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:label xml:lang="en">SessionEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/SharedAnnotation -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/SharedAnnotation">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Annotation"/>
+        <rdfs:label xml:lang="en">SharedAnnotation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/SoftwareApplication -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/SoftwareApplication">
+        <owl:equivalentClass rdf:resource="https://schema.org/SoftwareApplication"/>
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+        <rdfs:comment xml:lang="en">a caliper:SoftwareApplication represents a computer program, application, module, platform or system. It is analogous to a sdo:SoftwareApplication or dcmitype:Software.</rdfs:comment>
+        <rdfs:label xml:lang="en">SoftwareApplication</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Status -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Status">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/TagAnnotation -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/TagAnnotation">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Annotation"/>
+        <rdfs:label xml:lang="en">TagAnnotation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/TextPositionSelector -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/TextPositionSelector">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/oa#TextPositionSelector"/>
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Selector"/>
+        <rdfs:comment xml:lang="en">A caliper:TextPositionSelector describes a range of text based on its start and end positions.  The text MUST be normalized before counting characters. Each caliper:TextPositionSelector MUST have exactly 1 caliper:start property and exactly 1 caliper:end property.</rdfs:comment>
+        <rdfs:label xml:lang="en">TextPositionSelector</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/Thread -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Thread">
+        <owl:equivalentClass rdf:resource="http://rdfs.org/sioc/spec/#term_Thread"/>
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResourceCollection"/>
+        <rdfs:comment xml:lang="en">A caliper:Thread represents a series of one or more messages that share a common subject and are connected by a reply or by date relationships. It is analogous to a sioc:Thread.</rdfs:comment>
+        <rdfs:label xml:lang="en">Thread</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/ThreadEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ThreadEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:label xml:lang="en">ThreadEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/ToolUseEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ToolUseEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:label xml:lang="en">ToolUseEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/TrueFalseResponse -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/TrueFalseResponse">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Response"/>
+        <rdfs:label xml:lang="en">TrueFalseResponse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/VideoObject -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/VideoObject">
+        <owl:equivalentClass rdf:resource="https://schema.org/VideoObject"/>
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/MediaObject"/>
+        <rdfs:label xml:lang="en">VideoObject</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/ViewEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ViewEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:label xml:lang="en">ViewEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/WebPage -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/WebPage">
+        <owl:equivalentClass rdf:resource="https://schema.org/WebPage"/>
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">WebPage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/epubChapter -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/epubChapter">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">EpubChapter</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/epubPart -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/epubPart">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">EpubPart</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/epubSubChapter -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/epubSubChapter">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deprecated by IDPF as of 26 April 2016.  See https://idpf.github.io/epub-vocabs/structure/</rdfs:comment>
+        <rdfs:label xml:lang="en">EpubSubChapter</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/epubVolume -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/epubVolume">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <rdfs:label xml:lang="en">EpubVolume</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/spec/#term_Forum -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/spec/#term_Forum"/>
+    
+
+
+    <!-- http://rdfs.org/sioc/spec/#term_Post -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/spec/#term_Post"/>
+    
+
+
+    <!-- http://rdfs.org/sioc/spec/#term_Thread -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/spec/#term_Thread"/>
+    
+
+
+    <!-- http://www.w3.org/ns/oa#TextPositionSelector -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/oa#TextPositionSelector"/>
+    
+
+
+    <!-- http://www.w3.org/ns/org#Organization -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/org#Organization"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/spec/#term_Agent -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/spec/#term_Agent"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/spec/#term_Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/spec/#term_Person"/>
+    
+
+
+    <!-- https://schema.org/AudioObject -->
+
+    <owl:Class rdf:about="https://schema.org/AudioObject"/>
+    
+
+
+    <!-- https://schema.org/CreativeWork -->
+
+    <owl:Class rdf:about="https://schema.org/CreativeWork"/>
+    
+
+
+    <!-- https://schema.org/ImageObject -->
+
+    <owl:Class rdf:about="https://schema.org/ImageObject"/>
+    
+
+
+    <!-- https://schema.org/MediaObject -->
+
+    <owl:Class rdf:about="https://schema.org/MediaObject"/>
+    
+
+
+    <!-- https://schema.org/SoftwareApplication -->
+
+    <owl:Class rdf:about="https://schema.org/SoftwareApplication"/>
+    
+
+
+    <!-- https://schema.org/Thing -->
+
+    <owl:Class rdf:about="https://schema.org/Thing">
+        <rdfs:label xml:lang="en">Thing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/VideoObject -->
+
+    <owl:Class rdf:about="https://schema.org/VideoObject"/>
+    
+
+
+    <!-- https://schema.org/WebPage -->
+
+    <owl:Class rdf:about="https://schema.org/WebPage"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
