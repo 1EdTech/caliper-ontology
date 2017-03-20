@@ -502,7 +502,11 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/id
 :id rdf:type owl:DatatypeProperty ;
-    rdfs:domain :Event ;
+    rdfs:domain [ rdf:type owl:Class ;
+                  owl:unionOf ( :Entity
+                                :Event
+                              )
+                ] ;
     rdfs:range xsd:string ;
     rdfs:label "id"@en .
 
@@ -618,13 +622,6 @@ xsd:duration rdf:type rdfs:Datatype .
             rdfs:domain :Result ;
             rdfs:range xsd:double ;
             rdfs:label "totalScore"@en .
-
-
-###  http://purl.imsglobal.org/caliper/uuid
-:uuid rdf:type owl:DatatypeProperty ;
-      rdfs:domain :Event ;
-      rdfs:range xsd:string ;
-      rdfs:label "uuid"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/value
