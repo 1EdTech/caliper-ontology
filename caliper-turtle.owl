@@ -7,7 +7,9 @@
 @base <http://purl.imsglobal.org/caliper/> .
 
 <http://purl.imsglobal.org/caliper/> rdf:type owl:Ontology ;
-                                      rdfs:comment "IMS Caliper Analytics defines a standard for enabling the collection of rich contextual data about learning interactions and a Sensor API capturing and reporting this data.  The IMS Caliper Framework is designed to establish a means for consistently capturing and presenting measures of learning activity, which will enable more efficient development of learning analytics features in learning environments; define a common language for labeling learning data, in order to set the stage for an ecosystem of higher-order applications of learning analytics; provide a standard way of measuring learning activities and effectiveness that will enable designers and providers of curriculum to measure, compare and improve quality; leverage data science methods, standards and technologies; and build upon existing IMS standards."@en ;
+                                      rdfs:comment """The drive to deliver education at scale coupled with a demand for measurable accountability has spurred interest in the application of “big data” principles to the business of education. Opportunities to tap new data sources, ask new questions and pursue new insights have grown as both the learning technology ecosystem has expanded and the definition of what constitutes learning has evolved beyond the formal classroom experience to include informal, social and experiential modes of acquiring knowledge and skills. The challenges inherent in describing, collecting and exchanging learning activity data originating from such diverse learning sources and context are now formidable.
+
+The Caliper Analytics® specification attempts to address the underlying interoperability challenges posed by these shifts in the learning technology landscape. Caliper provides an information model and domain-specific controlled vocabularies for describing learning activities, events and related entities. Serialization of the model is performed using JSON-LD. Caliper also defines an application programming interface (the Sensor API™) for marshalling and transmitting Caliper events from instrumented applications to one or more target endpoints for storage, analysis and re-use. Industry-wide adoption of Caliper offers academic institutions and Ed Tech organizations the tantalizing prospect of a more unified learning data environment in which to build new and innovative services designed to measure, infer, predict, report and visualize."""@en ;
                                       rdfs:label "Caliper Analytics Ontology"@en ;
                                       rdfs:seeAlso "http://www.imsglobal.org/caliper"^^xsd:string .
 
@@ -716,6 +718,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/AnnotationEvent
 :AnnotationEvent rdf:type owl:Class ;
                  rdfs:subClassOf :Event ;
+                 rdfs:comment "A Caliper AnnotationEvent models the annotating of digital content. The resulting Annotation is also described and is subtyped for greater type specificity."@en ;
                  rdfs:label "AnnotationEvent"@en .
 
 
@@ -732,6 +735,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/AssessmentEvent
 :AssessmentEvent rdf:type owl:Class ;
                  rdfs:subClassOf :Event ;
+                 rdfs:comment "A Caliper AssessmentEvent models learner interactions with assessments instruments such as online tests or quizzes."@en ;
                  rdfs:label "AssessmentEvent"@en .
 
 
@@ -744,6 +748,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/AssessmentItemEvent
 :AssessmentItemEvent rdf:type owl:Class ;
                      rdfs:subClassOf :Event ;
+                     rdfs:comment "A Caliper AssessmentItemEvent models a learner's interaction with an individual AssessmentItem."@en ;
                      rdfs:label "AssessmentItemEvent"@en .
 
 
@@ -756,6 +761,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/AssignableEvent
 :AssignableEvent rdf:type owl:Class ;
                  rdfs:subClassOf :Event ;
+                 rdfs:comment "A Caliper AssignableEvent models activities associated with the assignment of digital content assigned to a learner for completion."@en ;
                  rdfs:label "AssignableEvent"@en .
 
 
@@ -826,6 +832,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/Event
 :Event rdf:type owl:Class ;
+       rdfs:comment "A Caliper Event is a generic type that describes a relationship established between an actor and an object, formed as a result of a purposeful action undertaken by the actor in connection to the object at a particular moment in time."@en ;
        rdfs:label "Event"@en .
 
 
@@ -838,13 +845,14 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/Forum
 :Forum rdf:type owl:Class ;
        rdfs:subClassOf :DigitalResourceCollection ;
-       rdfs:comment "A caliper:Forum is a channel or virtual space in which group discussions take place.  A caliper:Forum typically includes one or more threaded discussions to which members can subscribe, post messages and reply to other messages.  It is analogous to an sioc.Forum."@en ;
+       rdfs:comment "A caliper:Forum is a channel or virtual space in which group discussions take place.  A caliper:Forum typically includes one or more threaded discussions to which members can subscribe, post messages and reply to other messages."@en ;
        rdfs:label "Forum"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/ForumEvent
 :ForumEvent rdf:type owl:Class ;
             rdfs:subClassOf :Event ;
+            rdfs:comment "A Caliper ForumEvent models learners and others participating in online forum communities. Forums typically encompass one or more threads or topics to which members can subscribe, post messages and reply to other messages if a threaded discussion is permitted."@en ;
             rdfs:label "ForumEvent"@en .
 
 
@@ -887,6 +895,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/MediaEvent
 :MediaEvent rdf:type owl:Class ;
             rdfs:subClassOf :Event ;
+            rdfs:comment "A Caliper MediaEvent models interactions between learners and rich content such as audio, images and video."@en ;
             rdfs:label "MediaEvent"@en .
 
 
@@ -911,13 +920,14 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/Message
 :Message rdf:type owl:Class ;
          rdfs:subClassOf :DigitalResource ;
-         rdfs:comment "A Caliper Message is a digital form of written communication sent to a recipient. A series of Messages may constitute a Thread if they share a common subject and are connected by a reply or by date relationships. It is analogous to an sioc:Post."@en ;
+         rdfs:comment "A Caliper Message is a digital form of written communication sent to a recipient. A series of Messages may constitute a Thread if they share a common subject and are connected by a reply or by date relationships."@en ;
          rdfs:label "Message"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/MessageEvent
 :MessageEvent rdf:type owl:Class ;
               rdfs:subClassOf :Event ;
+              rdfs:comment "A Caliper MessageEvent describes a Person posting a Message or marking a post as either read or unread."@en ;
               rdfs:label "MessageEvent"@en .
 
 
@@ -936,6 +946,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/NavigationEvent
 :NavigationEvent rdf:type owl:Class ;
                  rdfs:subClassOf :Event ;
+                 rdfs:comment "A Caliper NavigationEvent models an actor traversing a network of digital resources."@en ;
                  rdfs:label "NavigationEvent"@en .
 
 
@@ -949,6 +960,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/OutcomeEvent
 :OutcomeEvent rdf:type owl:Class ;
               rdfs:subClassOf :Event ;
+              rdfs:comment "A Caliper OutcomeEvent models grading activities performed by an Agent, typically a Person or a SoftwareApplication."@en ;
               rdfs:label "OutcomeEvent"@en .
 
 
@@ -961,7 +973,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/Person
 :Person rdf:type owl:Class ;
         rdfs:subClassOf :Agent ;
-        rdfs:comment "A caliper:Person represents a human being, alive or deceased, real or imaginary.  caliper:Person is analogous to a foaf:Person."@en ;
+        rdfs:comment "A caliper:Person represents a human being, alive or deceased, real or imaginary."@en ;
         rdfs:label "Person"@en .
 
 
@@ -975,6 +987,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/ReadingEvent
 :ReadingEvent rdf:type owl:Class ;
               rdfs:subClassOf :Event ;
+              rdfs:comment "A Caliper ReadingEvent models an actor reading textural content.  ReadingEvent is DEPRECATED and will be removed in a future version of the specification.  It SHOULD NOT be referenced."@en ;
               rdfs:label "ReadingEvent"@en ;
               owl:deprecated "true"^^xsd:boolean .
 
@@ -1018,6 +1031,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/SessionEvent
 :SessionEvent rdf:type owl:Class ;
               rdfs:subClassOf :Event ;
+              rdfs:comment "A Caliper SessionEvent models the creation and subsequent termination of a user session established by a Person interacting with a SoftwareApplication."@en ;
               rdfs:label "SessionEvent"@en .
 
 
@@ -1030,7 +1044,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/SoftwareApplication
 :SoftwareApplication rdf:type owl:Class ;
                      rdfs:subClassOf :Agent ;
-                     rdfs:comment "a caliper:SoftwareApplication represents a computer program, application, module, platform or system. It is analogous to a sdo:SoftwareApplication or dcmitype:Software."@en ;
+                     rdfs:comment "a caliper:SoftwareApplication represents a computer program, application, module, platform or system."@en ;
                      rdfs:label "SoftwareApplication"@en .
 
 
@@ -1055,19 +1069,21 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/Thread
 :Thread rdf:type owl:Class ;
         rdfs:subClassOf :DigitalResourceCollection ;
-        rdfs:comment "A caliper:Thread represents a series of one or more messages that share a common subject and are connected by a reply or by date relationships. It is analogous to a sioc:Thread."@en ;
+        rdfs:comment "A caliper:Thread represents a series of one or more messages that share a common subject and are connected by a reply or by date relationships."@en ;
         rdfs:label "Thread"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/ThreadEvent
 :ThreadEvent rdf:type owl:Class ;
              rdfs:subClassOf :Event ;
+             rdfs:comment "A Caliper ThreadEvent models an actor interacting with a Forum thread or topic."@en ;
              rdfs:label "ThreadEvent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/ToolUseEvent
 :ToolUseEvent rdf:type owl:Class ;
               rdfs:subClassOf :Event ;
+              rdfs:comment "A Caliper ToolUseEvent models a Person using a learning tool in a way that the tool's creators have determined is an indication of a learning interaction."@en ;
               rdfs:label "ToolUseEvent"@en .
 
 
@@ -1086,6 +1102,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/ViewEvent
 :ViewEvent rdf:type owl:Class ;
            rdfs:subClassOf :Event ;
+           rdfs:comment "A Caliper ViewEvent describes an actor's examination of digital content whenever the activity emphasizes thoughtful observation or study as opposed to the mere retrieval of a resource."@en ;
            rdfs:label "ViewEvent"@en .
 
 

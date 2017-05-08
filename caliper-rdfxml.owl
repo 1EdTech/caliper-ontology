@@ -7,7 +7,9 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://purl.imsglobal.org/caliper/">
-        <rdfs:comment xml:lang="en">IMS Caliper Analytics defines a standard for enabling the collection of rich contextual data about learning interactions and a Sensor API capturing and reporting this data.  The IMS Caliper Framework is designed to establish a means for consistently capturing and presenting measures of learning activity, which will enable more efficient development of learning analytics features in learning environments; define a common language for labeling learning data, in order to set the stage for an ecosystem of higher-order applications of learning analytics; provide a standard way of measuring learning activities and effectiveness that will enable designers and providers of curriculum to measure, compare and improve quality; leverage data science methods, standards and technologies; and build upon existing IMS standards.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The drive to deliver education at scale coupled with a demand for measurable accountability has spurred interest in the application of “big data” principles to the business of education. Opportunities to tap new data sources, ask new questions and pursue new insights have grown as both the learning technology ecosystem has expanded and the definition of what constitutes learning has evolved beyond the formal classroom experience to include informal, social and experiential modes of acquiring knowledge and skills. The challenges inherent in describing, collecting and exchanging learning activity data originating from such diverse learning sources and context are now formidable.
+
+The Caliper Analytics® specification attempts to address the underlying interoperability challenges posed by these shifts in the learning technology landscape. Caliper provides an information model and domain-specific controlled vocabularies for describing learning activities, events and related entities. Serialization of the model is performed using JSON-LD. Caliper also defines an application programming interface (the Sensor API™) for marshalling and transmitting Caliper events from instrumented applications to one or more target endpoints for storage, analysis and re-use. Industry-wide adoption of Caliper offers academic institutions and Ed Tech organizations the tantalizing prospect of a more unified learning data environment in which to build new and innovative services designed to measure, infer, predict, report and visualize.</rdfs:comment>
         <rdfs:label xml:lang="en">Caliper Analytics Ontology</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/caliper</rdfs:seeAlso>
     </owl:Ontology>
@@ -1040,6 +1042,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/AnnotationEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:comment xml:lang="en">A Caliper AnnotationEvent models the annotating of digital content. The resulting Annotation is also described and is subtyped for greater type specificity.</rdfs:comment>
         <rdfs:label xml:lang="en">AnnotationEvent</rdfs:label>
     </owl:Class>
     
@@ -1065,6 +1068,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/AssessmentEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:comment xml:lang="en">A Caliper AssessmentEvent models learner interactions with assessments instruments such as online tests or quizzes.</rdfs:comment>
         <rdfs:label xml:lang="en">AssessmentEvent</rdfs:label>
     </owl:Class>
     
@@ -1083,6 +1087,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/AssessmentItemEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:comment xml:lang="en">A Caliper AssessmentItemEvent models a learner&apos;s interaction with an individual AssessmentItem.</rdfs:comment>
         <rdfs:label xml:lang="en">AssessmentItemEvent</rdfs:label>
     </owl:Class>
     
@@ -1101,6 +1106,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/AssignableEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:comment xml:lang="en">A Caliper AssignableEvent models activities associated with the assignment of digital content assigned to a learner for completion.</rdfs:comment>
         <rdfs:label xml:lang="en">AssignableEvent</rdfs:label>
     </owl:Class>
     
@@ -1207,6 +1213,7 @@
     <!-- http://purl.imsglobal.org/caliper/Event -->
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Event">
+        <rdfs:comment xml:lang="en">A Caliper Event is a generic type that describes a relationship established between an actor and an object, formed as a result of a purposeful action undertaken by the actor in connection to the object at a particular moment in time.</rdfs:comment>
         <rdfs:label xml:lang="en">Event</rdfs:label>
     </owl:Class>
     
@@ -1225,7 +1232,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Forum">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResourceCollection"/>
-        <rdfs:comment xml:lang="en">A caliper:Forum is a channel or virtual space in which group discussions take place.  A caliper:Forum typically includes one or more threaded discussions to which members can subscribe, post messages and reply to other messages.  It is analogous to an sioc.Forum.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A caliper:Forum is a channel or virtual space in which group discussions take place.  A caliper:Forum typically includes one or more threaded discussions to which members can subscribe, post messages and reply to other messages.</rdfs:comment>
         <rdfs:label xml:lang="en">Forum</rdfs:label>
     </owl:Class>
     
@@ -1235,6 +1242,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ForumEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:comment xml:lang="en">A Caliper ForumEvent models learners and others participating in online forum communities. Forums typically encompass one or more threads or topics to which members can subscribe, post messages and reply to other messages if a threaded discussion is permitted.</rdfs:comment>
         <rdfs:label xml:lang="en">ForumEvent</rdfs:label>
     </owl:Class>
     
@@ -1298,6 +1306,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/MediaEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:comment xml:lang="en">A Caliper MediaEvent models interactions between learners and rich content such as audio, images and video.</rdfs:comment>
         <rdfs:label xml:lang="en">MediaEvent</rdfs:label>
     </owl:Class>
     
@@ -1334,7 +1343,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Message">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
-        <rdfs:comment xml:lang="en">A Caliper Message is a digital form of written communication sent to a recipient. A series of Messages may constitute a Thread if they share a common subject and are connected by a reply or by date relationships. It is analogous to an sioc:Post.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A Caliper Message is a digital form of written communication sent to a recipient. A series of Messages may constitute a Thread if they share a common subject and are connected by a reply or by date relationships.</rdfs:comment>
         <rdfs:label xml:lang="en">Message</rdfs:label>
     </owl:Class>
     
@@ -1344,6 +1353,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/MessageEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:comment xml:lang="en">A Caliper MessageEvent describes a Person posting a Message or marking a post as either read or unread.</rdfs:comment>
         <rdfs:label xml:lang="en">MessageEvent</rdfs:label>
     </owl:Class>
     
@@ -1371,6 +1381,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/NavigationEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:comment xml:lang="en">A Caliper NavigationEvent models an actor traversing a network of digital resources.</rdfs:comment>
         <rdfs:label xml:lang="en">NavigationEvent</rdfs:label>
     </owl:Class>
     
@@ -1390,6 +1401,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/OutcomeEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:comment xml:lang="en">A Caliper OutcomeEvent models grading activities performed by an Agent, typically a Person or a SoftwareApplication.</rdfs:comment>
         <rdfs:label xml:lang="en">OutcomeEvent</rdfs:label>
     </owl:Class>
     
@@ -1408,7 +1420,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Person">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
-        <rdfs:comment xml:lang="en">A caliper:Person represents a human being, alive or deceased, real or imaginary.  caliper:Person is analogous to a foaf:Person.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A caliper:Person represents a human being, alive or deceased, real or imaginary.</rdfs:comment>
         <rdfs:label xml:lang="en">Person</rdfs:label>
     </owl:Class>
     
@@ -1428,6 +1440,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ReadingEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:comment xml:lang="en">A Caliper ReadingEvent models an actor reading textural content.  ReadingEvent is DEPRECATED and will be removed in a future version of the specification.  It SHOULD NOT be referenced.</rdfs:comment>
         <rdfs:label xml:lang="en">ReadingEvent</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -1492,6 +1505,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/SessionEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:comment xml:lang="en">A Caliper SessionEvent models the creation and subsequent termination of a user session established by a Person interacting with a SoftwareApplication.</rdfs:comment>
         <rdfs:label xml:lang="en">SessionEvent</rdfs:label>
     </owl:Class>
     
@@ -1510,7 +1524,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/SoftwareApplication">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
-        <rdfs:comment xml:lang="en">a caliper:SoftwareApplication represents a computer program, application, module, platform or system. It is analogous to a sdo:SoftwareApplication or dcmitype:Software.</rdfs:comment>
+        <rdfs:comment xml:lang="en">a caliper:SoftwareApplication represents a computer program, application, module, platform or system.</rdfs:comment>
         <rdfs:label xml:lang="en">SoftwareApplication</rdfs:label>
     </owl:Class>
     
@@ -1547,7 +1561,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Thread">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResourceCollection"/>
-        <rdfs:comment xml:lang="en">A caliper:Thread represents a series of one or more messages that share a common subject and are connected by a reply or by date relationships. It is analogous to a sioc:Thread.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A caliper:Thread represents a series of one or more messages that share a common subject and are connected by a reply or by date relationships.</rdfs:comment>
         <rdfs:label xml:lang="en">Thread</rdfs:label>
     </owl:Class>
     
@@ -1557,6 +1571,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ThreadEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:comment xml:lang="en">A Caliper ThreadEvent models an actor interacting with a Forum thread or topic.</rdfs:comment>
         <rdfs:label xml:lang="en">ThreadEvent</rdfs:label>
     </owl:Class>
     
@@ -1566,6 +1581,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ToolUseEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:comment xml:lang="en">A Caliper ToolUseEvent models a Person using a learning tool in a way that the tool&apos;s creators have determined is an indication of a learning interaction.</rdfs:comment>
         <rdfs:label xml:lang="en">ToolUseEvent</rdfs:label>
     </owl:Class>
     
@@ -1593,6 +1609,7 @@
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ViewEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:comment xml:lang="en">A Caliper ViewEvent describes an actor&apos;s examination of digital content whenever the activity emphasizes thoughtful observation or study as opposed to the mere retrieval of a resource.</rdfs:comment>
         <rdfs:label xml:lang="en">ViewEvent</rdfs:label>
     </owl:Class>
     
