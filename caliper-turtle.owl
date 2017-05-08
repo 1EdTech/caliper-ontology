@@ -99,8 +99,8 @@ xsd:duration rdf:type rdfs:Datatype .
                                    )
                      ] ;
          rdfs:range :Attempt ;
-         rdfs:label "The associated Attempt."@en ,
-                    "attempt"@en .
+         rdfs:comment "The associated Attempt."@en ;
+         rdfs:label "attempt"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/creators
@@ -406,7 +406,6 @@ xsd:duration rdf:type rdfs:Datatype .
           rdfs:domain :CourseSection ;
           rdfs:range xsd:string ;
           rdfs:comment "A plain-text descriptor that characterizes the purpose of the CourseSection such as \"lecture\", \"lab\" or \"seminar\"."@en ;
-          rdfs:isDefinedBy "caliper:"^^xsd:string ;
           rdfs:label "category"@en .
 
 

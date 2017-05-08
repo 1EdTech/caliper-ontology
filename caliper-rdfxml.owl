@@ -151,7 +151,7 @@ The Caliper Analytics® specification attempts to address the underlying interop
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Attempt"/>
-        <rdfs:label xml:lang="en">The associated Attempt.</rdfs:label>
+        <rdfs:comment xml:lang="en">The associated Attempt.</rdfs:comment>
         <rdfs:label xml:lang="en">attempt</rdfs:label>
     </owl:ObjectProperty>
     
@@ -576,7 +576,6 @@ The Caliper Analytics® specification attempts to address the underlying interop
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/CourseSection"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">A plain-text descriptor that characterizes the purpose of the CourseSection such as &quot;lecture&quot;, &quot;lab&quot; or &quot;seminar&quot;.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">caliper:</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">category</rdfs:label>
     </owl:DatatypeProperty>
     
