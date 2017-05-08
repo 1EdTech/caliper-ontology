@@ -999,6 +999,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/academicSession",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A human-readable identifier of the designated period in which a CourseOffering occurs."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/CourseOffering"
   } ],
@@ -1012,6 +1016,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/action",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The action or predicate that binds the Event actor or subject to the Event object."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Event"
   } ],
@@ -1143,6 +1151,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/body",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A plain-text rendering of the body content of a Message."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Message"
   } ],
@@ -1158,7 +1170,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "An optional textual note or comment provided by an actor who annotates a caliper:DigitalResource with a caliper:Bookmark."
+    "@value" : "A plain text rendering of the note associated with a BookmarkAnnotation."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/BookmarkAnnotation"
@@ -1173,6 +1185,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/category",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A plain-text descriptor that characterizes the purpose of the CourseSection such as \"lecture\", \"lab\" or \"seminar\"."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/CourseSection"
   } ],
@@ -1189,6 +1205,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/comment",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Plain text feedback provided by the scorer of a Result."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Result"
   } ],
@@ -1202,6 +1222,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/count",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The total number of attempts inclusive of the current Attempt that have been registered by the learner against the assigned resource."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Attempt"
   } ],
@@ -1215,6 +1239,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/courseNumber",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A human-readable identifier of the CourseOffering or CourseSection."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/CourseSection"
   } ],
@@ -1245,6 +1273,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/currentTime",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A time interval or duration that represents the current playback position measured from the beginning of a MediaObject."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/MediaLocation"
   } ],
@@ -1258,6 +1290,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/curveFactor",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A scale factor to be used in adjusting the totalScore."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Result"
   } ],
@@ -1271,6 +1307,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/curvedTotalScore",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The total score earned by the learner after applying a curveFactor to a method for computing a scaled score; e.g., adjusting the score equal to the sum of 100 - curvedFactor(100 - totalScore)."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Result"
   } ],
@@ -1284,6 +1324,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/dateCreated",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A date and time value expressed with millisecond precision that describes when an Entity was created."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Entity"
   } ],
@@ -1293,13 +1337,14 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
-  } ],
-  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
-    "@value" : "sdo:dateCreated"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/dateModified",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A date and time value expressed with millisecond precision that describes when an Entity was last changed or modified."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Entity"
   } ],
@@ -1309,13 +1354,14 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
-  } ],
-  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
-    "@value" : "sdo:dateModified"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/datePublished",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A date and time value expressed with millisecond precision that provides the publication date of a resource."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
   } ],
@@ -1329,6 +1375,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/dateToActivate",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A date and time value expressed with millisecond precision that describes when a resource was activated."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/AssignableDigitalResource"
   } ],
@@ -1342,6 +1392,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/dateToShow",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A date and time value expressed with millisecond precision that describes when a resource should be shown or made available."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/AssignableDigitalResource"
   } ],
@@ -1355,6 +1409,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/dateToStartOn",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A date and time value expressed with millisecond precision that describes when the resource can be started."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/AssignableDigitalResource"
   } ],
@@ -1368,6 +1426,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/dateToSubmit",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A date and time value expressed with millisecond precision that describes when the resource is to be submitted for evaluation."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/AssignableDigitalResource"
   } ],
@@ -1381,6 +1443,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/description",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A brief, plain-text representation of the resource."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Entity"
   } ],
@@ -1394,6 +1460,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/duration",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A time interval that represents the total time required to complete an activity."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid14"
   } ],
@@ -1426,7 +1496,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "The end position of a segment of text. The first character in the full text is position 0. The character indicated at position caliper:end is NOT included within the selected segment.  See caliper:TextPositionSelector."
+    "@value" : "The end position of a segment of text. The first character in the full text is position 0. The character that represents the end position is NOT included within the selected segment."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/TextPositionSelector"
@@ -1437,13 +1507,14 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-  } ],
-  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
-    "@value" : "oa:end"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/endedAtTime",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A date and time value expressed with millisecond precision that describes when the activity was completed or terminated."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid19"
   } ],
@@ -1453,9 +1524,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
-  } ],
-  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
-    "@value" : "prov:endedAtTime"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/epubChapter",
@@ -1533,7 +1601,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A combined date and time representation (including milliseconds) of when an event occurred formatted in accordance with the ISO 8601 standard."
+    "@value" : "A date and time value expressed with millisecond precision that indicates when an Event occurred."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Event"
@@ -1544,9 +1612,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
-  } ],
-  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
-    "@value" : "prov:startedAtTime"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/extensions",
@@ -1565,6 +1630,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/extraCreditScore",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The number of extra credit points earned by the learner."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Result"
   } ],
@@ -1629,6 +1698,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/id",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Event or Entity identifier.  For an Event, the id MUST be a UUID expressed as a URN using the form urn:uuid:<UUID> per RFC 4122.  For Entities a valid IRI MUST be specified. The IRI MUST be unique and persistent. The IRI SHOULD also be dereferenceable, i.e., capable of returning a representation of the resource.  An Entity MAY be provisioned with a URI employing the URN scheme in cases where a Linked Data friendly HTTP URI is either unavailable or inappropriate."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid23"
   } ],
@@ -1642,6 +1715,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/index",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A non-negative integer that represents the position of the Frame."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Frame"
   } ],
@@ -1672,6 +1749,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/isTimeDependent",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A boolean value indicating whether or not interacting with the item is time dependent."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/AssessmentItem"
   } ],
@@ -1733,6 +1814,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/maxAttempts",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A non-negative integer indicating the number of permitted attempts."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/AssignableDigitalResource"
   } ],
@@ -1746,6 +1831,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/maxScore",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A non-negative integer indicating the maximum score permitted."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/AssignableDigitalResource"
   } ],
@@ -1759,6 +1848,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/maxSubmits",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A non-negative integer indicating the number of permitted submissions."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/AssignableDigitalResource"
   } ],
@@ -1772,6 +1865,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/mediaType",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A string value drawn from the list of IANA approved media types and subtypes that identifies the file format of a resource."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
   } ],
@@ -1836,6 +1933,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/muted",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An optional boolean value indicating whether or not the MediaObject has been muted ."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/AudioObject"
   } ],
@@ -1849,6 +1950,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/name",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A string value comprising a word or phrase by which the resource is known."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Entity"
   } ],
@@ -1877,6 +1982,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/normalScore",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The score earned by the learner before adding the extraCreditScore, subtracting the penaltyScore or applying the curveFactor, if any."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Result"
   } ],
@@ -1907,6 +2016,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/objectType",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A string value that designates the resource type."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
   } ],
@@ -1938,6 +2051,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/penaltyScore",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The number of points deducted from the normalScore due to an infraction such as submitting an Attempt after the due date."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Result"
   } ],
@@ -2033,6 +2150,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/selectionText",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A string value representing a plain-text rendering of the selected segment of the annotated resource."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/HighlightAnnotation"
   } ],
@@ -2065,7 +2186,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "The starting position of a segment of text. The first character in the full text is position 0. The character indicated at position caliper:start is included within the selected segment. See caliper:TextPositionSelector."
+    "@value" : "The starting position of a segment of text. The first character in the full text is position 0. The character that represents the start position is included within the selected segment."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/TextPositionSelector"
@@ -2076,13 +2197,14 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-  } ],
-  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
-    "@value" : "oa:start"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/startedAtTime",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A date and time value expressed with millisecond precision that describes when the activity commenced."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid26"
   } ],
@@ -2092,9 +2214,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
-  } ],
-  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
-    "@value" : "prov:startedAtTime"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/status",
@@ -2161,6 +2280,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/totalScore",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A score earned by the learner equal to the sum of normalScore + extraCreditScore - penaltyScore. This value does not take into account the effects of curving."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Result"
   } ],
@@ -2191,6 +2314,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/value",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A string value that represents the options selected."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid30"
   } ],
@@ -2218,6 +2345,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/version",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A string value that designates the current form or version of the resource."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid33"
   } ],
@@ -2231,6 +2362,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/volumeLevel",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The current volume level."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "volumeLevel"
@@ -2241,6 +2376,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/volumeMax",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A string value indicating the maximum volume level permitted."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "volumeMax"
@@ -2251,6 +2390,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/volumeMin",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A string value indicating the minimum volume level permitted."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "volumeMin"

@@ -369,6 +369,7 @@ xsd:duration rdf:type rdfs:Datatype .
                           owl:FunctionalProperty ;
                  rdfs:domain :CourseOffering ;
                  rdfs:range xsd:string ;
+                 rdfs:comment "A human-readable identifier of the designated period in which a CourseOffering occurs."@en ;
                  rdfs:label "academicSession"@en .
 
 
@@ -377,6 +378,7 @@ xsd:duration rdf:type rdfs:Datatype .
                  owl:FunctionalProperty ;
         rdfs:domain :Event ;
         rdfs:range xsd:string ;
+        rdfs:comment "The action or predicate that binds the Event actor or subject to the Event object."@en ;
         rdfs:label "action"@en .
 
 
@@ -385,6 +387,7 @@ xsd:duration rdf:type rdfs:Datatype .
                owl:FunctionalProperty ;
       rdfs:domain :Message ;
       rdfs:range xsd:string ;
+      rdfs:comment "A plain-text rendering of the body content of a Message."@en ;
       rdfs:label "body"@en .
 
 
@@ -393,7 +396,7 @@ xsd:duration rdf:type rdfs:Datatype .
                         owl:FunctionalProperty ;
                rdfs:domain :BookmarkAnnotation ;
                rdfs:range xsd:string ;
-               rdfs:comment "An optional textual note or comment provided by an actor who annotates a caliper:DigitalResource with a caliper:Bookmark."@en ;
+               rdfs:comment "A plain text rendering of the note associated with a BookmarkAnnotation."@en ;
                rdfs:label "bookmarkNotes"@en .
 
 
@@ -402,6 +405,7 @@ xsd:duration rdf:type rdfs:Datatype .
                    owl:FunctionalProperty ;
           rdfs:domain :CourseSection ;
           rdfs:range xsd:string ;
+          rdfs:comment "A plain-text descriptor that characterizes the purpose of the CourseSection such as \"lecture\", \"lab\" or \"seminar\"."@en ;
           rdfs:isDefinedBy "caliper:"^^xsd:string ;
           rdfs:label "category"@en .
 
@@ -411,6 +415,7 @@ xsd:duration rdf:type rdfs:Datatype .
                   owl:FunctionalProperty ;
          rdfs:domain :Result ;
          rdfs:range xsd:string ;
+         rdfs:comment "Plain text feedback provided by the scorer of a Result."@en ;
          rdfs:label "comment"@en .
 
 
@@ -419,6 +424,7 @@ xsd:duration rdf:type rdfs:Datatype .
                 owl:FunctionalProperty ;
        rdfs:domain :Attempt ;
        rdfs:range xsd:nonNegativeInteger ;
+       rdfs:comment "The total number of attempts inclusive of the current Attempt that have been registered by the learner against the assigned resource."@en ;
        rdfs:label "count"@en .
 
 
@@ -426,6 +432,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :courseNumber rdf:type owl:DatatypeProperty ;
               rdfs:domain :CourseSection ;
               rdfs:range xsd:string ;
+              rdfs:comment "A human-readable identifier of the CourseOffering or CourseSection."@en ;
               rdfs:label "courseNumber"@en .
 
 
@@ -433,6 +440,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :currentTime rdf:type owl:DatatypeProperty ;
              rdfs:domain :MediaLocation ;
              rdfs:range xsd:duration ;
+             rdfs:comment "A time interval or duration that represents the current playback position measured from the beginning of a MediaObject."@en ;
              rdfs:label "currentTime"@en .
 
 
@@ -440,6 +448,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :curveFactor rdf:type owl:DatatypeProperty ;
              rdfs:domain :Result ;
              rdfs:range xsd:double ;
+             rdfs:comment "A scale factor to be used in adjusting the totalScore."@en ;
              rdfs:label "curveFactor"@en .
 
 
@@ -447,6 +456,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :curvedTotalScore rdf:type owl:DatatypeProperty ;
                   rdfs:domain :Result ;
                   rdfs:range xsd:double ;
+                  rdfs:comment "The total score earned by the learner after applying a curveFactor to a method for computing a scaled score; e.g., adjusting the score equal to the sum of 100 - curvedFactor(100 - totalScore)."@en ;
                   rdfs:label "curvedTotalScore"@en .
 
 
@@ -454,22 +464,23 @@ xsd:duration rdf:type rdfs:Datatype .
 :dateCreated rdf:type owl:DatatypeProperty ;
              rdfs:domain :Entity ;
              rdfs:range xsd:dateTime ;
-             rdfs:label "dateCreated"@en ;
-             owl:equivalentProperty "sdo:dateCreated"^^xsd:string .
+             rdfs:comment "A date and time value expressed with millisecond precision that describes when an Entity was created."@en ;
+             rdfs:label "dateCreated"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/dateModified
 :dateModified rdf:type owl:DatatypeProperty ;
               rdfs:domain :Entity ;
               rdfs:range xsd:dateTime ;
-              rdfs:label "dateModified"@en ;
-              owl:equivalentProperty "sdo:dateModified"^^xsd:string .
+              rdfs:comment "A date and time value expressed with millisecond precision that describes when an Entity was last changed or modified."@en ;
+              rdfs:label "dateModified"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/datePublished
 :datePublished rdf:type owl:DatatypeProperty ;
                rdfs:domain :DigitalResource ;
                rdfs:range xsd:dateTime ;
+               rdfs:comment "A date and time value expressed with millisecond precision that provides the publication date of a resource."@en ;
                rdfs:label "datePublished"@en .
 
 
@@ -477,6 +488,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :dateToActivate rdf:type owl:DatatypeProperty ;
                 rdfs:domain :AssignableDigitalResource ;
                 rdfs:range xsd:dateTime ;
+                rdfs:comment "A date and time value expressed with millisecond precision that describes when a resource was activated."@en ;
                 rdfs:label "dateToActivate"@en .
 
 
@@ -484,6 +496,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :dateToShow rdf:type owl:DatatypeProperty ;
             rdfs:domain :AssignableDigitalResource ;
             rdfs:range xsd:dateTime ;
+            rdfs:comment "A date and time value expressed with millisecond precision that describes when a resource should be shown or made available."@en ;
             rdfs:label "dateToShow"@en .
 
 
@@ -491,6 +504,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :dateToStartOn rdf:type owl:DatatypeProperty ;
                rdfs:domain :AssignableDigitalResource ;
                rdfs:range xsd:dateTime ;
+               rdfs:comment "A date and time value expressed with millisecond precision that describes when the resource can be started."@en ;
                rdfs:label "dateToStartOn"@en .
 
 
@@ -498,6 +512,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :dateToSubmit rdf:type owl:DatatypeProperty ;
               rdfs:domain :AssignableDigitalResource ;
               rdfs:range xsd:dateTime ;
+              rdfs:comment "A date and time value expressed with millisecond precision that describes when the resource is to be submitted for evaluation."@en ;
               rdfs:label "dateToSubmit"@en .
 
 
@@ -505,6 +520,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :description rdf:type owl:DatatypeProperty ;
              rdfs:domain :Entity ;
              rdfs:range xsd:string ;
+             rdfs:comment "A brief, plain-text representation of the resource."@en ;
              rdfs:label "description"@en .
 
 
@@ -518,6 +534,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                     )
                       ] ;
           rdfs:range xsd:duration ;
+          rdfs:comment "A time interval that represents the total time required to complete an activity."@en ;
           rdfs:label "duration"@en .
 
 
@@ -525,9 +542,8 @@ xsd:duration rdf:type rdfs:Datatype .
 :end rdf:type owl:DatatypeProperty ;
      rdfs:domain :TextPositionSelector ;
      rdfs:range xsd:nonNegativeInteger ;
-     rdfs:comment "The end position of a segment of text. The first character in the full text is position 0. The character indicated at position caliper:end is NOT included within the selected segment.  See caliper:TextPositionSelector."@en ;
-     rdfs:label "end"@en ;
-     owl:equivalentProperty "oa:end"^^xsd:string .
+     rdfs:comment "The end position of a segment of text. The first character in the full text is position 0. The character that represents the end position is NOT included within the selected segment."@en ;
+     rdfs:label "end"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/endedAtTime
@@ -539,23 +555,23 @@ xsd:duration rdf:type rdfs:Datatype .
                                        )
                          ] ;
              rdfs:range xsd:dateTime ;
-             rdfs:label "endedAtTime"@en ;
-             owl:equivalentProperty "prov:endedAtTime"^^xsd:string .
+             rdfs:comment "A date and time value expressed with millisecond precision that describes when the activity was completed or terminated."@en ;
+             rdfs:label "endedAtTime"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/eventTime
 :eventTime rdf:type owl:DatatypeProperty ;
            rdfs:domain :Event ;
            rdfs:range xsd:dateTime ;
-           rdfs:comment "A combined date and time representation (including milliseconds) of when an event occurred formatted in accordance with the ISO 8601 standard."@en ;
-           rdfs:label "eventTime"@en ;
-           owl:equivalentProperty "prov:startedAtTime"^^xsd:string .
+           rdfs:comment "A date and time value expressed with millisecond precision that indicates when an Event occurred."@en ;
+           rdfs:label "eventTime"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/extraCreditScore
 :extraCreditScore rdf:type owl:DatatypeProperty ;
                   rdfs:domain :Result ;
                   rdfs:range xsd:double ;
+                  rdfs:comment "The number of extra credit points earned by the learner."@en ;
                   rdfs:label "extraCreditScore"@en .
 
 
@@ -568,6 +584,7 @@ xsd:duration rdf:type rdfs:Datatype .
                               )
                 ] ;
     rdfs:range xsd:string ;
+    rdfs:comment "The Event or Entity identifier.  For an Event, the id MUST be a UUID expressed as a URN using the form urn:uuid:<UUID> per RFC 4122.  For Entities a valid IRI MUST be specified. The IRI MUST be unique and persistent. The IRI SHOULD also be dereferenceable, i.e., capable of returning a representation of the resource.  An Entity MAY be provisioned with a URI employing the URN scheme in cases where a Linked Data friendly HTTP URI is either unavailable or inappropriate."@en ;
     rdfs:label "id"@en .
 
 
@@ -575,6 +592,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :index rdf:type owl:DatatypeProperty ;
        rdfs:domain :Frame ;
        rdfs:range xsd:long ;
+       rdfs:comment "A non-negative integer that represents the position of the Frame."@en ;
        rdfs:label "index"@en .
 
 
@@ -582,6 +600,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :isTimeDependent rdf:type owl:DatatypeProperty ;
                  rdfs:domain :AssessmentItem ;
                  rdfs:range xsd:boolean ;
+                 rdfs:comment "A boolean value indicating whether or not interacting with the item is time dependent."@en ;
                  rdfs:label "isTimeDependent"@en .
 
 
@@ -589,6 +608,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :maxAttempts rdf:type owl:DatatypeProperty ;
              rdfs:domain :AssignableDigitalResource ;
              rdfs:range xsd:nonNegativeInteger ;
+             rdfs:comment "A non-negative integer indicating the number of permitted attempts."@en ;
              rdfs:label "maxAttempts"@en .
 
 
@@ -596,6 +616,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :maxScore rdf:type owl:DatatypeProperty ;
           rdfs:domain :AssignableDigitalResource ;
           rdfs:range xsd:double ;
+          rdfs:comment "A non-negative integer indicating the maximum score permitted."@en ;
           rdfs:label "maxScore"@en .
 
 
@@ -603,6 +624,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :maxSubmits rdf:type owl:DatatypeProperty ;
             rdfs:domain :AssignableDigitalResource ;
             rdfs:range xsd:nonNegativeInteger ;
+            rdfs:comment "A non-negative integer indicating the number of permitted submissions."@en ;
             rdfs:label "maxSubmits"@en .
 
 
@@ -610,6 +632,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :mediaType rdf:type owl:DatatypeProperty ;
            rdfs:domain :DigitalResource ;
            rdfs:range xsd:string ;
+           rdfs:comment "A string value drawn from the list of IANA approved media types and subtypes that identifies the file format of a resource."@en ;
            rdfs:label "mediaType"@en .
 
 
@@ -617,6 +640,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :muted rdf:type owl:DatatypeProperty ;
        rdfs:domain :AudioObject ;
        rdfs:range xsd:boolean ;
+       rdfs:comment "An optional boolean value indicating whether or not the MediaObject has been muted ."@en ;
        rdfs:label "muted"@en .
 
 
@@ -624,6 +648,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :name rdf:type owl:DatatypeProperty ;
       rdfs:domain :Entity ;
       rdfs:range xsd:string ;
+      rdfs:comment "A string value comprising a word or phrase by which the resource is known."@en ;
       rdfs:label "name"@en .
 
 
@@ -631,12 +656,14 @@ xsd:duration rdf:type rdfs:Datatype .
 :normalScore rdf:type owl:DatatypeProperty ;
              rdfs:domain :Result ;
              rdfs:range xsd:double ;
+             rdfs:comment "The score earned by the learner before adding the extraCreditScore, subtracting the penaltyScore or applying the curveFactor, if any."@en ;
              rdfs:label "normalScore"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/objectType
 :objectType rdf:type owl:DatatypeProperty ;
             rdfs:domain :DigitalResource ;
+            rdfs:comment "A string value that designates the resource type."@en ;
             rdfs:label "objectType"@en ;
             owl:deprecated "true"^^xsd:boolean .
 
@@ -645,6 +672,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :penaltyScore rdf:type owl:DatatypeProperty ;
               rdfs:domain :Result ;
               rdfs:range xsd:double ;
+              rdfs:comment "The number of points deducted from the normalScore due to an infraction such as submitting an Attempt after the due date."@en ;
               rdfs:label "penaltyScore"@en .
 
 
@@ -652,6 +680,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :selectionText rdf:type owl:DatatypeProperty ;
                rdfs:domain :HighlightAnnotation ;
                rdfs:range xsd:string ;
+               rdfs:comment "A string value representing a plain-text rendering of the selected segment of the annotated resource."@en ;
                rdfs:label "selectionText"@en .
 
 
@@ -659,9 +688,8 @@ xsd:duration rdf:type rdfs:Datatype .
 :start rdf:type owl:DatatypeProperty ;
        rdfs:domain :TextPositionSelector ;
        rdfs:range xsd:nonNegativeInteger ;
-       rdfs:comment "The starting position of a segment of text. The first character in the full text is position 0. The character indicated at position caliper:start is included within the selected segment. See caliper:TextPositionSelector."@en ;
-       rdfs:label "start"@en ;
-       owl:equivalentProperty "oa:start"^^xsd:string .
+       rdfs:comment "The starting position of a segment of text. The first character in the full text is position 0. The character that represents the start position is included within the selected segment."@en ;
+       rdfs:label "start"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/startedAtTime
@@ -673,14 +701,15 @@ xsd:duration rdf:type rdfs:Datatype .
                                          )
                            ] ;
                rdfs:range xsd:dateTime ;
-               rdfs:label "startedAtTime"@en ;
-               owl:equivalentProperty "prov:startedAtTime"^^xsd:string .
+               rdfs:comment "A date and time value expressed with millisecond precision that describes when the activity commenced."@en ;
+               rdfs:label "startedAtTime"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/totalScore
 :totalScore rdf:type owl:DatatypeProperty ;
             rdfs:domain :Result ;
             rdfs:range xsd:double ;
+            rdfs:comment "A score earned by the learner equal to the sum of normalScore + extraCreditScore - penaltyScore. This value does not take into account the effects of curving."@en ;
             rdfs:label "totalScore"@en .
 
 
@@ -692,6 +721,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                  )
                    ] ;
        rdfs:range xsd:string ;
+       rdfs:comment "A string value that represents the options selected."@en ;
        rdfs:label "value"@en .
 
 
@@ -703,24 +733,28 @@ xsd:duration rdf:type rdfs:Datatype .
                                    )
                      ] ;
          rdfs:range xsd:string ;
+         rdfs:comment "A string value that designates the current form or version of the resource."@en ;
          rdfs:label "version"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/volumeLevel
 :volumeLevel rdf:type owl:DatatypeProperty ;
              rdfs:range xsd:string ;
+             rdfs:comment "The current volume level."@en ;
              rdfs:label "volumeLevel"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/volumeMax
 :volumeMax rdf:type owl:DatatypeProperty ;
            rdfs:range xsd:string ;
+           rdfs:comment "A string value indicating the maximum volume level permitted."@en ;
            rdfs:label "volumeMax"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/volumeMin
 :volumeMin rdf:type owl:DatatypeProperty ;
            rdfs:range xsd:string ;
+           rdfs:comment "A string value indicating the minimum volume level permitted."@en ;
            rdfs:label "volumeMin"@en .
 
 
