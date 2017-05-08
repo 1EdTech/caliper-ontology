@@ -42,7 +42,7 @@ xsd:duration rdf:type rdfs:Datatype .
                 owl:FunctionalProperty ;
        rdfs:domain :Event ;
        rdfs:range :Agent ;
-       rdfs:comment "The participant in an action or process."@en ;
+       rdfs:comment "The Agent who initiated the Event, typically a Person, Organization or SoftwareApplication."@en ;
        rdfs:label "actor"@en .
 
 
@@ -51,6 +51,7 @@ xsd:duration rdf:type rdfs:Datatype .
                     owl:FunctionalProperty ;
            rdfs:domain :Annotation ;
            rdfs:range :DigitalResource ;
+           rdfs:comment "The DigitalResource that was annotated by the annotator."@en ;
            rdfs:label "annotated"@en .
 
 
@@ -59,6 +60,7 @@ xsd:duration rdf:type rdfs:Datatype .
                     owl:FunctionalProperty ;
            rdfs:domain :Annotation ;
            rdfs:range :Agent ;
+           rdfs:comment "The Person who created the Annotation."@en ;
            rdfs:label "annotator"@en .
 
 
@@ -67,6 +69,7 @@ xsd:duration rdf:type rdfs:Datatype .
                      owl:FunctionalProperty ;
             rdfs:domain :Attempt ;
             rdfs:range :DigitalResource ;
+            rdfs:comment "The DigitalResource that constitutes the object of the assignment."@en ;
             rdfs:label "assignable"@en .
 
 
@@ -75,6 +78,7 @@ xsd:duration rdf:type rdfs:Datatype .
                    owl:FunctionalProperty ;
           rdfs:domain :Attempt ;
           rdfs:range :Agent ;
+          rdfs:comment "The Person who initiated the Attempt of an assigned DigitalResource."@en ;
           rdfs:label "assignee"@en .
 
 
@@ -82,7 +86,8 @@ xsd:duration rdf:type rdfs:Datatype .
 :attachments rdf:type owl:ObjectProperty ;
              rdfs:domain :Message ;
              rdfs:range :DigitalResource ;
-             rdfs:comment "attachments"@en .
+             rdfs:comment "An ordered collection of one or more DigitalResource entities attached to a Message."@en ;
+             rdfs:label "attachments"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/attempt
@@ -94,13 +99,15 @@ xsd:duration rdf:type rdfs:Datatype .
                                    )
                      ] ;
          rdfs:range :Attempt ;
-         rdfs:label "attempt"@en .
+         rdfs:label "The associated Attempt."@en ,
+                    "attempt"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/creators
 :creators rdf:type owl:ObjectProperty ;
           rdfs:domain :DigitalResource ;
           rdfs:range :Agent ;
+          rdfs:comment "An ordered collection of Agent entities, typically of type Person, that are responsible for bringing resource into being"@en ;
           rdfs:label "creators"@en .
 
 
@@ -109,6 +116,7 @@ xsd:duration rdf:type rdfs:Datatype .
                 owl:FunctionalProperty ;
        rdfs:domain :Event ;
        rdfs:range :SoftwareApplication ;
+       rdfs:comment "A SoftwareApplication that represents the application context within which an Event occurs."@en ;
        rdfs:label "edApp"@en .
 
 
@@ -119,6 +127,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                         :Event
                                       )
                         ] ;
+            rdfs:comment "An ordered collection of objects not defined by the Caliper Information Model."@en ;
             rdfs:label "extensions"@en .
 
 
@@ -127,15 +136,8 @@ xsd:duration rdf:type rdfs:Datatype .
                            owl:FunctionalProperty ;
                   rdfs:domain :Event ;
                   rdfs:range :LtiSession ;
+                  rdfs:comment "If an Event occurs within the context of an LTI tool launch, the federatedSession constitutes the tool consumer's LtiSession."@en ;
                   rdfs:label "federatedSession"@en .
-
-
-###  http://purl.imsglobal.org/caliper/fromResource
-:fromResource rdf:type owl:ObjectProperty ;
-              rdfs:domain :NavigationEvent ;
-              rdfs:range :DigitalResource ;
-              rdfs:label "fromResource"@en ;
-              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/generated
@@ -143,6 +145,7 @@ xsd:duration rdf:type rdfs:Datatype .
                     owl:FunctionalProperty ;
            rdfs:domain :Event ;
            rdfs:range :Entity ;
+           rdfs:comment "An Entity created or generated as a result of an interaction between an actor and an object."@en ;
            rdfs:label "generated"@en .
 
 
@@ -151,6 +154,7 @@ xsd:duration rdf:type rdfs:Datatype .
                 owl:FunctionalProperty ;
        rdfs:domain :Event ;
        rdfs:range :Organization ;
+       rdfs:comment "An Organization that represents the group or organizational context within which an Event occurs."@en ;
        rdfs:label "group"@en .
 
 
@@ -163,6 +167,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                     )
                       ] ;
           rdfs:range :Entity ;
+          rdfs:comment "A related Entity that includes or incorporates the resource as a part of its whole."@en ;
           rdfs:label "isPartOf"@en .
 
 
@@ -171,13 +176,14 @@ xsd:duration rdf:type rdfs:Datatype .
                 owl:FunctionalProperty ;
        rdfs:domain :DigitalResourceCollection ;
        rdfs:range :DigitalResource ;
-       rdfs:comment "The set of one or more entities that comprise a collection."@en ;
+       rdfs:comment "An ordered collection of resources that comprise the collection."@en ;
        rdfs:label "items"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/keywords
 :keywords rdf:type owl:ObjectProperty ;
           rdfs:domain :DigitalResource ;
+          rdfs:comment "An ordered collection of one or more string values that represent tags or labels used to identify the resource."@en ;
           rdfs:label "keywords"@en .
 
 
@@ -185,6 +191,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :learningObjectives rdf:type owl:ObjectProperty ;
                     rdfs:domain :DigitalResource ;
                     rdfs:range :LearningObjective ;
+                    rdfs:comment "An ordered collection of one or more LearningObjective entities that describe what a learner is expected to comprehend or accomplish after engaging with the resource."@en ;
                     rdfs:label "learningObjectives"@en .
 
 
@@ -193,6 +200,7 @@ xsd:duration rdf:type rdfs:Datatype .
                  owl:FunctionalProperty ;
         rdfs:domain :Membership ;
         rdfs:range :Person ;
+        rdfs:comment "The Person associated with a Membership."@en ;
         rdfs:label "member"@en .
 
 
@@ -200,6 +208,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :members rdf:type owl:ObjectProperty ;
          rdfs:domain :Organization ;
          rdfs:range :Agent ;
+         rdfs:comment "An ordered collection of entities of type Agent that belong to a particular group."@en ;
          rdfs:label "members"@en .
 
 
@@ -208,7 +217,15 @@ xsd:duration rdf:type rdfs:Datatype .
                      owl:FunctionalProperty ;
             rdfs:domain :Event ;
             rdfs:range :Membership ;
+            rdfs:comment "The relationship between the actor and the group in terms of roles assigned and current status."@en ;
             rdfs:label "membership"@en .
+
+
+###  http://purl.imsglobal.org/caliper/navigatedFrom
+:navigatedFrom rdf:type owl:ObjectProperty ;
+               rdfs:comment "The DigitalResource or SoftwareApplication that constitutes the referring context of a Navigation Event.  Deprecated."@en ;
+               rdfs:label "navigatedFrom"@en ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/object
@@ -216,7 +233,7 @@ xsd:duration rdf:type rdfs:Datatype .
                  owl:FunctionalProperty ;
         rdfs:domain :Event ;
         rdfs:range :Entity ;
-        rdfs:comment "A caliper:object is a caliper:Entity that is related to the caliper:actor by way of the relationship described by the caliper:action."@en ;
+        rdfs:comment "An Entity that an Event actor interacts with as described by the Event action."@en ;
         rdfs:label "object"@en .
 
 
@@ -225,6 +242,7 @@ xsd:duration rdf:type rdfs:Datatype .
                        owl:FunctionalProperty ;
               rdfs:domain :Membership ;
               rdfs:range :Organization ;
+              rdfs:comment "The Organization associated with a Membership."@en ;
               rdfs:label "organization"@en .
 
 
@@ -233,6 +251,7 @@ xsd:duration rdf:type rdfs:Datatype .
                    owl:FunctionalProperty ;
           rdfs:domain :Event ;
           rdfs:range :Entity ;
+          rdfs:comment "An Entity that represents the referring context within which an Event occurs.  A SoftwareApplication or DigitalResource will typically constitute the referring context."@en ;
           rdfs:label "referrer"@en .
 
 
@@ -241,14 +260,14 @@ xsd:duration rdf:type rdfs:Datatype .
                   owl:FunctionalProperty ;
          rdfs:domain :Message ;
          rdfs:range :Message ;
-         rdfs:comment "The prior Message, if any, that prompted the posting of this Message in the form of a reply or response. Analogous to sioc:reply_of."@en ;
+         rdfs:comment "A prior Message that represents the post to which a Message is directed in reply."@en ;
          rdfs:label "replyTo"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/roles
 :roles rdf:type owl:ObjectProperty ;
        rdfs:domain :Membership ;
-       rdfs:range :Role ;
+       rdfs:comment "An ordered collection of organizational roles assigned to a member."@en ;
        rdfs:label "roles"@en .
 
 
@@ -257,6 +276,7 @@ xsd:duration rdf:type rdfs:Datatype .
                    owl:FunctionalProperty ;
           rdfs:domain :Result ;
           rdfs:range :Agent ;
+          rdfs:comment "The Agent who scored or graded an Attempt."@en ;
           rdfs:label "scoredBy"@en .
 
 
@@ -265,6 +285,7 @@ xsd:duration rdf:type rdfs:Datatype .
                     owl:FunctionalProperty ;
            rdfs:domain :HighlightAnnotation ;
            rdfs:range :TextPositionSelector ;
+           rdfs:comment "A Selector that describes a fragment or segment of a resource."@en ;
            rdfs:label "selection"@en .
 
 
@@ -273,6 +294,7 @@ xsd:duration rdf:type rdfs:Datatype .
                   owl:FunctionalProperty ;
          rdfs:domain :Event ;
          rdfs:range :Session ;
+         rdfs:comment "The current user Session."@en ;
          rdfs:label "session"@en .
 
 
@@ -280,7 +302,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :status rdf:type owl:ObjectProperty ,
                  owl:FunctionalProperty ;
         rdfs:domain :Membership ;
-        rdfs:range :Status ;
+        rdfs:comment "The current standing of a member."@en ;
         rdfs:label "status"@en .
 
 
@@ -289,13 +311,14 @@ xsd:duration rdf:type rdfs:Datatype .
                             owl:FunctionalProperty ;
                    rdfs:domain :Organization ;
                    rdfs:range :Organization ;
-                   rdfs:comment "The parent organization of a caliper:Organization."@en ;
+                   rdfs:comment "The parent Organization of an Organization."@en ;
                    rdfs:label "subOrganizationOf"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/tags
 :tags rdf:type owl:ObjectProperty ;
       rdfs:domain :TagAnnotation ;
+      rdfs:comment "An ordered collection of one or more string values that represent labels or tags associated with the annotated DigitalResource."@en ;
       rdfs:label "tags"@en .
 
 
@@ -304,6 +327,7 @@ xsd:duration rdf:type rdfs:Datatype .
                  owl:FunctionalProperty ;
         rdfs:domain :Event ;
         rdfs:range :Entity ;
+        rdfs:comment "An Entity that represents a particular segment or location within an Event object."@en ;
         rdfs:label "target"@en .
 
 
@@ -312,6 +336,7 @@ xsd:duration rdf:type rdfs:Datatype .
                owl:FunctionalProperty ;
       rdfs:domain :Session ;
       rdfs:range :Agent ;
+      rdfs:comment "The Person who initiated a Session."@en ;
       rdfs:label "user"@en .
 
 
@@ -323,6 +348,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                     :SelectTextResponse
                                   )
                     ] ;
+        rdfs:comment "An ordered collection of one or more selected options."@en ;
         rdfs:label "values"@en .
 
 
@@ -330,7 +356,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :withAgents rdf:type owl:ObjectProperty ;
             rdfs:domain :SharedAnnotation ;
             rdfs:range :Agent ;
-            rdfs:comment "A list of caliper agents with whom a resource is shared. Each caliper:Agent listed may represent a human, organization or a software application.  The list SHOULD include 1 or more agents but may be omitted or left empty if the agent list is intended to be anonymous.  It is RECOMMENDED that the following terms be used to describe an agent: caliperLis:Person, caliperW3c:Organization or caliper:SoftwareApplication."@en ;
+            rdfs:comment "An ordered collection of one or more Agent entities, typically of type Person, with whom the annotated DigitalResource has been shared."@en ;
             rdfs:label "withAgents"@en .
 
 
@@ -705,13 +731,14 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/Agent
 :Agent rdf:type owl:Class ;
        rdfs:subClassOf :Entity ;
-       rdfs:comment "A caliper:Agent is a generic class that represents a caliper:Entity that can initiate or perform an action. It is analogous to a foaf:Agent. Given that caliper:Agent represents a generic type it is recommended that only subclasses of caliper:Agent be used to represent a Caliper:actor."@en ;
+       rdfs:comment "A Caliper Agent is a generic type that represents an Entity that can initiate or perform an action.  Utilize Agent only if no suitable subtype exists to represent the actor being described."@en ;
        rdfs:label "Agent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Annotation
 :Annotation rdf:type owl:Class ;
             rdfs:subClassOf :Entity ;
+            rdfs:comment "A Caliper Annotation is a generic type that represents a comment, explanation, highlight, mark, note, question or tag linked to a DigitalResource."@en ;
             rdfs:label "Annotation"@en .
 
 
@@ -729,6 +756,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                                  ) ;
                               rdf:type owl:Class
                             ] ;
+            rdfs:comment "A Caliper Assessment represents an assessment instrument such as a test or quiz."@en ;
             rdfs:label "Assessment"@en .
 
 
@@ -742,6 +770,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/AssessmentItem
 :AssessmentItem rdf:type owl:Class ;
                 rdfs:subClassOf :AssignableDigitalResource ;
+                rdfs:comment "A Caliper AssessmentItem represents a single test question."@en ;
                 rdfs:label "AssessmentItem"@en .
 
 
@@ -755,6 +784,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/AssignableDigitalResource
 :AssignableDigitalResource rdf:type owl:Class ;
                            rdfs:subClassOf :DigitalResource ;
+                           rdfs:comment "A Caliper AssignableDigitalResource is a generic type that represents digital content associated with a graded or ungraded assignment.  Utilize AssignableDigitalResource only if no suitable subtype exists to represent the resource being described."@en ;
                            rdfs:label "AssignableDigitalResource"@en .
 
 
@@ -768,65 +798,75 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/Attempt
 :Attempt rdf:type owl:Class ;
          rdfs:subClassOf :Entity ;
-         rdfs:comment "Provides a count of the number of times a caliper:Agent interacts with a caliper:AssignableDigitalResource.  A caliper:Attempt is generated as the result of an action such as starting a caliper:Assessment. In the case of an caliper:OutcomeEvent graded action, the caliper:Attempt constitutes the object of the interaction."@en ;
+         rdfs:comment "A Caliper Attempt provides a count of the number of times an actor has interacted with an AssignableDigitalResource along with start time, end time and duration information. An Attempt is generated as the result of an action such as starting an Assessment."@en ;
          rdfs:label "Attempt"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/AudioObject
 :AudioObject rdf:type owl:Class ;
              rdfs:subClassOf :MediaObject ;
+             rdfs:comment "A Caliper AudioObject represents an audio or sound file."@en ;
              rdfs:label "AudioObject"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/BookmarkAnnotation
 :BookmarkAnnotation rdf:type owl:Class ;
                     rdfs:subClassOf :Annotation ;
+                    rdfs:comment "A Caliper BookmarkAnnotation represents the act of marking a DigitalResource at a particular location."@en ;
                     rdfs:label "BookmarkAnnotation"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Chapter
 :Chapter rdf:type owl:Class ;
          rdfs:subClassOf :DigitalResource ;
+         rdfs:comment "A Caliper Chapter represents a major sub-division of a piece of digital content."@en ;
          rdfs:label "Chapter"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/CourseOffering
 :CourseOffering rdf:type owl:Class ;
                 rdfs:subClassOf :Organization ;
+                rdfs:comment "A Caliper CourseOffering represents the occurrence of a course or a type during a specified time period."@en ;
                 rdfs:label "CourseOffering"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/CourseSection
 :CourseSection rdf:type owl:Class ;
                rdfs:subClassOf :Organization ;
+               rdfs:comment "A Caliper CourseSection represents a specific instance of a CourseOffering occurring during a specific semester, term or period."@en ;
                rdfs:label "CourseSection"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/DigitalResource
 :DigitalResource rdf:type owl:Class ;
                  rdfs:subClassOf :Entity ;
+                 rdfs:comment "A Caliper DigitalResource is a generic type that represents digital content.  Utilize DigitalResource only if no suitable subtype exists to represent the resource being described."@en ;
                  rdfs:label "DigitalResource"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/DigitalResourceCollection
 :DigitalResourceCollection rdf:type owl:Class ;
-                           rdfs:subClassOf :DigitalResource .
+                           rdfs:subClassOf :DigitalResource ;
+                           rdfs:comment "A Caliper DigitalResourceCollection represents an ordered collection of DigitalResource entities."@en ;
+                           rdfs:label "DigitalResourceCollection"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Document
 :Document rdf:type owl:Class ;
           rdfs:subClassOf :DigitalResource ;
+          rdfs:comment "A Caliper Document represents textual content."@en ;
           rdfs:label "Document"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Entity
 :Entity rdf:type owl:Class ;
-        rdfs:comment "A caliper:Entity represents a generic class that is analogous to an sdo:Thing. Given that a caliper:Entity represents a generic type it is recommended that only subclasses of caliper:Entity be employed to represent nodes in the learning graph.  A caliper:Entity should be provisioned with a globally-scoped, dereferenceable IRI in order to ensure that caliper:Event data can be linked and shared.  In cases where an IRI is inappropriate, a caliper:Entity can be assigned a blank node identifier."@en ;
+        rdfs:comment "A Caliper Entity is a generic type that represents objects or things that participate in learning-related activities. Entity is subtyped for enhanced type specificity in order to better describe people, groups, digital content, courses, assignments, assessments, forums, messages, software applications and other entities that constitute the \"stuff\" of a Caliper Event.  Utilize Entity only if no suitable subtype exists to represent the thing being described."@en ;
         rdfs:label "Entity"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Envelope
 :Envelope rdf:type owl:Class ;
+          rdfs:comment "A Caliper Envelope is a container that is used to transmit one or more Caliper Events and/or Caliper Entity describes."@en ;
           rdfs:label "Envelope"@en .
 
 
@@ -839,13 +879,14 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/FillinBlankResponse
 :FillinBlankResponse rdf:type owl:Class ;
                      rdfs:subClassOf :Response ;
+                     rdfs:comment "A Caliper FillinBlankResponse represents a type of Response in which a respondent is asked to provide one or more words, expressions or short phrases that correctly completes a statement."@en ;
                      rdfs:label "FillinBlankResponse"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Forum
 :Forum rdf:type owl:Class ;
        rdfs:subClassOf :DigitalResourceCollection ;
-       rdfs:comment "A caliper:Forum is a channel or virtual space in which group discussions take place.  A caliper:Forum typically includes one or more threaded discussions to which members can subscribe, post messages and reply to other messages."@en ;
+       rdfs:comment "A Caliper Forum represents a channel or virtual space in which group discussions take place.  A Forum typically comprises one or more threaded conversations to which members can subscribe, post messages and reply to other messages."@en ;
        rdfs:label "Forum"@en .
 
 
@@ -859,36 +900,42 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/Frame
 :Frame rdf:type owl:Class ;
        rdfs:subClassOf :DigitalResource ;
+       rdfs:comment "A Caliper Frame represents a part, portion or segment of a DigitalResource."@en ;
        rdfs:label "Frame"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Group
 :Group rdf:type owl:Class ;
        rdfs:subClassOf :Organization ;
+       rdfs:comment "A Caliper Group represents an ad-hoc, informal or short-lived collection of people organized for some common educational or social purpose.  A Group can act as an Agent. It can be linked both to a parent Organization and to its members."@en ;
        rdfs:label "Group"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/HighlightAnnotation
 :HighlightAnnotation rdf:type owl:Class ;
                      rdfs:subClassOf :Annotation ;
+                     rdfs:comment "A Caliper HighlightAnnotation represents the act of marking a particular segment of a DigitalResource between two known coordinates."@en ;
                      rdfs:label "HighlightAnnotation"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/ImageObject
 :ImageObject rdf:type owl:Class ;
              rdfs:subClassOf :MediaObject ;
+             rdfs:comment "A Caliper ImageObject represents an image file."@en ;
              rdfs:label "ImageObject"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/LearningObjective
 :LearningObjective rdf:type owl:Class ;
                    rdfs:subClassOf :Entity ;
+                   rdfs:comment "A Caliper LearningObjective represents a summary statement that outlines the learning-related goals that a learner is expected to attain as a result of engaging in a learning activity."@en ;
                    rdfs:label "LearningObjective"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/LtiSession
 :LtiSession rdf:type owl:Class ;
             rdfs:subClassOf :Session ;
+            rdfs:comment "A Caliper LtiSession represents an LTI Tool Consumer user session."@en ;
             rdfs:label "LtiSession"@en .
 
 
@@ -902,25 +949,28 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/MediaLocation
 :MediaLocation rdf:type owl:Class ;
                rdfs:subClassOf :DigitalResource ;
+               rdfs:comment "A Caliper MediaLocation provides the current playback position in a MediaObject such as an AudioObject or VideoObject."@en ;
                rdfs:label "MediaLocation"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/MediaObject
 :MediaObject rdf:type owl:Class ;
              rdfs:subClassOf :DigitalResource ;
+             rdfs:comment "A Caliper MediaObject represents a generic piece of media content.  Utilize MediaObject only if no suitable subtype exists to represent the resource being described."@en ;
              rdfs:label "MediaObject"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Membership
 :Membership rdf:type owl:Class ;
             rdfs:subClassOf :Entity ;
+            rdfs:comment "A Caliper Membership describes the relationship between an Organization and a Person (i.e., a member) in terms of the roles assigned and current status."@en ;
             rdfs:label "Membership"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Message
 :Message rdf:type owl:Class ;
          rdfs:subClassOf :DigitalResource ;
-         rdfs:comment "A Caliper Message is a digital form of written communication sent to a recipient. A series of Messages may constitute a Thread if they share a common subject and are connected by a reply or by date relationships."@en ;
+         rdfs:comment "A Caliper Message is a digital form of written communication sent to a recipient. A series of messages may constitute a Thread if they share a common subject and are connected by a reply or by date relationships."@en ;
          rdfs:label "Message"@en .
 
 
@@ -934,12 +984,14 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/MultipleChoiceResponse
 :MultipleChoiceResponse rdf:type owl:Class ;
                         rdfs:subClassOf :Response ;
+                        rdfs:comment "A Caliper MultipleChoiceResponse represents a type of Response in which a respondent is asked to provide the best possible answer from a list of choices."@en ;
                         rdfs:label "MultipleChoiceResponse"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/MultipleResponseResponse
 :MultipleResponseResponse rdf:type owl:Class ;
                           rdfs:subClassOf :Response ;
+                          rdfs:comment "A Caliper MultipleResponseResponse represents a form of response in which a respondent is asked to select more than one correct answer from a list of choices."@en ;
                           rdfs:label "MultipleResponseResponse"@en .
 
 
@@ -953,7 +1005,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/Organization
 :Organization rdf:type owl:Class ;
               rdfs:subClassOf :Agent ;
-              rdfs:comment "A caliper:Organization represents a group of people organized into a community or some other social, commercial, educational or political structure. The group has a common purpose or reason for existence that spans beyond the set of people belonging to it and can act as a caliper:Agent. A caliper:Organizations are often decomposable into hierarchical structures. It is analogous to a org:Organization."@en ;
+              rdfs:comment "A Caliper Organization represents a formal collection of people organized for some common educational, social or administrative purpose. An Organization can act as an Agent. It can be linked both to a parent Organization and to its members."@en ;
               rdfs:label "Organization"@en .
 
 
@@ -967,19 +1019,21 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/Page
 :Page rdf:type owl:Class ;
       rdfs:subClassOf :DigitalResource ;
+      rdfs:comment "A Caliper Page represents an item of paginated content."@en ;
       rdfs:label "Page"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Person
 :Person rdf:type owl:Class ;
         rdfs:subClassOf :Agent ;
-        rdfs:comment "A caliper:Person represents a human being, alive or deceased, real or imaginary."@en ;
+        rdfs:comment "A Caliper Person represents a human being, alive or deceased, real or imaginary."@en ;
         rdfs:label "Person"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Reading
 :Reading rdf:type owl:Class ;
          rdfs:subClassOf :DigitalResource ;
+         rdfs:comment "A Caliper Reading represents an item of paginated content. Reading is a DEPRECATED entity superseded by Document that will be removed in a future version of the specification. It SHOULD NOT be referenced."@en ;
          rdfs:label "Reading"@en ;
          owl:deprecated "true"^^xsd:boolean .
 
@@ -995,36 +1049,34 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/Response
 :Response rdf:type owl:Class ;
           rdfs:subClassOf :Entity ;
+          rdfs:comment "A Caliper Response is a generic type that represents the selected option generated by a Person interacting with an AssessmentItem.  Utilize Response only if no suitable subtype exists to represent the response being described."@en ;
           rdfs:label "Response"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Result
 :Result rdf:type owl:Class ;
         rdfs:subClassOf :Entity ;
+        rdfs:comment "A Caliper Result represents a grade applied to an assignment submission."@en ;
         rdfs:label "Result"@en .
-
-
-###  http://purl.imsglobal.org/caliper/Role
-:Role rdf:type owl:Class ;
-      rdfs:subClassOf :Entity .
 
 
 ###  http://purl.imsglobal.org/caliper/SelectTextResponse
 :SelectTextResponse rdf:type owl:Class ;
                     rdfs:subClassOf :Response ;
+                    rdfs:comment "A Caliper SelectTextResponse represents a type of Response that identifies text or a mapping from a presented paragraph or list."@en ;
                     rdfs:label "SelectTextResponse"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Selector
 :Selector rdf:type owl:Class ;
-          rdfs:comment "A resource which describes the segment of interest in a representation of a Source resource. This class is not used directly in Annotations, only its subclasses.  The nature of the Selector will be dependent on the type of the representation for which the segment is conveyed. The specific type of selector should be indicated using a subclass of caliper:Selector.  The Specifier's description MAY be conveyed as an external or embedded resource or as RDF properties within the graph. The description SHOULD use existing standards whenever possible. If the Specifier has an HTTP URI, then its description, and only its description, MUST be returned when the URI is dereferenced."@en ;
+          rdfs:comment "A Caliper Selector is a generic class that describes a fragment or segment of a resource.  Utilize Selector only if no suitable subtype exists to represent the selection being described."@en ;
           rdfs:label "Selector"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Session
 :Session rdf:type owl:Class ;
          rdfs:subClassOf :Entity ;
-         rdfs:comment "Represents a Web application user session.  caliper:SessionEvent log in actions generate a caliper:Session.  Log out actions treat the caliper:Session as the target of the interaction while in the case of a time out, the caliper:Session constitutes the object of the interaction."@en ;
+         rdfs:comment "A Caliper Session represents a web application user session."@en ;
          rdfs:label "Session"@en .
 
 
@@ -1038,38 +1090,35 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/SharedAnnotation
 :SharedAnnotation rdf:type owl:Class ;
                   rdfs:subClassOf :Annotation ;
+                  rdfs:comment "A Caliper SharedAnnotation represents the act of sharing a reference to a DigitalResource with other agents."@en ;
                   rdfs:label "SharedAnnotation"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/SoftwareApplication
 :SoftwareApplication rdf:type owl:Class ;
                      rdfs:subClassOf :Agent ;
-                     rdfs:comment "a caliper:SoftwareApplication represents a computer program, application, module, platform or system."@en ;
+                     rdfs:comment "A Caliper SoftwareApplication represents a computer program, application, module, platform or system."@en ;
                      rdfs:label "SoftwareApplication"@en .
-
-
-###  http://purl.imsglobal.org/caliper/Status
-:Status rdf:type owl:Class ;
-        rdfs:subClassOf :Entity .
 
 
 ###  http://purl.imsglobal.org/caliper/TagAnnotation
 :TagAnnotation rdf:type owl:Class ;
                rdfs:subClassOf :Annotation ;
+               rdfs:comment "A Caliper TagAnnotation represents the act of tagging a DigitalResource with tags or labels."@en ;
                rdfs:label "TagAnnotation"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/TextPositionSelector
 :TextPositionSelector rdf:type owl:Class ;
                       rdfs:subClassOf :Selector ;
-                      rdfs:comment "A caliper:TextPositionSelector describes a range of text based on its start and end positions.  The text MUST be normalized before counting characters. Each caliper:TextPositionSelector MUST have exactly 1 caliper:start property and exactly 1 caliper:end property."@en ;
+                      rdfs:comment "A Caliper TextPositionSelector represents a fragment or selection of textual content, the starting and ending positions of which are determined by the distance in characters from the initial character (position 0) of the enclosing full text."@en ;
                       rdfs:label "TextPositionSelector"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Thread
 :Thread rdf:type owl:Class ;
         rdfs:subClassOf :DigitalResourceCollection ;
-        rdfs:comment "A caliper:Thread represents a series of one or more messages that share a common subject and are connected by a reply or by date relationships."@en ;
+        rdfs:comment "A Caliper Thread represents a series of one or more messages that share a common subject and are connected by a reply or by date relationships."@en ;
         rdfs:label "Thread"@en .
 
 
@@ -1090,12 +1139,14 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/TrueFalseResponse
 :TrueFalseResponse rdf:type owl:Class ;
                    rdfs:subClassOf :Response ;
+                   rdfs:comment "A Caliper TrueFalseResponse represents a type of Response to an AssessmentItem in which only two possible options are provided (e.g., true/false, yes/no)."@en ;
                    rdfs:label "TrueFalseResponse"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/VideoObject
 :VideoObject rdf:type owl:Class ;
              rdfs:subClassOf :MediaObject ;
+             rdfs:comment "A Caliper VideoObject represents a visual recording stored in digital form."@en ;
              rdfs:label "VideoObject"@en .
 
 
@@ -1109,12 +1160,14 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/WebPage
 :WebPage rdf:type owl:Class ;
          rdfs:subClassOf :DigitalResource ;
+         rdfs:comment "A Caliper WebPage represents a document containing markup that is suitable for display in a web browser."@en ;
          rdfs:label "WebPage"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/epubChapter
 :epubChapter rdf:type owl:Class ;
              rdfs:subClassOf :DigitalResource ;
+             rdfs:comment "A Caliper EpubChapter represents a major structural division of a piece of writing. EpubChapter is a DEPRECATED entity that will be removed in a future version of the specification. It SHOULD NOT be referenced."@en ;
              rdfs:label "EpubChapter"@en ;
              owl:deprecated "true"^^xsd:boolean .
 
@@ -1122,6 +1175,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/epubPart
 :epubPart rdf:type owl:Class ;
           rdfs:subClassOf :DigitalResource ;
+          rdfs:comment "A Caliper EpubPart represents a major structural division of a piece of writing, typically encapsulating a set of related chapters. EpubPart is a DEPRECATED entity that will be removed in a future version of the specification. It SHOULD NOT be referenced."@en ;
           rdfs:label "EpubPart"@en ;
           owl:deprecated "true"^^xsd:boolean .
 
@@ -1129,7 +1183,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/epubSubChapter
 :epubSubChapter rdf:type owl:Class ;
                 rdfs:subClassOf :DigitalResource ;
-                rdfs:comment "Deprecated by IDPF as of 26 April 2016.  See https://idpf.github.io/epub-vocabs/structure/"^^xsd:string ;
+                rdfs:comment "A Caliper EpubSubChapter represents a major sub-division of an EpubChapter. EpubSubChapter is a DEPRECATED entity that will be removed in a future version of the specification. It SHOULD NOT be referenced."^^xsd:string ;
                 rdfs:label "EpubSubChapter"@en ;
                 owl:deprecated "true"^^xsd:boolean .
 
@@ -1137,6 +1191,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/epubVolume
 :epubVolume rdf:type owl:Class ;
             rdfs:subClassOf :DigitalResource ;
+            rdfs:comment "A Caliper EpubVolume represents a component of a collection. EpubVolume inherits all the properties and requirements defined for DigitalResource, its supertype. EpubVolume is a DEPRECATED entity that will be removed in a future version of the specification. It SHOULD NOT be referenced."@en ;
             rdfs:label "EpubVolume"@en ;
             owl:deprecated "true"^^xsd:boolean .
 

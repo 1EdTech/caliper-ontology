@@ -137,7 +137,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A caliper:Agent is a generic class that represents a caliper:Entity that can initiate or perform an action. It is analogous to a foaf:Agent. Given that caliper:Agent represents a generic type it is recommended that only subclasses of caliper:Agent be used to represent a Caliper:actor."
+    "@value" : "A Caliper Agent is a generic type that represents an Entity that can initiate or perform an action.  Utilize Agent only if no suitable subtype exists to represent the actor being described."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -149,6 +149,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Annotation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper Annotation is a generic type that represents a comment, explanation, highlight, mark, note, question or tag linked to a DigitalResource."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Annotation"
@@ -173,6 +177,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Assessment",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper Assessment represents an assessment instrument such as a test or quiz."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Assessment"
@@ -197,6 +205,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/AssessmentItem",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper AssessmentItem represents a single test question."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "AssessmentItem"
@@ -221,6 +233,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/AssignableDigitalResource",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper AssignableDigitalResource is a generic type that represents digital content associated with a graded or ungraded assignment.  Utilize AssignableDigitalResource only if no suitable subtype exists to represent the resource being described."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "AssignableDigitalResource"
@@ -247,7 +263,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Provides a count of the number of times a caliper:Agent interacts with a caliper:AssignableDigitalResource.  A caliper:Attempt is generated as the result of an action such as starting a caliper:Assessment. In the case of an caliper:OutcomeEvent graded action, the caliper:Attempt constitutes the object of the interaction."
+    "@value" : "A Caliper Attempt provides a count of the number of times an actor has interacted with an AssignableDigitalResource along with start time, end time and duration information. An Attempt is generated as the result of an action such as starting an Assessment."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -259,6 +275,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/AudioObject",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper AudioObject represents an audio or sound file."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "AudioObject"
@@ -269,6 +289,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/BookmarkAnnotation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper BookmarkAnnotation represents the act of marking a DigitalResource at a particular location."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "BookmarkAnnotation"
@@ -279,6 +303,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Chapter",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper Chapter represents a major sub-division of a piece of digital content."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Chapter"
@@ -289,6 +317,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/CourseOffering",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper CourseOffering represents the occurrence of a course or a type during a specified time period."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "CourseOffering"
@@ -299,6 +331,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/CourseSection",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper CourseSection represents a specific instance of a CourseOffering occurring during a specific semester, term or period."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "CourseSection"
@@ -309,6 +345,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/DigitalResource",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper DigitalResource is a generic type that represents digital content.  Utilize DigitalResource only if no suitable subtype exists to represent the resource being described."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "DigitalResource"
@@ -319,12 +359,24 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/DigitalResourceCollection",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper DigitalResourceCollection represents an ordered collection of DigitalResource entities."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "DigitalResourceCollection"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Document",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper Document represents textual content."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Document"
@@ -337,7 +389,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A caliper:Entity represents a generic class that is analogous to an sdo:Thing. Given that a caliper:Entity represents a generic type it is recommended that only subclasses of caliper:Entity be employed to represent nodes in the learning graph.  A caliper:Entity should be provisioned with a globally-scoped, dereferenceable IRI in order to ensure that caliper:Event data can be linked and shared.  In cases where an IRI is inappropriate, a caliper:Entity can be assigned a blank node identifier."
+    "@value" : "A Caliper Entity is a generic type that represents objects or things that participate in learning-related activities. Entity is subtyped for enhanced type specificity in order to better describe people, groups, digital content, courses, assignments, assessments, forums, messages, software applications and other entities that constitute the \"stuff\" of a Caliper Event.  Utilize Entity only if no suitable subtype exists to represent the thing being described."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -346,6 +398,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Envelope",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper Envelope is a container that is used to transmit one or more Caliper Events and/or Caliper Entity describes."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Envelope"
@@ -364,6 +420,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/FillinBlankResponse",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper FillinBlankResponse represents a type of Response in which a respondent is asked to provide one or more words, expressions or short phrases that correctly completes a statement."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "FillinBlankResponse"
@@ -376,7 +436,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A caliper:Forum is a channel or virtual space in which group discussions take place.  A caliper:Forum typically includes one or more threaded discussions to which members can subscribe, post messages and reply to other messages."
+    "@value" : "A Caliper Forum represents a channel or virtual space in which group discussions take place.  A Forum typically comprises one or more threaded conversations to which members can subscribe, post messages and reply to other messages."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -402,6 +462,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Frame",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper Frame represents a part, portion or segment of a DigitalResource."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Frame"
@@ -412,6 +476,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Group",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper Group represents an ad-hoc, informal or short-lived collection of people organized for some common educational or social purpose.  A Group can act as an Agent. It can be linked both to a parent Organization and to its members."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Group"
@@ -422,6 +490,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/HighlightAnnotation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper HighlightAnnotation represents the act of marking a particular segment of a DigitalResource between two known coordinates."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "HighlightAnnotation"
@@ -432,6 +504,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/ImageObject",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper ImageObject represents an image file."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ImageObject"
@@ -442,6 +518,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/LearningObjective",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper LearningObjective represents a summary statement that outlines the learning-related goals that a learner is expected to attain as a result of engaging in a learning activity."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "LearningObjective"
@@ -452,6 +532,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/LtiSession",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper LtiSession represents an LTI Tool Consumer user session."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "LtiSession"
@@ -476,6 +560,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/MediaLocation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper MediaLocation provides the current playback position in a MediaObject such as an AudioObject or VideoObject."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "MediaLocation"
@@ -486,6 +574,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/MediaObject",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper MediaObject represents a generic piece of media content.  Utilize MediaObject only if no suitable subtype exists to represent the resource being described."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "MediaObject"
@@ -496,6 +588,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Membership",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper Membership describes the relationship between an Organization and a Person (i.e., a member) in terms of the roles assigned and current status."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Membership"
@@ -508,7 +604,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A Caliper Message is a digital form of written communication sent to a recipient. A series of Messages may constitute a Thread if they share a common subject and are connected by a reply or by date relationships."
+    "@value" : "A Caliper Message is a digital form of written communication sent to a recipient. A series of messages may constitute a Thread if they share a common subject and are connected by a reply or by date relationships."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -534,6 +630,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/MultipleChoiceResponse",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper MultipleChoiceResponse represents a type of Response in which a respondent is asked to provide the best possible answer from a list of choices."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "MultipleChoiceResponse"
@@ -544,6 +644,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/MultipleResponseResponse",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper MultipleResponseResponse represents a form of response in which a respondent is asked to select more than one correct answer from a list of choices."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "MultipleResponseResponse"
@@ -570,7 +674,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A caliper:Organization represents a group of people organized into a community or some other social, commercial, educational or political structure. The group has a common purpose or reason for existence that spans beyond the set of people belonging to it and can act as a caliper:Agent. A caliper:Organizations are often decomposable into hierarchical structures. It is analogous to a org:Organization."
+    "@value" : "A Caliper Organization represents a formal collection of people organized for some common educational, social or administrative purpose. An Organization can act as an Agent. It can be linked both to a parent Organization and to its members."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -596,6 +700,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Page",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper Page represents an item of paginated content."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Page"
@@ -608,7 +716,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A caliper:Person represents a human being, alive or deceased, real or imaginary."
+    "@value" : "A Caliper Person represents a human being, alive or deceased, real or imaginary."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -620,6 +728,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Reading",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper Reading represents an item of paginated content. Reading is a DEPRECATED entity superseded by Document that will be removed in a future version of the specification. It SHOULD NOT be referenced."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Reading"
@@ -652,6 +764,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Response",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper Response is a generic type that represents the selected option generated by a Person interacting with an AssessmentItem.  Utilize Response only if no suitable subtype exists to represent the response being described."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Response"
@@ -662,6 +778,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Result",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper Result represents a grade applied to an assignment submission."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Result"
@@ -670,14 +790,12 @@
     "@id" : "http://purl.imsglobal.org/caliper/Entity"
   } ]
 }, {
-  "@id" : "http://purl.imsglobal.org/caliper/Role",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/Entity"
-  } ]
-}, {
   "@id" : "http://purl.imsglobal.org/caliper/SelectTextResponse",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper SelectTextResponse represents a type of Response that identifies text or a mapping from a presented paragraph or list."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "SelectTextResponse"
@@ -690,7 +808,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A resource which describes the segment of interest in a representation of a Source resource. This class is not used directly in Annotations, only its subclasses.  The nature of the Selector will be dependent on the type of the representation for which the segment is conveyed. The specific type of selector should be indicated using a subclass of caliper:Selector.  The Specifier's description MAY be conveyed as an external or embedded resource or as RDF properties within the graph. The description SHOULD use existing standards whenever possible. If the Specifier has an HTTP URI, then its description, and only its description, MUST be returned when the URI is dereferenced."
+    "@value" : "A Caliper Selector is a generic class that describes a fragment or segment of a resource.  Utilize Selector only if no suitable subtype exists to represent the selection being described."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -701,7 +819,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Represents a Web application user session.  caliper:SessionEvent log in actions generate a caliper:Session.  Log out actions treat the caliper:Session as the target of the interaction while in the case of a time out, the caliper:Session constitutes the object of the interaction."
+    "@value" : "A Caliper Session represents a web application user session."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -727,6 +845,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/SharedAnnotation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper SharedAnnotation represents the act of sharing a reference to a DigitalResource with other agents."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "SharedAnnotation"
@@ -739,7 +861,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "a caliper:SoftwareApplication represents a computer program, application, module, platform or system."
+    "@value" : "A Caliper SoftwareApplication represents a computer program, application, module, platform or system."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -749,14 +871,12 @@
     "@id" : "http://purl.imsglobal.org/caliper/Agent"
   } ]
 }, {
-  "@id" : "http://purl.imsglobal.org/caliper/Status",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/Entity"
-  } ]
-}, {
   "@id" : "http://purl.imsglobal.org/caliper/TagAnnotation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper TagAnnotation represents the act of tagging a DigitalResource with tags or labels."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "TagAnnotation"
@@ -769,7 +889,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A caliper:TextPositionSelector describes a range of text based on its start and end positions.  The text MUST be normalized before counting characters. Each caliper:TextPositionSelector MUST have exactly 1 caliper:start property and exactly 1 caliper:end property."
+    "@value" : "A Caliper TextPositionSelector represents a fragment or selection of textual content, the starting and ending positions of which are determined by the distance in characters from the initial character (position 0) of the enclosing full text."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -783,7 +903,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A caliper:Thread represents a series of one or more messages that share a common subject and are connected by a reply or by date relationships."
+    "@value" : "A Caliper Thread represents a series of one or more messages that share a common subject and are connected by a reply or by date relationships."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -823,6 +943,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/TrueFalseResponse",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper TrueFalseResponse represents a type of Response to an AssessmentItem in which only two possible options are provided (e.g., true/false, yes/no)."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "TrueFalseResponse"
@@ -833,6 +957,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/VideoObject",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper VideoObject represents a visual recording stored in digital form."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "VideoObject"
@@ -857,6 +985,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/WebPage",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper WebPage represents a document containing markup that is suitable for display in a web browser."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "WebPage"
@@ -895,7 +1027,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "The participant in an action or process."
+    "@value" : "The Agent who initiated the Event, typically a Person, Organization or SoftwareApplication."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Event"
@@ -910,6 +1042,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/annotated",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The DigitalResource that was annotated by the annotator."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Annotation"
   } ],
@@ -923,6 +1059,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/annotator",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Person who created the Annotation."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Annotation"
   } ],
@@ -936,6 +1076,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/assignable",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The DigitalResource that constitutes the object of the assignment."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Attempt"
   } ],
@@ -949,6 +1093,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/assignee",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Person who initiated the Attempt of an assigned DigitalResource."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Attempt"
   } ],
@@ -964,10 +1112,14 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "attachments"
+    "@value" : "An ordered collection of one or more DigitalResource entities attached to a Message."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Message"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "attachments"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
@@ -979,6 +1131,9 @@
     "@id" : "_:genid1"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "The associated Attempt."
+  }, {
     "@language" : "en",
     "@value" : "attempt"
   } ],
@@ -1073,6 +1228,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/creators",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An ordered collection of Agent entities, typically of type Person, that are responsible for bringing resource into being"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
   } ],
@@ -1248,6 +1407,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/edApp",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A SoftwareApplication that represents the application context within which an Event occurs."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Event"
   } ],
@@ -1297,6 +1460,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/epubChapter",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper EpubChapter represents a major structural division of a piece of writing. EpubChapter is a DEPRECATED entity that will be removed in a future version of the specification. It SHOULD NOT be referenced."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "EpubChapter"
@@ -1311,6 +1478,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/epubPart",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper EpubPart represents a major structural division of a piece of writing, typically encapsulating a set of related chapters. EpubPart is a DEPRECATED entity that will be removed in a future version of the specification. It SHOULD NOT be referenced."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "EpubPart"
@@ -1326,7 +1497,7 @@
   "@id" : "http://purl.imsglobal.org/caliper/epubSubChapter",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Deprecated by IDPF as of 26 April 2016.  See https://idpf.github.io/epub-vocabs/structure/"
+    "@value" : "A Caliper EpubSubChapter represents a major sub-division of an EpubChapter. EpubSubChapter is a DEPRECATED entity that will be removed in a future version of the specification. It SHOULD NOT be referenced."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1342,6 +1513,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/epubVolume",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper EpubVolume represents a component of a collection. EpubVolume inherits all the properties and requirements defined for DigitalResource, its supertype. EpubVolume is a DEPRECATED entity that will be removed in a future version of the specification. It SHOULD NOT be referenced."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "EpubVolume"
@@ -1376,6 +1551,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/extensions",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An ordered collection of objects not defined by the Caliper Information Model."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid4"
   } ],
@@ -1399,6 +1578,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/federatedSession",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "If an Event occurs within the context of an LTI tool launch, the federatedSession constitutes the tool consumer's LtiSession."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Event"
   } ],
@@ -1410,25 +1593,12 @@
     "@id" : "http://purl.imsglobal.org/caliper/LtiSession"
   } ]
 }, {
-  "@id" : "http://purl.imsglobal.org/caliper/fromResource",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/NavigationEvent"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "fromResource"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
-  } ],
-  "http://www.w3.org/2002/07/owl#deprecated" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
-    "@value" : "true"
-  } ]
-}, {
   "@id" : "http://purl.imsglobal.org/caliper/generated",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An Entity created or generated as a result of an interaction between an actor and an object."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Event"
   } ],
@@ -1442,6 +1612,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/group",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An Organization that represents the group or organizational context within which an Event occurs."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Event"
   } ],
@@ -1481,6 +1655,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/isPartOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A related Entity that includes or incorporates the resource as a part of its whole."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid7"
   } ],
@@ -1509,7 +1687,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "The set of one or more entities that comprise a collection."
+    "@value" : "An ordered collection of resources that comprise the collection."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/DigitalResourceCollection"
@@ -1524,6 +1702,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/keywords",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An ordered collection of one or more string values that represent tags or labels used to identify the resource."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
   } ],
@@ -1534,6 +1716,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/learningObjectives",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An ordered collection of one or more LearningObjective entities that describe what a learner is expected to comprehend or accomplish after engaging with the resource."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
   } ],
@@ -1599,6 +1785,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/member",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Person associated with a Membership."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Membership"
   } ],
@@ -1612,6 +1802,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/members",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An ordered collection of entities of type Agent that belong to a particular group."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Organization"
   } ],
@@ -1625,6 +1819,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/membership",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The relationship between the actor and the group in terms of roles assigned and current status."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Event"
   } ],
@@ -1662,6 +1860,21 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
+  "@id" : "http://purl.imsglobal.org/caliper/navigatedFrom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The DigitalResource or SoftwareApplication that constitutes the referring context of a Navigation Event.  Deprecated."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "navigatedFrom"
+  } ],
+  "http://www.w3.org/2002/07/owl#deprecated" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ]
+}, {
   "@id" : "http://purl.imsglobal.org/caliper/normalScore",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -1679,7 +1892,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A caliper:object is a caliper:Entity that is related to the caliper:actor by way of the relationship described by the caliper:action."
+    "@value" : "An Entity that an Event actor interacts with as described by the Event action."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Event"
@@ -1708,6 +1921,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/organization",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Organization associated with a Membership."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Membership"
   } ],
@@ -1734,6 +1951,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/referrer",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An Entity that represents the referring context within which an Event occurs.  A SoftwareApplication or DigitalResource will typically constitute the referring context."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Event"
   } ],
@@ -1749,7 +1970,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "The prior Message, if any, that prompted the posting of this Message in the form of a reply or response. Analogous to sioc:reply_of."
+    "@value" : "A prior Message that represents the post to which a Message is directed in reply."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Message"
@@ -1764,19 +1985,24 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/roles",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An ordered collection of organizational roles assigned to a member."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Membership"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "roles"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/Role"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/scoredBy",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Agent who scored or graded an Attempt."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Result"
   } ],
@@ -1790,6 +2016,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/selection",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Selector that describes a fragment or segment of a resource."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/HighlightAnnotation"
   } ],
@@ -1816,6 +2046,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/session",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The current user Session."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Event"
   } ],
@@ -1865,22 +2099,23 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/status",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The current standing of a member."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Membership"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "status"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/Status"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/subOrganizationOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "The parent organization of a caliper:Organization."
+    "@value" : "The parent Organization of an Organization."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Organization"
@@ -1895,6 +2130,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/tags",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An ordered collection of one or more string values that represent labels or tags associated with the annotated DigitalResource."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/TagAnnotation"
   } ],
@@ -1905,6 +2144,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/target",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An Entity that represents a particular segment or location within an Event object."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Event"
   } ],
@@ -1931,6 +2174,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/user",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The Person who initiated a Session."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Session"
   } ],
@@ -1957,6 +2204,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/values",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An ordered collection of one or more selected options."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid10"
   } ],
@@ -2012,7 +2263,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A list of caliper agents with whom a resource is shared. Each caliper:Agent listed may represent a human, organization or a software application.  The list SHOULD include 1 or more agents but may be omitted or left empty if the agent list is intended to be anonymous.  It is RECOMMENDED that the following terms be used to describe an agent: caliperLis:Person, caliperW3c:Organization or caliper:SoftwareApplication."
+    "@value" : "An ordered collection of one or more Agent entities, typically of type Person, with whom the annotated DigitalResource has been shared."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/SharedAnnotation"
