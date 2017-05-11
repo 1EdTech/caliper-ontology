@@ -46,6 +46,15 @@ xsd:duration rdf:type rdfs:Datatype .
        rdfs:label "actor"@en .
 
 
+###  http://purl.imsglobal.org/caliper/alignedLearningObjective
+:alignedLearningObjective rdf:type owl:ObjectProperty ;
+                          rdfs:domain :DigitalResource ;
+                          rdfs:range :LearningObjective ;
+                          rdfs:comment "An ordered collection of one or more LearningObjective entities that describe what a learner is expected to comprehend or accomplish after engaging with the resource.  Deprecated.  Use learningObjectives."@en ;
+                          rdfs:label "alignedLearningObjective"@en ;
+                          owl:deprecated "true"^^xsd:boolean .
+
+
 ###  http://purl.imsglobal.org/caliper/annotated
 :annotated rdf:type owl:ObjectProperty ,
                     owl:FunctionalProperty ;
@@ -109,6 +118,13 @@ xsd:duration rdf:type rdfs:Datatype .
           rdfs:range :Agent ;
           rdfs:comment "An ordered collection of Agent entities, typically of type Person, that are responsible for bringing resource into being"@en ;
           rdfs:label "creators"@en .
+
+
+###  http://purl.imsglobal.org/caliper/data
+:data rdf:type owl:ObjectProperty ;
+      rdfs:domain :Envelope ;
+      rdfs:comment "Envelope data array."@en ;
+      rdfs:label "data"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/edApp
@@ -185,6 +201,13 @@ xsd:duration rdf:type rdfs:Datatype .
           rdfs:domain :DigitalResource ;
           rdfs:comment "An ordered collection of one or more string values that represent tags or labels used to identify the resource."@en ;
           rdfs:label "keywords"@en .
+
+
+###  http://purl.imsglobal.org/caliper/launchParameters
+:launchParameters rdf:type owl:ObjectProperty ;
+                  rdfs:domain :LtiSession ;
+                  rdfs:comment "LTI launch parameters."@en ;
+                  rdfs:label "launchParameters"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/learningObjectives
@@ -296,14 +319,6 @@ xsd:duration rdf:type rdfs:Datatype .
          rdfs:range :Session ;
          rdfs:comment "The current user Session."@en ;
          rdfs:label "session"@en .
-
-
-###  http://purl.imsglobal.org/caliper/status
-:status rdf:type owl:ObjectProperty ,
-                 owl:FunctionalProperty ;
-        rdfs:domain :Membership ;
-        rdfs:comment "The current standing of a member."@en ;
-        rdfs:label "status"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/subOrganizationOf
@@ -457,6 +472,14 @@ xsd:duration rdf:type rdfs:Datatype .
                   rdfs:range xsd:double ;
                   rdfs:comment "The total score earned by the learner after applying a curveFactor to a method for computing a scaled score; e.g., adjusting the score equal to the sum of 100 - curvedFactor(100 - totalScore)."@en ;
                   rdfs:label "curvedTotalScore"@en .
+
+
+###  http://purl.imsglobal.org/caliper/dataVersion
+:dataVersion rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Envelope ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Envelope data payload Caliper version."@en ;
+             rdfs:label "dataVersion"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/dateCreated
@@ -683,6 +706,22 @@ xsd:duration rdf:type rdfs:Datatype .
                rdfs:label "selectionText"@en .
 
 
+###  http://purl.imsglobal.org/caliper/sendTime
+:sendTime rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Envelope ;
+          rdfs:range xsd:dateTime ;
+          rdfs:comment "Envelope send time."@en ;
+          rdfs:label "sendTime"@en .
+
+
+###  http://purl.imsglobal.org/caliper/sensor
+:sensor rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Envelope ;
+        rdfs:range xsd:string ;
+        rdfs:comment "Sensor identifier."@en ;
+        rdfs:label "sensor"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/start
 :start rdf:type owl:DatatypeProperty ;
        rdfs:domain :TextPositionSelector ;
@@ -702,6 +741,14 @@ xsd:duration rdf:type rdfs:Datatype .
                rdfs:range xsd:dateTime ;
                rdfs:comment "A date and time value expressed with millisecond precision that describes when the activity commenced."@en ;
                rdfs:label "startedAtTime"@en .
+
+
+###  http://purl.imsglobal.org/caliper/status
+:status rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Membership ;
+        rdfs:range xsd:string ;
+        rdfs:comment "The current standing of a member."@en ;
+        rdfs:label "status"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/totalScore
