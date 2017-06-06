@@ -1321,7 +1321,7 @@
     "@value" : "curveFactor"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#double"
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/curvedTotalScore",
@@ -1338,7 +1338,7 @@
     "@value" : "curvedTotalScore"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#double"
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/data",
@@ -1692,7 +1692,7 @@
     "@value" : "extraCreditScore"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#double"
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/federatedSession",
@@ -1907,7 +1907,7 @@
     "@value" : "maxScore"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#double"
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/maxSubmits",
@@ -2058,7 +2058,7 @@
     "@value" : "normalScore"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#double"
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/object",
@@ -2127,7 +2127,7 @@
     "@value" : "penaltyScore"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#double"
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/referrer",
@@ -2393,7 +2393,7 @@
     "@value" : "totalScore"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#double"
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/user",

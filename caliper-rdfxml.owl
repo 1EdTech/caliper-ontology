@@ -652,7 +652,7 @@ The Caliper Analytics® specification attempts to address the underlying interop
 
     <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/curveFactor">
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Result"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">A scale factor to be used in adjusting the totalScore.</rdfs:comment>
         <rdfs:label xml:lang="en">curveFactor</rdfs:label>
     </owl:DatatypeProperty>
@@ -663,7 +663,7 @@ The Caliper Analytics® specification attempts to address the underlying interop
 
     <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/curvedTotalScore">
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Result"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">The total score earned by the learner after applying a curveFactor to a method for computing a scaled score; e.g., adjusting the score equal to the sum of 100 - curvedFactor(100 - totalScore).</rdfs:comment>
         <rdfs:label xml:lang="en">curvedTotalScore</rdfs:label>
     </owl:DatatypeProperty>
@@ -834,7 +834,7 @@ The Caliper Analytics® specification attempts to address the underlying interop
 
     <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/extraCreditScore">
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Result"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">The number of extra credit points earned by the learner.</rdfs:comment>
         <rdfs:label xml:lang="en">extraCreditScore</rdfs:label>
     </owl:DatatypeProperty>
@@ -897,7 +897,7 @@ The Caliper Analytics® specification attempts to address the underlying interop
 
     <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/maxScore">
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">A non-negative integer indicating the maximum score permitted.</rdfs:comment>
         <rdfs:label xml:lang="en">maxScore</rdfs:label>
     </owl:DatatypeProperty>
@@ -952,7 +952,7 @@ The Caliper Analytics® specification attempts to address the underlying interop
 
     <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/normalScore">
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Result"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">The score earned by the learner before adding the extraCreditScore, subtracting the penaltyScore or applying the curveFactor, if any.</rdfs:comment>
         <rdfs:label xml:lang="en">normalScore</rdfs:label>
     </owl:DatatypeProperty>
@@ -974,7 +974,7 @@ The Caliper Analytics® specification attempts to address the underlying interop
 
     <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/penaltyScore">
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Result"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">The number of points deducted from the normalScore due to an infraction such as submitting an Attempt after the due date.</rdfs:comment>
         <rdfs:label xml:lang="en">penaltyScore</rdfs:label>
     </owl:DatatypeProperty>
@@ -1059,7 +1059,7 @@ The Caliper Analytics® specification attempts to address the underlying interop
 
     <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/totalScore">
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Result"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">A score earned by the learner equal to the sum of normalScore + extraCreditScore - penaltyScore. This value does not take into account the effects of curving.</rdfs:comment>
         <rdfs:label xml:lang="en">totalScore</rdfs:label>
     </owl:DatatypeProperty>
