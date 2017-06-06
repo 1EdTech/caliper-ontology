@@ -461,7 +461,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/curveFactor
 :curveFactor rdf:type owl:DatatypeProperty ;
              rdfs:domain :Result ;
-             rdfs:range xsd:double ;
+             rdfs:range xsd:decimal ;
              rdfs:comment "A scale factor to be used in adjusting the totalScore."@en ;
              rdfs:label "curveFactor"@en .
 
@@ -469,7 +469,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/curvedTotalScore
 :curvedTotalScore rdf:type owl:DatatypeProperty ;
                   rdfs:domain :Result ;
-                  rdfs:range xsd:double ;
+                  rdfs:range xsd:decimal ;
                   rdfs:comment "The total score earned by the learner after applying a curveFactor to a method for computing a scaled score; e.g., adjusting the score equal to the sum of 100 - curvedFactor(100 - totalScore)."@en ;
                   rdfs:label "curvedTotalScore"@en .
 
@@ -592,7 +592,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/extraCreditScore
 :extraCreditScore rdf:type owl:DatatypeProperty ;
                   rdfs:domain :Result ;
-                  rdfs:range xsd:double ;
+                  rdfs:range xsd:decimal ;
                   rdfs:comment "The number of extra credit points earned by the learner."@en ;
                   rdfs:label "extraCreditScore"@en .
 
@@ -637,7 +637,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/maxScore
 :maxScore rdf:type owl:DatatypeProperty ;
           rdfs:domain :AssignableDigitalResource ;
-          rdfs:range xsd:double ;
+          rdfs:range xsd:decimal ;
           rdfs:comment "A non-negative integer indicating the maximum score permitted."@en ;
           rdfs:label "maxScore"@en .
 
@@ -677,7 +677,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/normalScore
 :normalScore rdf:type owl:DatatypeProperty ;
              rdfs:domain :Result ;
-             rdfs:range xsd:double ;
+             rdfs:range xsd:decimal ;
              rdfs:comment "The score earned by the learner before adding the extraCreditScore, subtracting the penaltyScore or applying the curveFactor, if any."@en ;
              rdfs:label "normalScore"@en .
 
@@ -693,7 +693,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/penaltyScore
 :penaltyScore rdf:type owl:DatatypeProperty ;
               rdfs:domain :Result ;
-              rdfs:range xsd:double ;
+              rdfs:range xsd:decimal ;
               rdfs:comment "The number of points deducted from the normalScore due to an infraction such as submitting an Attempt after the due date."@en ;
               rdfs:label "penaltyScore"@en .
 
@@ -754,7 +754,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/totalScore
 :totalScore rdf:type owl:DatatypeProperty ;
             rdfs:domain :Result ;
-            rdfs:range xsd:double ;
+            rdfs:range xsd:decimal ;
             rdfs:comment "A score earned by the learner equal to the sum of normalScore + extraCreditScore - penaltyScore. This value does not take into account the effects of curving."@en ;
             rdfs:label "totalScore"@en .
 
