@@ -297,7 +297,11 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/scoredBy
 :scoredBy rdf:type owl:ObjectProperty ,
                    owl:FunctionalProperty ;
-          rdfs:domain :Result ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Result
+                                      :Score
+                                    )
+                      ] ;
           rdfs:range :Agent ;
           rdfs:comment "The Agent who scored or graded an Attempt."@en ;
           rdfs:label "scoredBy"@en .
@@ -463,7 +467,8 @@ xsd:duration rdf:type rdfs:Datatype .
              rdfs:domain :Result ;
              rdfs:range xsd:decimal ;
              rdfs:comment "A scale factor to be used in adjusting the totalScore."@en ;
-             rdfs:label "curveFactor"@en .
+             rdfs:label "curveFactor"@en ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/curvedTotalScore
@@ -471,7 +476,8 @@ xsd:duration rdf:type rdfs:Datatype .
                   rdfs:domain :Result ;
                   rdfs:range xsd:decimal ;
                   rdfs:comment "The total score earned by the learner after applying a curveFactor to a method for computing a scaled score; e.g., adjusting the score equal to the sum of 100 - curvedFactor(100 - totalScore)."@en ;
-                  rdfs:label "curvedTotalScore"@en .
+                  rdfs:label "curvedTotalScore"@en ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/dataVersion
@@ -594,7 +600,8 @@ xsd:duration rdf:type rdfs:Datatype .
                   rdfs:domain :Result ;
                   rdfs:range xsd:decimal ;
                   rdfs:comment "The number of extra credit points earned by the learner."@en ;
-                  rdfs:label "extraCreditScore"@en .
+                  rdfs:label "extraCreditScore"@en ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/id
@@ -634,9 +641,21 @@ xsd:duration rdf:type rdfs:Datatype .
              rdfs:label "maxAttempts"@en .
 
 
+###  http://purl.imsglobal.org/caliper/maxResultScore
+:maxResultScore rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Result ;
+                rdfs:range rdfs:Literal ;
+                rdfs:comment "The maximum score permitted for a Result."@en ;
+                rdfs:label "maxResultScore"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/maxScore
 :maxScore rdf:type owl:DatatypeProperty ;
-          rdfs:domain :AssignableDigitalResource ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :AssignableDigitalResource
+                                      :Score
+                                    )
+                      ] ;
           rdfs:range xsd:decimal ;
           rdfs:comment "A non-negative integer indicating the maximum score permitted."@en ;
           rdfs:label "maxScore"@en .
@@ -679,7 +698,8 @@ xsd:duration rdf:type rdfs:Datatype .
              rdfs:domain :Result ;
              rdfs:range xsd:decimal ;
              rdfs:comment "The score earned by the learner before adding the extraCreditScore, subtracting the penaltyScore or applying the curveFactor, if any."@en ;
-             rdfs:label "normalScore"@en .
+             rdfs:label "normalScore"@en ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/objectType
@@ -695,7 +715,24 @@ xsd:duration rdf:type rdfs:Datatype .
               rdfs:domain :Result ;
               rdfs:range xsd:decimal ;
               rdfs:comment "The number of points deducted from the normalScore due to an infraction such as submitting an Attempt after the due date."@en ;
-              rdfs:label "penaltyScore"@en .
+              rdfs:label "penaltyScore"@en ;
+              owl:deprecated "true"^^xsd:boolean .
+
+
+###  http://purl.imsglobal.org/caliper/resultScore
+:resultScore rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Result ;
+             rdfs:range rdfs:Literal ;
+             rdfs:comment "The result score awarded to the learner.  A result score can be updated."@en ;
+             rdfs:label "resultScore"@en .
+
+
+###  http://purl.imsglobal.org/caliper/scoreGiven
+:scoreGiven rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Score ;
+            rdfs:range xsd:decimal ;
+            rdfs:comment "The score value."@en ;
+            rdfs:label "scoreGiven"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/selectionText
@@ -756,7 +793,8 @@ xsd:duration rdf:type rdfs:Datatype .
             rdfs:domain :Result ;
             rdfs:range xsd:decimal ;
             rdfs:comment "A score earned by the learner equal to the sum of normalScore + extraCreditScore - penaltyScore. This value does not take into account the effects of curving."@en ;
-            rdfs:label "totalScore"@en .
+            rdfs:label "totalScore"@en ;
+            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://purl.imsglobal.org/caliper/value
@@ -1138,6 +1176,13 @@ xsd:duration rdf:type rdfs:Datatype .
         rdfs:subClassOf :Entity ;
         rdfs:comment "A Caliper Result represents a grade applied to an assignment submission."@en ;
         rdfs:label "Result"@en .
+
+
+###  http://purl.imsglobal.org/caliper/Score
+:Score rdf:type owl:Class ;
+       rdfs:subClassOf :Entity ;
+       rdfs:comment "A Caliper Score represents a grade.  The Score value is considered immutable."@en ;
+       rdfs:label "Score"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/SelectTextResponse
