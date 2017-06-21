@@ -494,6 +494,20 @@
     "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
   } ]
 }, {
+  "@id" : "http://purl.imsglobal.org/caliper/GradeEvent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Caliper GradeEvent models grading activities performed by an Agent, typically a Person or a SoftwareApplication."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "GradeEvent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/Event"
+  } ]
+}, {
   "@id" : "http://purl.imsglobal.org/caliper/Group",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -702,20 +716,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Agent"
-  } ]
-}, {
-  "@id" : "http://purl.imsglobal.org/caliper/OutcomeEvent",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A Caliper OutcomeEvent models grading activities performed by an Agent, typically a Person or a SoftwareApplication."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "OutcomeEvent"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/Event"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Page",

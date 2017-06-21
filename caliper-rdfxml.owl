@@ -1450,6 +1450,16 @@ The Caliper Analytics® specification attempts to address the underlying interop
     
 
 
+    <!-- http://purl.imsglobal.org/caliper/GradeEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/GradeEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:comment xml:lang="en">A Caliper GradeEvent models grading activities performed by an Agent, typically a Person or a SoftwareApplication.</rdfs:comment>
+        <rdfs:label xml:lang="en">GradeEvent</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.imsglobal.org/caliper/Group -->
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Group">
@@ -1596,16 +1606,6 @@ The Caliper Analytics® specification attempts to address the underlying interop
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
         <rdfs:comment xml:lang="en">A Caliper Organization represents a formal collection of people organized for some common educational, social or administrative purpose. An Organization can act as an Agent. It can be linked both to a parent Organization and to its members.</rdfs:comment>
         <rdfs:label xml:lang="en">Organization</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.imsglobal.org/caliper/OutcomeEvent -->
-
-    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/OutcomeEvent">
-        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
-        <rdfs:comment xml:lang="en">A Caliper OutcomeEvent models grading activities performed by an Agent, typically a Person or a SoftwareApplication.</rdfs:comment>
-        <rdfs:label xml:lang="en">OutcomeEvent</rdfs:label>
     </owl:Class>
     
 
