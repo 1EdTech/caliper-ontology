@@ -1022,6 +1022,13 @@ xsd:duration rdf:type rdfs:Datatype .
        rdfs:label "Frame"@en .
 
 
+###  http://purl.imsglobal.org/caliper/GradeEvent
+:GradeEvent rdf:type owl:Class ;
+            rdfs:subClassOf :Event ;
+            rdfs:comment "A Caliper GradeEvent models grading activities performed by an Agent, typically a Person or a SoftwareApplication."@en ;
+            rdfs:label "GradeEvent"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/Group
 :Group rdf:type owl:Class ;
        rdfs:subClassOf :Organization ;
@@ -1125,13 +1132,6 @@ xsd:duration rdf:type rdfs:Datatype .
               rdfs:subClassOf :Agent ;
               rdfs:comment "A Caliper Organization represents a formal collection of people organized for some common educational, social or administrative purpose. An Organization can act as an Agent. It can be linked both to a parent Organization and to its members."@en ;
               rdfs:label "Organization"@en .
-
-
-###  http://purl.imsglobal.org/caliper/OutcomeEvent
-:OutcomeEvent rdf:type owl:Class ;
-              rdfs:subClassOf :Event ;
-              rdfs:comment "A Caliper OutcomeEvent models grading activities performed by an Agent, typically a Person or a SoftwareApplication."@en ;
-              rdfs:label "OutcomeEvent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Page
