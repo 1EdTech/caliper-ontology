@@ -1134,6 +1134,14 @@ xsd:duration rdf:type rdfs:Datatype .
               rdfs:label "Organization"@en .
 
 
+###  http://purl.imsglobal.org/caliper/OutcomeEvent
+:OutcomeEvent rdf:type owl:Class ;
+              rdfs:subClassOf :Event ;
+              rdfs:comment "A Caliper OutcomeEvent models grading activities performed by an Agent, typically a Person or a SoftwareApplication.  OutcomeEvent is DEPRECATED and will be removed in a future version of the specification. Use GradeEvent instead."@en ;
+              rdfs:label "OutcomeEvent"@en ;
+              owl:deprecated "true"^^xsd:boolean .
+
+
 ###  http://purl.imsglobal.org/caliper/Page
 :Page rdf:type owl:Class ;
       rdfs:subClassOf :DigitalResource ;

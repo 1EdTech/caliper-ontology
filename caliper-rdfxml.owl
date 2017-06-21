@@ -1610,6 +1610,17 @@ The Caliper Analytics® specification attempts to address the underlying interop
     
 
 
+    <!-- http://purl.imsglobal.org/caliper/OutcomeEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/OutcomeEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:comment xml:lang="en">A Caliper OutcomeEvent models grading activities performed by an Agent, typically a Person or a SoftwareApplication.  OutcomeEvent is DEPRECATED and will be removed in a future version of the specification. Use GradeEvent instead.</rdfs:comment>
+        <rdfs:label xml:lang="en">OutcomeEvent</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
     <!-- http://purl.imsglobal.org/caliper/Page -->
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Page">
