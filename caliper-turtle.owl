@@ -203,13 +203,6 @@ xsd:duration rdf:type rdfs:Datatype .
           rdfs:label "keywords"@en .
 
 
-###  http://purl.imsglobal.org/caliper/launchParameters
-:launchParameters rdf:type owl:ObjectProperty ;
-                  rdfs:domain :LtiSession ;
-                  rdfs:comment "LTI launch parameters."@en ;
-                  rdfs:label "launchParameters"@en .
-
-
 ###  http://purl.imsglobal.org/caliper/learningObjectives
 :learningObjectives rdf:type owl:ObjectProperty ;
                     rdfs:domain :DigitalResource ;
@@ -242,6 +235,13 @@ xsd:duration rdf:type rdfs:Datatype .
             rdfs:range :Membership ;
             rdfs:comment "The relationship between the actor and the group in terms of roles assigned and current status."@en ;
             rdfs:label "membership"@en .
+
+
+###  http://purl.imsglobal.org/caliper/messageParameters
+:messageParameters rdf:type owl:ObjectProperty ;
+                   rdfs:domain :LtiSession ;
+                   rdfs:comment "A map of LTI-specified message parameters that provide Tool Consumer-related contextual information MAY be specified.  LTI message parameters of whatever type (i.e., required, recommended, optional, custom and extension) MAY be referenced."@en ;
+                   rdfs:label "messageParameters"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/navigatedFrom
