@@ -1158,6 +1158,7 @@ The Caliper Analytics® specification attempts to address the underlying interop
     <!-- http://purl.imsglobal.org/caliper/volumeLevel -->
 
     <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/volumeLevel">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/AudioObject"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">The current volume level.</rdfs:comment>
         <rdfs:label xml:lang="en">volumeLevel</rdfs:label>
@@ -1168,6 +1169,7 @@ The Caliper Analytics® specification attempts to address the underlying interop
     <!-- http://purl.imsglobal.org/caliper/volumeMax -->
 
     <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/volumeMax">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/AudioObject"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">A string value indicating the maximum volume level permitted.</rdfs:comment>
         <rdfs:label xml:lang="en">volumeMax</rdfs:label>
@@ -1178,6 +1180,7 @@ The Caliper Analytics® specification attempts to address the underlying interop
     <!-- http://purl.imsglobal.org/caliper/volumeMin -->
 
     <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/volumeMin">
+        <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/AudioObject"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">A string value indicating the minimum volume level permitted.</rdfs:comment>
         <rdfs:label xml:lang="en">volumeMin</rdfs:label>

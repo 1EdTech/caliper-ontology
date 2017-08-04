@@ -823,6 +823,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/volumeLevel
 :volumeLevel rdf:type owl:DatatypeProperty ;
+             rdfs:domain :AudioObject ;
              rdfs:range xsd:string ;
              rdfs:comment "The current volume level."@en ;
              rdfs:label "volumeLevel"@en .
@@ -830,6 +831,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/volumeMax
 :volumeMax rdf:type owl:DatatypeProperty ;
+           rdfs:domain :AudioObject ;
            rdfs:range xsd:string ;
            rdfs:comment "A string value indicating the maximum volume level permitted."@en ;
            rdfs:label "volumeMax"@en .
@@ -837,6 +839,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/volumeMin
 :volumeMin rdf:type owl:DatatypeProperty ;
+           rdfs:domain :AudioObject ;
            rdfs:range xsd:string ;
            rdfs:comment "A string value indicating the minimum volume level permitted."@en ;
            rdfs:label "volumeMin"@en .
