@@ -414,6 +414,9 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Entity"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/Event"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Envelope",
@@ -506,6 +509,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Event"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/OutcomeEvent"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Group",
@@ -1050,7 +1056,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/academicSession",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A human-readable identifier of the designated period in which a CourseOffering occurs."
@@ -1071,9 +1077,6 @@
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The action or predicate that binds the Event actor or subject to the Event object."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/Event"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1224,7 +1227,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/body",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A plain-text rendering of the body content of a Message."
@@ -1241,7 +1244,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/bookmarkNotes",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A plain text rendering of the note associated with a BookmarkAnnotation."
@@ -1258,7 +1261,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/category",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A plain-text descriptor that characterizes the purpose of the CourseSection such as \"lecture\", \"lab\" or \"seminar\"."
@@ -1275,7 +1278,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/comment",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Plain text feedback provided by the scorer of a Result."
@@ -1292,7 +1295,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/count",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The total number of attempts inclusive of the current Attempt that have been registered by the learner against the assigned resource."
@@ -1433,7 +1436,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/dateCreated",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A date and time value expressed with millisecond precision that describes when an Entity was created."
@@ -1620,7 +1623,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/endedAtTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A date and time value expressed with millisecond precision that describes when the activity was completed or terminated."
@@ -1708,7 +1711,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/eventTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A date and time value expressed with millisecond precision that indicates when an Event occurred."
@@ -1725,7 +1728,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/extensions",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An ordered collection of objects not defined by the Caliper Information Model."
@@ -1774,6 +1777,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/LtiSession"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyDisjointWith" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/session"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/generated",
@@ -1845,7 +1851,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/isPartOf",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A related Entity that includes or incorporates the resource as a part of its whole."
@@ -1879,7 +1885,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/items",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An ordered collection of resources that comprise the collection."
@@ -2111,7 +2117,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/navigatedFrom",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The DigitalResource or SoftwareApplication that constitutes the referring context of a Navigation Event.  Deprecated."
@@ -2237,7 +2243,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/replyTo",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A prior Message that represents the post to which a Message is directed in reply."
@@ -2353,7 +2359,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/sendTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Envelope send time."
@@ -2370,7 +2376,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/sensor",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Sensor identifier."
@@ -2421,7 +2427,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/startedAtTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A date and time value expressed with millisecond precision that describes when the activity commenced."
@@ -2455,7 +2461,7 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/subOrganizationOf",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The parent Organization of an Organization."

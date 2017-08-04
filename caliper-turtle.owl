@@ -137,7 +137,8 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/extensions
-:extensions rdf:type owl:ObjectProperty ;
+:extensions rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain [ rdf:type owl:Class ;
                           owl:unionOf ( :Entity
                                         :Event
@@ -152,6 +153,7 @@ xsd:duration rdf:type rdfs:Datatype .
                            owl:FunctionalProperty ;
                   rdfs:domain :Event ;
                   rdfs:range :LtiSession ;
+                  owl:propertyDisjointWith :session ;
                   rdfs:comment "If an Event occurs within the context of an LTI tool launch, the federatedSession constitutes the tool consumer's LtiSession."@en ;
                   rdfs:label "federatedSession"@en .
 
@@ -176,7 +178,8 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/isPartOf
 :isPartOf rdf:type owl:ObjectProperty ,
-                   owl:FunctionalProperty ;
+                   owl:FunctionalProperty ,
+                   owl:IrreflexiveProperty ;
           rdfs:domain [ rdf:type owl:Class ;
                         owl:unionOf ( :Attempt
                                       :DigitalResource
@@ -188,8 +191,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/items
-:items rdf:type owl:ObjectProperty ,
-                owl:FunctionalProperty ;
+:items rdf:type owl:ObjectProperty ;
        rdfs:domain :DigitalResourceCollection ;
        rdfs:range :DigitalResource ;
        rdfs:comment "An ordered collection of resources that comprise the collection."@en ;
@@ -245,7 +247,8 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/navigatedFrom
-:navigatedFrom rdf:type owl:ObjectProperty ;
+:navigatedFrom rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
                rdfs:comment "The DigitalResource or SoftwareApplication that constitutes the referring context of a Navigation Event.  Deprecated."@en ;
                rdfs:label "navigatedFrom"@en ;
                owl:deprecated "true"^^xsd:boolean .
@@ -280,7 +283,8 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/replyTo
 :replyTo rdf:type owl:ObjectProperty ,
-                  owl:FunctionalProperty ;
+                  owl:FunctionalProperty ,
+                  owl:IrreflexiveProperty ;
          rdfs:domain :Message ;
          rdfs:range :Message ;
          rdfs:comment "A prior Message that represents the post to which a Message is directed in reply."@en ;
@@ -327,7 +331,8 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/subOrganizationOf
 :subOrganizationOf rdf:type owl:ObjectProperty ,
-                            owl:FunctionalProperty ;
+                            owl:FunctionalProperty ,
+                            owl:IrreflexiveProperty ;
                    rdfs:domain :Organization ;
                    rdfs:range :Organization ;
                    rdfs:comment "The parent Organization of an Organization."@en ;
@@ -384,8 +389,7 @@ xsd:duration rdf:type rdfs:Datatype .
 #################################################################
 
 ###  http://purl.imsglobal.org/caliper/academicSession
-:academicSession rdf:type owl:DatatypeProperty ,
-                          owl:FunctionalProperty ;
+:academicSession rdf:type owl:DatatypeProperty ;
                  rdfs:domain :CourseOffering ;
                  rdfs:range xsd:string ;
                  rdfs:comment "A human-readable identifier of the designated period in which a CourseOffering occurs."@en ;
@@ -395,15 +399,13 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/action
 :action rdf:type owl:DatatypeProperty ,
                  owl:FunctionalProperty ;
-        rdfs:domain :Event ;
         rdfs:range xsd:string ;
         rdfs:comment "The action or predicate that binds the Event actor or subject to the Event object."@en ;
         rdfs:label "action"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/body
-:body rdf:type owl:DatatypeProperty ,
-               owl:FunctionalProperty ;
+:body rdf:type owl:DatatypeProperty ;
       rdfs:domain :Message ;
       rdfs:range xsd:string ;
       rdfs:comment "A plain-text rendering of the body content of a Message."@en ;
@@ -411,8 +413,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/bookmarkNotes
-:bookmarkNotes rdf:type owl:DatatypeProperty ,
-                        owl:FunctionalProperty ;
+:bookmarkNotes rdf:type owl:DatatypeProperty ;
                rdfs:domain :BookmarkAnnotation ;
                rdfs:range xsd:string ;
                rdfs:comment "A plain text rendering of the note associated with a BookmarkAnnotation."@en ;
@@ -420,8 +421,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/category
-:category rdf:type owl:DatatypeProperty ,
-                   owl:FunctionalProperty ;
+:category rdf:type owl:DatatypeProperty ;
           rdfs:domain :CourseSection ;
           rdfs:range xsd:string ;
           rdfs:comment "A plain-text descriptor that characterizes the purpose of the CourseSection such as \"lecture\", \"lab\" or \"seminar\"."@en ;
@@ -429,8 +429,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/comment
-:comment rdf:type owl:DatatypeProperty ,
-                  owl:FunctionalProperty ;
+:comment rdf:type owl:DatatypeProperty ;
          rdfs:domain :Result ;
          rdfs:range xsd:string ;
          rdfs:comment "Plain text feedback provided by the scorer of a Result."@en ;
@@ -438,8 +437,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/count
-:count rdf:type owl:DatatypeProperty ,
-                owl:FunctionalProperty ;
+:count rdf:type owl:DatatypeProperty ;
        rdfs:domain :Attempt ;
        rdfs:range xsd:nonNegativeInteger ;
        rdfs:comment "The total number of attempts inclusive of the current Attempt that have been registered by the learner against the assigned resource."@en ;
@@ -489,7 +487,8 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/dateCreated
-:dateCreated rdf:type owl:DatatypeProperty ;
+:dateCreated rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
              rdfs:domain :Entity ;
              rdfs:range xsd:dateTime ;
              rdfs:comment "A date and time value expressed with millisecond precision that describes when an Entity was created."@en ;
@@ -575,7 +574,8 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/endedAtTime
-:endedAtTime rdf:type owl:DatatypeProperty ;
+:endedAtTime rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
              rdfs:domain [ rdf:type owl:Class ;
                            owl:unionOf ( :Attempt
                                          :Response
@@ -588,7 +588,8 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/eventTime
-:eventTime rdf:type owl:DatatypeProperty ;
+:eventTime rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
            rdfs:domain :Event ;
            rdfs:range xsd:dateTime ;
            rdfs:comment "A date and time value expressed with millisecond precision that indicates when an Event occurred."@en ;
@@ -744,7 +745,8 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/sendTime
-:sendTime rdf:type owl:DatatypeProperty ;
+:sendTime rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
           rdfs:domain :Envelope ;
           rdfs:range xsd:dateTime ;
           rdfs:comment "Envelope send time."@en ;
@@ -752,7 +754,8 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/sensor
-:sensor rdf:type owl:DatatypeProperty ;
+:sensor rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
         rdfs:domain :Envelope ;
         rdfs:range xsd:string ;
         rdfs:comment "Sensor identifier."@en ;
@@ -768,7 +771,8 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/startedAtTime
-:startedAtTime rdf:type owl:DatatypeProperty ;
+:startedAtTime rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
                rdfs:domain [ rdf:type owl:Class ;
                              owl:unionOf ( :Attempt
                                            :Response
@@ -981,6 +985,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/Entity
 :Entity rdf:type owl:Class ;
+        owl:disjointWith :Event ;
         rdfs:comment "A Caliper Entity is a generic type that represents objects or things that participate in learning-related activities. Entity is subtyped for enhanced type specificity in order to better describe people, groups, digital content, courses, assignments, assessments, forums, messages, software applications and other entities that constitute the \"stuff\" of a Caliper Event.  Utilize Entity only if no suitable subtype exists to represent the thing being described."@en ;
         rdfs:label "Entity"@en .
 
@@ -1027,6 +1032,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/GradeEvent
 :GradeEvent rdf:type owl:Class ;
+            owl:equivalentClass :OutcomeEvent ;
             rdfs:subClassOf :Event ;
             rdfs:comment "A Caliper GradeEvent models grading activities performed by an Agent, typically a Person or a SoftwareApplication."@en ;
             rdfs:label "GradeEvent"@en .
