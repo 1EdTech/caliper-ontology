@@ -644,7 +644,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/maxResultScore
 :maxResultScore rdf:type owl:DatatypeProperty ;
                 rdfs:domain :Result ;
-                rdfs:range rdfs:Literal ;
+                rdfs:range xsd:decimal ;
                 rdfs:comment "The maximum score permitted for a Result."@en ;
                 rdfs:label "maxResultScore"@en .
 
@@ -722,7 +722,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/resultScore
 :resultScore rdf:type owl:DatatypeProperty ;
              rdfs:domain :Result ;
-             rdfs:range rdfs:Literal ;
+             rdfs:range xsd:decimal ;
              rdfs:comment "The result score awarded to the learner.  A result score can be updated."@en ;
              rdfs:label "resultScore"@en .
 

@@ -907,7 +907,7 @@ The Caliper Analytics® specification attempts to address the underlying interop
 
     <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/maxResultScore">
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Result"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">The maximum score permitted for a Result.</rdfs:comment>
         <rdfs:label xml:lang="en">maxResultScore</rdfs:label>
     </owl:DatatypeProperty>
@@ -1015,7 +1015,7 @@ The Caliper Analytics® specification attempts to address the underlying interop
 
     <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/resultScore">
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Result"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">The result score awarded to the learner.  A result score can be updated.</rdfs:comment>
         <rdfs:label xml:lang="en">resultScore</rdfs:label>
     </owl:DatatypeProperty>
