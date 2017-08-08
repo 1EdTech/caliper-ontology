@@ -249,6 +249,8 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/navigatedFrom
 :navigatedFrom rdf:type owl:ObjectProperty ,
                         owl:FunctionalProperty ;
+               rdfs:domain :NavigationEvent ;
+               rdfs:range :Entity ;
                rdfs:comment "The DigitalResource or SoftwareApplication that constitutes the referring context of a Navigation Event.  Deprecated."@en ;
                rdfs:label "navigatedFrom"@en ;
                owl:deprecated "true"^^xsd:boolean .
