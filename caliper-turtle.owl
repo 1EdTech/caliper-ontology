@@ -448,7 +448,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/courseNumber
 :courseNumber rdf:type owl:DatatypeProperty ;
-              rdfs:domain :CourseSection ;
+              rdfs:domain :CourseOffering ;
               rdfs:range xsd:string ;
               rdfs:comment "A human-readable identifier of the CourseOffering or CourseSection."@en ;
               rdfs:label "courseNumber"@en .
@@ -959,7 +959,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/CourseSection
 :CourseSection rdf:type owl:Class ;
-               rdfs:subClassOf :Organization ;
+               rdfs:subClassOf :CourseOffering ;
                rdfs:comment "A Caliper CourseSection represents a specific instance of a CourseOffering occurring during a specific semester, term or period."@en ;
                rdfs:label "CourseSection"@en .
 
