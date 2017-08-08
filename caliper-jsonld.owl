@@ -360,7 +360,7 @@
     "@value" : "CourseSection"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/Organization"
+    "@id" : "http://purl.imsglobal.org/caliper/CourseOffering"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/DigitalResource",
@@ -1318,7 +1318,7 @@
     "@value" : "A human-readable identifier of the CourseOffering or CourseSection."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/CourseSection"
+    "@id" : "http://purl.imsglobal.org/caliper/CourseOffering"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2122,9 +2122,15 @@
     "@language" : "en",
     "@value" : "The DigitalResource or SoftwareApplication that constitutes the referring context of a Navigation Event.  Deprecated."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/NavigationEvent"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "navigatedFrom"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/Entity"
   } ],
   "http://www.w3.org/2002/07/owl#deprecated" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
