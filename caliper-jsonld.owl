@@ -1155,7 +1155,7 @@
     "@value" : "annotator"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/Agent"
+    "@id" : "http://purl.imsglobal.org/caliper/Person"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/assignable",
@@ -1189,7 +1189,7 @@
     "@value" : "assignee"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/Agent"
+    "@id" : "http://purl.imsglobal.org/caliper/Person"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/attachments",
@@ -2549,7 +2549,7 @@
     "@value" : "user"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/Agent"
+    "@id" : "http://purl.imsglobal.org/caliper/Person"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/value",
