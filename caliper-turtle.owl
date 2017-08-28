@@ -68,7 +68,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :annotator rdf:type owl:ObjectProperty ,
                     owl:FunctionalProperty ;
            rdfs:domain :Annotation ;
-           rdfs:range :Agent ;
+           rdfs:range :Person ;
            rdfs:comment "The Person who created the Annotation."@en ;
            rdfs:label "annotator"@en .
 
@@ -86,7 +86,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :assignee rdf:type owl:ObjectProperty ,
                    owl:FunctionalProperty ;
           rdfs:domain :Attempt ;
-          rdfs:range :Agent ;
+          rdfs:range :Person ;
           rdfs:comment "The Person who initiated the Attempt of an assigned DigitalResource."@en ;
           rdfs:label "assignee"@en .
 
@@ -361,7 +361,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :user rdf:type owl:ObjectProperty ,
                owl:FunctionalProperty ;
       rdfs:domain :Session ;
-      rdfs:range :Agent ;
+      rdfs:range :Person ;
       rdfs:comment "The Person who initiated a Session."@en ;
       rdfs:label "user"@en .
 

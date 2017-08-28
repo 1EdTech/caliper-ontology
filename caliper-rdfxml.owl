@@ -108,7 +108,7 @@ The Caliper Analytics® specification attempts to address the underlying interop
     <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/annotator">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Annotation"/>
-        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Person"/>
         <rdfs:comment xml:lang="en">The Person who created the Annotation.</rdfs:comment>
         <rdfs:label xml:lang="en">annotator</rdfs:label>
     </owl:ObjectProperty>
@@ -132,7 +132,7 @@ The Caliper Analytics® specification attempts to address the underlying interop
     <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/assignee">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Attempt"/>
-        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Person"/>
         <rdfs:comment xml:lang="en">The Person who initiated the Attempt of an assigned DigitalResource.</rdfs:comment>
         <rdfs:label xml:lang="en">assignee</rdfs:label>
     </owl:ObjectProperty>
@@ -509,7 +509,7 @@ The Caliper Analytics® specification attempts to address the underlying interop
     <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/user">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Session"/>
-        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+        <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Person"/>
         <rdfs:comment xml:lang="en">The Person who initiated a Session.</rdfs:comment>
         <rdfs:label xml:lang="en">user</rdfs:label>
     </owl:ObjectProperty>
