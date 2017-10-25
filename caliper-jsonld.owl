@@ -23,21 +23,21 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "http://purl.imsglobal.org/caliper/FillinBlankResponse"
+      "@id" : "http://purl.imsglobal.org/caliper/Attempt"
     }, {
-      "@id" : "http://purl.imsglobal.org/caliper/MultipleResponseResponse"
+      "@id" : "http://purl.imsglobal.org/caliper/MediaObject"
     }, {
-      "@id" : "http://purl.imsglobal.org/caliper/SelectTextResponse"
+      "@id" : "http://purl.imsglobal.org/caliper/Response"
+    }, {
+      "@id" : "http://purl.imsglobal.org/caliper/Session"
     } ]
   } ]
 }, {
-  "@id" : "_:genid17",
+  "@id" : "_:genid18",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
       "@id" : "http://purl.imsglobal.org/caliper/Attempt"
-    }, {
-      "@id" : "http://purl.imsglobal.org/caliper/MediaObject"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/Response"
     }, {
@@ -49,25 +49,13 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "http://purl.imsglobal.org/caliper/Attempt"
-    }, {
-      "@id" : "http://purl.imsglobal.org/caliper/Response"
-    }, {
-      "@id" : "http://purl.imsglobal.org/caliper/Session"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid26",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
       "@id" : "http://purl.imsglobal.org/caliper/Entity"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/Event"
     } ]
   } ]
 }, {
-  "@id" : "_:genid29",
+  "@id" : "_:genid25",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -77,7 +65,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid32",
+  "@id" : "_:genid28",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -89,7 +77,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid36",
+  "@id" : "_:genid32",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -99,13 +87,23 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid39",
+  "@id" : "_:genid35",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
       "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/SoftwareApplication"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid38",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://purl.imsglobal.org/caliper/AssignableDigitalResource"
+    }, {
+      "@id" : "http://purl.imsglobal.org/caliper/DigitalResourceCollection"
     } ]
   } ]
 }, {
@@ -116,16 +114,6 @@
       "@id" : "http://purl.imsglobal.org/caliper/Entity"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/Event"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid42",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://purl.imsglobal.org/caliper/AssignableDigitalResource"
-    }, {
-      "@id" : "http://purl.imsglobal.org/caliper/DigitalResourceCollection"
     } ]
   } ]
 }, {
@@ -206,7 +194,7 @@
     "@value" : "Assessment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid42"
+    "@id" : "_:genid38"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/AssessmentEvent",
@@ -1057,6 +1045,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/academicSession",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "256"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A human-readable identifier of the designated period in which a CourseOffering occurs."
@@ -1074,9 +1066,19 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/action",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:enum" : [ {
+    "@value" : "Abandoned,\nActivated,\nAdded,\nAttached,\nBookmarked,\nChangedResolution,\nChangedSize,\nChangedSpeed,\nChangedVolume,\nClassified,\nClosedPopout,\nCommented,\nCompleted,\nCreated,\nDeactivated,\nDeleted,\nDescribed,\nDisabledClosedCaptioning,\nDisliked,\nEnabledClosedCaptioning,\nEnded,\nEnteredFullScreen,\nExitedFullScreen,\nForwardedTo,\nGraded,\nHid,\nHighlighted,\nIdentified,\nJumpedTo,\nLiked,\nLinked,\nLoggedIn,\nLoggedOut,\nMarkedAsRead,\nMarkedAsUnread,\nModified,\nMuted,\nNavigatedTo,\nOpenedPopout,\nPaused,\nPosted,\nQuestioned,\nRanked,\nRecommended,\nRemoved,\nReset,\nRestarted,\nResumed,\nRetrieved,\nReviewed,\nRewound,\nSearched,\nShared,\nShowed,\nSkipped,\nStarted,\nSubmitted,\nSubscribed,\nTagged,\nTimedOut,\nUnmuted,\nUnsubscribed,\nUsed,\nViewed"
+  } ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "256"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The action or predicate that binds the Event actor or subject to the Event object."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/Event"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1088,6 +1090,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/actor",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The Agent who initiated the Event, typically a Person, Organization or SoftwareApplication."
@@ -1105,6 +1110,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/alignedLearningObjective",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:array" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An ordered collection of one or more LearningObjective entities that describe what a learner is expected to comprehend or accomplish after engaging with the resource.  Deprecated.  Use learningObjectives."
@@ -1126,6 +1134,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/annotated",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The DigitalResource that was annotated by the annotator."
@@ -1143,6 +1154,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/annotator",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The Person who created the Annotation."
@@ -1160,6 +1174,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/assignable",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The DigitalResource that constitutes the object of the assignment."
@@ -1177,6 +1194,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/assignee",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The Person who initiated the Attempt of an assigned DigitalResource."
@@ -1194,6 +1214,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/attachments",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:array" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An ordered collection of one or more DigitalResource entities attached to a Message."
@@ -1211,6 +1234,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/attempt",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The associated Attempt."
@@ -1228,6 +1254,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/body",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "4096"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A plain-text rendering of the body content of a Message."
@@ -1245,6 +1275,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/bookmarkNotes",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "1024"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A plain text rendering of the note associated with a BookmarkAnnotation."
@@ -1262,6 +1296,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/category",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "128"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A plain-text descriptor that characterizes the purpose of the CourseSection such as \"lecture\", \"lab\" or \"seminar\"."
@@ -1279,6 +1317,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/comment",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "1024"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Plain text feedback provided by the scorer of a Result."
@@ -1313,6 +1355,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/courseNumber",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "128"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A human-readable identifier of the CourseOffering or CourseSection."
@@ -1330,6 +1376,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/creators",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:array" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An ordered collection of Agent entities, typically of type Person, that are responsible for bringing resource into being"
@@ -1347,6 +1396,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/currentTime",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "64"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A time interval or duration that represents the current playback position measured from the beginning of a MediaObject."
@@ -1406,6 +1459,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/data",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:array" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Envelope data array."
@@ -1420,6 +1476,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/dataVersion",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:pattern" : [ {
+    "@value" : "^http://purl.imsglobal.org/ctx/caliper/v1p1$"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Envelope data payload Caliper version."
@@ -1437,6 +1496,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/dateCreated",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "64"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A date and time value expressed with millisecond precision that describes when an Entity was created."
@@ -1454,6 +1517,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/dateModified",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "64"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A date and time value expressed with millisecond precision that describes when an Entity was last changed or modified."
@@ -1471,6 +1538,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/datePublished",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "64"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A date and time value expressed with millisecond precision that provides the publication date of a resource."
@@ -1488,6 +1559,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/dateToActivate",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "64"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A date and time value expressed with millisecond precision that describes when a resource was activated."
@@ -1505,6 +1580,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/dateToShow",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "64"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A date and time value expressed with millisecond precision that describes when a resource should be shown or made available."
@@ -1522,6 +1601,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/dateToStartOn",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "64"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A date and time value expressed with millisecond precision that describes when the resource can be started."
@@ -1539,6 +1622,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/dateToSubmit",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "64"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A date and time value expressed with millisecond precision that describes when the resource is to be submitted for evaluation."
@@ -1556,6 +1643,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/description",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "1024"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A brief, plain-text representation of the resource."
@@ -1573,12 +1664,16 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/duration",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "64"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A time interval that represents the total time required to complete an activity."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid17"
+    "@id" : "_:genid13"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1590,6 +1685,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/edApp",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A SoftwareApplication that represents the application context within which an Event occurs."
@@ -1624,12 +1722,16 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/endedAtTime",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "64"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A date and time value expressed with millisecond precision that describes when the activity was completed or terminated."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid22"
+    "@id" : "_:genid18"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1712,6 +1814,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/eventTime",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "64"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A date and time value expressed with millisecond precision that indicates when an Event occurred."
@@ -1764,6 +1870,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/federatedSession",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "If an Event occurs within the context of an LTI tool launch, the federatedSession constitutes the tool consumer's LtiSession."
@@ -1784,6 +1893,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/generated",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An Entity created or generated as a result of an interaction between an actor and an object."
@@ -1801,6 +1913,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/group",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An Organization that represents the group or organizational context within which an Event occurs."
@@ -1818,12 +1933,16 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/id",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "2048"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The Event or Entity identifier.  For an Event, the id MUST be a UUID expressed as a URN using the form urn:uuid:<UUID> per RFC 4122.  For Entities a valid IRI MUST be specified. The IRI MUST be unique and persistent. The IRI SHOULD also be dereferenceable, i.e., capable of returning a representation of the resource.  An Entity MAY be provisioned with a URI employing the URN scheme in cases where a Linked Data friendly HTTP URI is either unavailable or inappropriate."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid26"
+    "@id" : "_:genid22"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1832,6 +1951,27 @@
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/ims:array",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/ims:coerced",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/ims:enum",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/ims:iri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/ims:max",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/ims:pattern",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/ims:patternName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/index",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
@@ -1852,6 +1992,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/isPartOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A related Entity that includes or incorporates the resource as a part of its whole."
@@ -1886,6 +2029,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/items",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:array" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An ordered collection of resources that comprise the collection."
@@ -1902,7 +2048,11 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/keywords",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:array" : [ {
+    "@language" : "en",
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An ordered collection of one or more string values that represent tags or labels used to identify the resource."
@@ -1913,10 +2063,16 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "keywords"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/learningObjectives",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:array" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An ordered collection of one or more LearningObjective entities that describe what a learner is expected to comprehend or accomplish after engaging with the resource."
@@ -1973,7 +2129,7 @@
     "@value" : "A non-negative integer indicating the maximum score permitted."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid29"
+    "@id" : "_:genid25"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2002,6 +2158,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/mediaType",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "128"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A string value drawn from the list of IANA approved media types and subtypes that identifies the file format of a resource."
@@ -2019,6 +2179,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/member",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The Person associated with a Membership."
@@ -2036,6 +2199,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/members",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:array" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An ordered collection of entities of type Agent that belong to a particular group."
@@ -2053,6 +2219,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/membership",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The relationship between the actor and the group in terms of roles assigned and current status."
@@ -2101,6 +2270,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/name",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "256"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A string value comprising a word or phrase by which the resource is known."
@@ -2118,6 +2291,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/navigatedFrom",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The DigitalResource or SoftwareApplication that constitutes the referring context of a Navigation Event.  Deprecated."
@@ -2160,6 +2336,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/object",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An Entity that an Event actor interacts with as described by the Event action."
@@ -2195,6 +2374,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/organization",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The Organization associated with a Membership."
@@ -2233,6 +2415,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/referrer",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An Entity that represents the referring context within which an Event occurs.  A SoftwareApplication or DigitalResource will typically constitute the referring context."
@@ -2250,6 +2435,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/replyTo",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A prior Message that represents the post to which a Message is directed in reply."
@@ -2283,10 +2471,20 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/roles",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:array" : [ {
+    "@value" : ""
+  } ],
+  "http://purl.imsglobal.org/caliper/ims:enum" : [ {
+    "@value" : "Administrator,\nContentDeveloper,\nInstructor,\nLearner,\nManager,\nMember,\nMentor,\nOfficer,\nAdministrator#Administrator,\nAdministrator#Developer,\nAdministrator#ExternalDeveloper,\nAdministrator#ExternalSupport,\nAdministrator#ExternalSystemAdministrator,\nAdministrator#Support,\nAdministrator#SystemAdministrator,\nContentDeveloper#ContentDeveloper,\nContentDeveloper#ContentExpert,\nContentDeveloper#ExternalContentExpert,\nContentDeveloper#Librarian,\nInstructor#ExternalInstructor,\nInstructor#Grader,\nInstructor#GuestInstructor,\nInstructor#Instructor,\nInstructor#Lecturer,\nInstructor#PrimaryInstructor,\nInstructor#SecondaryInstructor,\nInstructor#TeachingAssistant,\nInstructor#TeachingAssistantGroup,\nInstructor#TeachingAssistantOffering,\nInstructor#TeachingAssistantSection,\nInstructor#TeachingAssistantTemplate,\nLearner#ExternalLearner,\nLearner#GuestLearner,\nLearner#Learner,\nLearner#NonCreditLearner,\nManager#AreaManager,\nManager#CourseCoordinator,\nManager#Observer,\nManager#ExternalObserver,\nMember#Member,\nMentor#Advisor,\nMentor#Auditor,\nMentor#ExternalAdvisor,\nMentor#ExternalAuditor,\nMentor#ExternalLearningFacilitator,\nMentor#ExternalMentor,\nMentor#ExternalReviewer,\nMentor#ExternalTutor,\nMentor#LearningFacilitator,\nMentor#Mentor,\nMentor#Reviewer,\nMentor#Tutor,\nOfficer#Chair,\nOfficer#Secretary,\nOfficer#Treasurer,\nOfficer#Vice-Chair"
+  } ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "256"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "An ordered collection of organizational roles assigned to a member."
+    "@value" : "An ordered collection of organizational roles assigned to the member MAY be specified. Role values are limited to the list of Caliper defined roles terms. Whenever a subrole is specified, the core context role SHOULD also be included; for example, a role of Instructor#TeachingAssistant should always be accompanied by the Instructor role."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Membership"
@@ -2294,6 +2492,9 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "roles"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/scoreGiven",
@@ -2315,6 +2516,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/scoredBy",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The Agent who scored or graded an Attempt."
@@ -2332,6 +2536,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/selection",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A Selector that describes a fragment or segment of a resource."
@@ -2349,6 +2556,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/selectionText",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "2048"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A string value representing a plain-text rendering of the selected segment of the annotated resource."
@@ -2400,6 +2611,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/session",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The current user Session."
@@ -2434,12 +2648,16 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/startedAtTime",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "64"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A date and time value expressed with millisecond precision that describes when the activity commenced."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid32"
+    "@id" : "_:genid28"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2451,6 +2669,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/status",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:enum" : [ {
+    "@value" : "Active,\nInactive"
+  } ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "256"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The current standing of a member."
@@ -2468,6 +2693,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/subOrganizationOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The parent Organization of an Organization."
@@ -2484,7 +2712,11 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/tags",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:array" : [ {
+    "@language" : "en",
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An ordered collection of one or more string values that represent labels or tags associated with the annotated DigitalResource."
@@ -2495,10 +2727,16 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "tags"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/target",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An Entity that represents a particular segment or location within an Event object."
@@ -2535,8 +2773,31 @@
     "@value" : "true"
   } ]
 }, {
+  "@id" : "http://purl.imsglobal.org/caliper/type",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "256"
+  } ],
+  "http://purl.imsglobal.org/caliper/ims:patternName" : [ {
+    "@value" : ""
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/Entity"
+  }, {
+    "@id" : "http://purl.imsglobal.org/caliper/Event"
+  }, {
+    "@id" : "http://purl.imsglobal.org/caliper/TextPositionSelector"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
   "@id" : "http://purl.imsglobal.org/caliper/user",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:iri" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The Person who initiated a Session."
@@ -2554,12 +2815,16 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/value",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "256"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A string value that represents the options selected."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid36"
+    "@id" : "_:genid32"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2570,27 +2835,46 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/values",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:array" : [ {
+    "@language" : "en",
+    "@value" : ""
+  } ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "256"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An ordered collection of one or more selected options."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid13"
+    "@id" : "http://purl.imsglobal.org/caliper/FillinBlankResponse"
+  }, {
+    "@id" : "http://purl.imsglobal.org/caliper/MultipleResponseResponse"
+  }, {
+    "@id" : "http://purl.imsglobal.org/caliper/SelectTextResponse"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "values"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/version",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "64"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A string value that designates the current form or version of the resource."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid39"
+    "@id" : "_:genid35"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2602,6 +2886,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/volumeLevel",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "32"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The current volume level."
@@ -2619,6 +2907,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/volumeMax",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "32"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A string value indicating the maximum volume level permitted."
@@ -2636,6 +2928,10 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/volumeMin",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:max" : [ {
+    "@language" : "en",
+    "@value" : "32"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A string value indicating the minimum volume level permitted."
@@ -2653,6 +2949,9 @@
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/withAgents",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.imsglobal.org/caliper/ims:array" : [ {
+    "@value" : ""
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An ordered collection of one or more Agent entities, typically of type Person, with whom the annotated DigitalResource has been shared."
