@@ -17,6 +17,34 @@ The Caliper Analytics® specification attempts to address the underlying interop
 #    Annotation properties
 #################################################################
 
+###  http://purl.imsglobal.org/caliper/ims:array
+:array rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.imsglobal.org/caliper/ims:coerced
+:coerced rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.imsglobal.org/caliper/ims:enum
+:enum rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.imsglobal.org/caliper/ims:iri
+:iri rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.imsglobal.org/caliper/ims:max
+:max rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.imsglobal.org/caliper/ims:pattern
+:pattern rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.imsglobal.org/caliper/ims:patternName
+:patternName rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2002/07/owl#equivalentClass
 owl:equivalentClass rdf:type owl:AnnotationProperty .
 
@@ -42,6 +70,7 @@ xsd:duration rdf:type rdfs:Datatype .
                 owl:FunctionalProperty ;
        rdfs:domain :Event ;
        rdfs:range :Agent ;
+       :iri ""^^xsd:string ;
        rdfs:comment "The Agent who initiated the Event, typically a Person, Organization or SoftwareApplication."@en ;
        rdfs:label "actor"@en .
 
@@ -50,6 +79,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :alignedLearningObjective rdf:type owl:ObjectProperty ;
                           rdfs:domain :DigitalResource ;
                           rdfs:range :LearningObjective ;
+                          :array ""^^xsd:string ;
                           rdfs:comment "An ordered collection of one or more LearningObjective entities that describe what a learner is expected to comprehend or accomplish after engaging with the resource.  Deprecated.  Use learningObjectives."@en ;
                           rdfs:label "alignedLearningObjective"@en ;
                           owl:deprecated "true"^^xsd:boolean .
@@ -60,6 +90,7 @@ xsd:duration rdf:type rdfs:Datatype .
                     owl:FunctionalProperty ;
            rdfs:domain :Annotation ;
            rdfs:range :DigitalResource ;
+           :iri ""^^xsd:string ;
            rdfs:comment "The DigitalResource that was annotated by the annotator."@en ;
            rdfs:label "annotated"@en .
 
@@ -69,6 +100,7 @@ xsd:duration rdf:type rdfs:Datatype .
                     owl:FunctionalProperty ;
            rdfs:domain :Annotation ;
            rdfs:range :Person ;
+           :iri ""^^xsd:string ;
            rdfs:comment "The Person who created the Annotation."@en ;
            rdfs:label "annotator"@en .
 
@@ -78,6 +110,7 @@ xsd:duration rdf:type rdfs:Datatype .
                      owl:FunctionalProperty ;
             rdfs:domain :Attempt ;
             rdfs:range :DigitalResource ;
+            :iri ""^^xsd:string ;
             rdfs:comment "The DigitalResource that constitutes the object of the assignment."@en ;
             rdfs:label "assignable"@en .
 
@@ -87,6 +120,7 @@ xsd:duration rdf:type rdfs:Datatype .
                    owl:FunctionalProperty ;
           rdfs:domain :Attempt ;
           rdfs:range :Person ;
+          :iri ""^^xsd:string ;
           rdfs:comment "The Person who initiated the Attempt of an assigned DigitalResource."@en ;
           rdfs:label "assignee"@en .
 
@@ -95,6 +129,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :attachments rdf:type owl:ObjectProperty ;
              rdfs:domain :Message ;
              rdfs:range :DigitalResource ;
+             :array ""^^xsd:string ;
              rdfs:comment "An ordered collection of one or more DigitalResource entities attached to a Message."@en ;
              rdfs:label "attachments"@en .
 
@@ -108,6 +143,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                    )
                      ] ;
          rdfs:range :Attempt ;
+         :iri ""^^xsd:string ;
          rdfs:comment "The associated Attempt."@en ;
          rdfs:label "attempt"@en .
 
@@ -116,6 +152,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :creators rdf:type owl:ObjectProperty ;
           rdfs:domain :DigitalResource ;
           rdfs:range :Agent ;
+          :array ""^^xsd:string ;
           rdfs:comment "An ordered collection of Agent entities, typically of type Person, that are responsible for bringing resource into being"@en ;
           rdfs:label "creators"@en .
 
@@ -123,6 +160,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/data
 :data rdf:type owl:ObjectProperty ;
       rdfs:domain :Envelope ;
+      :array ""^^xsd:string ;
       rdfs:comment "Envelope data array."@en ;
       rdfs:label "data"@en .
 
@@ -132,6 +170,7 @@ xsd:duration rdf:type rdfs:Datatype .
                 owl:FunctionalProperty ;
        rdfs:domain :Event ;
        rdfs:range :SoftwareApplication ;
+       :iri ""^^xsd:string ;
        rdfs:comment "A SoftwareApplication that represents the application context within which an Event occurs."@en ;
        rdfs:label "edApp"@en .
 
@@ -154,6 +193,7 @@ xsd:duration rdf:type rdfs:Datatype .
                   rdfs:domain :Event ;
                   rdfs:range :LtiSession ;
                   owl:propertyDisjointWith :session ;
+                  :iri ""^^xsd:string ;
                   rdfs:comment "If an Event occurs within the context of an LTI tool launch, the federatedSession constitutes the tool consumer's LtiSession."@en ;
                   rdfs:label "federatedSession"@en .
 
@@ -163,6 +203,7 @@ xsd:duration rdf:type rdfs:Datatype .
                     owl:FunctionalProperty ;
            rdfs:domain :Event ;
            rdfs:range :Entity ;
+           :iri ""^^xsd:string ;
            rdfs:comment "An Entity created or generated as a result of an interaction between an actor and an object."@en ;
            rdfs:label "generated"@en .
 
@@ -172,6 +213,7 @@ xsd:duration rdf:type rdfs:Datatype .
                 owl:FunctionalProperty ;
        rdfs:domain :Event ;
        rdfs:range :Organization ;
+       :iri ""^^xsd:string ;
        rdfs:comment "An Organization that represents the group or organizational context within which an Event occurs."@en ;
        rdfs:label "group"@en .
 
@@ -186,6 +228,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                     )
                       ] ;
           rdfs:range :Entity ;
+          :iri ""^^xsd:string ;
           rdfs:comment "A related Entity that includes or incorporates the resource as a part of its whole."@en ;
           rdfs:label "isPartOf"@en .
 
@@ -194,21 +237,16 @@ xsd:duration rdf:type rdfs:Datatype .
 :items rdf:type owl:ObjectProperty ;
        rdfs:domain :DigitalResourceCollection ;
        rdfs:range :DigitalResource ;
+       :array ""^^xsd:string ;
        rdfs:comment "An ordered collection of resources that comprise the collection."@en ;
        rdfs:label "items"@en .
-
-
-###  http://purl.imsglobal.org/caliper/keywords
-:keywords rdf:type owl:ObjectProperty ;
-          rdfs:domain :DigitalResource ;
-          rdfs:comment "An ordered collection of one or more string values that represent tags or labels used to identify the resource."@en ;
-          rdfs:label "keywords"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/learningObjectives
 :learningObjectives rdf:type owl:ObjectProperty ;
                     rdfs:domain :DigitalResource ;
                     rdfs:range :LearningObjective ;
+                    :array ""^^xsd:string ;
                     rdfs:comment "An ordered collection of one or more LearningObjective entities that describe what a learner is expected to comprehend or accomplish after engaging with the resource."@en ;
                     rdfs:label "learningObjectives"@en .
 
@@ -218,6 +256,7 @@ xsd:duration rdf:type rdfs:Datatype .
                  owl:FunctionalProperty ;
         rdfs:domain :Membership ;
         rdfs:range :Person ;
+        :iri ""^^xsd:string ;
         rdfs:comment "The Person associated with a Membership."@en ;
         rdfs:label "member"@en .
 
@@ -226,6 +265,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :members rdf:type owl:ObjectProperty ;
          rdfs:domain :Organization ;
          rdfs:range :Agent ;
+         :array ""^^xsd:string ;
          rdfs:comment "An ordered collection of entities of type Agent that belong to a particular group."@en ;
          rdfs:label "members"@en .
 
@@ -235,6 +275,7 @@ xsd:duration rdf:type rdfs:Datatype .
                      owl:FunctionalProperty ;
             rdfs:domain :Event ;
             rdfs:range :Membership ;
+            :iri ""^^xsd:string ;
             rdfs:comment "The relationship between the actor and the group in terms of roles assigned and current status."@en ;
             rdfs:label "membership"@en .
 
@@ -251,6 +292,7 @@ xsd:duration rdf:type rdfs:Datatype .
                         owl:FunctionalProperty ;
                rdfs:domain :NavigationEvent ;
                rdfs:range :Entity ;
+               :iri ""^^xsd:string ;
                rdfs:comment "The DigitalResource or SoftwareApplication that constitutes the referring context of a Navigation Event.  Deprecated."@en ;
                rdfs:label "navigatedFrom"@en ;
                owl:deprecated "true"^^xsd:boolean .
@@ -261,6 +303,7 @@ xsd:duration rdf:type rdfs:Datatype .
                  owl:FunctionalProperty ;
         rdfs:domain :Event ;
         rdfs:range :Entity ;
+        :iri ""^^xsd:string ;
         rdfs:comment "An Entity that an Event actor interacts with as described by the Event action."@en ;
         rdfs:label "object"@en .
 
@@ -270,6 +313,7 @@ xsd:duration rdf:type rdfs:Datatype .
                        owl:FunctionalProperty ;
               rdfs:domain :Membership ;
               rdfs:range :Organization ;
+              :iri ""^^xsd:string ;
               rdfs:comment "The Organization associated with a Membership."@en ;
               rdfs:label "organization"@en .
 
@@ -279,6 +323,7 @@ xsd:duration rdf:type rdfs:Datatype .
                    owl:FunctionalProperty ;
           rdfs:domain :Event ;
           rdfs:range :Entity ;
+          :iri ""^^xsd:string ;
           rdfs:comment "An Entity that represents the referring context within which an Event occurs.  A SoftwareApplication or DigitalResource will typically constitute the referring context."@en ;
           rdfs:label "referrer"@en .
 
@@ -289,15 +334,9 @@ xsd:duration rdf:type rdfs:Datatype .
                   owl:IrreflexiveProperty ;
          rdfs:domain :Message ;
          rdfs:range :Message ;
+         :iri ""^^xsd:string ;
          rdfs:comment "A prior Message that represents the post to which a Message is directed in reply."@en ;
          rdfs:label "replyTo"@en .
-
-
-###  http://purl.imsglobal.org/caliper/roles
-:roles rdf:type owl:ObjectProperty ;
-       rdfs:domain :Membership ;
-       rdfs:comment "An ordered collection of organizational roles assigned to a member."@en ;
-       rdfs:label "roles"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/scoredBy
@@ -309,6 +348,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                     )
                       ] ;
           rdfs:range :Agent ;
+          :iri ""^^xsd:string ;
           rdfs:comment "The Agent who scored or graded an Attempt."@en ;
           rdfs:label "scoredBy"@en .
 
@@ -318,6 +358,7 @@ xsd:duration rdf:type rdfs:Datatype .
                     owl:FunctionalProperty ;
            rdfs:domain :HighlightAnnotation ;
            rdfs:range :TextPositionSelector ;
+           :iri ""^^xsd:string ;
            rdfs:comment "A Selector that describes a fragment or segment of a resource."@en ;
            rdfs:label "selection"@en .
 
@@ -327,6 +368,7 @@ xsd:duration rdf:type rdfs:Datatype .
                   owl:FunctionalProperty ;
          rdfs:domain :Event ;
          rdfs:range :Session ;
+         :iri ""^^xsd:string ;
          rdfs:comment "The current user Session."@en ;
          rdfs:label "session"@en .
 
@@ -337,15 +379,9 @@ xsd:duration rdf:type rdfs:Datatype .
                             owl:IrreflexiveProperty ;
                    rdfs:domain :Organization ;
                    rdfs:range :Organization ;
+                   :iri ""^^xsd:string ;
                    rdfs:comment "The parent Organization of an Organization."@en ;
                    rdfs:label "subOrganizationOf"@en .
-
-
-###  http://purl.imsglobal.org/caliper/tags
-:tags rdf:type owl:ObjectProperty ;
-      rdfs:domain :TagAnnotation ;
-      rdfs:comment "An ordered collection of one or more string values that represent labels or tags associated with the annotated DigitalResource."@en ;
-      rdfs:label "tags"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/target
@@ -353,6 +389,7 @@ xsd:duration rdf:type rdfs:Datatype .
                  owl:FunctionalProperty ;
         rdfs:domain :Event ;
         rdfs:range :Entity ;
+        :iri ""^^xsd:string ;
         rdfs:comment "An Entity that represents a particular segment or location within an Event object."@en ;
         rdfs:label "target"@en .
 
@@ -362,26 +399,16 @@ xsd:duration rdf:type rdfs:Datatype .
                owl:FunctionalProperty ;
       rdfs:domain :Session ;
       rdfs:range :Person ;
+      :iri ""^^xsd:string ;
       rdfs:comment "The Person who initiated a Session."@en ;
       rdfs:label "user"@en .
-
-
-###  http://purl.imsglobal.org/caliper/values
-:values rdf:type owl:ObjectProperty ;
-        rdfs:domain [ rdf:type owl:Class ;
-                      owl:unionOf ( :FillinBlankResponse
-                                    :MultipleResponseResponse
-                                    :SelectTextResponse
-                                  )
-                    ] ;
-        rdfs:comment "An ordered collection of one or more selected options."@en ;
-        rdfs:label "values"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/withAgents
 :withAgents rdf:type owl:ObjectProperty ;
             rdfs:domain :SharedAnnotation ;
             rdfs:range :Agent ;
+            :array ""^^xsd:string ;
             rdfs:comment "An ordered collection of one or more Agent entities, typically of type Person, with whom the annotated DigitalResource has been shared."@en ;
             rdfs:label "withAgents"@en .
 
@@ -394,6 +421,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :academicSession rdf:type owl:DatatypeProperty ;
                  rdfs:domain :CourseOffering ;
                  rdfs:range xsd:string ;
+                 :max "256"@en ;
                  rdfs:comment "A human-readable identifier of the designated period in which a CourseOffering occurs."@en ;
                  rdfs:label "academicSession"@en .
 
@@ -401,7 +429,73 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/action
 :action rdf:type owl:DatatypeProperty ,
                  owl:FunctionalProperty ;
+        rdfs:domain :Event ;
         rdfs:range xsd:string ;
+        :enum """Abandoned,
+Activated,
+Added,
+Attached,
+Bookmarked,
+ChangedResolution,
+ChangedSize,
+ChangedSpeed,
+ChangedVolume,
+Classified,
+ClosedPopout,
+Commented,
+Completed,
+Created,
+Deactivated,
+Deleted,
+Described,
+DisabledClosedCaptioning,
+Disliked,
+EnabledClosedCaptioning,
+Ended,
+EnteredFullScreen,
+ExitedFullScreen,
+ForwardedTo,
+Graded,
+Hid,
+Highlighted,
+Identified,
+JumpedTo,
+Liked,
+Linked,
+LoggedIn,
+LoggedOut,
+MarkedAsRead,
+MarkedAsUnread,
+Modified,
+Muted,
+NavigatedTo,
+OpenedPopout,
+Paused,
+Posted,
+Questioned,
+Ranked,
+Recommended,
+Removed,
+Reset,
+Restarted,
+Resumed,
+Retrieved,
+Reviewed,
+Rewound,
+Searched,
+Shared,
+Showed,
+Skipped,
+Started,
+Submitted,
+Subscribed,
+Tagged,
+TimedOut,
+Unmuted,
+Unsubscribed,
+Used,
+Viewed"""^^xsd:string ;
+        :max "256"@en ;
         rdfs:comment "The action or predicate that binds the Event actor or subject to the Event object."@en ;
         rdfs:label "action"@en .
 
@@ -410,6 +504,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :body rdf:type owl:DatatypeProperty ;
       rdfs:domain :Message ;
       rdfs:range xsd:string ;
+      :max "4096"@en ;
       rdfs:comment "A plain-text rendering of the body content of a Message."@en ;
       rdfs:label "body"@en .
 
@@ -418,6 +513,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :bookmarkNotes rdf:type owl:DatatypeProperty ;
                rdfs:domain :BookmarkAnnotation ;
                rdfs:range xsd:string ;
+               :max "1024"@en ;
                rdfs:comment "A plain text rendering of the note associated with a BookmarkAnnotation."@en ;
                rdfs:label "bookmarkNotes"@en .
 
@@ -426,6 +522,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :category rdf:type owl:DatatypeProperty ;
           rdfs:domain :CourseSection ;
           rdfs:range xsd:string ;
+          :max "128"@en ;
           rdfs:comment "A plain-text descriptor that characterizes the purpose of the CourseSection such as \"lecture\", \"lab\" or \"seminar\"."@en ;
           rdfs:label "category"@en .
 
@@ -434,6 +531,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :comment rdf:type owl:DatatypeProperty ;
          rdfs:domain :Result ;
          rdfs:range xsd:string ;
+         :max "1024"@en ;
          rdfs:comment "Plain text feedback provided by the scorer of a Result."@en ;
          rdfs:label "comment"@en .
 
@@ -450,6 +548,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :courseNumber rdf:type owl:DatatypeProperty ;
               rdfs:domain :CourseOffering ;
               rdfs:range xsd:string ;
+              :max "128"@en ;
               rdfs:comment "A human-readable identifier of the CourseOffering or CourseSection."@en ;
               rdfs:label "courseNumber"@en .
 
@@ -458,6 +557,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :currentTime rdf:type owl:DatatypeProperty ;
              rdfs:domain :MediaLocation ;
              rdfs:range xsd:duration ;
+             :max "64"@en ;
              rdfs:comment "A time interval or duration that represents the current playback position measured from the beginning of a MediaObject."@en ;
              rdfs:label "currentTime"@en .
 
@@ -484,6 +584,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :dataVersion rdf:type owl:DatatypeProperty ;
              rdfs:domain :Envelope ;
              rdfs:range xsd:string ;
+             :pattern "^http://purl.imsglobal.org/ctx/caliper/v1p1$"^^xsd:string ;
              rdfs:comment "Envelope data payload Caliper version."@en ;
              rdfs:label "dataVersion"@en .
 
@@ -493,6 +594,7 @@ xsd:duration rdf:type rdfs:Datatype .
                       owl:FunctionalProperty ;
              rdfs:domain :Entity ;
              rdfs:range xsd:dateTime ;
+             :max "64"@en ;
              rdfs:comment "A date and time value expressed with millisecond precision that describes when an Entity was created."@en ;
              rdfs:label "dateCreated"@en .
 
@@ -501,6 +603,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :dateModified rdf:type owl:DatatypeProperty ;
               rdfs:domain :Entity ;
               rdfs:range xsd:dateTime ;
+              :max "64"@en ;
               rdfs:comment "A date and time value expressed with millisecond precision that describes when an Entity was last changed or modified."@en ;
               rdfs:label "dateModified"@en .
 
@@ -509,6 +612,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :datePublished rdf:type owl:DatatypeProperty ;
                rdfs:domain :DigitalResource ;
                rdfs:range xsd:dateTime ;
+               :max "64"@en ;
                rdfs:comment "A date and time value expressed with millisecond precision that provides the publication date of a resource."@en ;
                rdfs:label "datePublished"@en .
 
@@ -517,6 +621,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :dateToActivate rdf:type owl:DatatypeProperty ;
                 rdfs:domain :AssignableDigitalResource ;
                 rdfs:range xsd:dateTime ;
+                :max "64"@en ;
                 rdfs:comment "A date and time value expressed with millisecond precision that describes when a resource was activated."@en ;
                 rdfs:label "dateToActivate"@en .
 
@@ -525,6 +630,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :dateToShow rdf:type owl:DatatypeProperty ;
             rdfs:domain :AssignableDigitalResource ;
             rdfs:range xsd:dateTime ;
+            :max "64"@en ;
             rdfs:comment "A date and time value expressed with millisecond precision that describes when a resource should be shown or made available."@en ;
             rdfs:label "dateToShow"@en .
 
@@ -533,6 +639,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :dateToStartOn rdf:type owl:DatatypeProperty ;
                rdfs:domain :AssignableDigitalResource ;
                rdfs:range xsd:dateTime ;
+               :max "64"@en ;
                rdfs:comment "A date and time value expressed with millisecond precision that describes when the resource can be started."@en ;
                rdfs:label "dateToStartOn"@en .
 
@@ -541,6 +648,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :dateToSubmit rdf:type owl:DatatypeProperty ;
               rdfs:domain :AssignableDigitalResource ;
               rdfs:range xsd:dateTime ;
+              :max "64"@en ;
               rdfs:comment "A date and time value expressed with millisecond precision that describes when the resource is to be submitted for evaluation."@en ;
               rdfs:label "dateToSubmit"@en .
 
@@ -549,6 +657,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :description rdf:type owl:DatatypeProperty ;
              rdfs:domain :Entity ;
              rdfs:range xsd:string ;
+             :max "1024"@en ;
              rdfs:comment "A brief, plain-text representation of the resource."@en ;
              rdfs:label "description"@en .
 
@@ -563,6 +672,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                     )
                       ] ;
           rdfs:range xsd:duration ;
+          :max "64"@en ;
           rdfs:comment "A time interval that represents the total time required to complete an activity."@en ;
           rdfs:label "duration"@en .
 
@@ -585,6 +695,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                        )
                          ] ;
              rdfs:range xsd:dateTime ;
+             :max "64"@en ;
              rdfs:comment "A date and time value expressed with millisecond precision that describes when the activity was completed or terminated."@en ;
              rdfs:label "endedAtTime"@en .
 
@@ -594,6 +705,7 @@ xsd:duration rdf:type rdfs:Datatype .
                     owl:FunctionalProperty ;
            rdfs:domain :Event ;
            rdfs:range xsd:dateTime ;
+           :max "64"@en ;
            rdfs:comment "A date and time value expressed with millisecond precision that indicates when an Event occurred."@en ;
            rdfs:label "eventTime"@en .
 
@@ -616,6 +728,7 @@ xsd:duration rdf:type rdfs:Datatype .
                               )
                 ] ;
     rdfs:range xsd:string ;
+    :max "2048"@en ;
     rdfs:comment "The Event or Entity identifier.  For an Event, the id MUST be a UUID expressed as a URN using the form urn:uuid:<UUID> per RFC 4122.  For Entities a valid IRI MUST be specified. The IRI MUST be unique and persistent. The IRI SHOULD also be dereferenceable, i.e., capable of returning a representation of the resource.  An Entity MAY be provisioned with a URI employing the URN scheme in cases where a Linked Data friendly HTTP URI is either unavailable or inappropriate."@en ;
     rdfs:label "id"@en .
 
@@ -634,6 +747,15 @@ xsd:duration rdf:type rdfs:Datatype .
                  rdfs:range xsd:boolean ;
                  rdfs:comment "A boolean value indicating whether or not interacting with the item is time dependent."@en ;
                  rdfs:label "isTimeDependent"@en .
+
+
+###  http://purl.imsglobal.org/caliper/keywords
+:keywords rdf:type owl:DatatypeProperty ;
+          rdfs:domain :DigitalResource ;
+          rdfs:range xsd:string ;
+          :array ""@en ;
+          rdfs:comment "An ordered collection of one or more string values that represent tags or labels used to identify the resource."@en ;
+          rdfs:label "keywords"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/maxAttempts
@@ -676,6 +798,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :mediaType rdf:type owl:DatatypeProperty ;
            rdfs:domain :DigitalResource ;
            rdfs:range xsd:string ;
+           :max "128"@en ;
            rdfs:comment "A string value drawn from the list of IANA approved media types and subtypes that identifies the file format of a resource."@en ;
            rdfs:label "mediaType"@en .
 
@@ -692,6 +815,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :name rdf:type owl:DatatypeProperty ;
       rdfs:domain :Entity ;
       rdfs:range xsd:string ;
+      :max "256"@en ;
       rdfs:comment "A string value comprising a word or phrase by which the resource is known."@en ;
       rdfs:label "name"@en .
 
@@ -730,6 +854,72 @@ xsd:duration rdf:type rdfs:Datatype .
              rdfs:label "resultScore"@en .
 
 
+###  http://purl.imsglobal.org/caliper/roles
+:roles rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Membership ;
+       rdfs:range xsd:string ;
+       :array ""^^xsd:string ;
+       :enum """Administrator,
+ContentDeveloper,
+Instructor,
+Learner,
+Manager,
+Member,
+Mentor,
+Officer,
+Administrator#Administrator,
+Administrator#Developer,
+Administrator#ExternalDeveloper,
+Administrator#ExternalSupport,
+Administrator#ExternalSystemAdministrator,
+Administrator#Support,
+Administrator#SystemAdministrator,
+ContentDeveloper#ContentDeveloper,
+ContentDeveloper#ContentExpert,
+ContentDeveloper#ExternalContentExpert,
+ContentDeveloper#Librarian,
+Instructor#ExternalInstructor,
+Instructor#Grader,
+Instructor#GuestInstructor,
+Instructor#Instructor,
+Instructor#Lecturer,
+Instructor#PrimaryInstructor,
+Instructor#SecondaryInstructor,
+Instructor#TeachingAssistant,
+Instructor#TeachingAssistantGroup,
+Instructor#TeachingAssistantOffering,
+Instructor#TeachingAssistantSection,
+Instructor#TeachingAssistantTemplate,
+Learner#ExternalLearner,
+Learner#GuestLearner,
+Learner#Learner,
+Learner#NonCreditLearner,
+Manager#AreaManager,
+Manager#CourseCoordinator,
+Manager#Observer,
+Manager#ExternalObserver,
+Member#Member,
+Mentor#Advisor,
+Mentor#Auditor,
+Mentor#ExternalAdvisor,
+Mentor#ExternalAuditor,
+Mentor#ExternalLearningFacilitator,
+Mentor#ExternalMentor,
+Mentor#ExternalReviewer,
+Mentor#ExternalTutor,
+Mentor#LearningFacilitator,
+Mentor#Mentor,
+Mentor#Reviewer,
+Mentor#Tutor,
+Officer#Chair,
+Officer#Secretary,
+Officer#Treasurer,
+Officer#Vice-Chair"""^^xsd:string ;
+       :max "256"@en ;
+       rdfs:comment "An ordered collection of organizational roles assigned to the member MAY be specified. Role values are limited to the list of Caliper defined roles terms. Whenever a subrole is specified, the core context role SHOULD also be included; for example, a role of Instructor#TeachingAssistant should always be accompanied by the Instructor role."@en ;
+       rdfs:label "roles"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/scoreGiven
 :scoreGiven rdf:type owl:DatatypeProperty ;
             rdfs:domain :Score ;
@@ -742,6 +932,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :selectionText rdf:type owl:DatatypeProperty ;
                rdfs:domain :HighlightAnnotation ;
                rdfs:range xsd:string ;
+               :max "2048"@en ;
                rdfs:comment "A string value representing a plain-text rendering of the selected segment of the annotated resource."@en ;
                rdfs:label "selectionText"@en .
 
@@ -782,6 +973,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                          )
                            ] ;
                rdfs:range xsd:dateTime ;
+               :max "64"@en ;
                rdfs:comment "A date and time value expressed with millisecond precision that describes when the activity commenced."@en ;
                rdfs:label "startedAtTime"@en .
 
@@ -790,8 +982,20 @@ xsd:duration rdf:type rdfs:Datatype .
 :status rdf:type owl:DatatypeProperty ;
         rdfs:domain :Membership ;
         rdfs:range xsd:string ;
+        :enum """Active,
+Inactive"""^^xsd:string ;
+        :max "256"@en ;
         rdfs:comment "The current standing of a member."@en ;
         rdfs:label "status"@en .
+
+
+###  http://purl.imsglobal.org/caliper/tags
+:tags rdf:type owl:DatatypeProperty ;
+      rdfs:domain :TagAnnotation ;
+      rdfs:range xsd:string ;
+      :array ""@en ;
+      rdfs:comment "An ordered collection of one or more string values that represent labels or tags associated with the annotated DigitalResource."@en ;
+      rdfs:label "tags"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/totalScore
@@ -803,6 +1007,16 @@ xsd:duration rdf:type rdfs:Datatype .
             owl:deprecated "true"^^xsd:boolean .
 
 
+###  http://purl.imsglobal.org/caliper/type
+:type rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Entity ,
+                  :Event ,
+                  :TextPositionSelector ;
+      rdfs:range xsd:string ;
+      :max "256"@en ;
+      :patternName ""^^xsd:string .
+
+
 ###  http://purl.imsglobal.org/caliper/value
 :value rdf:type owl:DatatypeProperty ;
        rdfs:domain [ rdf:type owl:Class ;
@@ -811,8 +1025,21 @@ xsd:duration rdf:type rdfs:Datatype .
                                  )
                    ] ;
        rdfs:range xsd:string ;
+       :max "256"@en ;
        rdfs:comment "A string value that represents the options selected."@en ;
        rdfs:label "value"@en .
+
+
+###  http://purl.imsglobal.org/caliper/values
+:values rdf:type owl:DatatypeProperty ;
+        rdfs:domain :FillinBlankResponse ,
+                    :MultipleResponseResponse ,
+                    :SelectTextResponse ;
+        rdfs:range xsd:string ;
+        :array ""@en ;
+        :max "256"@en ;
+        rdfs:comment "An ordered collection of one or more selected options."@en ;
+        rdfs:label "values"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/version
@@ -823,6 +1050,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                    )
                      ] ;
          rdfs:range xsd:string ;
+         :max "64"@en ;
          rdfs:comment "A string value that designates the current form or version of the resource."@en ;
          rdfs:label "version"@en .
 
@@ -831,6 +1059,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :volumeLevel rdf:type owl:DatatypeProperty ;
              rdfs:domain :AudioObject ;
              rdfs:range xsd:string ;
+             :max "32"@en ;
              rdfs:comment "The current volume level."@en ;
              rdfs:label "volumeLevel"@en .
 
@@ -839,6 +1068,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :volumeMax rdf:type owl:DatatypeProperty ;
            rdfs:domain :AudioObject ;
            rdfs:range xsd:string ;
+           :max "32"@en ;
            rdfs:comment "A string value indicating the maximum volume level permitted."@en ;
            rdfs:label "volumeMax"@en .
 
@@ -847,6 +1077,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :volumeMin rdf:type owl:DatatypeProperty ;
            rdfs:domain :AudioObject ;
            rdfs:range xsd:string ;
+           :max "32"@en ;
            rdfs:comment "A string value indicating the minimum volume level permitted."@en ;
            rdfs:label "volumeMin"@en .
 
