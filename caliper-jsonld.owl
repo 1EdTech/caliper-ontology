@@ -1,15 +1,14 @@
 [ {
   "@id" : "_:genid1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://purl.imsglobal.org/caliper/Response"
-    }, {
-      "@id" : "http://purl.imsglobal.org/caliper/Result"
-    } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/coerced"
   } ]
 }, {
-  "@id" : "_:genid10",
+  "@id" : "_:genid11",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -19,7 +18,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid13",
+  "@id" : "_:genid14",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -31,7 +30,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid17",
+  "@id" : "_:genid18",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -45,7 +44,17 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid22",
+  "@id" : "_:genid2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://purl.imsglobal.org/caliper/Response"
+    }, {
+      "@id" : "http://purl.imsglobal.org/caliper/Result"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid23",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -57,7 +66,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid26",
+  "@id" : "_:genid27",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -67,7 +76,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid29",
+  "@id" : "_:genid30",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -77,7 +86,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid32",
+  "@id" : "_:genid33",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -89,7 +98,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid36",
+  "@id" : "_:genid37",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -99,7 +108,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid39",
+  "@id" : "_:genid40",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -109,17 +118,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid4",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://purl.imsglobal.org/caliper/Entity"
-    }, {
-      "@id" : "http://purl.imsglobal.org/caliper/Event"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid42",
+  "@id" : "_:genid43",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
@@ -129,7 +128,17 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid7",
+  "@id" : "_:genid5",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://purl.imsglobal.org/caliper/Entity"
+    }, {
+      "@id" : "http://purl.imsglobal.org/caliper/Event"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid8",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -206,7 +215,7 @@
     "@value" : "Assessment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid42"
+    "@id" : "_:genid43"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/AssessmentEvent",
@@ -1190,6 +1199,8 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://purl.imsglobal.org/caliper/Person"
+  }, {
+    "@id" : "_:genid1"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/attachments",
@@ -1216,7 +1227,7 @@
     "@value" : "The associated Attempt."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid1"
+    "@id" : "_:genid2"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1273,6 +1284,12 @@
     "@language" : "en",
     "@value" : "category"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/coerced",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
@@ -1578,7 +1595,7 @@
     "@value" : "A time interval that represents the total time required to complete an activity."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid17"
+    "@id" : "_:genid18"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1629,7 +1646,7 @@
     "@value" : "A date and time value expressed with millisecond precision that describes when the activity was completed or terminated."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid22"
+    "@id" : "_:genid23"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1734,7 +1751,7 @@
     "@value" : "An ordered collection of objects not defined by the Caliper Information Model."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid4"
+    "@id" : "_:genid5"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1823,7 +1840,7 @@
     "@value" : "The Event or Entity identifier.  For an Event, the id MUST be a UUID expressed as a URN using the form urn:uuid:<UUID> per RFC 4122.  For Entities a valid IRI MUST be specified. The IRI MUST be unique and persistent. The IRI SHOULD also be dereferenceable, i.e., capable of returning a representation of the resource.  An Entity MAY be provisioned with a URI employing the URN scheme in cases where a Linked Data friendly HTTP URI is either unavailable or inappropriate."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid26"
+    "@id" : "_:genid27"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1857,7 +1874,7 @@
     "@value" : "A related Entity that includes or incorporates the resource as a part of its whole."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid7"
+    "@id" : "_:genid8"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1973,7 +1990,7 @@
     "@value" : "A non-negative integer indicating the maximum score permitted."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid29"
+    "@id" : "_:genid30"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2320,7 +2337,7 @@
     "@value" : "The Agent who scored or graded an Attempt."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid10"
+    "@id" : "_:genid11"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2439,7 +2456,7 @@
     "@value" : "A date and time value expressed with millisecond precision that describes when the activity commenced."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid32"
+    "@id" : "_:genid33"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2559,7 +2576,7 @@
     "@value" : "A string value that represents the options selected."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid36"
+    "@id" : "_:genid37"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2576,7 +2593,7 @@
     "@value" : "An ordered collection of one or more selected options."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid13"
+    "@id" : "_:genid14"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2590,7 +2607,7 @@
     "@value" : "A string value that designates the current form or version of the resource."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid39"
+    "@id" : "_:genid40"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
