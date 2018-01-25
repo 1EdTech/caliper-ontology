@@ -7,10 +7,12 @@
 @base <http://purl.imsglobal.org/caliper/> .
 
 <http://purl.imsglobal.org/caliper/> rdf:type owl:Ontology ;
-                                      rdfs:comment """The drive to deliver education at scale coupled with a demand for measurable accountability has spurred interest in the application of “big data” principles to the business of education. Opportunities to tap new data sources, ask new questions and pursue new insights have grown as both the learning technology ecosystem has expanded and the definition of what constitutes learning has evolved beyond the formal classroom experience to include informal, social and experiential modes of acquiring knowledge and skills. The challenges inherent in describing, collecting and exchanging learning activity data originating from such diverse learning sources and context are now formidable.
-
-The Caliper Analytics® specification attempts to address the underlying interoperability challenges posed by these shifts in the learning technology landscape. Caliper provides an information model and domain-specific controlled vocabularies for describing learning activities, events and related entities. Serialization of the model is performed using JSON-LD. Caliper also defines an application programming interface (the Sensor API™) for marshalling and transmitting Caliper events from instrumented applications to one or more target endpoints for storage, analysis and re-use. Industry-wide adoption of Caliper offers academic institutions and Ed Tech organizations the tantalizing prospect of a more unified learning data environment in which to build new and innovative services designed to measure, infer, predict, report and visualize."""@en ;
                                       rdfs:label "Caliper Analytics Ontology"@en ;
+                                      rdfs:comment """The Caliper Analytics Specification provides a structured approach to describing, collecting and exchanging learning activity data at scale.  Establishing a common vocabulary for describing learning interactions is a central objective.  Promoting data interoperability, data sharing and data-informed decision making are also important goals.
+
+Caliper also defines an application programming interface (the Sensor API) for marshalling and transmitting event data from instrumented applications to target endpoints for storage, analysis and use.
+
+The Caliper ontology provides a machine-readable document that defines the concepts, relationships and constraints that together comprise the Caliper information model."""@en ;
                                       rdfs:seeAlso "http://www.imsglobal.org/caliper"^^xsd:string .
 
 #################################################################
