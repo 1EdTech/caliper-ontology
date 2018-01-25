@@ -32,7 +32,7 @@ The Caliper ontology is available in three flavors: [JSON-LD](./caliper-jsonld.o
 * __develop__: unstable development branch.  Current work that targets a future release is merged to this branch.
 
 ## Tags
-*caliper-ontology* releases are tagged and versioned MAJOR.MINOR.PATCH\[-label\] (e.g., 1.1.0).  Pre-release tags are identified with an extensions label (e.g., "1.2.0-RC01").  The tags are stored in this repository.
+Caliper ontology releases are tagged and versioned MAJOR.MINOR.PATCH\[-label\] (e.g., 1.1.0).  Pre-release tags are identified with an extensions label (e.g., "1.2.0-RC01").  The tags are stored in this repository.
 
 ©2018 IMS Global Learning Consortium, Inc. All Rights Reserved.
 Trademark Information - http://www.imsglobal.org/copyright.html
