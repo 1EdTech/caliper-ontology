@@ -58,8 +58,9 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/annotated
-:annotated rdf:type owl:ObjectProperty ,
-                    owl:FunctionalProperty ;
+:annotated rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :object ;
+           rdf:type owl:FunctionalProperty ;
            rdfs:domain :Annotation ;
            rdfs:range :DigitalResource ;
            rdfs:comment "The DigitalResource that was annotated by the annotator."@en ;
@@ -67,8 +68,9 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/annotator
-:annotator rdf:type owl:ObjectProperty ,
-                    owl:FunctionalProperty ;
+:annotator rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :actor ;
+           rdf:type owl:FunctionalProperty ;
            rdfs:domain :Annotation ;
            rdfs:range :Person ;
            rdfs:comment "The Person who created the Annotation."@en ;
@@ -76,8 +78,9 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/assignable
-:assignable rdf:type owl:ObjectProperty ,
-                     owl:FunctionalProperty ;
+:assignable rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :object ;
+            rdf:type owl:FunctionalProperty ;
             rdfs:domain :Attempt ;
             rdfs:range :DigitalResource ;
             rdfs:comment "The DigitalResource that constitutes the object of the assignment."@en ;
@@ -85,8 +88,9 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/assignee
-:assignee rdf:type owl:ObjectProperty ,
-                   owl:FunctionalProperty ;
+:assignee rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :actor ;
+          rdf:type owl:FunctionalProperty ;
           rdfs:domain :Attempt ;
           rdfs:range :Person ;
           rdfs:comment "The Person who initiated the Attempt of an assigned DigitalResource."@en ;
@@ -151,8 +155,9 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/federatedSession
-:federatedSession rdf:type owl:ObjectProperty ,
-                           owl:FunctionalProperty ;
+:federatedSession rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :session ;
+                  rdf:type owl:FunctionalProperty ;
                   rdfs:domain :Event ;
                   rdfs:range :LtiSession ;
                   owl:propertyDisjointWith :session ;
@@ -170,8 +175,9 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/group
-:group rdf:type owl:ObjectProperty ,
-                owl:FunctionalProperty ;
+:group rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :organization ;
+       rdf:type owl:FunctionalProperty ;
        rdfs:domain :Event ;
        rdfs:range :Organization ;
        rdfs:comment "An Organization that represents the group or organizational context within which an Event occurs."@en ;
@@ -181,6 +187,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/isPartOf
 :isPartOf rdf:type owl:ObjectProperty ,
                    owl:FunctionalProperty ,
+                   owl:TransitiveProperty ,
                    owl:IrreflexiveProperty ;
           rdfs:domain [ rdf:type owl:Class ;
                         owl:unionOf ( :Attempt
@@ -202,6 +209,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/keywords
 :keywords rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty :tags ;
           rdfs:domain :DigitalResource ;
           rdfs:comment "An ordered collection of one or more string values that represent tags or labels used to identify the resource."@en ;
           rdfs:label "keywords"@en .
@@ -216,8 +224,9 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/member
-:member rdf:type owl:ObjectProperty ,
-                 owl:FunctionalProperty ;
+:member rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :actor ;
+        rdf:type owl:FunctionalProperty ;
         rdfs:domain :Membership ;
         rdfs:range :Person ;
         rdfs:comment "The Person associated with a Membership."@en ;
@@ -360,8 +369,9 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/user
-:user rdf:type owl:ObjectProperty ,
-               owl:FunctionalProperty ;
+:user rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :actor ;
+      rdf:type owl:FunctionalProperty ;
       rdfs:domain :Session ;
       rdfs:range :Person ;
       rdfs:comment "The Person who initiated a Session."@en ;
