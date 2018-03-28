@@ -84,6 +84,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <!-- http://purl.imsglobal.org/caliper/alignedLearningObjective -->
 
     <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/alignedLearningObjective">
+        <owl:equivalentProperty rdf:resource="http://purl.imsglobal.org/caliper/learningObjectives"/>
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
         <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/LearningObjective"/>
         <rdfs:comment xml:lang="en">An ordered collection of one or more LearningObjective entities that describe what a learner is expected to comprehend or accomplish after engaging with the resource.  Deprecated.  Use learningObjectives.</rdfs:comment>
@@ -368,6 +369,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <!-- http://purl.imsglobal.org/caliper/navigatedFrom -->
 
     <owl:ObjectProperty rdf:about="http://purl.imsglobal.org/caliper/navigatedFrom">
+        <owl:equivalentProperty rdf:resource="http://purl.imsglobal.org/caliper/referrer"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/NavigationEvent"/>
         <rdfs:range rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
@@ -708,6 +710,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:propertyDisjointWith rdf:resource="http://purl.imsglobal.org/caliper/dateModified"/>
         <rdfs:comment xml:lang="en">A date and time value expressed with millisecond precision that describes when an Entity was created.</rdfs:comment>
         <rdfs:label xml:lang="en">dateCreated</rdfs:label>
     </owl:DatatypeProperty>
@@ -816,6 +819,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/end">
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/TextPositionSelector"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <owl:propertyDisjointWith rdf:resource="http://purl.imsglobal.org/caliper/start"/>
         <rdfs:comment xml:lang="en">The end position of a segment of text. The first character in the full text is position 0. The character that represents the end position is NOT included within the selected segment.</rdfs:comment>
         <rdfs:label xml:lang="en">end</rdfs:label>
     </owl:DatatypeProperty>
@@ -836,6 +840,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:propertyDisjointWith rdf:resource="http://purl.imsglobal.org/caliper/startedAtTime"/>
         <rdfs:comment xml:lang="en">A date and time value expressed with millisecond precision that describes when the activity was completed or terminated.</rdfs:comment>
         <rdfs:label xml:lang="en">endedAtTime</rdfs:label>
     </owl:DatatypeProperty>
@@ -1189,6 +1194,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/volumeMax">
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/AudioObject"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:propertyDisjointWith rdf:resource="http://purl.imsglobal.org/caliper/volumeMin"/>
         <rdfs:comment xml:lang="en">A string value indicating the maximum volume level permitted.</rdfs:comment>
         <rdfs:label xml:lang="en">volumeMax</rdfs:label>
     </owl:DatatypeProperty>
@@ -1241,6 +1247,20 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/AnnotationEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/AssessmentEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/AssessmentItemEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/AssignableEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ForumEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/GradeEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/MediaEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/MessageEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/NavigationEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/OutcomeEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ReadingEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SessionEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ThreadEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ToolUseEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ViewEvent"/>
         <rdfs:comment xml:lang="en">A Caliper AnnotationEvent models the annotating of digital content. The resulting Annotation is also described and is subtyped for greater type specificity.</rdfs:comment>
         <rdfs:label xml:lang="en">AnnotationEvent</rdfs:label>
     </owl:Class>
@@ -1258,6 +1278,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/AssessmentItem"/>
         <rdfs:comment xml:lang="en">A Caliper Assessment represents an assessment instrument such as a test or quiz.</rdfs:comment>
         <rdfs:label xml:lang="en">Assessment</rdfs:label>
     </owl:Class>
@@ -1268,6 +1289,19 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/AssessmentEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/AssessmentItemEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/AssignableEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ForumEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/GradeEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/MediaEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/MessageEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/NavigationEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/OutcomeEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ReadingEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SessionEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ThreadEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ToolUseEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ViewEvent"/>
         <rdfs:comment xml:lang="en">A Caliper AssessmentEvent models learner interactions with assessments instruments such as online tests or quizzes.</rdfs:comment>
         <rdfs:label xml:lang="en">AssessmentEvent</rdfs:label>
     </owl:Class>
@@ -1288,6 +1322,18 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/AssessmentItemEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/AssignableEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ForumEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/GradeEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/MediaEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/MessageEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/NavigationEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/OutcomeEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ReadingEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SessionEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ThreadEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ToolUseEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ViewEvent"/>
         <rdfs:comment xml:lang="en">A Caliper AssessmentItemEvent models a learner&apos;s interaction with an individual AssessmentItem.</rdfs:comment>
         <rdfs:label xml:lang="en">AssessmentItemEvent</rdfs:label>
     </owl:Class>
@@ -1308,6 +1354,17 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/AssignableEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ForumEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/GradeEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/MediaEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/MessageEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/NavigationEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/OutcomeEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ReadingEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SessionEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ThreadEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ToolUseEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ViewEvent"/>
         <rdfs:comment xml:lang="en">A Caliper AssignableEvent models activities associated with the assignment of digital content assigned to a learner for completion.</rdfs:comment>
         <rdfs:label xml:lang="en">AssignableEvent</rdfs:label>
     </owl:Class>
@@ -1328,6 +1385,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/AudioObject">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/MediaObject"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ImageObject"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/VideoObject"/>
         <rdfs:comment xml:lang="en">A Caliper AudioObject represents an audio or sound file.</rdfs:comment>
         <rdfs:label xml:lang="en">AudioObject</rdfs:label>
     </owl:Class>
@@ -1338,6 +1397,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/BookmarkAnnotation">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Annotation"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/HighlightAnnotation"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SharedAnnotation"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/TagAnnotation"/>
         <rdfs:comment xml:lang="en">A Caliper BookmarkAnnotation represents the act of marking a DigitalResource at a particular location.</rdfs:comment>
         <rdfs:label xml:lang="en">BookmarkAnnotation</rdfs:label>
     </owl:Class>
@@ -1407,7 +1469,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <!-- http://purl.imsglobal.org/caliper/Entity -->
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Entity">
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/Envelope"/>
         <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/Selector"/>
         <rdfs:comment xml:lang="en">A Caliper Entity is a generic type that represents objects or things that participate in learning-related activities. Entity is subtyped for enhanced type specificity in order to better describe people, groups, digital content, courses, assignments, assessments, forums, messages, software applications and other entities that constitute the &quot;stuff&quot; of a Caliper Event.  Utilize Entity only if no suitable subtype exists to represent the thing being described.</rdfs:comment>
         <rdfs:label xml:lang="en">Entity</rdfs:label>
     </owl:Class>
@@ -1417,6 +1481,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <!-- http://purl.imsglobal.org/caliper/Envelope -->
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Envelope">
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/Selector"/>
         <rdfs:comment xml:lang="en">A Caliper Envelope is a container that is used to transmit one or more Caliper Events and/or Caliper Entity describes.</rdfs:comment>
         <rdfs:label xml:lang="en">Envelope</rdfs:label>
     </owl:Class>
@@ -1426,6 +1492,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <!-- http://purl.imsglobal.org/caliper/Event -->
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Event">
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/Selector"/>
         <rdfs:comment xml:lang="en">A Caliper Event is a generic type that describes a relationship established between an actor and an object, formed as a result of a purposeful action undertaken by the actor in connection to the object at a particular moment in time.</rdfs:comment>
         <rdfs:label xml:lang="en">Event</rdfs:label>
     </owl:Class>
@@ -1436,6 +1503,10 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/FillinBlankResponse">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Response"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/MultipleChoiceResponse"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/MultipleResponseResponse"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SelectTextResponse"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/TrueFalseResponse"/>
         <rdfs:comment xml:lang="en">A Caliper FillinBlankResponse represents a type of Response in which a respondent is asked to provide one or more words, expressions or short phrases that correctly completes a statement.</rdfs:comment>
         <rdfs:label xml:lang="en">FillinBlankResponse</rdfs:label>
     </owl:Class>
@@ -1446,6 +1517,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Forum">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResourceCollection"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/Message"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/Thread"/>
         <rdfs:comment xml:lang="en">A Caliper Forum represents a channel or virtual space in which group discussions take place.  A Forum typically comprises one or more threaded conversations to which members can subscribe, post messages and reply to other messages.</rdfs:comment>
         <rdfs:label xml:lang="en">Forum</rdfs:label>
     </owl:Class>
@@ -1456,6 +1529,16 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ForumEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/GradeEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/MediaEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/MessageEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/NavigationEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/OutcomeEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ReadingEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SessionEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ThreadEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ToolUseEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ViewEvent"/>
         <rdfs:comment xml:lang="en">A Caliper ForumEvent models learners and others participating in online forum communities. Forums typically encompass one or more threads or topics to which members can subscribe, post messages and reply to other messages if a threaded discussion is permitted.</rdfs:comment>
         <rdfs:label xml:lang="en">ForumEvent</rdfs:label>
     </owl:Class>
@@ -1477,6 +1560,15 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/GradeEvent">
         <owl:equivalentClass rdf:resource="http://purl.imsglobal.org/caliper/OutcomeEvent"/>
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/MediaEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/MessageEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/NavigationEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/OutcomeEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ReadingEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SessionEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ThreadEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ToolUseEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ViewEvent"/>
         <rdfs:comment xml:lang="en">A Caliper GradeEvent models grading activities performed by an Agent, typically a Person or a SoftwareApplication.</rdfs:comment>
         <rdfs:label xml:lang="en">GradeEvent</rdfs:label>
     </owl:Class>
@@ -1497,6 +1589,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/HighlightAnnotation">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Annotation"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SharedAnnotation"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/TagAnnotation"/>
         <rdfs:comment xml:lang="en">A Caliper HighlightAnnotation represents the act of marking a particular segment of a DigitalResource between two known coordinates.</rdfs:comment>
         <rdfs:label xml:lang="en">HighlightAnnotation</rdfs:label>
     </owl:Class>
@@ -1507,6 +1601,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ImageObject">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/MediaObject"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/VideoObject"/>
         <rdfs:comment xml:lang="en">A Caliper ImageObject represents an image file.</rdfs:comment>
         <rdfs:label xml:lang="en">ImageObject</rdfs:label>
     </owl:Class>
@@ -1537,6 +1632,14 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/MediaEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/MessageEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/NavigationEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/OutcomeEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ReadingEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SessionEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ThreadEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ToolUseEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ViewEvent"/>
         <rdfs:comment xml:lang="en">A Caliper MediaEvent models interactions between learners and rich content such as audio, images and video.</rdfs:comment>
         <rdfs:label xml:lang="en">MediaEvent</rdfs:label>
     </owl:Class>
@@ -1577,6 +1680,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Message">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/Thread"/>
         <rdfs:comment xml:lang="en">A Caliper Message is a digital form of written communication sent to a recipient. A series of messages may constitute a Thread if they share a common subject and are connected by a reply or by date relationships.</rdfs:comment>
         <rdfs:label xml:lang="en">Message</rdfs:label>
     </owl:Class>
@@ -1587,6 +1691,13 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/MessageEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/NavigationEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/OutcomeEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ReadingEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SessionEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ThreadEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ToolUseEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ViewEvent"/>
         <rdfs:comment xml:lang="en">A Caliper MessageEvent describes a Person posting a Message or marking a post as either read or unread.</rdfs:comment>
         <rdfs:label xml:lang="en">MessageEvent</rdfs:label>
     </owl:Class>
@@ -1597,6 +1708,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/MultipleChoiceResponse">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Response"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/MultipleResponseResponse"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SelectTextResponse"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/TrueFalseResponse"/>
         <rdfs:comment xml:lang="en">A Caliper MultipleChoiceResponse represents a type of Response in which a respondent is asked to provide the best possible answer from a list of choices.</rdfs:comment>
         <rdfs:label xml:lang="en">MultipleChoiceResponse</rdfs:label>
     </owl:Class>
@@ -1607,6 +1721,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/MultipleResponseResponse">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Response"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SelectTextResponse"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/TrueFalseResponse"/>
         <rdfs:comment xml:lang="en">A Caliper MultipleResponseResponse represents a form of response in which a respondent is asked to select more than one correct answer from a list of choices.</rdfs:comment>
         <rdfs:label xml:lang="en">MultipleResponseResponse</rdfs:label>
     </owl:Class>
@@ -1617,6 +1733,12 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/NavigationEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/OutcomeEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ReadingEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SessionEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ThreadEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ToolUseEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ViewEvent"/>
         <rdfs:comment xml:lang="en">A Caliper NavigationEvent models an actor traversing a network of digital resources.</rdfs:comment>
         <rdfs:label xml:lang="en">NavigationEvent</rdfs:label>
     </owl:Class>
@@ -1627,6 +1749,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Organization">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SoftwareApplication"/>
         <rdfs:comment xml:lang="en">A Caliper Organization represents a formal collection of people organized for some common educational, social or administrative purpose. An Organization can act as an Agent. It can be linked both to a parent Organization and to its members.</rdfs:comment>
         <rdfs:label xml:lang="en">Organization</rdfs:label>
     </owl:Class>
@@ -1637,6 +1760,11 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/OutcomeEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ReadingEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SessionEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ThreadEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ToolUseEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ViewEvent"/>
         <rdfs:comment xml:lang="en">A Caliper OutcomeEvent models grading activities performed by an Agent, typically a Person or a SoftwareApplication.  OutcomeEvent is DEPRECATED and will be removed in a future version of the specification. Use GradeEvent instead.</rdfs:comment>
         <rdfs:label xml:lang="en">OutcomeEvent</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
@@ -1658,6 +1786,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Person">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SoftwareApplication"/>
         <rdfs:comment xml:lang="en">A Caliper Person represents a human being, alive or deceased, real or imaginary.</rdfs:comment>
         <rdfs:label xml:lang="en">Person</rdfs:label>
     </owl:Class>
@@ -1679,6 +1808,10 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ReadingEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/SessionEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ThreadEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ToolUseEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ViewEvent"/>
         <rdfs:comment xml:lang="en">A Caliper ReadingEvent models an actor reading textural content.  ReadingEvent is DEPRECATED and will be removed in a future version of the specification.  It SHOULD NOT be referenced.</rdfs:comment>
         <rdfs:label xml:lang="en">ReadingEvent</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
@@ -1700,6 +1833,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Result">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/Score"/>
         <rdfs:comment xml:lang="en">A Caliper Result represents a grade applied to an assignment submission.</rdfs:comment>
         <rdfs:label xml:lang="en">Result</rdfs:label>
     </owl:Class>
@@ -1720,6 +1854,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/SelectTextResponse">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Response"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/TrueFalseResponse"/>
         <rdfs:comment xml:lang="en">A Caliper SelectTextResponse represents a type of Response that identifies text or a mapping from a presented paragraph or list.</rdfs:comment>
         <rdfs:label xml:lang="en">SelectTextResponse</rdfs:label>
     </owl:Class>
@@ -1749,6 +1884,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/SessionEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ThreadEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ToolUseEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ViewEvent"/>
         <rdfs:comment xml:lang="en">A Caliper SessionEvent models the creation and subsequent termination of a user session established by a Person interacting with a SoftwareApplication.</rdfs:comment>
         <rdfs:label xml:lang="en">SessionEvent</rdfs:label>
     </owl:Class>
@@ -1759,6 +1897,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/SharedAnnotation">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Annotation"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/TagAnnotation"/>
         <rdfs:comment xml:lang="en">A Caliper SharedAnnotation represents the act of sharing a reference to a DigitalResource with other agents.</rdfs:comment>
         <rdfs:label xml:lang="en">SharedAnnotation</rdfs:label>
     </owl:Class>
@@ -1809,6 +1948,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ThreadEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ToolUseEvent"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ViewEvent"/>
         <rdfs:comment xml:lang="en">A Caliper ThreadEvent models an actor interacting with a Forum thread or topic.</rdfs:comment>
         <rdfs:label xml:lang="en">ThreadEvent</rdfs:label>
     </owl:Class>
@@ -1819,6 +1960,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ToolUseEvent">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/ViewEvent"/>
         <rdfs:comment xml:lang="en">A Caliper ToolUseEvent models a Person using a learning tool in a way that the tool&apos;s creators have determined is an indication of a learning interaction.</rdfs:comment>
         <rdfs:label xml:lang="en">ToolUseEvent</rdfs:label>
     </owl:Class>
@@ -1869,6 +2011,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/epubChapter">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/epubPart"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/epubSubChapter"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/epubVolume"/>
         <rdfs:comment xml:lang="en">A Caliper EpubChapter represents a major structural division of a piece of writing. EpubChapter is a DEPRECATED entity that will be removed in a future version of the specification. It SHOULD NOT be referenced.</rdfs:comment>
         <rdfs:label xml:lang="en">EpubChapter</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
@@ -1880,6 +2025,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/epubPart">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/epubSubChapter"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/epubVolume"/>
         <rdfs:comment xml:lang="en">A Caliper EpubPart represents a major structural division of a piece of writing, typically encapsulating a set of related chapters. EpubPart is a DEPRECATED entity that will be removed in a future version of the specification. It SHOULD NOT be referenced.</rdfs:comment>
         <rdfs:label xml:lang="en">EpubPart</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
@@ -1891,6 +2038,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/epubSubChapter">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/epubVolume"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Caliper EpubSubChapter represents a major sub-division of an EpubChapter. EpubSubChapter is a DEPRECATED entity that will be removed in a future version of the specification. It SHOULD NOT be referenced.</rdfs:comment>
         <rdfs:label xml:lang="en">EpubSubChapter</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>

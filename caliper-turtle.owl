@@ -50,6 +50,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/alignedLearningObjective
 :alignedLearningObjective rdf:type owl:ObjectProperty ;
+                          owl:equivalentProperty :learningObjectives ;
                           rdfs:domain :DigitalResource ;
                           rdfs:range :LearningObjective ;
                           rdfs:comment "An ordered collection of one or more LearningObjective entities that describe what a learner is expected to comprehend or accomplish after engaging with the resource.  Deprecated.  Use learningObjectives."@en ;
@@ -258,8 +259,9 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/navigatedFrom
-:navigatedFrom rdf:type owl:ObjectProperty ,
-                        owl:FunctionalProperty ;
+:navigatedFrom rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty :referrer ;
+               rdf:type owl:FunctionalProperty ;
                rdfs:domain :NavigationEvent ;
                rdfs:range :Entity ;
                rdfs:comment "The DigitalResource or SoftwareApplication that constitutes the referring context of a Navigation Event.  Deprecated."@en ;
@@ -505,6 +507,7 @@ xsd:duration rdf:type rdfs:Datatype .
                       owl:FunctionalProperty ;
              rdfs:domain :Entity ;
              rdfs:range xsd:dateTime ;
+             owl:propertyDisjointWith :dateModified ;
              rdfs:comment "A date and time value expressed with millisecond precision that describes when an Entity was created."@en ;
              rdfs:label "dateCreated"@en .
 
@@ -583,6 +586,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :end rdf:type owl:DatatypeProperty ;
      rdfs:domain :TextPositionSelector ;
      rdfs:range xsd:nonNegativeInteger ;
+     owl:propertyDisjointWith :start ;
      rdfs:comment "The end position of a segment of text. The first character in the full text is position 0. The character that represents the end position is NOT included within the selected segment."@en ;
      rdfs:label "end"@en .
 
@@ -597,6 +601,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                        )
                          ] ;
              rdfs:range xsd:dateTime ;
+             owl:propertyDisjointWith :startedAtTime ;
              rdfs:comment "A date and time value expressed with millisecond precision that describes when the activity was completed or terminated."@en ;
              rdfs:label "endedAtTime"@en .
 
@@ -851,6 +856,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :volumeMax rdf:type owl:DatatypeProperty ;
            rdfs:domain :AudioObject ;
            rdfs:range xsd:string ;
+           owl:propertyDisjointWith :volumeMin ;
            rdfs:comment "A string value indicating the maximum volume level permitted."@en ;
            rdfs:label "volumeMax"@en .
 
@@ -884,6 +890,20 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/AnnotationEvent
 :AnnotationEvent rdf:type owl:Class ;
                  rdfs:subClassOf :Event ;
+                 owl:disjointWith :AssessmentEvent ,
+                                  :AssessmentItemEvent ,
+                                  :AssignableEvent ,
+                                  :ForumEvent ,
+                                  :GradeEvent ,
+                                  :MediaEvent ,
+                                  :MessageEvent ,
+                                  :NavigationEvent ,
+                                  :OutcomeEvent ,
+                                  :ReadingEvent ,
+                                  :SessionEvent ,
+                                  :ThreadEvent ,
+                                  :ToolUseEvent ,
+                                  :ViewEvent ;
                  rdfs:comment "A Caliper AnnotationEvent models the annotating of digital content. The resulting Annotation is also described and is subtyped for greater type specificity."@en ;
                  rdfs:label "AnnotationEvent"@en .
 
@@ -895,6 +915,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                                  ) ;
                               rdf:type owl:Class
                             ] ;
+            owl:disjointWith :AssessmentItem ;
             rdfs:comment "A Caliper Assessment represents an assessment instrument such as a test or quiz."@en ;
             rdfs:label "Assessment"@en .
 
@@ -902,6 +923,19 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/AssessmentEvent
 :AssessmentEvent rdf:type owl:Class ;
                  rdfs:subClassOf :Event ;
+                 owl:disjointWith :AssessmentItemEvent ,
+                                  :AssignableEvent ,
+                                  :ForumEvent ,
+                                  :GradeEvent ,
+                                  :MediaEvent ,
+                                  :MessageEvent ,
+                                  :NavigationEvent ,
+                                  :OutcomeEvent ,
+                                  :ReadingEvent ,
+                                  :SessionEvent ,
+                                  :ThreadEvent ,
+                                  :ToolUseEvent ,
+                                  :ViewEvent ;
                  rdfs:comment "A Caliper AssessmentEvent models learner interactions with assessments instruments such as online tests or quizzes."@en ;
                  rdfs:label "AssessmentEvent"@en .
 
@@ -916,6 +950,18 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/AssessmentItemEvent
 :AssessmentItemEvent rdf:type owl:Class ;
                      rdfs:subClassOf :Event ;
+                     owl:disjointWith :AssignableEvent ,
+                                      :ForumEvent ,
+                                      :GradeEvent ,
+                                      :MediaEvent ,
+                                      :MessageEvent ,
+                                      :NavigationEvent ,
+                                      :OutcomeEvent ,
+                                      :ReadingEvent ,
+                                      :SessionEvent ,
+                                      :ThreadEvent ,
+                                      :ToolUseEvent ,
+                                      :ViewEvent ;
                      rdfs:comment "A Caliper AssessmentItemEvent models a learner's interaction with an individual AssessmentItem."@en ;
                      rdfs:label "AssessmentItemEvent"@en .
 
@@ -930,6 +976,17 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/AssignableEvent
 :AssignableEvent rdf:type owl:Class ;
                  rdfs:subClassOf :Event ;
+                 owl:disjointWith :ForumEvent ,
+                                  :GradeEvent ,
+                                  :MediaEvent ,
+                                  :MessageEvent ,
+                                  :NavigationEvent ,
+                                  :OutcomeEvent ,
+                                  :ReadingEvent ,
+                                  :SessionEvent ,
+                                  :ThreadEvent ,
+                                  :ToolUseEvent ,
+                                  :ViewEvent ;
                  rdfs:comment "A Caliper AssignableEvent models activities associated with the assignment of digital content assigned to a learner for completion."@en ;
                  rdfs:label "AssignableEvent"@en .
 
@@ -944,6 +1001,8 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/AudioObject
 :AudioObject rdf:type owl:Class ;
              rdfs:subClassOf :MediaObject ;
+             owl:disjointWith :ImageObject ,
+                              :VideoObject ;
              rdfs:comment "A Caliper AudioObject represents an audio or sound file."@en ;
              rdfs:label "AudioObject"@en .
 
@@ -951,6 +1010,9 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/BookmarkAnnotation
 :BookmarkAnnotation rdf:type owl:Class ;
                     rdfs:subClassOf :Annotation ;
+                    owl:disjointWith :HighlightAnnotation ,
+                                     :SharedAnnotation ,
+                                     :TagAnnotation ;
                     rdfs:comment "A Caliper BookmarkAnnotation represents the act of marking a DigitalResource at a particular location."@en ;
                     rdfs:label "BookmarkAnnotation"@en .
 
@@ -999,19 +1061,24 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/Entity
 :Entity rdf:type owl:Class ;
-        owl:disjointWith :Event ;
+        owl:disjointWith :Envelope ,
+                         :Event ,
+                         :Selector ;
         rdfs:comment "A Caliper Entity is a generic type that represents objects or things that participate in learning-related activities. Entity is subtyped for enhanced type specificity in order to better describe people, groups, digital content, courses, assignments, assessments, forums, messages, software applications and other entities that constitute the \"stuff\" of a Caliper Event.  Utilize Entity only if no suitable subtype exists to represent the thing being described."@en ;
         rdfs:label "Entity"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Envelope
 :Envelope rdf:type owl:Class ;
+          owl:disjointWith :Event ,
+                           :Selector ;
           rdfs:comment "A Caliper Envelope is a container that is used to transmit one or more Caliper Events and/or Caliper Entity describes."@en ;
           rdfs:label "Envelope"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Event
 :Event rdf:type owl:Class ;
+       owl:disjointWith :Selector ;
        rdfs:comment "A Caliper Event is a generic type that describes a relationship established between an actor and an object, formed as a result of a purposeful action undertaken by the actor in connection to the object at a particular moment in time."@en ;
        rdfs:label "Event"@en .
 
@@ -1019,6 +1086,10 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/FillinBlankResponse
 :FillinBlankResponse rdf:type owl:Class ;
                      rdfs:subClassOf :Response ;
+                     owl:disjointWith :MultipleChoiceResponse ,
+                                      :MultipleResponseResponse ,
+                                      :SelectTextResponse ,
+                                      :TrueFalseResponse ;
                      rdfs:comment "A Caliper FillinBlankResponse represents a type of Response in which a respondent is asked to provide one or more words, expressions or short phrases that correctly completes a statement."@en ;
                      rdfs:label "FillinBlankResponse"@en .
 
@@ -1026,6 +1097,8 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/Forum
 :Forum rdf:type owl:Class ;
        rdfs:subClassOf :DigitalResourceCollection ;
+       owl:disjointWith :Message ,
+                        :Thread ;
        rdfs:comment "A Caliper Forum represents a channel or virtual space in which group discussions take place.  A Forum typically comprises one or more threaded conversations to which members can subscribe, post messages and reply to other messages."@en ;
        rdfs:label "Forum"@en .
 
@@ -1033,6 +1106,16 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/ForumEvent
 :ForumEvent rdf:type owl:Class ;
             rdfs:subClassOf :Event ;
+            owl:disjointWith :GradeEvent ,
+                             :MediaEvent ,
+                             :MessageEvent ,
+                             :NavigationEvent ,
+                             :OutcomeEvent ,
+                             :ReadingEvent ,
+                             :SessionEvent ,
+                             :ThreadEvent ,
+                             :ToolUseEvent ,
+                             :ViewEvent ;
             rdfs:comment "A Caliper ForumEvent models learners and others participating in online forum communities. Forums typically encompass one or more threads or topics to which members can subscribe, post messages and reply to other messages if a threaded discussion is permitted."@en ;
             rdfs:label "ForumEvent"@en .
 
@@ -1048,6 +1131,15 @@ xsd:duration rdf:type rdfs:Datatype .
 :GradeEvent rdf:type owl:Class ;
             owl:equivalentClass :OutcomeEvent ;
             rdfs:subClassOf :Event ;
+            owl:disjointWith :MediaEvent ,
+                             :MessageEvent ,
+                             :NavigationEvent ,
+                             :OutcomeEvent ,
+                             :ReadingEvent ,
+                             :SessionEvent ,
+                             :ThreadEvent ,
+                             :ToolUseEvent ,
+                             :ViewEvent ;
             rdfs:comment "A Caliper GradeEvent models grading activities performed by an Agent, typically a Person or a SoftwareApplication."@en ;
             rdfs:label "GradeEvent"@en .
 
@@ -1062,6 +1154,8 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/HighlightAnnotation
 :HighlightAnnotation rdf:type owl:Class ;
                      rdfs:subClassOf :Annotation ;
+                     owl:disjointWith :SharedAnnotation ,
+                                      :TagAnnotation ;
                      rdfs:comment "A Caliper HighlightAnnotation represents the act of marking a particular segment of a DigitalResource between two known coordinates."@en ;
                      rdfs:label "HighlightAnnotation"@en .
 
@@ -1069,6 +1163,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/ImageObject
 :ImageObject rdf:type owl:Class ;
              rdfs:subClassOf :MediaObject ;
+             owl:disjointWith :VideoObject ;
              rdfs:comment "A Caliper ImageObject represents an image file."@en ;
              rdfs:label "ImageObject"@en .
 
@@ -1090,6 +1185,14 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/MediaEvent
 :MediaEvent rdf:type owl:Class ;
             rdfs:subClassOf :Event ;
+            owl:disjointWith :MessageEvent ,
+                             :NavigationEvent ,
+                             :OutcomeEvent ,
+                             :ReadingEvent ,
+                             :SessionEvent ,
+                             :ThreadEvent ,
+                             :ToolUseEvent ,
+                             :ViewEvent ;
             rdfs:comment "A Caliper MediaEvent models interactions between learners and rich content such as audio, images and video."@en ;
             rdfs:label "MediaEvent"@en .
 
@@ -1118,6 +1221,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/Message
 :Message rdf:type owl:Class ;
          rdfs:subClassOf :DigitalResource ;
+         owl:disjointWith :Thread ;
          rdfs:comment "A Caliper Message is a digital form of written communication sent to a recipient. A series of messages may constitute a Thread if they share a common subject and are connected by a reply or by date relationships."@en ;
          rdfs:label "Message"@en .
 
@@ -1125,6 +1229,13 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/MessageEvent
 :MessageEvent rdf:type owl:Class ;
               rdfs:subClassOf :Event ;
+              owl:disjointWith :NavigationEvent ,
+                               :OutcomeEvent ,
+                               :ReadingEvent ,
+                               :SessionEvent ,
+                               :ThreadEvent ,
+                               :ToolUseEvent ,
+                               :ViewEvent ;
               rdfs:comment "A Caliper MessageEvent describes a Person posting a Message or marking a post as either read or unread."@en ;
               rdfs:label "MessageEvent"@en .
 
@@ -1132,6 +1243,9 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/MultipleChoiceResponse
 :MultipleChoiceResponse rdf:type owl:Class ;
                         rdfs:subClassOf :Response ;
+                        owl:disjointWith :MultipleResponseResponse ,
+                                         :SelectTextResponse ,
+                                         :TrueFalseResponse ;
                         rdfs:comment "A Caliper MultipleChoiceResponse represents a type of Response in which a respondent is asked to provide the best possible answer from a list of choices."@en ;
                         rdfs:label "MultipleChoiceResponse"@en .
 
@@ -1139,6 +1253,8 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/MultipleResponseResponse
 :MultipleResponseResponse rdf:type owl:Class ;
                           rdfs:subClassOf :Response ;
+                          owl:disjointWith :SelectTextResponse ,
+                                           :TrueFalseResponse ;
                           rdfs:comment "A Caliper MultipleResponseResponse represents a form of response in which a respondent is asked to select more than one correct answer from a list of choices."@en ;
                           rdfs:label "MultipleResponseResponse"@en .
 
@@ -1146,6 +1262,12 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/NavigationEvent
 :NavigationEvent rdf:type owl:Class ;
                  rdfs:subClassOf :Event ;
+                 owl:disjointWith :OutcomeEvent ,
+                                  :ReadingEvent ,
+                                  :SessionEvent ,
+                                  :ThreadEvent ,
+                                  :ToolUseEvent ,
+                                  :ViewEvent ;
                  rdfs:comment "A Caliper NavigationEvent models an actor traversing a network of digital resources."@en ;
                  rdfs:label "NavigationEvent"@en .
 
@@ -1153,6 +1275,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/Organization
 :Organization rdf:type owl:Class ;
               rdfs:subClassOf :Agent ;
+              owl:disjointWith :SoftwareApplication ;
               rdfs:comment "A Caliper Organization represents a formal collection of people organized for some common educational, social or administrative purpose. An Organization can act as an Agent. It can be linked both to a parent Organization and to its members."@en ;
               rdfs:label "Organization"@en .
 
@@ -1160,6 +1283,11 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/OutcomeEvent
 :OutcomeEvent rdf:type owl:Class ;
               rdfs:subClassOf :Event ;
+              owl:disjointWith :ReadingEvent ,
+                               :SessionEvent ,
+                               :ThreadEvent ,
+                               :ToolUseEvent ,
+                               :ViewEvent ;
               rdfs:comment "A Caliper OutcomeEvent models grading activities performed by an Agent, typically a Person or a SoftwareApplication.  OutcomeEvent is DEPRECATED and will be removed in a future version of the specification. Use GradeEvent instead."@en ;
               rdfs:label "OutcomeEvent"@en ;
               owl:deprecated "true"^^xsd:boolean .
@@ -1175,6 +1303,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/Person
 :Person rdf:type owl:Class ;
         rdfs:subClassOf :Agent ;
+        owl:disjointWith :SoftwareApplication ;
         rdfs:comment "A Caliper Person represents a human being, alive or deceased, real or imaginary."@en ;
         rdfs:label "Person"@en .
 
@@ -1190,6 +1319,10 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/ReadingEvent
 :ReadingEvent rdf:type owl:Class ;
               rdfs:subClassOf :Event ;
+              owl:disjointWith :SessionEvent ,
+                               :ThreadEvent ,
+                               :ToolUseEvent ,
+                               :ViewEvent ;
               rdfs:comment "A Caliper ReadingEvent models an actor reading textural content.  ReadingEvent is DEPRECATED and will be removed in a future version of the specification.  It SHOULD NOT be referenced."@en ;
               rdfs:label "ReadingEvent"@en ;
               owl:deprecated "true"^^xsd:boolean .
@@ -1205,6 +1338,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/Result
 :Result rdf:type owl:Class ;
         rdfs:subClassOf :Entity ;
+        owl:disjointWith :Score ;
         rdfs:comment "A Caliper Result represents a grade applied to an assignment submission."@en ;
         rdfs:label "Result"@en .
 
@@ -1219,6 +1353,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/SelectTextResponse
 :SelectTextResponse rdf:type owl:Class ;
                     rdfs:subClassOf :Response ;
+                    owl:disjointWith :TrueFalseResponse ;
                     rdfs:comment "A Caliper SelectTextResponse represents a type of Response that identifies text or a mapping from a presented paragraph or list."@en ;
                     rdfs:label "SelectTextResponse"@en .
 
@@ -1239,6 +1374,9 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/SessionEvent
 :SessionEvent rdf:type owl:Class ;
               rdfs:subClassOf :Event ;
+              owl:disjointWith :ThreadEvent ,
+                               :ToolUseEvent ,
+                               :ViewEvent ;
               rdfs:comment "A Caliper SessionEvent models the creation and subsequent termination of a user session established by a Person interacting with a SoftwareApplication."@en ;
               rdfs:label "SessionEvent"@en .
 
@@ -1246,6 +1384,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/SharedAnnotation
 :SharedAnnotation rdf:type owl:Class ;
                   rdfs:subClassOf :Annotation ;
+                  owl:disjointWith :TagAnnotation ;
                   rdfs:comment "A Caliper SharedAnnotation represents the act of sharing a reference to a DigitalResource with other agents."@en ;
                   rdfs:label "SharedAnnotation"@en .
 
@@ -1281,6 +1420,8 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/ThreadEvent
 :ThreadEvent rdf:type owl:Class ;
              rdfs:subClassOf :Event ;
+             owl:disjointWith :ToolUseEvent ,
+                              :ViewEvent ;
              rdfs:comment "A Caliper ThreadEvent models an actor interacting with a Forum thread or topic."@en ;
              rdfs:label "ThreadEvent"@en .
 
@@ -1288,6 +1429,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/ToolUseEvent
 :ToolUseEvent rdf:type owl:Class ;
               rdfs:subClassOf :Event ;
+              owl:disjointWith :ViewEvent ;
               rdfs:comment "A Caliper ToolUseEvent models a Person using a learning tool in a way that the tool's creators have determined is an indication of a learning interaction."@en ;
               rdfs:label "ToolUseEvent"@en .
 
@@ -1323,6 +1465,9 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/epubChapter
 :epubChapter rdf:type owl:Class ;
              rdfs:subClassOf :DigitalResource ;
+             owl:disjointWith :epubPart ,
+                              :epubSubChapter ,
+                              :epubVolume ;
              rdfs:comment "A Caliper EpubChapter represents a major structural division of a piece of writing. EpubChapter is a DEPRECATED entity that will be removed in a future version of the specification. It SHOULD NOT be referenced."@en ;
              rdfs:label "EpubChapter"@en ;
              owl:deprecated "true"^^xsd:boolean .
@@ -1331,6 +1476,8 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/epubPart
 :epubPart rdf:type owl:Class ;
           rdfs:subClassOf :DigitalResource ;
+          owl:disjointWith :epubSubChapter ,
+                           :epubVolume ;
           rdfs:comment "A Caliper EpubPart represents a major structural division of a piece of writing, typically encapsulating a set of related chapters. EpubPart is a DEPRECATED entity that will be removed in a future version of the specification. It SHOULD NOT be referenced."@en ;
           rdfs:label "EpubPart"@en ;
           owl:deprecated "true"^^xsd:boolean .
@@ -1339,6 +1486,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/epubSubChapter
 :epubSubChapter rdf:type owl:Class ;
                 rdfs:subClassOf :DigitalResource ;
+                owl:disjointWith :epubVolume ;
                 rdfs:comment "A Caliper EpubSubChapter represents a major sub-division of an EpubChapter. EpubSubChapter is a DEPRECATED entity that will be removed in a future version of the specification. It SHOULD NOT be referenced."^^xsd:string ;
                 rdfs:label "EpubSubChapter"@en ;
                 owl:deprecated "true"^^xsd:boolean .
