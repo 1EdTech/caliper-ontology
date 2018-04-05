@@ -2637,7 +2637,11 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <!-- http://purl.imsglobal.org/caliper/Role -->
 
-    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Role"/>
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Role">
+        <rdfs:comment xml:lang="en">A member can have multiple roles in a Membership.  These different roles would be reflected in separate instances of the Role.</rdfs:comment>
+        <rdfs:isDefinedBy>http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Role</rdfs:label>
+    </owl:Class>
     
 
 
@@ -2817,7 +2821,11 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <!-- http://purl.imsglobal.org/caliper/Status -->
 
-    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Status"/>
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Status">
+        <rdfs:comment xml:lang="en">Indicates if a member is active or inactive in the collection. This allows the source system to specifically tell the target system that a member is now active or inactive.  Another view is that the absence of a Membership object when membership data is passed implies inactivity and the existence of an object implies active membership.  This will logically work for a ‘snap-shot’ interface where all members are passed every time objects are sent from one system to another but it will not support an interface where individual Membership objects are passed.</rdfs:comment>
+        <rdfs:isDefinedBy>http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Status</rdfs:label>
+    </owl:Class>
     
 
 
@@ -3148,6 +3156,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Role"/>
+        <rdfs:comment xml:lang="en">The role of a formal administrator in the Membership.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Administrator</rdfs:label>
     </owl:Class>
     
@@ -3157,6 +3167,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Role"/>
+        <rdfs:comment xml:lang="en">The role of an author of content for learning material presented through the Membership.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ContentDeveloper</rdfs:label>
     </owl:Class>
     
@@ -3166,6 +3178,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Role"/>
+        <rdfs:comment xml:lang="en">The role of teaching instructor for learning material presented through the Membership.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Instructor</rdfs:label>
     </owl:Class>
     
@@ -3175,6 +3189,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership#Learner">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Role"/>
+        <rdfs:comment xml:lang="en">The role of someone undergoing some form of formal learning.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Learner</rdfs:label>
     </owl:Class>
     
@@ -3184,6 +3200,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership#Manager">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Role"/>
+        <rdfs:comment xml:lang="en">The role of manager of the Group for which the Membership is being defined.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Manager</rdfs:label>
     </owl:Class>
     
@@ -3193,6 +3211,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership#Member">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Role"/>
+        <rdfs:comment xml:lang="en">The role of a member of the associated Membership.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Member</rdfs:label>
     </owl:Class>
     
@@ -3202,6 +3222,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Role"/>
+        <rdfs:comment xml:lang="en">The role of a personal mentor of other individuals in the Membership.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Mentor</rdfs:label>
     </owl:Class>
     
@@ -3211,7 +3233,20 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:Class rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership#Officer">
         <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Role"/>
+        <rdfs:comment xml:lang="en">The role of an officer of organization e.g., Chair, Secretary, etc. in the Membership.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Officer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Role"/>
+        <rdfs:comment xml:lang="en">The role of teaching assistant to an Instructor in the Membership.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">TeachingAssistant</rdfs:label>
     </owl:Class>
     
 
@@ -3232,7 +3267,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Abandoned">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Forsake, leave behind.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/202232813-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202232813-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Abandoned</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3243,7 +3278,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Activated">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Make active or more active. Inverse of Deactivated.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200191014-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200191014-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Activated</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3254,7 +3289,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Added">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Make an addition (to); join or combine or unite with others; increase the quality, quantity, size or scope of. Inverse of Removed.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200182551-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200182551-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Added</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3265,7 +3300,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Attached">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Cause to be attached.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/201299048-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201299048-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Attached</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3276,9 +3311,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Bookmarked">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">A marker that specifies a location of interest in a DigitalResource that is recorded for later retrieval.</rdfs:comment>
-        <rdfs:isDefinedBy>http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Bookmarked</rdfs:label>
-        <rdfs:seeAlso>http://wordnet-rdf.princeton.edu/wn31/102874508-n</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/102874508-n</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3288,9 +3323,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/ChangedResolution">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Cause to change; make different; cause a transformation of the number of pixels per square inch on a computer-generated display.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200126072-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200126072-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ChangedResolution</rdfs:label>
-        <rdfs:seeAlso>http://wordnet-rdf.princeton.edu/wn31/111526370-n</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/111526370-n</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3300,9 +3335,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/ChangedSize">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Cause to change; make different; cause a transformation of the physical magnitude of something.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200126072-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200126072-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ChangedSize</rdfs:label>
-        <rdfs:seeAlso>http://wordnet-rdf.princeton.edu/wn31/105106204-n</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/105106204-n</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3312,9 +3347,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/ChangedSpeed">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Cause to change; make different; cause a transformation of the rate at which something happens.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200126072-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200126072-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ChangedSpeed</rdfs:label>
-        <rdfs:seeAlso>http://wordnet-rdf.princeton.edu/wn31/105065291-n</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/105065291-n</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3324,9 +3359,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/ChangedVolume">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Cause to change; make different; cause a transformation of the magnitude of sound (usually in a specified direction).</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200126072-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200126072-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ChangedVolume</rdfs:label>
-        <rdfs:seeAlso>http://wordnet-rdf.princeton.edu/wn31/104997456-n</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/104997456-n</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3336,7 +3371,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Classified">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Assign to a class or kind.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200741667-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200741667-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Classified</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3347,7 +3382,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/ClosedPopout">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Close or shut a video popout. Inverse of OpenedPopout.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/201349660-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201349660-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ClosedPopout</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3358,7 +3393,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Commented">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Make or write a comment on.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/201060446-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201060446-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Commented</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3369,7 +3404,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Completed">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Come or bring to a finish or an end.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200485097-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200485097-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Completed</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3380,7 +3415,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Created">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Make or cause to be or to become. Inverse of Deleted.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/201620211-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201620211-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Created</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3391,7 +3426,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Deactivated">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Make inactive. Inverse of Activated.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200191849-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200191849-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Deactivated</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3402,7 +3437,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Deleted">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Wipe out digitally. Inverse of Created.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/201001860-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201001860-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Deleted</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3413,7 +3448,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Described">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Give a description of.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200989103-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200989103-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Described</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3424,9 +3459,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/DisabledClosedCaptioning">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Render unable to perform the visual display of a plain text transcription of audio output. Inverse of EnabledClosedCaptioning.</rdfs:comment>
-        <rdfs:isDefinedBy>http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">DisabledClosedCaptioning</rdfs:label>
-        <rdfs:seeAlso>http://wordnet-rdf.princeton.edu/wn31/200513267-v</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200513267-v</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3436,7 +3471,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Disliked">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Have or feel a dislike or distaste for. Inverse of Liked.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/201780648-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201780648-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Disliked</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3447,9 +3482,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/EnabledClosedCaptioning">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Render capable or able the visual display of a plain text transcription of audio output. Inverse of DisabledClosedCaptioning.</rdfs:comment>
-        <rdfs:isDefinedBy>http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">EnabledClosedCaptioning</rdfs:label>
-        <rdfs:seeAlso>http://wordnet-rdf.princeton.edu/wn31/200513958-v</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200513958-v</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3459,7 +3494,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Ended">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Bring to an end or halt. Inverse of Started.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200353480-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200353480-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Ended</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3470,9 +3505,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/EnteredFullScreen">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">To come or go into a view mode that utilizes all the available display surface of a screen. Inverse of ExitedFullScreen.</rdfs:comment>
-        <rdfs:isDefinedBy>http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">EnteredFullScreen</rdfs:label>
-        <rdfs:seeAlso>http://wordnet-rdf.princeton.edu/wn31/202020375-v</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202020375-v</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3482,9 +3517,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/ExitedFullScreen">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Move out of or depart from a view mode that utilizes all the available display surface of a screen. Inverse of EnteredFullScreen.</rdfs:comment>
-        <rdfs:isDefinedBy>http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ExitedFullScreen</rdfs:label>
-        <rdfs:seeAlso>http://wordnet-rdf.princeton.edu/wn31/202019450-v</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202019450-v</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3494,7 +3529,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/ForwardedTo">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Send or ship onward.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/201959367-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201959367-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ForwardedTo</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3505,7 +3540,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Graded">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Assign a grade or rank to, according to one&apos;s evaluation.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200659399-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200659399-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Graded</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3516,7 +3551,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Hid">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Prevent from being seen or discovered. Inverse of Showed.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/202149298-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202149298-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Hid</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3527,7 +3562,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Highlighted">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Move into the foreground to make more visible or prominent.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200515150-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200515150-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Highlighted</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3538,7 +3573,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Identified">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Recognize as being; establish the identity of someone or something.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200620568-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200620568-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Identified</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3549,7 +3584,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/JumpedTo">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Pass abruptly from one state or topic to another.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200561468-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200561468-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">JumpedTo</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3560,7 +3595,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Liked">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Be fond of. Inverse of Disliked.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/201780873-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201780873-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Liked</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3571,7 +3606,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Linked">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Connect, fasten, or put together two or more pieces.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/201357376-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201357376-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Linked</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3582,7 +3617,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/LoggedIn">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Enter a computer or software application. Inverse of LoggedOut.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/202253955-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202253955-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">LoggedIn</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3593,7 +3628,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/LoggedOut">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Exit a computer or software application. Inverse of LoggedIn.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/202254101-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202254101-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">LoggedOut</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3604,9 +3639,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/MarkedAsRead">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Mark: designate as if by a mark, read: interpret something that is written or printed. Inverse of MarkedAsUnread.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200923709-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200923709-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">MarkedAsRead</rdfs:label>
-        <rdfs:seeAlso>http://wordnet-rdf.princeton.edu/wn31/200626756-v</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200626756-v</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3616,9 +3651,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/MarkedAsUnread">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Remove designation as if by a mark.  Inverse of MarkedAsRead.</rdfs:comment>
-        <rdfs:isDefinedBy>http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">MarkedAsUnread</rdfs:label>
-        <rdfs:seeAlso>http://wordnet-rdf.princeton.edu/wn31/200923709-v</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200923709-v</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3628,7 +3663,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Modified">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Cause to change; make different; cause a transformation.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200126072-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200126072-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Modified</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3639,7 +3674,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Muted">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Deaden (a sound or noise). Inverse of Unmuted.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/mute-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/mute-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Muted</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3650,7 +3685,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/NavigatedTo">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Direct the course; determine the direction of travelling.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/201935739-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201935739-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">NavigatedTo</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3661,9 +3696,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/OpenedPopout">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Start to operate or function or cause to start operating or functioning a video popout. Inverse of ClosedPopout.</rdfs:comment>
-        <rdfs:isDefinedBy>http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">OpenedPopout</rdfs:label>
-        <rdfs:seeAlso>http://wordnet-rdf.princeton.edu/wn31/202431018-v</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202431018-v</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3673,7 +3708,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Paused">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Cease an action temporarily. Inverse of Resumed.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200781106-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200781106-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Paused</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3684,7 +3719,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Posted">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">To cause to be directed or transmitted to another place.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/201033289-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201033289-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Posted</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3695,7 +3730,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Questioned">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Pose a question.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200786670-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200786670-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Questioned</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3706,7 +3741,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Ranked">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Assign a rank or rating to.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200659723-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200659723-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Ranked</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3717,7 +3752,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Recommended">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Express a good opinion of.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200884469-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200884469-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Recommended</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3728,7 +3763,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Removed">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Remove from sight. Inverse of Added.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200181704-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200181704-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Removed</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3739,7 +3774,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Reset">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Set anew.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200949623-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200949623-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Reset</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3750,9 +3785,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Restarted">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Take up or begin anew, as in to start something, make progress but then stop and return to the beginning in order to start again.</rdfs:comment>
-        <rdfs:isDefinedBy>http://purl.imglobal.org/caliper</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imglobal.org/caliper</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Restarted</rdfs:label>
-        <rdfs:seeAlso>http://wordnet-rdf.princeton.edu/wn31/200350758-v</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200350758-v</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3762,9 +3797,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Resumed">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Take up or begin anew, as in to start something, pause and then begin again at the location where the pause in action occurred. Inverse of Paused.</rdfs:comment>
-        <rdfs:isDefinedBy>http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Resumed</rdfs:label>
-        <rdfs:seeAlso>http://wordnet-rdf.princeton.edu/wn31/200350758-v</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200350758-v</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3774,7 +3809,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Retrieved">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Obtain or retrieve from a storage device; as of information on a computer.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/202253616-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202253616-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Retrieved</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3785,7 +3820,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Reviewed">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Appraise critically.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200857194-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200857194-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Reviewed</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3796,7 +3831,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Rewound">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Wind up again.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/201524927-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201524927-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Rewound</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3807,7 +3842,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Searched">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Try to locate or discover, or try to establish the existence of.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/201318273-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201318273-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Searched</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3818,7 +3853,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Shared">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Communicate.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/201065952-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201065952-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Shared</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3829,7 +3864,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Showed">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Make visible or noticeable. Inverse of Hid.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/202141597-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202141597-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Showed</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3840,7 +3875,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Skipped">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Bypass.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200618188-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200618188-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Skipped</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3851,7 +3886,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Started">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Set in motion, cause to start. Inverse of Ended.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/200349400-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200349400-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Started</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3862,7 +3897,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Submitted">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Hand over formally.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/202267560-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202267560-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Submitted</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3873,7 +3908,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Subscribed">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Receive or obtain regularly. Inverse of Unsubscribed.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/202214527-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202214527-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Subscribed</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3884,7 +3919,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Tagged">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Attach a tag or label to.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/201591414-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201591414-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Tagged</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3895,7 +3930,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/TimedOut">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Cancellation of a user session after a predetermined time interval has occurred without activity.</rdfs:comment>
-        <rdfs:isDefinedBy>http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">TimedOut</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3906,9 +3941,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Unmuted">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Inverse of Muted.</rdfs:comment>
-        <rdfs:isDefinedBy>http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Unmuted</rdfs:label>
-        <rdfs:seeAlso>http://wordnet-rdf.princeton.edu/wn31/mute-v</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/mute-v</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3918,9 +3953,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Unsubscribed">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Inverse of Subscribed.</rdfs:comment>
-        <rdfs:isDefinedBy>http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Unsubscribed</rdfs:label>
-        <rdfs:seeAlso>http://wordnet-rdf.princeton.edu/wn31/202214527-v</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202214527-v</rdfs:seeAlso>
     </owl:NamedIndividual>
     
 
@@ -3930,7 +3965,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Used">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Put into service; make work or employ for a particular purpose or for its inherent or natural purpose.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/201161188-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201161188-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Used</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3941,7 +3976,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Viewed">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
         <rdfs:comment xml:lang="en">Look at carefully; study mentally.</rdfs:comment>
-        <rdfs:isDefinedBy>http://wordnet-rdf.princeton.edu/wn31/202134765-v</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202134765-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Viewed</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3951,6 +3986,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Administrator">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator"/>
+        <rdfs:comment xml:lang="en">Someone who typically works with a system and all sub-structures (LMS, SIS, etc.).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Administrator</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3960,6 +3997,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Developer">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator"/>
+        <rdfs:comment xml:lang="en">Provides programmatic development for use in a LMS, SIS, or associated tool(s).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Developer</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3969,6 +4008,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalDeveloper">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator"/>
+        <rdfs:comment xml:lang="en">A user who is not a member of the institution but provides programmatic development for use in a LMS, SIS, or associated tool(s).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ExternalDeveloper</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3978,6 +4019,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalSupport">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator"/>
+        <rdfs:comment xml:lang="en">A user who is not a member of the institution but provides support for the system; usually has fewer privileges then an administrator.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ExternalSupport</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3987,6 +4030,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalSystemAdministrator">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator"/>
+        <rdfs:comment xml:lang="en">A user who is not a member of the institution that provides support, e.g., vendor support accounts, 3rd party support accounts, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ExternalSystemAdministrator</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3996,6 +4041,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Support">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator"/>
+        <rdfs:comment xml:lang="en">Provides support for the system, usually has fewer privileges then an administrator.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Support</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4005,6 +4052,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#SystemAdministrator">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator"/>
+        <rdfs:comment xml:lang="en">A person who has greater privileges then an administrator.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">SystemAdministrator</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4014,6 +4063,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ContentDeveloper">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper"/>
+        <rdfs:comment xml:lang="en">Someone who usually develops materials within a specific course structure.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">ContentDeveloper</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4022,6 +4074,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ContentExpert">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper"/>
+        <rdfs:comment xml:lang="en">An expert that participates in the course because of their knowledge; e.g., guest speaker, artist in residence, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ContentExpert</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4031,6 +4085,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ExternalContentExpert">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper"/>
+        <rdfs:comment xml:lang="en">An expert who is not a member of the institution butparticipates in the course because of their knowledge; e.g., guest speaker, artist in residence, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ExternalContentExpert</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4040,6 +4096,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#Librarian">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper"/>
+        <rdfs:comment xml:lang="en">A librarian who provides content support.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Librarian</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4049,16 +4107,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#ExternalInstructor">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor"/>
+        <rdfs:comment xml:lang="en">An instructor who is not a member of the institution.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ExternalInstructor</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Grader -->
-
-    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Grader">
-        <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor"/>
-        <rdfs:label xml:lang="en">Grader</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4067,6 +4118,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#GuestInstructor">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor"/>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <rdfs:comment xml:lang="en">An instructor who is teaching this course outside of their normal responsibilities</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">GuestInstructor</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4076,6 +4130,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Instructor">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor"/>
+        <rdfs:comment xml:lang="en">Someone who usually teaches within a specific course structure.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Instructor</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4085,6 +4141,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Lecturer">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor"/>
+        <rdfs:comment xml:lang="en">An instructor that has limited permissions to modify the course.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Lecturer</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4094,6 +4152,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#PrimaryInstructor">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor"/>
+        <rdfs:comment xml:lang="en">An instructor who is primarily responsible for the instruction.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">PrimaryInstructor</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4103,6 +4163,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#SecondaryInstructor">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor"/>
+        <rdfs:comment xml:lang="en">An instructor who has secondary responsibility for the instruction.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">SecondaryInstructor</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4111,7 +4173,10 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <!-- http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistant -->
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistant">
-        <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor"/>
+        <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant"/>
+        <rdfs:comment xml:lang="en">Someone who usually has a subset of instructional responsibilities for some portion of a course structure</rdfs:comment>
+        <rdfs:comment xml:lang="en">The role of a teaching assistant to an Instructor in the Membership.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">TeachingAssistant</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4120,7 +4185,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <!-- http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantGroup -->
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantGroup">
-        <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor"/>
+        <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant"/>
+        <rdfs:comment xml:lang="en">A teaching assistant for a Group.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">TeachingAssistantGroup</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4129,7 +4196,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <!-- http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantOffering -->
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantOffering">
-        <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor"/>
+        <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant"/>
+        <rdfs:comment xml:lang="en">A teaching assistant for a CourseOffering.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">TeachingAssistantOffering</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4138,7 +4207,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <!-- http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantSection -->
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantSection">
-        <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor"/>
+        <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant"/>
+        <rdfs:comment xml:lang="en">A teaching assistant for a CourseSection.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">TeachingAssistantSection</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4147,7 +4218,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <!-- http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantTemplate -->
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantTemplate">
-        <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor"/>
+        <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant"/>
+        <rdfs:comment xml:lang="en">A teaching assistant for a template.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">TeachingAssistantTemplate</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4157,6 +4230,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#ExternalLearner">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Learner"/>
+        <rdfs:comment xml:lang="en">A learner who is not a member of the institution.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ExternalLearner</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4166,6 +4241,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#GuestLearner">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Learner"/>
+        <rdfs:comment xml:lang="en">A learner who is not enrolled in the same process as a learner; may or may not receive credit for the course.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">GuestLearner</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4175,6 +4252,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#Learner">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Learner"/>
+        <rdfs:comment xml:lang="en">Someone who usually learns within a specific course structure.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Learner</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4184,6 +4263,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#NonCreditLearner">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Learner"/>
+        <rdfs:comment xml:lang="en">A learner who is enrolled through the same process as a learner, but is not receiving credit for the course of study.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">NonCreditLearner</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4193,6 +4274,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#AreaManager">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Manager"/>
+        <rdfs:comment xml:lang="en">Someone who provides assistance, administration, and/or support to multiple course structures; e.g., Departmental Staff, Cohort Leader, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">AreaManager</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4202,6 +4285,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#CourseCoordinator">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Manager"/>
+        <rdfs:comment xml:lang="en">Someone who provides assistance to a set of course structures that are related, a lab manager, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">CourseCoordinator</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4211,6 +4296,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#ExternalObserver">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Manager"/>
+        <rdfs:comment xml:lang="en">Person that is not a member of the institution but views multiple course structures for non-instructional purposes; e.g., peer review committee, accreditation staff, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ExternalObserver</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4220,6 +4307,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#Manager">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Manager"/>
+        <rdfs:comment xml:lang="en">Someone who usually interacts with multiple course structures.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Manager</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4229,6 +4318,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#Observer">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Manager"/>
+        <rdfs:comment xml:lang="en">Views multiple course structures for non-instructional purposes; e.g., peer review committee, accreditation staff, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Observer</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4238,6 +4329,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Member#Member">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Member"/>
+        <rdfs:comment xml:lang="en">Someone who is a member of an Organization.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Member</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4247,6 +4340,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Advisor">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor"/>
+        <rdfs:comment xml:lang="en">Advises learners.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Advisor</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4256,6 +4351,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Auditor">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor"/>
+        <rdfs:comment xml:lang="en">Audits learner activities; e.g., staff that verifies continuing eligibility for a scholarship, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Auditor</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4265,6 +4362,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalAdvisor">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor"/>
+        <rdfs:comment xml:lang="en">A user who is not a member of the institution that advises learners.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ExternalAdvisor</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4274,6 +4373,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalAuditor">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor"/>
+        <rdfs:comment xml:lang="en">A user who is not a member of the institution that audits learner activities; e.g., staff that verifies continuing eligibility for a scholarship, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ExternalAuditor</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4283,6 +4384,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalLearningFacilitator">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor"/>
+        <rdfs:comment xml:lang="en">A user who is not a member of the institution that works with individual learner to access materials; e.g., translator, assistant for persons of differing abilities, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ExternalLearningFacilitator</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4292,6 +4395,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalMentor">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor"/>
+        <rdfs:comment xml:lang="en">A user who is not a member of the institution that mentors learners.</rdfs:comment>
+        <rdfs:comment xml:lang="en">ExternalMentor</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
     </owl:NamedIndividual>
     
 
@@ -4300,6 +4406,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalReviewer">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor"/>
+        <rdfs:comment xml:lang="en">A user who is not a member of the institution that reviews work by learners.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ExternalReviewer</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4309,6 +4417,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalTutor">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor"/>
+        <rdfs:comment xml:lang="en">A user who is not a member of the institution that works with individual learners to assist in their instruction.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ExternalTutor</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4318,6 +4428,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#LearningFacilitator">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor"/>
+        <rdfs:comment xml:lang="en">Works with individual learner to access materials; e.g., translator, assistant for persons of differing abilities, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">LearningFacilitator</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4327,6 +4439,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Mentor">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor"/>
+        <rdfs:comment xml:lang="en">Someone who usually works with a specific course structure with a specific learner.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Mentor</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4336,6 +4450,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Reviewer">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor"/>
+        <rdfs:comment xml:lang="en">Reviews work by learners.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Reviewer</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4345,6 +4461,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Tutor">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor"/>
+        <rdfs:comment xml:lang="en">Works with individual learners to assist in their instruction.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Tutor</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4354,7 +4472,20 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Chair">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Officer"/>
+        <rdfs:comment xml:lang="en">Chair of the Group.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Chair</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Communications -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Communications">
+        <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Officer"/>
+        <rdfs:comment xml:lang="en">Communications officer for the Group.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Communications</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4363,6 +4494,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Officer">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Officer"/>
+        <rdfs:comment xml:lang="en">The role of an officer of organization e.g., Chair, Secretary, etc. in the Membership.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Officer</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4372,6 +4505,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Secretary">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Officer"/>
+        <rdfs:comment xml:lang="en">Secretary to the Group.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Secretary</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4381,16 +4516,42 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Treasurer">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Officer"/>
+        <rdfs:comment xml:lang="en">Treasurer to the Group.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Treasurer</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Vice-Chair -->
+    <!-- http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#ViceChair -->
 
-    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Vice-Chair">
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#ViceChair">
         <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Officer"/>
-        <rdfs:label xml:lang="en">Vice-Chair</rdfs:label>
+        <rdfs:comment xml:lang="en">Vice Chair to the Group.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">ViceChair</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#Grader -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#Grader">
+        <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor"/>
+        <rdfs:comment xml:lang="en">Primary responsibility is assignment of grades.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Grader</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#TeachingAssistantSectionAssociation -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#TeachingAssistantSectionAssociation">
+        <rdf:type rdf:resource="http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant"/>
+        <rdfs:comment xml:lang="en">A teaching assistant for a section association.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">TeachingAssistantSectionAssociation</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4399,6 +4560,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/status#Active">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Status"/>
+        <rdfs:comment xml:lang="en">The member is active in the Membership.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Active</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4408,6 +4571,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/vocab/lis/v2/status#Inactive">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Status"/>
+        <rdfs:comment xml:lang="en">The member is inactive in the Membership.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/lis/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Inactive</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4622,7 +4787,6 @@ The Caliper ontology provides a machine-readable document that defines the conce
             <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ExternalContentExpert"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#Librarian"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#ExternalInstructor"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Grader"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#GuestInstructor"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Instructor"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Lecturer"/>
@@ -4656,10 +4820,13 @@ The Caliper ontology provides a machine-readable document that defines the conce
             <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Reviewer"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Tutor"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Chair"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Communications"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Officer"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Secretary"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Treasurer"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Vice-Chair"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#ViceChair"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#Grader"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#TeachingAssistantSectionAssociation"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/status#Active"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/status#Inactive"/>
         </owl:distinctMembers>

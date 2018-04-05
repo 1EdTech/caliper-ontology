@@ -2395,8 +2395,6 @@
     }, {
       "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#ExternalInstructor"
     }, {
-      "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Grader"
-    }, {
       "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#GuestInstructor"
     }, {
       "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Instructor"
@@ -2463,13 +2461,19 @@
     }, {
       "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Chair"
     }, {
+      "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Communications"
+    }, {
       "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Officer"
     }, {
       "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Secretary"
     }, {
       "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Treasurer"
     }, {
-      "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Vice-Chair"
+      "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#ViceChair"
+    }, {
+      "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#Grader"
+    }, {
+      "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#TeachingAssistantSectionAssociation"
     }, {
       "@id" : "http://purl.imsglobal.org/vocab/lis/v2/status#Active"
     }, {
@@ -3545,7 +3549,18 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Role",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A member can have multiple roles in a Membership.  These different roles would be reflected in separate instances of the Role."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Role"
+  } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Score",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
@@ -3655,7 +3670,18 @@
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/Status",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Indicates if a member is active or inactive in the collection. This allows the source system to specifically tell the target system that a member is now active or inactive.  Another view is that the absence of a Membership object when membership data is passed implies inactivity and the existence of an object implies active membership.  This will logically work for a ‘snap-shot’ interface where all members are passed every time objects are sent from one system to another but it will not support an interface where individual Membership objects are passed."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Status"
+  } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/TagAnnotation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
@@ -6426,6 +6452,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The role of a formal administrator in the Membership."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Administrator"
@@ -6436,6 +6469,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The role of an author of content for learning material presented through the Membership."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ContentDeveloper"
@@ -6446,6 +6486,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The role of teaching instructor for learning material presented through the Membership."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Instructor"
@@ -6456,6 +6503,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership#Learner",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The role of someone undergoing some form of formal learning."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Learner"
@@ -6466,6 +6520,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership#Manager",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The role of manager of the Group for which the Membership is being defined."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Manager"
@@ -6476,6 +6537,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership#Member",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The role of a member of the associated Membership."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Member"
@@ -6486,6 +6554,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The role of a personal mentor of other individuals in the Membership."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Mentor"
@@ -6496,6 +6571,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership#Officer",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The role of an officer of organization e.g., Chair, Secretary, etc. in the Membership."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Officer"
@@ -6504,8 +6586,32 @@
     "@id" : "http://purl.imsglobal.org/caliper/Role"
   } ]
 }, {
+  "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The role of teaching assistant to an Instructor in the Membership."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "TeachingAssistant"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.imsglobal.org/caliper/Role"
+  } ]
+}, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Administrator",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Someone who typically works with a system and all sub-structures (LMS, SIS, etc.)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Administrator"
@@ -6513,6 +6619,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Developer",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Provides programmatic development for use in a LMS, SIS, or associated tool(s)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Developer"
@@ -6520,6 +6633,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalDeveloper",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A user who is not a member of the institution but provides programmatic development for use in a LMS, SIS, or associated tool(s)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ExternalDeveloper"
@@ -6527,6 +6647,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalSupport",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A user who is not a member of the institution but provides support for the system; usually has fewer privileges then an administrator."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ExternalSupport"
@@ -6534,6 +6661,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalSystemAdministrator",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A user who is not a member of the institution that provides support, e.g., vendor support accounts, 3rd party support accounts, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ExternalSystemAdministrator"
@@ -6541,6 +6675,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Support",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Provides support for the system, usually has fewer privileges then an administrator."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Support"
@@ -6548,16 +6689,41 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#SystemAdministrator",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A person who has greater privileges then an administrator."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "SystemAdministrator"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ContentDeveloper",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Someone who usually develops materials within a specific course structure."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ContentDeveloper"
+  } ]
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ContentExpert",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An expert that participates in the course because of their knowledge; e.g., guest speaker, artist in residence, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ContentExpert"
@@ -6565,6 +6731,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ExternalContentExpert",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An expert who is not a member of the institution butparticipates in the course because of their knowledge; e.g., guest speaker, artist in residence, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ExternalContentExpert"
@@ -6572,6 +6745,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#Librarian",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A librarian who provides content support."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Librarian"
@@ -6579,20 +6759,30 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#ExternalInstructor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An instructor who is not a member of the institution."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ExternalInstructor"
   } ]
 }, {
-  "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Grader",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Grader"
-  } ]
-}, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#GuestInstructor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : ""
+  }, {
+    "@language" : "en",
+    "@value" : "An instructor who is teaching this course outside of their normal responsibilities"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "GuestInstructor"
@@ -6600,6 +6790,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Instructor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Someone who usually teaches within a specific course structure."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Instructor"
@@ -6607,6 +6804,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Lecturer",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An instructor that has limited permissions to modify the course."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Lecturer"
@@ -6614,6 +6818,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#PrimaryInstructor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An instructor who is primarily responsible for the instruction."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "PrimaryInstructor"
@@ -6621,41 +6832,86 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#SecondaryInstructor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An instructor who has secondary responsibility for the instruction."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "SecondaryInstructor"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistant",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Someone who usually has a subset of instructional responsibilities for some portion of a course structure"
+  }, {
+    "@language" : "en",
+    "@value" : "The role of a teaching assistant to an Instructor in the Membership."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "TeachingAssistant"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantGroup",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A teaching assistant for a Group."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "TeachingAssistantGroup"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantOffering",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A teaching assistant for a CourseOffering."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "TeachingAssistantOffering"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantSection",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A teaching assistant for a CourseSection."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "TeachingAssistantSection"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantTemplate",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A teaching assistant for a template."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "TeachingAssistantTemplate"
@@ -6663,6 +6919,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#ExternalLearner",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Learner" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A learner who is not a member of the institution."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ExternalLearner"
@@ -6670,6 +6933,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#GuestLearner",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Learner" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A learner who is not enrolled in the same process as a learner; may or may not receive credit for the course."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "GuestLearner"
@@ -6677,6 +6947,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#Learner",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Learner" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Someone who usually learns within a specific course structure."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Learner"
@@ -6684,6 +6961,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#NonCreditLearner",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Learner" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A learner who is enrolled through the same process as a learner, but is not receiving credit for the course of study."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "NonCreditLearner"
@@ -6691,6 +6975,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#AreaManager",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Manager" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Someone who provides assistance, administration, and/or support to multiple course structures; e.g., Departmental Staff, Cohort Leader, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "AreaManager"
@@ -6698,6 +6989,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#CourseCoordinator",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Manager" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Someone who provides assistance to a set of course structures that are related, a lab manager, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "CourseCoordinator"
@@ -6705,6 +7003,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#ExternalObserver",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Manager" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Person that is not a member of the institution but views multiple course structures for non-instructional purposes; e.g., peer review committee, accreditation staff, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ExternalObserver"
@@ -6712,6 +7017,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#Manager",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Manager" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Someone who usually interacts with multiple course structures."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Manager"
@@ -6719,6 +7031,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#Observer",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Manager" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Views multiple course structures for non-instructional purposes; e.g., peer review committee, accreditation staff, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Observer"
@@ -6726,6 +7045,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Member#Member",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Member" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Someone who is a member of an Organization."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Member"
@@ -6733,6 +7059,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Advisor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Advises learners."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Advisor"
@@ -6740,6 +7073,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Auditor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Audits learner activities; e.g., staff that verifies continuing eligibility for a scholarship, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Auditor"
@@ -6747,6 +7087,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalAdvisor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A user who is not a member of the institution that advises learners."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ExternalAdvisor"
@@ -6754,6 +7101,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalAuditor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A user who is not a member of the institution that audits learner activities; e.g., staff that verifies continuing eligibility for a scholarship, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ExternalAuditor"
@@ -6761,16 +7115,40 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalLearningFacilitator",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A user who is not a member of the institution that works with individual learner to access materials; e.g., translator, assistant for persons of differing abilities, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ExternalLearningFacilitator"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalMentor",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A user who is not a member of the institution that mentors learners."
+  }, {
+    "@language" : "en",
+    "@value" : "ExternalMentor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ]
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalReviewer",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A user who is not a member of the institution that reviews work by learners."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ExternalReviewer"
@@ -6778,6 +7156,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalTutor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A user who is not a member of the institution that works with individual learners to assist in their instruction."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ExternalTutor"
@@ -6785,6 +7170,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#LearningFacilitator",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Works with individual learner to access materials; e.g., translator, assistant for persons of differing abilities, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "LearningFacilitator"
@@ -6792,6 +7184,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Mentor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Someone who usually works with a specific course structure with a specific learner."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Mentor"
@@ -6799,6 +7198,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Reviewer",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Reviews work by learners."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Reviewer"
@@ -6806,6 +7212,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Tutor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Works with individual learners to assist in their instruction."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Tutor"
@@ -6813,13 +7226,41 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Chair",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Officer" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Chair of the Group."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Chair"
   } ]
 }, {
+  "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Communications",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Officer" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Communications officer for the Group."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Communications"
+  } ]
+}, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Officer",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Officer" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The role of an officer of organization e.g., Chair, Secretary, etc. in the Membership."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Officer"
@@ -6827,6 +7268,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Secretary",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Officer" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Secretary to the Group."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Secretary"
@@ -6834,20 +7282,69 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Treasurer",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Officer" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Treasurer to the Group."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Treasurer"
   } ]
 }, {
-  "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Vice-Chair",
+  "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#ViceChair",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Officer" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Vice Chair to the Group."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Vice-Chair"
+    "@value" : "ViceChair"
+  } ]
+}, {
+  "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#Grader",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Primary responsibility is assignment of grades."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Grader"
+  } ]
+}, {
+  "@id" : "http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#TeachingAssistantSectionAssociation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A teaching assistant for a section association."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "TeachingAssistantSectionAssociation"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/status#Active",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Status" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The member is active in the Membership."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Active"
@@ -6855,6 +7352,13 @@
 }, {
   "@id" : "http://purl.imsglobal.org/vocab/lis/v2/status#Inactive",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Status" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The member is inactive in the Membership."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://www.imsglobal.org/lis/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Inactive"

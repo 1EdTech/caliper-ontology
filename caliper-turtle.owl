@@ -1929,7 +1929,10 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/Role
-:Role rdf:type owl:Class .
+:Role rdf:type owl:Class ;
+      rdfs:comment "A member can have multiple roles in a Membership.  These different roles would be reflected in separate instances of the Role."@en ;
+      rdfs:isDefinedBy "http://www.imsglobal.org/lis/" ;
+      rdfs:label "Role"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Score
@@ -2057,7 +2060,10 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://purl.imsglobal.org/caliper/Status
-:Status rdf:type owl:Class .
+:Status rdf:type owl:Class ;
+        rdfs:comment "Indicates if a member is active or inactive in the collection. This allows the source system to specifically tell the target system that a member is now active or inactive.  Another view is that the absence of a Membership object when membership data is passed implies inactivity and the existence of an object implies active membership.  This will logically work for a ‘snap-shot’ interface where all members are passed every time objects are sent from one system to another but it will not support an interface where individual Membership objects are passed."@en ;
+        rdfs:isDefinedBy "http://www.imsglobal.org/lis/" ;
+        rdfs:label "Status"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/TagAnnotation
@@ -2304,49 +2310,73 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator
 <http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator> rdf:type owl:Class ;
                                                                   rdfs:subClassOf :Role ;
+                                                                  rdfs:comment "The role of a formal administrator in the Membership."@en ;
+                                                                  rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                   rdfs:label "Administrator"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper
 <http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper> rdf:type owl:Class ;
                                                                      rdfs:subClassOf :Role ;
+                                                                     rdfs:comment "The role of an author of content for learning material presented through the Membership."@en ;
+                                                                     rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                      rdfs:label "ContentDeveloper"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor
 <http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor> rdf:type owl:Class ;
                                                                rdfs:subClassOf :Role ;
+                                                               rdfs:comment "The role of teaching instructor for learning material presented through the Membership."@en ;
+                                                               rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                rdfs:label "Instructor"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership#Learner
 <http://purl.imsglobal.org/vocab/lis/v2/membership#Learner> rdf:type owl:Class ;
                                                             rdfs:subClassOf :Role ;
+                                                            rdfs:comment "The role of someone undergoing some form of formal learning."@en ;
+                                                            rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                             rdfs:label "Learner"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership#Manager
 <http://purl.imsglobal.org/vocab/lis/v2/membership#Manager> rdf:type owl:Class ;
                                                             rdfs:subClassOf :Role ;
+                                                            rdfs:comment "The role of manager of the Group for which the Membership is being defined."@en ;
+                                                            rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                             rdfs:label "Manager"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership#Member
 <http://purl.imsglobal.org/vocab/lis/v2/membership#Member> rdf:type owl:Class ;
                                                            rdfs:subClassOf :Role ;
+                                                           rdfs:comment "The role of a member of the associated Membership."@en ;
+                                                           rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                            rdfs:label "Member"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor
 <http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor> rdf:type owl:Class ;
                                                            rdfs:subClassOf :Role ;
+                                                           rdfs:comment "The role of a personal mentor of other individuals in the Membership."@en ;
+                                                           rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                            rdfs:label "Mentor"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership#Officer
 <http://purl.imsglobal.org/vocab/lis/v2/membership#Officer> rdf:type owl:Class ;
                                                             rdfs:subClassOf :Role ;
+                                                            rdfs:comment "The role of an officer of organization e.g., Chair, Secretary, etc. in the Membership."@en ;
+                                                            rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                             rdfs:label "Officer"@en .
+
+
+###  http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant
+<http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf :Role ;
+                                                                      rdfs:comment "The role of teaching assistant to an Instructor in the Membership."@en ;
+                                                                      rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
+                                                                      rdfs:label "TeachingAssistant"@en .
 
 
 #################################################################
@@ -2357,7 +2387,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Abandoned> rdf:type owl:NamedIndividual ,
                                                                :Action ;
                                                       rdfs:comment "Forsake, leave behind."@en ;
-                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202232813-v" ;
+                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202232813-v"^^xsd:string ;
                                                       rdfs:label "Abandoned"@en .
 
 
@@ -2365,7 +2395,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Activated> rdf:type owl:NamedIndividual ,
                                                                :Action ;
                                                       rdfs:comment "Make active or more active. Inverse of Deactivated."@en ;
-                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200191014-v" ;
+                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200191014-v"^^xsd:string ;
                                                       rdfs:label "Activated"@en .
 
 
@@ -2373,7 +2403,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Added> rdf:type owl:NamedIndividual ,
                                                            :Action ;
                                                   rdfs:comment "Make an addition (to); join or combine or unite with others; increase the quality, quantity, size or scope of. Inverse of Removed."@en ;
-                                                  rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200182551-v" ;
+                                                  rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200182551-v"^^xsd:string ;
                                                   rdfs:label "Added"@en .
 
 
@@ -2381,7 +2411,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Attached> rdf:type owl:NamedIndividual ,
                                                               :Action ;
                                                      rdfs:comment "Cause to be attached."@en ;
-                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201299048-v" ;
+                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201299048-v"^^xsd:string ;
                                                      rdfs:label "Attached"@en .
 
 
@@ -2389,52 +2419,52 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Bookmarked> rdf:type owl:NamedIndividual ,
                                                                 :Action ;
                                                        rdfs:comment "A marker that specifies a location of interest in a DigitalResource that is recorded for later retrieval."@en ;
-                                                       rdfs:isDefinedBy "http://purl.imsglobal.org/caliper" ;
+                                                       rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
                                                        rdfs:label "Bookmarked"@en ;
-                                                       rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/102874508-n" .
+                                                       rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/102874508-n"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/ChangedResolution
 <http://purl.imsglobal.org/caliper/actions/ChangedResolution> rdf:type owl:NamedIndividual ,
                                                                        :Action ;
                                                               rdfs:comment "Cause to change; make different; cause a transformation of the number of pixels per square inch on a computer-generated display."@en ;
-                                                              rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200126072-v" ;
+                                                              rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200126072-v"^^xsd:string ;
                                                               rdfs:label "ChangedResolution"@en ;
-                                                              rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/111526370-n" .
+                                                              rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/111526370-n"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/ChangedSize
 <http://purl.imsglobal.org/caliper/actions/ChangedSize> rdf:type owl:NamedIndividual ,
                                                                  :Action ;
                                                         rdfs:comment "Cause to change; make different; cause a transformation of the physical magnitude of something."@en ;
-                                                        rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200126072-v" ;
+                                                        rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200126072-v"^^xsd:string ;
                                                         rdfs:label "ChangedSize"@en ;
-                                                        rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/105106204-n" .
+                                                        rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/105106204-n"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/ChangedSpeed
 <http://purl.imsglobal.org/caliper/actions/ChangedSpeed> rdf:type owl:NamedIndividual ,
                                                                   :Action ;
                                                          rdfs:comment "Cause to change; make different; cause a transformation of the rate at which something happens."@en ;
-                                                         rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200126072-v" ;
+                                                         rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200126072-v"^^xsd:string ;
                                                          rdfs:label "ChangedSpeed"@en ;
-                                                         rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/105065291-n" .
+                                                         rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/105065291-n"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/ChangedVolume
 <http://purl.imsglobal.org/caliper/actions/ChangedVolume> rdf:type owl:NamedIndividual ,
                                                                    :Action ;
                                                           rdfs:comment "Cause to change; make different; cause a transformation of the magnitude of sound (usually in a specified direction)."@en ;
-                                                          rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200126072-v" ;
+                                                          rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200126072-v"^^xsd:string ;
                                                           rdfs:label "ChangedVolume"@en ;
-                                                          rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/104997456-n" .
+                                                          rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/104997456-n"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/Classified
 <http://purl.imsglobal.org/caliper/actions/Classified> rdf:type owl:NamedIndividual ,
                                                                 :Action ;
                                                        rdfs:comment "Assign to a class or kind."@en ;
-                                                       rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200741667-v" ;
+                                                       rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200741667-v"^^xsd:string ;
                                                        rdfs:label "Classified"@en .
 
 
@@ -2442,7 +2472,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/ClosedPopout> rdf:type owl:NamedIndividual ,
                                                                   :Action ;
                                                          rdfs:comment "Close or shut a video popout. Inverse of OpenedPopout."@en ;
-                                                         rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201349660-v" ;
+                                                         rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201349660-v"^^xsd:string ;
                                                          rdfs:label "ClosedPopout"@en .
 
 
@@ -2450,7 +2480,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Commented> rdf:type owl:NamedIndividual ,
                                                                :Action ;
                                                       rdfs:comment "Make or write a comment on."@en ;
-                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201060446-v" ;
+                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201060446-v"^^xsd:string ;
                                                       rdfs:label "Commented"@en .
 
 
@@ -2458,7 +2488,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Completed> rdf:type owl:NamedIndividual ,
                                                                :Action ;
                                                       rdfs:comment "Come or bring to a finish or an end."@en ;
-                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200485097-v" ;
+                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200485097-v"^^xsd:string ;
                                                       rdfs:label "Completed"@en .
 
 
@@ -2466,7 +2496,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Created> rdf:type owl:NamedIndividual ,
                                                              :Action ;
                                                     rdfs:comment "Make or cause to be or to become. Inverse of Deleted."@en ;
-                                                    rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201620211-v" ;
+                                                    rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201620211-v"^^xsd:string ;
                                                     rdfs:label "Created"@en .
 
 
@@ -2474,7 +2504,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Deactivated> rdf:type owl:NamedIndividual ,
                                                                  :Action ;
                                                         rdfs:comment "Make inactive. Inverse of Activated."@en ;
-                                                        rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200191849-v" ;
+                                                        rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200191849-v"^^xsd:string ;
                                                         rdfs:label "Deactivated"@en .
 
 
@@ -2482,7 +2512,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Deleted> rdf:type owl:NamedIndividual ,
                                                              :Action ;
                                                     rdfs:comment "Wipe out digitally. Inverse of Created."@en ;
-                                                    rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201001860-v" ;
+                                                    rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201001860-v"^^xsd:string ;
                                                     rdfs:label "Deleted"@en .
 
 
@@ -2490,7 +2520,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Described> rdf:type owl:NamedIndividual ,
                                                                :Action ;
                                                       rdfs:comment "Give a description of."@en ;
-                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200989103-v" ;
+                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200989103-v"^^xsd:string ;
                                                       rdfs:label "Described"@en .
 
 
@@ -2498,16 +2528,16 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/DisabledClosedCaptioning> rdf:type owl:NamedIndividual ,
                                                                               :Action ;
                                                                      rdfs:comment "Render unable to perform the visual display of a plain text transcription of audio output. Inverse of EnabledClosedCaptioning."@en ;
-                                                                     rdfs:isDefinedBy "http://purl.imsglobal.org/caliper" ;
+                                                                     rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
                                                                      rdfs:label "DisabledClosedCaptioning"@en ;
-                                                                     rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/200513267-v" .
+                                                                     rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/200513267-v"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/Disliked
 <http://purl.imsglobal.org/caliper/actions/Disliked> rdf:type owl:NamedIndividual ,
                                                               :Action ;
                                                      rdfs:comment "Have or feel a dislike or distaste for. Inverse of Liked."@en ;
-                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201780648-v" ;
+                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201780648-v"^^xsd:string ;
                                                      rdfs:label "Disliked"@en .
 
 
@@ -2515,16 +2545,16 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/EnabledClosedCaptioning> rdf:type owl:NamedIndividual ,
                                                                              :Action ;
                                                                     rdfs:comment "Render capable or able the visual display of a plain text transcription of audio output. Inverse of DisabledClosedCaptioning."@en ;
-                                                                    rdfs:isDefinedBy "http://purl.imsglobal.org/caliper" ;
+                                                                    rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
                                                                     rdfs:label "EnabledClosedCaptioning"@en ;
-                                                                    rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/200513958-v" .
+                                                                    rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/200513958-v"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/Ended
 <http://purl.imsglobal.org/caliper/actions/Ended> rdf:type owl:NamedIndividual ,
                                                            :Action ;
                                                   rdfs:comment "Bring to an end or halt. Inverse of Started."@en ;
-                                                  rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200353480-v" ;
+                                                  rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200353480-v"^^xsd:string ;
                                                   rdfs:label "Ended"@en .
 
 
@@ -2532,25 +2562,25 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/EnteredFullScreen> rdf:type owl:NamedIndividual ,
                                                                        :Action ;
                                                               rdfs:comment "To come or go into a view mode that utilizes all the available display surface of a screen. Inverse of ExitedFullScreen."@en ;
-                                                              rdfs:isDefinedBy "http://purl.imsglobal.org/caliper" ;
+                                                              rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
                                                               rdfs:label "EnteredFullScreen"@en ;
-                                                              rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/202020375-v" .
+                                                              rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/202020375-v"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/ExitedFullScreen
 <http://purl.imsglobal.org/caliper/actions/ExitedFullScreen> rdf:type owl:NamedIndividual ,
                                                                       :Action ;
                                                              rdfs:comment "Move out of or depart from a view mode that utilizes all the available display surface of a screen. Inverse of EnteredFullScreen."@en ;
-                                                             rdfs:isDefinedBy "http://purl.imsglobal.org/caliper" ;
+                                                             rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
                                                              rdfs:label "ExitedFullScreen"@en ;
-                                                             rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/202019450-v" .
+                                                             rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/202019450-v"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/ForwardedTo
 <http://purl.imsglobal.org/caliper/actions/ForwardedTo> rdf:type owl:NamedIndividual ,
                                                                  :Action ;
                                                         rdfs:comment "Send or ship onward."@en ;
-                                                        rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201959367-v" ;
+                                                        rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201959367-v"^^xsd:string ;
                                                         rdfs:label "ForwardedTo"@en .
 
 
@@ -2558,7 +2588,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Graded> rdf:type owl:NamedIndividual ,
                                                             :Action ;
                                                    rdfs:comment "Assign a grade or rank to, according to one's evaluation."@en ;
-                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200659399-v" ;
+                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200659399-v"^^xsd:string ;
                                                    rdfs:label "Graded"@en .
 
 
@@ -2566,7 +2596,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Hid> rdf:type owl:NamedIndividual ,
                                                          :Action ;
                                                 rdfs:comment "Prevent from being seen or discovered. Inverse of Showed."@en ;
-                                                rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202149298-v" ;
+                                                rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202149298-v"^^xsd:string ;
                                                 rdfs:label "Hid"@en .
 
 
@@ -2574,7 +2604,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Highlighted> rdf:type owl:NamedIndividual ,
                                                                  :Action ;
                                                         rdfs:comment "Move into the foreground to make more visible or prominent."@en ;
-                                                        rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200515150-v" ;
+                                                        rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200515150-v"^^xsd:string ;
                                                         rdfs:label "Highlighted"@en .
 
 
@@ -2582,7 +2612,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Identified> rdf:type owl:NamedIndividual ,
                                                                 :Action ;
                                                        rdfs:comment "Recognize as being; establish the identity of someone or something."@en ;
-                                                       rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200620568-v" ;
+                                                       rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200620568-v"^^xsd:string ;
                                                        rdfs:label "Identified"@en .
 
 
@@ -2590,7 +2620,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/JumpedTo> rdf:type owl:NamedIndividual ,
                                                               :Action ;
                                                      rdfs:comment "Pass abruptly from one state or topic to another."@en ;
-                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200561468-v" ;
+                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200561468-v"^^xsd:string ;
                                                      rdfs:label "JumpedTo"@en .
 
 
@@ -2598,7 +2628,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Liked> rdf:type owl:NamedIndividual ,
                                                            :Action ;
                                                   rdfs:comment "Be fond of. Inverse of Disliked."@en ;
-                                                  rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201780873-v" ;
+                                                  rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201780873-v"^^xsd:string ;
                                                   rdfs:label "Liked"@en .
 
 
@@ -2606,7 +2636,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Linked> rdf:type owl:NamedIndividual ,
                                                             :Action ;
                                                    rdfs:comment "Connect, fasten, or put together two or more pieces."@en ;
-                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201357376-v" ;
+                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201357376-v"^^xsd:string ;
                                                    rdfs:label "Linked"@en .
 
 
@@ -2614,7 +2644,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/LoggedIn> rdf:type owl:NamedIndividual ,
                                                               :Action ;
                                                      rdfs:comment "Enter a computer or software application. Inverse of LoggedOut."@en ;
-                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202253955-v" ;
+                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202253955-v"^^xsd:string ;
                                                      rdfs:label "LoggedIn"@en .
 
 
@@ -2622,7 +2652,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/LoggedOut> rdf:type owl:NamedIndividual ,
                                                                :Action ;
                                                       rdfs:comment "Exit a computer or software application. Inverse of LoggedIn."@en ;
-                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202254101-v" ;
+                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202254101-v"^^xsd:string ;
                                                       rdfs:label "LoggedOut"@en .
 
 
@@ -2630,25 +2660,25 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/MarkedAsRead> rdf:type owl:NamedIndividual ,
                                                                   :Action ;
                                                          rdfs:comment "Mark: designate as if by a mark, read: interpret something that is written or printed. Inverse of MarkedAsUnread."@en ;
-                                                         rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200923709-v" ;
+                                                         rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200923709-v"^^xsd:string ;
                                                          rdfs:label "MarkedAsRead"@en ;
-                                                         rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/200626756-v" .
+                                                         rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/200626756-v"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/MarkedAsUnread
 <http://purl.imsglobal.org/caliper/actions/MarkedAsUnread> rdf:type owl:NamedIndividual ,
                                                                     :Action ;
                                                            rdfs:comment "Remove designation as if by a mark.  Inverse of MarkedAsRead."@en ;
-                                                           rdfs:isDefinedBy "http://purl.imsglobal.org/caliper" ;
+                                                           rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
                                                            rdfs:label "MarkedAsUnread"@en ;
-                                                           rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/200923709-v" .
+                                                           rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/200923709-v"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/Modified
 <http://purl.imsglobal.org/caliper/actions/Modified> rdf:type owl:NamedIndividual ,
                                                               :Action ;
                                                      rdfs:comment "Cause to change; make different; cause a transformation."@en ;
-                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200126072-v" ;
+                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200126072-v"^^xsd:string ;
                                                      rdfs:label "Modified"@en .
 
 
@@ -2656,7 +2686,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Muted> rdf:type owl:NamedIndividual ,
                                                            :Action ;
                                                   rdfs:comment "Deaden (a sound or noise). Inverse of Unmuted."@en ;
-                                                  rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/mute-v" ;
+                                                  rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/mute-v"^^xsd:string ;
                                                   rdfs:label "Muted"@en .
 
 
@@ -2664,7 +2694,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/NavigatedTo> rdf:type owl:NamedIndividual ,
                                                                  :Action ;
                                                         rdfs:comment "Direct the course; determine the direction of travelling."@en ;
-                                                        rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201935739-v" ;
+                                                        rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201935739-v"^^xsd:string ;
                                                         rdfs:label "NavigatedTo"@en .
 
 
@@ -2672,16 +2702,16 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/OpenedPopout> rdf:type owl:NamedIndividual ,
                                                                   :Action ;
                                                          rdfs:comment "Start to operate or function or cause to start operating or functioning a video popout. Inverse of ClosedPopout."@en ;
-                                                         rdfs:isDefinedBy "http://purl.imsglobal.org/caliper" ;
+                                                         rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
                                                          rdfs:label "OpenedPopout"@en ;
-                                                         rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/202431018-v" .
+                                                         rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/202431018-v"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/Paused
 <http://purl.imsglobal.org/caliper/actions/Paused> rdf:type owl:NamedIndividual ,
                                                             :Action ;
                                                    rdfs:comment "Cease an action temporarily. Inverse of Resumed."@en ;
-                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200781106-v" ;
+                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200781106-v"^^xsd:string ;
                                                    rdfs:label "Paused"@en .
 
 
@@ -2689,7 +2719,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Posted> rdf:type owl:NamedIndividual ,
                                                             :Action ;
                                                    rdfs:comment "To cause to be directed or transmitted to another place."@en ;
-                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201033289-v" ;
+                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201033289-v"^^xsd:string ;
                                                    rdfs:label "Posted"@en .
 
 
@@ -2697,7 +2727,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Questioned> rdf:type owl:NamedIndividual ,
                                                                 :Action ;
                                                        rdfs:comment "Pose a question."@en ;
-                                                       rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200786670-v" ;
+                                                       rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200786670-v"^^xsd:string ;
                                                        rdfs:label "Questioned"@en .
 
 
@@ -2705,7 +2735,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Ranked> rdf:type owl:NamedIndividual ,
                                                             :Action ;
                                                    rdfs:comment "Assign a rank or rating to."@en ;
-                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200659723-v" ;
+                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200659723-v"^^xsd:string ;
                                                    rdfs:label "Ranked"@en .
 
 
@@ -2713,7 +2743,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Recommended> rdf:type owl:NamedIndividual ,
                                                                  :Action ;
                                                         rdfs:comment "Express a good opinion of."@en ;
-                                                        rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200884469-v" ;
+                                                        rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200884469-v"^^xsd:string ;
                                                         rdfs:label "Recommended"@en .
 
 
@@ -2721,7 +2751,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Removed> rdf:type owl:NamedIndividual ,
                                                              :Action ;
                                                     rdfs:comment "Remove from sight. Inverse of Added."@en ;
-                                                    rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200181704-v" ;
+                                                    rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200181704-v"^^xsd:string ;
                                                     rdfs:label "Removed"@en .
 
 
@@ -2729,7 +2759,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Reset> rdf:type owl:NamedIndividual ,
                                                            :Action ;
                                                   rdfs:comment "Set anew."@en ;
-                                                  rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200949623-v" ;
+                                                  rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200949623-v"^^xsd:string ;
                                                   rdfs:label "Reset"@en .
 
 
@@ -2737,25 +2767,25 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Restarted> rdf:type owl:NamedIndividual ,
                                                                :Action ;
                                                       rdfs:comment "Take up or begin anew, as in to start something, make progress but then stop and return to the beginning in order to start again."@en ;
-                                                      rdfs:isDefinedBy "http://purl.imglobal.org/caliper" ;
+                                                      rdfs:isDefinedBy "http://purl.imglobal.org/caliper"^^xsd:string ;
                                                       rdfs:label "Restarted"@en ;
-                                                      rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/200350758-v" .
+                                                      rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/200350758-v"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/Resumed
 <http://purl.imsglobal.org/caliper/actions/Resumed> rdf:type owl:NamedIndividual ,
                                                              :Action ;
                                                     rdfs:comment "Take up or begin anew, as in to start something, pause and then begin again at the location where the pause in action occurred. Inverse of Paused."@en ;
-                                                    rdfs:isDefinedBy "http://purl.imsglobal.org/caliper" ;
+                                                    rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
                                                     rdfs:label "Resumed"@en ;
-                                                    rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/200350758-v" .
+                                                    rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/200350758-v"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/Retrieved
 <http://purl.imsglobal.org/caliper/actions/Retrieved> rdf:type owl:NamedIndividual ,
                                                                :Action ;
                                                       rdfs:comment "Obtain or retrieve from a storage device; as of information on a computer."@en ;
-                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202253616-v" ;
+                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202253616-v"^^xsd:string ;
                                                       rdfs:label "Retrieved"@en .
 
 
@@ -2763,7 +2793,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Reviewed> rdf:type owl:NamedIndividual ,
                                                               :Action ;
                                                      rdfs:comment "Appraise critically."@en ;
-                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200857194-v" ;
+                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200857194-v"^^xsd:string ;
                                                      rdfs:label "Reviewed"@en .
 
 
@@ -2771,7 +2801,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Rewound> rdf:type owl:NamedIndividual ,
                                                              :Action ;
                                                     rdfs:comment "Wind up again."@en ;
-                                                    rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201524927-v" ;
+                                                    rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201524927-v"^^xsd:string ;
                                                     rdfs:label "Rewound"@en .
 
 
@@ -2779,7 +2809,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Searched> rdf:type owl:NamedIndividual ,
                                                               :Action ;
                                                      rdfs:comment "Try to locate or discover, or try to establish the existence of."@en ;
-                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201318273-v" ;
+                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201318273-v"^^xsd:string ;
                                                      rdfs:label "Searched"@en .
 
 
@@ -2787,7 +2817,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Shared> rdf:type owl:NamedIndividual ,
                                                             :Action ;
                                                    rdfs:comment "Communicate."@en ;
-                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201065952-v" ;
+                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201065952-v"^^xsd:string ;
                                                    rdfs:label "Shared"@en .
 
 
@@ -2795,7 +2825,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Showed> rdf:type owl:NamedIndividual ,
                                                             :Action ;
                                                    rdfs:comment "Make visible or noticeable. Inverse of Hid."@en ;
-                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202141597-v" ;
+                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202141597-v"^^xsd:string ;
                                                    rdfs:label "Showed"@en .
 
 
@@ -2803,7 +2833,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Skipped> rdf:type owl:NamedIndividual ,
                                                              :Action ;
                                                     rdfs:comment "Bypass."@en ;
-                                                    rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200618188-v" ;
+                                                    rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200618188-v"^^xsd:string ;
                                                     rdfs:label "Skipped"@en .
 
 
@@ -2811,7 +2841,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Started> rdf:type owl:NamedIndividual ,
                                                              :Action ;
                                                     rdfs:comment "Set in motion, cause to start. Inverse of Ended."@en ;
-                                                    rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200349400-v" ;
+                                                    rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200349400-v"^^xsd:string ;
                                                     rdfs:label "Started"@en .
 
 
@@ -2819,7 +2849,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Submitted> rdf:type owl:NamedIndividual ,
                                                                :Action ;
                                                       rdfs:comment "Hand over formally."@en ;
-                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202267560-v" ;
+                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202267560-v"^^xsd:string ;
                                                       rdfs:label "Submitted"@en .
 
 
@@ -2827,7 +2857,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Subscribed> rdf:type owl:NamedIndividual ,
                                                                 :Action ;
                                                        rdfs:comment "Receive or obtain regularly. Inverse of Unsubscribed."@en ;
-                                                       rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202214527-v" ;
+                                                       rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202214527-v"^^xsd:string ;
                                                        rdfs:label "Subscribed"@en .
 
 
@@ -2835,7 +2865,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Tagged> rdf:type owl:NamedIndividual ,
                                                             :Action ;
                                                    rdfs:comment "Attach a tag or label to."@en ;
-                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201591414-v" ;
+                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201591414-v"^^xsd:string ;
                                                    rdfs:label "Tagged"@en .
 
 
@@ -2843,7 +2873,7 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/TimedOut> rdf:type owl:NamedIndividual ,
                                                               :Action ;
                                                      rdfs:comment "Cancellation of a user session after a predetermined time interval has occurred without activity."@en ;
-                                                     rdfs:isDefinedBy "http://purl.imsglobal.org/caliper" ;
+                                                     rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
                                                      rdfs:label "TimedOut"@en .
 
 
@@ -2851,25 +2881,25 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Unmuted> rdf:type owl:NamedIndividual ,
                                                              :Action ;
                                                     rdfs:comment "Inverse of Muted."@en ;
-                                                    rdfs:isDefinedBy "http://purl.imsglobal.org/caliper" ;
+                                                    rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
                                                     rdfs:label "Unmuted"@en ;
-                                                    rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/mute-v" .
+                                                    rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/mute-v"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/Unsubscribed
 <http://purl.imsglobal.org/caliper/actions/Unsubscribed> rdf:type owl:NamedIndividual ,
                                                                   :Action ;
                                                          rdfs:comment "Inverse of Subscribed."@en ;
-                                                         rdfs:isDefinedBy "http://purl.imsglobal.org/caliper" ;
+                                                         rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
                                                          rdfs:label "Unsubscribed"@en ;
-                                                         rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/202214527-v" .
+                                                         rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/202214527-v"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/Used
 <http://purl.imsglobal.org/caliper/actions/Used> rdf:type owl:NamedIndividual ,
                                                           :Action ;
                                                  rdfs:comment "Put into service; make work or employ for a particular purpose or for its inherent or natural purpose."@en ;
-                                                 rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201161188-v" ;
+                                                 rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201161188-v"^^xsd:string ;
                                                  rdfs:label "Used"@en .
 
 
@@ -2877,317 +2907,441 @@ xsd:duration rdf:type rdfs:Datatype .
 <http://purl.imsglobal.org/caliper/actions/Viewed> rdf:type owl:NamedIndividual ,
                                                             :Action ;
                                                    rdfs:comment "Look at carefully; study mentally."@en ;
-                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202134765-v" ;
+                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202134765-v"^^xsd:string ;
                                                    rdfs:label "Viewed"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Administrator
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Administrator> rdf:type owl:NamedIndividual ,
                                                                                          <http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator> ;
+                                                                                rdfs:comment "Someone who typically works with a system and all sub-structures (LMS, SIS, etc.)."@en ;
+                                                                                rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                 rdfs:label "Administrator"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Developer
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Developer> rdf:type owl:NamedIndividual ,
                                                                                      <http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator> ;
+                                                                            rdfs:comment "Provides programmatic development for use in a LMS, SIS, or associated tool(s)."@en ;
+                                                                            rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                             rdfs:label "Developer"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalDeveloper
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalDeveloper> rdf:type owl:NamedIndividual ,
                                                                                              <http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator> ;
+                                                                                    rdfs:comment "A user who is not a member of the institution but provides programmatic development for use in a LMS, SIS, or associated tool(s)."@en ;
+                                                                                    rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                     rdfs:label "ExternalDeveloper"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalSupport
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalSupport> rdf:type owl:NamedIndividual ,
                                                                                            <http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator> ;
+                                                                                  rdfs:comment "A user who is not a member of the institution but provides support for the system; usually has fewer privileges then an administrator."@en ;
+                                                                                  rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                   rdfs:label "ExternalSupport"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalSystemAdministrator
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalSystemAdministrator> rdf:type owl:NamedIndividual ,
                                                                                                        <http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator> ;
+                                                                                              rdfs:comment "A user who is not a member of the institution that provides support, e.g., vendor support accounts, 3rd party support accounts, etc."@en ;
+                                                                                              rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                               rdfs:label "ExternalSystemAdministrator"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Support
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Support> rdf:type owl:NamedIndividual ,
                                                                                    <http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator> ;
+                                                                          rdfs:comment "Provides support for the system, usually has fewer privileges then an administrator."@en ;
+                                                                          rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                           rdfs:label "Support"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#SystemAdministrator
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#SystemAdministrator> rdf:type owl:NamedIndividual ,
                                                                                                <http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator> ;
+                                                                                      rdfs:comment "A person who has greater privileges then an administrator."@en ;
+                                                                                      rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                       rdfs:label "SystemAdministrator"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ContentDeveloper
 <http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ContentDeveloper> rdf:type owl:NamedIndividual ,
-                                                                                               <http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper> .
+                                                                                               <http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper> ;
+                                                                                      rdfs:comment "Someone who usually develops materials within a specific course structure."@en ;
+                                                                                      rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
+                                                                                      rdfs:label "ContentDeveloper"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ContentExpert
 <http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ContentExpert> rdf:type owl:NamedIndividual ,
                                                                                             <http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper> ;
+                                                                                   rdfs:comment "An expert that participates in the course because of their knowledge; e.g., guest speaker, artist in residence, etc."@en ;
+                                                                                   rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                    rdfs:label "ContentExpert"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ExternalContentExpert
 <http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ExternalContentExpert> rdf:type owl:NamedIndividual ,
                                                                                                     <http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper> ;
+                                                                                           rdfs:comment "An expert who is not a member of the institution butparticipates in the course because of their knowledge; e.g., guest speaker, artist in residence, etc."@en ;
+                                                                                           rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                            rdfs:label "ExternalContentExpert"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#Librarian
 <http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#Librarian> rdf:type owl:NamedIndividual ,
                                                                                         <http://purl.imsglobal.org/vocab/lis/v2/membership#ContentDeveloper> ;
+                                                                               rdfs:comment "A librarian who provides content support."@en ;
+                                                                               rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                rdfs:label "Librarian"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#ExternalInstructor
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#ExternalInstructor> rdf:type owl:NamedIndividual ,
                                                                                            <http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor> ;
+                                                                                  rdfs:comment "An instructor who is not a member of the institution."@en ;
+                                                                                  rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                   rdfs:label "ExternalInstructor"@en .
-
-
-###  http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Grader
-<http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Grader> rdf:type owl:NamedIndividual ,
-                                                                               <http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor> ;
-                                                                      rdfs:label "Grader"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#GuestInstructor
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#GuestInstructor> rdf:type owl:NamedIndividual ,
                                                                                         <http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor> ;
+                                                                               rdfs:comment ""@en ,
+                                                                                            "An instructor who is teaching this course outside of their normal responsibilities"@en ;
+                                                                               rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                rdfs:label "GuestInstructor"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Instructor
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Instructor> rdf:type owl:NamedIndividual ,
                                                                                    <http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor> ;
+                                                                          rdfs:comment "Someone who usually teaches within a specific course structure."@en ;
+                                                                          rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                           rdfs:label "Instructor"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Lecturer
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Lecturer> rdf:type owl:NamedIndividual ,
                                                                                  <http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor> ;
+                                                                        rdfs:comment "An instructor that has limited permissions to modify the course."@en ;
+                                                                        rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                         rdfs:label "Lecturer"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#PrimaryInstructor
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#PrimaryInstructor> rdf:type owl:NamedIndividual ,
                                                                                           <http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor> ;
+                                                                                 rdfs:comment "An instructor who is primarily responsible for the instruction."@en ;
+                                                                                 rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                  rdfs:label "PrimaryInstructor"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#SecondaryInstructor
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#SecondaryInstructor> rdf:type owl:NamedIndividual ,
                                                                                             <http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor> ;
+                                                                                   rdfs:comment "An instructor who has secondary responsibility for the instruction."@en ;
+                                                                                   rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                    rdfs:label "SecondaryInstructor"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistant
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistant> rdf:type owl:NamedIndividual ,
-                                                                                          <http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor> ;
+                                                                                          <http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant> ;
+                                                                                 rdfs:comment "Someone who usually has a subset of instructional responsibilities for some portion of a course structure"@en ,
+                                                                                              "The role of a teaching assistant to an Instructor in the Membership."@en ;
+                                                                                 rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                  rdfs:label "TeachingAssistant"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantGroup
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantGroup> rdf:type owl:NamedIndividual ,
-                                                                                               <http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor> ;
+                                                                                               <http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant> ;
+                                                                                      rdfs:comment "A teaching assistant for a Group."@en ;
+                                                                                      rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                       rdfs:label "TeachingAssistantGroup"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantOffering
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantOffering> rdf:type owl:NamedIndividual ,
-                                                                                                  <http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor> ;
+                                                                                                  <http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant> ;
+                                                                                         rdfs:comment "A teaching assistant for a CourseOffering."@en ;
+                                                                                         rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                          rdfs:label "TeachingAssistantOffering"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantSection
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantSection> rdf:type owl:NamedIndividual ,
-                                                                                                 <http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor> ;
+                                                                                                 <http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant> ;
+                                                                                        rdfs:comment "A teaching assistant for a CourseSection."@en ;
+                                                                                        rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                         rdfs:label "TeachingAssistantSection"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantTemplate
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantTemplate> rdf:type owl:NamedIndividual ,
-                                                                                                  <http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor> ;
+                                                                                                  <http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant> ;
+                                                                                         rdfs:comment "A teaching assistant for a template."@en ;
+                                                                                         rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                          rdfs:label "TeachingAssistantTemplate"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#ExternalLearner
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#ExternalLearner> rdf:type owl:NamedIndividual ,
                                                                                      <http://purl.imsglobal.org/vocab/lis/v2/membership#Learner> ;
+                                                                            rdfs:comment "A learner who is not a member of the institution."@en ;
+                                                                            rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                             rdfs:label "ExternalLearner"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#GuestLearner
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#GuestLearner> rdf:type owl:NamedIndividual ,
                                                                                   <http://purl.imsglobal.org/vocab/lis/v2/membership#Learner> ;
+                                                                         rdfs:comment "A learner who is not enrolled in the same process as a learner; may or may not receive credit for the course."@en ;
+                                                                         rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                          rdfs:label "GuestLearner"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#Learner
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#Learner> rdf:type owl:NamedIndividual ,
                                                                              <http://purl.imsglobal.org/vocab/lis/v2/membership#Learner> ;
+                                                                    rdfs:comment "Someone who usually learns within a specific course structure."@en ;
+                                                                    rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                     rdfs:label "Learner"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#NonCreditLearner
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#NonCreditLearner> rdf:type owl:NamedIndividual ,
                                                                                       <http://purl.imsglobal.org/vocab/lis/v2/membership#Learner> ;
+                                                                             rdfs:comment "A learner who is enrolled through the same process as a learner, but is not receiving credit for the course of study."@en ;
+                                                                             rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                              rdfs:label "NonCreditLearner"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#AreaManager
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#AreaManager> rdf:type owl:NamedIndividual ,
                                                                                  <http://purl.imsglobal.org/vocab/lis/v2/membership#Manager> ;
+                                                                        rdfs:comment "Someone who provides assistance, administration, and/or support to multiple course structures; e.g., Departmental Staff, Cohort Leader, etc."@en ;
+                                                                        rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                         rdfs:label "AreaManager"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#CourseCoordinator
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#CourseCoordinator> rdf:type owl:NamedIndividual ,
                                                                                        <http://purl.imsglobal.org/vocab/lis/v2/membership#Manager> ;
+                                                                              rdfs:comment "Someone who provides assistance to a set of course structures that are related, a lab manager, etc."@en ;
+                                                                              rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                               rdfs:label "CourseCoordinator"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#ExternalObserver
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#ExternalObserver> rdf:type owl:NamedIndividual ,
                                                                                       <http://purl.imsglobal.org/vocab/lis/v2/membership#Manager> ;
+                                                                             rdfs:comment "Person that is not a member of the institution but views multiple course structures for non-instructional purposes; e.g., peer review committee, accreditation staff, etc."@en ;
+                                                                             rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                              rdfs:label "ExternalObserver"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#Manager
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#Manager> rdf:type owl:NamedIndividual ,
                                                                              <http://purl.imsglobal.org/vocab/lis/v2/membership#Manager> ;
+                                                                    rdfs:comment "Someone who usually interacts with multiple course structures."@en ;
+                                                                    rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                     rdfs:label "Manager"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#Observer
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#Observer> rdf:type owl:NamedIndividual ,
                                                                               <http://purl.imsglobal.org/vocab/lis/v2/membership#Manager> ;
+                                                                     rdfs:comment "Views multiple course structures for non-instructional purposes; e.g., peer review committee, accreditation staff, etc."@en ;
+                                                                     rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                      rdfs:label "Observer"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Member#Member
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Member#Member> rdf:type owl:NamedIndividual ,
                                                                            <http://purl.imsglobal.org/vocab/lis/v2/membership#Member> ;
+                                                                  rdfs:comment "Someone who is a member of an Organization."@en ;
+                                                                  rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                   rdfs:label "Member"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Advisor
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Advisor> rdf:type owl:NamedIndividual ,
                                                                             <http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor> ;
+                                                                   rdfs:comment "Advises learners."@en ;
+                                                                   rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                    rdfs:label "Advisor"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Auditor
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Auditor> rdf:type owl:NamedIndividual ,
                                                                             <http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor> ;
+                                                                   rdfs:comment "Audits learner activities; e.g., staff that verifies continuing eligibility for a scholarship, etc."@en ;
+                                                                   rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                    rdfs:label "Auditor"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalAdvisor
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalAdvisor> rdf:type owl:NamedIndividual ,
                                                                                     <http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor> ;
+                                                                           rdfs:comment "A user who is not a member of the institution that advises learners."@en ;
+                                                                           rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                            rdfs:label "ExternalAdvisor"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalAuditor
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalAuditor> rdf:type owl:NamedIndividual ,
                                                                                     <http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor> ;
+                                                                           rdfs:comment "A user who is not a member of the institution that audits learner activities; e.g., staff that verifies continuing eligibility for a scholarship, etc."@en ;
+                                                                           rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                            rdfs:label "ExternalAuditor"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalLearningFacilitator
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalLearningFacilitator> rdf:type owl:NamedIndividual ,
                                                                                                 <http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor> ;
+                                                                                       rdfs:comment "A user who is not a member of the institution that works with individual learner to access materials; e.g., translator, assistant for persons of differing abilities, etc."@en ;
+                                                                                       rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                        rdfs:label "ExternalLearningFacilitator"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalMentor
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalMentor> rdf:type owl:NamedIndividual ,
-                                                                                   <http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor> .
+                                                                                   <http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor> ;
+                                                                          rdfs:comment "A user who is not a member of the institution that mentors learners."@en ,
+                                                                                       "ExternalMentor"@en ;
+                                                                          rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalReviewer
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalReviewer> rdf:type owl:NamedIndividual ,
                                                                                      <http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor> ;
+                                                                            rdfs:comment "A user who is not a member of the institution that reviews work by learners."@en ;
+                                                                            rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                             rdfs:label "ExternalReviewer"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalTutor
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalTutor> rdf:type owl:NamedIndividual ,
                                                                                   <http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor> ;
+                                                                         rdfs:comment "A user who is not a member of the institution that works with individual learners to assist in their instruction."@en ;
+                                                                         rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                          rdfs:label "ExternalTutor"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#LearningFacilitator
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#LearningFacilitator> rdf:type owl:NamedIndividual ,
                                                                                         <http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor> ;
+                                                                               rdfs:comment "Works with individual learner to access materials; e.g., translator, assistant for persons of differing abilities, etc."@en ;
+                                                                               rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                                rdfs:label "LearningFacilitator"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Mentor
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Mentor> rdf:type owl:NamedIndividual ,
                                                                            <http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor> ;
+                                                                  rdfs:comment "Someone who usually works with a specific course structure with a specific learner."@en ;
+                                                                  rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                   rdfs:label "Mentor"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Reviewer
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Reviewer> rdf:type owl:NamedIndividual ,
                                                                              <http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor> ;
+                                                                    rdfs:comment "Reviews work by learners."@en ;
+                                                                    rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                     rdfs:label "Reviewer"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Tutor
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Tutor> rdf:type owl:NamedIndividual ,
                                                                           <http://purl.imsglobal.org/vocab/lis/v2/membership#Mentor> ;
+                                                                 rdfs:comment "Works with individual learners to assist in their instruction."@en ;
+                                                                 rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                  rdfs:label "Tutor"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Chair
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Chair> rdf:type owl:NamedIndividual ,
                                                                            <http://purl.imsglobal.org/vocab/lis/v2/membership#Officer> ;
+                                                                  rdfs:comment "Chair of the Group."@en ;
+                                                                  rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                   rdfs:label "Chair"@en .
+
+
+###  http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Communications
+<http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Communications> rdf:type owl:NamedIndividual ,
+                                                                                    <http://purl.imsglobal.org/vocab/lis/v2/membership#Officer> ;
+                                                                           rdfs:comment "Communications officer for the Group."@en ;
+                                                                           rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
+                                                                           rdfs:label "Communications"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Officer
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Officer> rdf:type owl:NamedIndividual ,
                                                                              <http://purl.imsglobal.org/vocab/lis/v2/membership#Officer> ;
+                                                                    rdfs:comment "The role of an officer of organization e.g., Chair, Secretary, etc. in the Membership."@en ;
+                                                                    rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                     rdfs:label "Officer"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Secretary
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Secretary> rdf:type owl:NamedIndividual ,
                                                                                <http://purl.imsglobal.org/vocab/lis/v2/membership#Officer> ;
+                                                                      rdfs:comment "Secretary to the Group."@en ;
+                                                                      rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                       rdfs:label "Secretary"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Treasurer
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Treasurer> rdf:type owl:NamedIndividual ,
                                                                                <http://purl.imsglobal.org/vocab/lis/v2/membership#Officer> ;
+                                                                      rdfs:comment "Treasurer to the Group."@en ;
+                                                                      rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                                       rdfs:label "Treasurer"@en .
 
 
-###  http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Vice-Chair
-<http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Vice-Chair> rdf:type owl:NamedIndividual ,
-                                                                                <http://purl.imsglobal.org/vocab/lis/v2/membership#Officer> ;
-                                                                       rdfs:label "Vice-Chair"@en .
+###  http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#ViceChair
+<http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#ViceChair> rdf:type owl:NamedIndividual ,
+                                                                               <http://purl.imsglobal.org/vocab/lis/v2/membership#Officer> ;
+                                                                      rdfs:comment "Vice Chair to the Group."@en ;
+                                                                      rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
+                                                                      rdfs:label "ViceChair"@en .
+
+
+###  http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#Grader
+<http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#Grader> rdf:type owl:NamedIndividual ,
+                                                                                      <http://purl.imsglobal.org/vocab/lis/v2/membership#Instructor> ;
+                                                                             rdfs:comment "Primary responsibility is assignment of grades."@en ;
+                                                                             rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
+                                                                             rdfs:label "Grader"@en .
+
+
+###  http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#TeachingAssistantSectionAssociation
+<http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#TeachingAssistantSectionAssociation> rdf:type owl:NamedIndividual ,
+                                                                                                                   <http://purl.imsglobal.org/vocab/lis/v2/membership#TeachingAssistant> ;
+                                                                                                          rdfs:comment "A teaching assistant for a section association."@en ;
+                                                                                                          rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
+                                                                                                          rdfs:label "TeachingAssistantSectionAssociation"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/status#Active
 <http://purl.imsglobal.org/vocab/lis/v2/status#Active> rdf:type owl:NamedIndividual ,
                                                                 :Status ;
+                                                       rdfs:comment "The member is active in the Membership."@en ;
+                                                       rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                        rdfs:label "Active"@en .
 
 
 ###  http://purl.imsglobal.org/vocab/lis/v2/status#Inactive
 <http://purl.imsglobal.org/vocab/lis/v2/status#Inactive> rdf:type owl:NamedIndividual ,
                                                                   :Status ;
+                                                         rdfs:comment "The member is inactive in the Membership."@en ;
+                                                         rdfs:isDefinedBy "http://www.imsglobal.org/lis/"^^xsd:string ;
                                                          rdfs:label "Inactive"@en .
 
 
@@ -3394,7 +3548,6 @@ xsd:duration rdf:type rdfs:Datatype .
                         <http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ExternalContentExpert>
                         <http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#Librarian>
                         <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#ExternalInstructor>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Grader>
                         <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#GuestInstructor>
                         <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Instructor>
                         <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Lecturer>
@@ -3428,10 +3581,13 @@ xsd:duration rdf:type rdfs:Datatype .
                         <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Reviewer>
                         <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Tutor>
                         <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Chair>
+                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Communications>
                         <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Officer>
                         <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Secretary>
                         <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Treasurer>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Vice-Chair>
+                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#ViceChair>
+                        <http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#Grader>
+                        <http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#TeachingAssistantSectionAssociation>
                         <http://purl.imsglobal.org/vocab/lis/v2/status#Active>
                         <http://purl.imsglobal.org/vocab/lis/v2/status#Inactive>
                       )
