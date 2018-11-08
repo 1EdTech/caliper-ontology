@@ -309,6 +309,13 @@ xsd:duration rdf:type rdfs:Datatype .
                    rdfs:label "messageParameters"@en .
 
 
+###  http://purl.imsglobal.org/caliper/messageType
+:messageType rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :LtiLink ;
+             rdfs:range :LtiMessageType .
+
+
 ###  http://purl.imsglobal.org/caliper/navigatedFrom
 :navigatedFrom rdf:type owl:ObjectProperty ,
                         owl:FunctionalProperty ;
@@ -1720,6 +1727,29 @@ xsd:duration rdf:type rdfs:Datatype .
                    rdfs:label "LearningObjective"@en .
 
 
+###  http://purl.imsglobal.org/caliper/Link
+:Link rdf:type owl:Class ;
+      rdfs:subClassOf :Entity ;
+      rdfs:comment "The Link entity represents a URL that might be a UI workflow or service endpoint (transient or otherwise), and not necessarily a proper Digital Resource (such as a WebPage or LtiLink."@en ;
+      rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+      rdfs:label "Link"@en .
+
+
+###  http://purl.imsglobal.org/caliper/LtiLink
+:LtiLink rdf:type owl:Class ;
+         rdfs:subClassOf :DigitalResource ;
+         rdfs:comment "The LtiLink entity represents a digital resource that must be retrieved from an external tool application via an LTI request message. It is, effectively, a Digital Resource that must use LTI for access."@en ;
+         rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+         rdfs:label "LtiLink"@en .
+
+
+###  http://purl.imsglobal.org/caliper/LtiMessageType
+:LtiMessageType rdf:type owl:Class ;
+                rdfs:comment "The LTI specification defines a number of message types that are exchanged between platforms and tools.  Each LTI message type describes or asserts a set of required and optional sender claims that are communicated to a receiver at particular moments in the workflow."@en ;
+                rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                rdfs:label "LtiMessageType"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/LtiSession
 :LtiSession rdf:type owl:Class ;
             rdfs:subClassOf :Session ;
@@ -2070,7 +2100,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :Query rdf:type owl:Class ;
        rdfs:subClassOf :Entity ;
        rdfs:comment "A Caliper Query models search criteria created by an actor that targets a searchable resource."@en ;
-       rdfs:isDefinedBy "http://purl.imsglobal.org/caliper" ;
+       rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
        rdfs:label "Query"@en .
 
 
@@ -2196,7 +2226,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                owl:someValuesFrom :SearchResponse
                              ] ;
              rdfs:comment "A Caliper SearchEvent models a Person querying a resource for information, typically a DigitalResource or SoftwareApplication. A SearchResponse may be referenced using the generated property."@en ;
-             rdfs:isDefinedBy "http://purl.imsglobal.org/caliper" ;
+             rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
              rdfs:label "SearchEvent"@en .
 
 
@@ -2427,6 +2457,74 @@ xsd:duration rdf:type rdfs:Datatype .
              rdfs:comment "A Caliper ThreadEvent models an actor interacting with a Forum thread or topic."@en ;
              rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
              rdfs:label "ThreadEvent"@en .
+
+
+###  http://purl.imsglobal.org/caliper/ToolLaunchEvent
+:ToolLaunchEvent rdf:type owl:Class ;
+                 rdfs:subClassOf :Event ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :action ;
+                                                          owl:someValuesFrom :Action
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :action ;
+                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                               owl:oneOf ( <http://purl.imsglobal.org/actions/Launched>
+                                                                                           <http://purl.imsglobal.org/actions/Returned>
+                                                                                         )
+                                                                             ]
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :actor ;
+                                                          owl:someValuesFrom :Agent
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :actor ;
+                                                          owl:allValuesFrom :Person
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :object ;
+                                                          owl:someValuesFrom :Agent
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :object ;
+                                                          owl:allValuesFrom :SoftwareApplication
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :target ;
+                                                          owl:someValuesFrom :Entity
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :target ;
+                                                          owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                              owl:unionOf ( :Link
+                                                                                            :LtiLink
+                                                                                          )
+                                                                            ]
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :generated ;
+                                   owl:someValuesFrom :DigitalResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :federatedSession ;
+                                   owl:allValuesFrom :LtiSession
+                                 ] ;
+                 rdfs:comment "The ToolLaunchEvent models an interaction between a Person and a SoftwareApplication), at a given time and in a given context at a given time and in a given context."@en ;
+                 rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"@en ;
+                 rdfs:label "ToolLaunchEvent"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/ToolUseEvent
@@ -2667,6 +2765,38 @@ xsd:duration rdf:type rdfs:Datatype .
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://purl.imsglobal.org/actions/Launched
+<http://purl.imsglobal.org/actions/Launched> rdf:type owl:NamedIndividual ,
+                                                      :Action ;
+                                             rdfs:comment "Get going; give impetus to."@en ;
+                                             rdfs:isDefinedBy "href=\"http://wordnet-rdf.princeton.edu/wn31/01515196-v"^^xsd:string ;
+                                             rdfs:label "Launched"@en .
+
+
+###  http://purl.imsglobal.org/actions/Returned
+<http://purl.imsglobal.org/actions/Returned> rdf:type owl:NamedIndividual ,
+                                                      :Action ;
+                                             rdfs:comment "Go or come back to place, condition, or activity where one has been before."@en ;
+                                             rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/01515196-v"^^xsd:string ;
+                                             rdfs:label "Returned"@en .
+
+
+###  http://purl.imsglobal.org/caliper/LtiDeepLinkingRequest
+:LtiDeepLinkingRequest rdf:type owl:NamedIndividual ,
+                                :LtiMessageType ;
+                       rdfs:comment "An LTI message type."@en ;
+                       rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                       rdfs:label "LtiDeepLinkingRequest"@en .
+
+
+###  http://purl.imsglobal.org/caliper/LtiResourceLinkRequest
+:LtiResourceLinkRequest rdf:type owl:NamedIndividual ,
+                                 :LtiMessageType ;
+                        rdfs:comment "An LTI message type."@en ;
+                        rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                        rdfs:label "LtiResourceLinkRequest"@en .
+
 
 ###  http://purl.imsglobal.org/caliper/actions/Abandoned
 <http://purl.imsglobal.org/caliper/actions/Abandoned> rdf:type owl:NamedIndividual ,
@@ -3652,6 +3782,24 @@ xsd:duration rdf:type rdfs:Datatype .
                 :Attempt
                 :DigitalResource
                 :LearningObjective
+                :Link
+                :Membership
+                :Query
+                :Response
+                :Result
+                :Score
+                :SearchResponse
+                :Session
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Agent
+                :Annotation
+                :Attempt
+                :DigitalResource
+                :LearningObjective
                 :Membership
                 :Query
                 :Response
@@ -3686,6 +3834,22 @@ xsd:duration rdf:type rdfs:Datatype .
                 :AssessmentItem
                 :Forum
                 :Thread
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AssignableDigitalResource
+                :Chapter
+                :DigitalResourceCollection
+                :Document
+                :Frame
+                :LtiLink
+                :MediaLocation
+                :MediaObject
+                :Message
+                :Page
+                :WebPage
               )
 ] .
 
