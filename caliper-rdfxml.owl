@@ -2906,6 +2906,72 @@ The Caliper ontology provides a machine-readable document that defines the conce
     
 
 
+    <!-- http://purl.imsglobal.org/caliper/ResourceManagementEvent -->
+
+    <owl:Class rdf:about="http://purl.imsglobal.org/caliper/ResourceManagementEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/Event"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/action"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/action"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:oneOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.imsglobal.org/actions/Archived"/>
+                                    <rdf:Description rdf:about="http://purl.imsglobal.org/actions/Copied"/>
+                                    <rdf:Description rdf:about="http://purl.imsglobal.org/actions/Published"/>
+                                    <rdf:Description rdf:about="http://purl.imsglobal.org/actions/Restored"/>
+                                    <rdf:Description rdf:about="http://purl.imsglobal.org/actions/Unpublished"/>
+                                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Created"/>
+                                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Deleted"/>
+                                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Described"/>
+                                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Modified"/>
+                                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Retrieved"/>
+                                </owl:oneOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/actor"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/Agent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/actor"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/Person"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/generated"/>
+                <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/object"/>
+                <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A Caliper ResourceManagementEvent models a Person managing an Entity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">ResourceManagementEvent</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.imsglobal.org/caliper/Response -->
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Response">
@@ -3724,6 +3790,27 @@ The Caliper ontology provides a machine-readable document that defines the conce
     
 
 
+    <!-- http://purl.imsglobal.org/actions/Archived -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/actions/Archived">
+        <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
+        <rdfs:comment xml:lang="en">Put into an archive. Inverse of Restored.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201387292-v</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Archived</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.imsglobal.org/actions/Copied -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/actions/Copied">
+        <rdfs:comment xml:lang="en">Make a replica of.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201697776-v</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Copied</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.imsglobal.org/actions/Launched -->
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/actions/Launched">
@@ -3735,6 +3822,26 @@ The Caliper ontology provides a machine-readable document that defines the conce
     
 
 
+    <!-- http://purl.imsglobal.org/actions/Published -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/actions/Published">
+        <rdfs:comment xml:lang="en">Prepare and issue for public distribution or sale. Inverse of Unpublished.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200969657-v</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Published</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.imsglobal.org/actions/Restored -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/actions/Restored">
+        <rdfs:comment xml:lang="en">Return to its original or usable and functioning condition. Inverse of Archived.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202558146-v</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Restored</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.imsglobal.org/actions/Returned -->
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/actions/Returned">
@@ -3742,6 +3849,16 @@ The Caliper ontology provides a machine-readable document that defines the conce
         <rdfs:comment xml:lang="en">Go or come back to place, condition, or activity where one has been before.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/01515196-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Returned</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.imsglobal.org/actions/Unpublished -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/actions/Unpublished">
+        <rdfs:comment xml:lang="en">Remove from public distribution or sale. Inverse of Published.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200969657-v</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Unpublished</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -5253,6 +5370,13 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.imsglobal.org/actions/Archived"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/actions/Copied"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/actions/Launched"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/actions/Published"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/actions/Restored"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/actions/Returned"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/actions/Unpublished"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Abandoned"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Activated"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Added"/>
@@ -5276,7 +5400,6 @@ The Caliper ontology provides a machine-readable document that defines the conce
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Ended"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/EnteredFullScreen"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/ExitedFullScreen"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/ForwardedTo"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Graded"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Hid"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Highlighted"/>
@@ -5317,60 +5440,6 @@ The Caliper ontology provides a machine-readable document that defines the conce
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Unsubscribed"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Used"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Viewed"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Administrator"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Developer"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalDeveloper"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalSupport"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalSystemAdministrator"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Support"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#SystemAdministrator"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ContentDeveloper"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ContentExpert"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ExternalContentExpert"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#Librarian"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#ExternalInstructor"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#GuestInstructor"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Instructor"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Lecturer"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#PrimaryInstructor"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#SecondaryInstructor"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistant"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantGroup"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantOffering"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantSection"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantTemplate"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#ExternalLearner"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#GuestLearner"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#Learner"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#NonCreditLearner"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#AreaManager"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#CourseCoordinator"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#ExternalObserver"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#Manager"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#Observer"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Member#Member"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Advisor"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Auditor"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalAdvisor"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalAuditor"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalLearningFacilitator"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalMentor"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalReviewer"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalTutor"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#LearningFacilitator"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Mentor"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Reviewer"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Tutor"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Chair"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Communications"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Officer"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Secretary"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Treasurer"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#ViceChair"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#Grader"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#TeachingAssistantSectionAssociation"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/status#Active"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/vocab/lis/v2/status#Inactive"/>
         </owl:distinctMembers>
     </rdf:Description>
 </rdf:RDF>

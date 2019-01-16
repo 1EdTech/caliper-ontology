@@ -2165,6 +2165,56 @@ xsd:duration rdf:type rdfs:Datatype .
               owl:deprecated "true"^^xsd:boolean .
 
 
+###  http://purl.imsglobal.org/caliper/ResourceManagementEvent
+:ResourceManagementEvent rdf:type owl:Class ;
+                         rdfs:subClassOf :Event ,
+                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :action ;
+                                                                  owl:someValuesFrom :Action
+                                                                ]
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :action ;
+                                                                  owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                       owl:oneOf ( <http://purl.imsglobal.org/actions/Archived>
+                                                                                                   <http://purl.imsglobal.org/actions/Copied>
+                                                                                                   <http://purl.imsglobal.org/actions/Published>
+                                                                                                   <http://purl.imsglobal.org/actions/Restored>
+                                                                                                   <http://purl.imsglobal.org/actions/Unpublished>
+                                                                                                   <http://purl.imsglobal.org/caliper/actions/Created>
+                                                                                                   <http://purl.imsglobal.org/caliper/actions/Deleted>
+                                                                                                   <http://purl.imsglobal.org/caliper/actions/Described>
+                                                                                                   <http://purl.imsglobal.org/caliper/actions/Modified>
+                                                                                                   <http://purl.imsglobal.org/caliper/actions/Retrieved>
+                                                                                                 )
+                                                                                     ]
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ,
+                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :actor ;
+                                                                  owl:someValuesFrom :Agent
+                                                                ]
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :actor ;
+                                                                  owl:allValuesFrom :Person
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :generated ;
+                                           owl:someValuesFrom :Entity
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :object ;
+                                           owl:someValuesFrom :Entity
+                                         ] ;
+                         rdfs:comment "A Caliper ResourceManagementEvent models a Person managing an Entity."@en ;
+                         rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                         rdfs:label "ResourceManagementEvent"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/Response
 :Response rdf:type owl:Class ;
           rdfs:subClassOf :Entity ;
@@ -2766,6 +2816,21 @@ xsd:duration rdf:type rdfs:Datatype .
 #    Individuals
 #################################################################
 
+###  http://purl.imsglobal.org/actions/Archived
+<http://purl.imsglobal.org/actions/Archived> rdf:type owl:NamedIndividual ,
+                                                      :Action ;
+                                             rdfs:comment "Put into an archive. Inverse of Restored."@en ;
+                                             rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201387292-v"^^xsd:string ;
+                                             rdfs:label "Archived"@en .
+
+
+###  http://purl.imsglobal.org/actions/Copied
+<http://purl.imsglobal.org/actions/Copied> rdf:type owl:NamedIndividual ;
+                                           rdfs:comment "Make a replica of."@en ;
+                                           rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201697776-v"^^xsd:string ;
+                                           rdfs:label "Copied"@en .
+
+
 ###  http://purl.imsglobal.org/actions/Launched
 <http://purl.imsglobal.org/actions/Launched> rdf:type owl:NamedIndividual ,
                                                       :Action ;
@@ -2774,12 +2839,33 @@ xsd:duration rdf:type rdfs:Datatype .
                                              rdfs:label "Launched"@en .
 
 
+###  http://purl.imsglobal.org/actions/Published
+<http://purl.imsglobal.org/actions/Published> rdf:type owl:NamedIndividual ;
+                                              rdfs:comment "Prepare and issue for public distribution or sale. Inverse of Unpublished."@en ;
+                                              rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200969657-v"^^xsd:string ;
+                                              rdfs:label "Published"@en .
+
+
+###  http://purl.imsglobal.org/actions/Restored
+<http://purl.imsglobal.org/actions/Restored> rdf:type owl:NamedIndividual ;
+                                             rdfs:comment "Return to its original or usable and functioning condition. Inverse of Archived."@en ;
+                                             rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202558146-v"^^xsd:string ;
+                                             rdfs:label "Restored"@en .
+
+
 ###  http://purl.imsglobal.org/actions/Returned
 <http://purl.imsglobal.org/actions/Returned> rdf:type owl:NamedIndividual ,
                                                       :Action ;
                                              rdfs:comment "Go or come back to place, condition, or activity where one has been before."@en ;
                                              rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/01515196-v"^^xsd:string ;
                                              rdfs:label "Returned"@en .
+
+
+###  http://purl.imsglobal.org/actions/Unpublished
+<http://purl.imsglobal.org/actions/Unpublished> rdf:type owl:NamedIndividual ;
+                                                rdfs:comment "Remove from public distribution or sale. Inverse of Published."@en ;
+                                                rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200969657-v"^^xsd:string ;
+                                                rdfs:label "Unpublished"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/LtiDeepLinkingRequest
@@ -3923,7 +4009,14 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 [ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( <http://purl.imsglobal.org/caliper/actions/Abandoned>
+  owl:distinctMembers ( <http://purl.imsglobal.org/actions/Archived>
+                        <http://purl.imsglobal.org/actions/Copied>
+                        <http://purl.imsglobal.org/actions/Launched>
+                        <http://purl.imsglobal.org/actions/Published>
+                        <http://purl.imsglobal.org/actions/Restored>
+                        <http://purl.imsglobal.org/actions/Returned>
+                        <http://purl.imsglobal.org/actions/Unpublished>
+                        <http://purl.imsglobal.org/caliper/actions/Abandoned>
                         <http://purl.imsglobal.org/caliper/actions/Activated>
                         <http://purl.imsglobal.org/caliper/actions/Added>
                         <http://purl.imsglobal.org/caliper/actions/Attached>
@@ -3946,7 +4039,6 @@ xsd:duration rdf:type rdfs:Datatype .
                         <http://purl.imsglobal.org/caliper/actions/Ended>
                         <http://purl.imsglobal.org/caliper/actions/EnteredFullScreen>
                         <http://purl.imsglobal.org/caliper/actions/ExitedFullScreen>
-                        <http://purl.imsglobal.org/caliper/actions/ForwardedTo>
                         <http://purl.imsglobal.org/caliper/actions/Graded>
                         <http://purl.imsglobal.org/caliper/actions/Hid>
                         <http://purl.imsglobal.org/caliper/actions/Highlighted>
@@ -3987,60 +4079,6 @@ xsd:duration rdf:type rdfs:Datatype .
                         <http://purl.imsglobal.org/caliper/actions/Unsubscribed>
                         <http://purl.imsglobal.org/caliper/actions/Used>
                         <http://purl.imsglobal.org/caliper/actions/Viewed>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Administrator>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Developer>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalDeveloper>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalSupport>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#ExternalSystemAdministrator>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Support>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#SystemAdministrator>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ContentDeveloper>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ContentExpert>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#ExternalContentExpert>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/ContentDeveloper#Librarian>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#ExternalInstructor>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#GuestInstructor>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Instructor>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#Lecturer>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#PrimaryInstructor>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#SecondaryInstructor>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistant>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantGroup>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantOffering>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantSection>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Instructor#TeachingAssistantTemplate>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#ExternalLearner>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#GuestLearner>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#Learner>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Learner#NonCreditLearner>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#AreaManager>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#CourseCoordinator>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#ExternalObserver>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#Manager>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Manager#Observer>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Member#Member>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Advisor>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Auditor>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalAdvisor>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalAuditor>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalLearningFacilitator>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalMentor>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalReviewer>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#ExternalTutor>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#LearningFacilitator>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Mentor>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Reviewer>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Mentor#Tutor>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Chair>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Communications>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Officer>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Secretary>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#Treasurer>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/Officer#ViceChair>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#Grader>
-                        <http://purl.imsglobal.org/vocab/lis/v2/membership/TeachingAssistant#TeachingAssistantSectionAssociation>
-                        <http://purl.imsglobal.org/vocab/lis/v2/status#Active>
-                        <http://purl.imsglobal.org/vocab/lis/v2/status#Inactive>
                       )
 ] .
 
