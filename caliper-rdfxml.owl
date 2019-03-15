@@ -1473,7 +1473,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment xml:lang="en">Indicates whether the order of the selected items is important.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">orderedSelection</rdfs:label>
+        <rdfs:label xml:lang="en">isOrderedSelection</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1507,7 +1507,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment xml:lang="en">A integer value used to determine the amount of points on the LikertScale.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">points</rdfs:label>
+        <rdfs:label xml:lang="en">scalePoints</rdfs:label>
     </owl:DatatypeProperty>
     
 

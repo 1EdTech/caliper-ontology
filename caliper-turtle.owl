@@ -1098,7 +1098,7 @@ xsd:duration rdf:type rdfs:Datatype .
                   rdfs:range xsd:boolean ;
                   rdfs:comment "Indicates whether the order of the selected items is important."@en ;
                   rdfs:isDefinedBy "https://purl.imsglobal.org/caliper"^^xsd:string ;
-                  rdfs:label "orderedSelection"@en .
+                  rdfs:label "isOrderedSelection"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/penaltyScore
@@ -1123,7 +1123,7 @@ xsd:duration rdf:type rdfs:Datatype .
         rdfs:range xsd:integer ;
         rdfs:comment "A integer value used to determine the amount of points on the LikertScale."@en ;
         rdfs:isDefinedBy "https://purl.imsglobal.org/caliper"^^xsd:string ;
-        rdfs:label "points"@en .
+        rdfs:label "scalePoints"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/question
