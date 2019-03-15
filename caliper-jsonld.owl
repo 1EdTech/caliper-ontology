@@ -1516,7 +1516,7 @@
     "@id" : "http://purl.imsglobal.org/caliper/object"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "http://purl.imsglobal.org/caliper/Entity"
+    "@id" : "http://purl.imsglobal.org/caliper/DigitalResource"
   } ]
 }, {
   "@id" : "_:genid380",
@@ -2732,6 +2732,8 @@
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Completed"
     }, {
+      "@id" : "http://purl.imsglobal.org/caliper/actions/Copied"
+    }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Created"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Deactivated"
@@ -2744,6 +2746,8 @@
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Disliked"
     }, {
+      "@id" : "http://purl.imsglobal.org/caliper/actions/Downloaded"
+    }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/EnabledClosedCaptioning"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Ended"
@@ -2751,6 +2755,8 @@
       "@id" : "http://purl.imsglobal.org/caliper/actions/EnteredFullScreen"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/ExitedFullScreen"
+    }, {
+      "@id" : "http://purl.imsglobal.org/caliper/actions/ForwardedTo"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Graded"
     }, {
@@ -2786,6 +2792,10 @@
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Posted"
     }, {
+      "@id" : "http://purl.imsglobal.org/caliper/actions/Printed"
+    }, {
+      "@id" : "http://purl.imsglobal.org/caliper/actions/Published"
+    }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Questioned"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Ranked"
@@ -2798,6 +2808,8 @@
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Restarted"
     }, {
+      "@id" : "http://purl.imsglobal.org/caliper/actions/Restored"
+    }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Resumed"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Retrieved"
@@ -2805,6 +2817,8 @@
       "@id" : "http://purl.imsglobal.org/caliper/actions/Reviewed"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Rewound"
+    }, {
+      "@id" : "http://purl.imsglobal.org/caliper/actions/Saved"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Searched"
     }, {
@@ -2826,7 +2840,11 @@
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Unmuted"
     }, {
+      "@id" : "http://purl.imsglobal.org/caliper/actions/Unpublished"
+    }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Unsubscribed"
+    }, {
+      "@id" : "http://purl.imsglobal.org/caliper/actions/Uploaded"
     }, {
       "@id" : "http://purl.imsglobal.org/caliper/actions/Used"
     }, {
@@ -3015,7 +3033,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Action" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Put into an archive. Inverse of Restored."
+    "@value" : "Put into an archive. The Archived action signals that a resource has been put into long-term storage. Inverse of Restored."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@value" : "http://wordnet-rdf.princeton.edu/wn31/201387292-v"
@@ -4852,11 +4870,25 @@
     "@value" : "Completed"
   } ]
 }, {
+  "@id" : "http://purl.imsglobal.org/caliper/actions/Copied",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Action" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Make a replica of. The Copied action signals that a resource has been duplicated."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://wordnet-rdf.princeton.edu/wn31/201697776-v"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Copied"
+  } ]
+}, {
   "@id" : "http://purl.imsglobal.org/caliper/actions/Created",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Action" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Make or cause to be or to become. Inverse of Deleted."
+    "@value" : "Make or cause to be or to become. The Created action signals that a resource has been brought into existence. Inverse of Deleted."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@value" : "http://wordnet-rdf.princeton.edu/wn31/201620211-v"
@@ -4884,7 +4916,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Action" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Wipe out digitally. Inverse of Created."
+    "@value" : "Wipe out digitally. The Deleted action signals that a resource has been removed permanently from a system. Inverse of Created."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@value" : "http://wordnet-rdf.princeton.edu/wn31/201001860-v"
@@ -4898,7 +4930,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Action" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Give a description of."
+    "@value" : "Give a description of. The Described action signals that a description of a resource has been provided."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@value" : "http://wordnet-rdf.princeton.edu/wn31/200989103-v"
@@ -4937,6 +4969,20 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Disliked"
+  } ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/actions/Downloaded",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Action" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Transfer a file or program from a central computer to a smaller computer or to a computer at a remote location. The Downloaded action signals that a copy of the resource has been transferred from a central or primary system to a remote or secondary system. Inverse of Uploaded."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://wordnet-rdf.princeton.edu/wn31/02233704-v"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Downloaded"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/actions/EnabledClosedCaptioning",
@@ -5182,7 +5228,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Action" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Cause to change; make different; cause a transformation."
+    "@value" : "Cause to change; make different; cause a transformation. The Modified action signals that a resource has been altered or changed."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@value" : "http://wordnet-rdf.princeton.edu/wn31/200126072-v"
@@ -5263,6 +5309,34 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Posted"
+  } ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/actions/Printed",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Action" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Reproduce by printing. The Printed action signals that a mechanical process has been invoked in order to produce a printed representation of a resource."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://wordnet-rdf.princeton.edu/wn31/01747945-v"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Printed"
+  } ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/actions/Published",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Action" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Prepare and issue for public distribution or sale. The Published action signals that a resource is now available for public consumption. Inverse of Unpublished."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://wordnet-rdf.princeton.edu/wn31/200969657-v"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Published"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/actions/Questioned",
@@ -5352,6 +5426,20 @@
     "@value" : "http://wordnet-rdf.princeton.edu/wn31/200350758-v"
   } ]
 }, {
+  "@id" : "http://purl.imsglobal.org/caliper/actions/Restored",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Action" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Return to its original or usable and functioning condition. The Restored action signals that an archived resource has been retrieved from long-term storage. Inverse of Archived."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://wordnet-rdf.princeton.edu/wn31/202558146-v"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Restored"
+  } ]
+}, {
   "@id" : "http://purl.imsglobal.org/caliper/actions/Resumed",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Action" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -5373,7 +5461,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Action" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Obtain or retrieve from a storage device; as of information on a computer."
+    "@value" : "Obtain or retrieve from a storage device; as of information on a computer. The Retrieved action signals that a resource has been accessed or obtained."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@value" : "http://wordnet-rdf.princeton.edu/wn31/202253616-v"
@@ -5409,6 +5497,20 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Rewound"
+  } ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/actions/Saved",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Action" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Record data on a computer. The Saved action signals that the current state of a resource has been stored for future use."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://wordnet-rdf.princeton.edu/wn31/00998886-v"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Saved"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/actions/Searched",
@@ -5554,6 +5656,20 @@
     "@value" : "http://wordnet-rdf.princeton.edu/wn31/mute-v"
   } ]
 }, {
+  "@id" : "http://purl.imsglobal.org/caliper/actions/Unpublished",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Action" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Remove from public distribution or sale. The Unpublished action signals that a published resource has been rendered unavailable for public consumption. Inverse of Published."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://wordnet-rdf.princeton.edu/wn31/200969657-v"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Unpublished"
+  } ]
+}, {
   "@id" : "http://purl.imsglobal.org/caliper/actions/Unsubscribed",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Action" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -5569,6 +5685,20 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
     "@value" : "http://wordnet-rdf.princeton.edu/wn31/202214527-v"
+  } ]
+}, {
+  "@id" : "http://purl.imsglobal.org/caliper/actions/Uploaded",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://purl.imsglobal.org/caliper/Action" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Transfer a file or program to a central computer from a smaller computer or a computer at a remote location. The Uploaded action signals that a copy of the resource has been transferred from a remote or secondary system to a central or primary system. Inverse of Downloaded."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "http://wordnet-rdf.princeton.edu/wn31/02233898-v"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Uploaded"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/actions/Used",

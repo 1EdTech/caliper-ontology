@@ -7,7 +7,6 @@
 @base <http://purl.imsglobal.org/caliper/> .
 
 <http://purl.imsglobal.org/caliper/> rdf:type owl:Ontology ;
-                                      <http://purl.org/dc/terms/title> "Caliper Analytics® Ontology"@en ;
                                       <http://purl.org/dc/terms/license> """Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the specification set forth in this document, and to provide supporting documentation.
 
 IMS takes no position regarding the validity or scope of any intellectual property or other rights that might be claimed to pertain to the implementation or use of the technology described in this document or the extent to which any license under such rights might or might not be available; neither does it represent that it has made any effort to identify any such rights. Information on IMS’s procedures with respect to rights in IMS specifications can be found at the IMS Intellectual Property Rights web page: http://www.imsglobal.org/ipr/imsipr_policyFinal.pdf.
@@ -21,13 +20,14 @@ Permission is granted to all parties to use excerpts from this document as neede
 The limited permissions granted above are perpetual and will not be revoked by IMS or its successors or assigns.
 
 THIS ONTOLOGY IS BEING OFFERED WITHOUT ANY WARRANTY WHATSOEVER, AND IN PARTICULAR, ANY WARRANTY OF NON INFRINGEMENT IS EXPRESSLY DISCLAIMED. ANY USE OF THIS ONTOLOGY SHALL BE MADE ENTIRELY AT THE IMPLEMENTER'S OWN RISK, AND NEITHER THE CONSORTIUM, NOR ANY OF ITS MEMBERS OR SUBMITTERS, SHALL HAVE ANY LIABILITY WHATSOEVER TO ANY IMPLEMENTER OR THIRD PARTY FOR ANY DAMAGES OF ANY NATURE WHATSOEVER, DIRECTLY OR INDIRECTLY, ARISING FROM THE USE OF THIS ONTOLOGY."""@en ;
+                                      <http://purl.org/dc/terms/title> "Caliper Analytics® Ontology"@en ;
                                       rdfs:comment """The Caliper Analytics Specification provides a structured approach to describing, collecting and exchanging learning activity data at scale.  Establishing a common vocabulary for describing learning interactions is a central objective.  Promoting data interoperability, data sharing and data-informed decision making are also important goals.
 
 Caliper also defines an application programming interface (the Sensor API) for marshalling and transmitting event data from instrumented applications to target endpoints for storage, analysis and use.
 
 The Caliper ontology provides a machine-readable document that defines the concepts, relationships and constraints that together comprise the Caliper information model."""@en ;
-                                      rdfs:seeAlso "http://www.imsglobal.org/caliper"^^xsd:string ;
-                                      rdfs:label "Caliper Analytics® Ontology"@en .
+                                      rdfs:label "Caliper Analytics® Ontology"@en ;
+                                      rdfs:seeAlso "http://www.imsglobal.org/caliper"^^xsd:string .
 
 #################################################################
 #    Annotation properties
@@ -2208,7 +2208,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty :object ;
-                                           owl:someValuesFrom :Entity
+                                           owl:someValuesFrom :DigitalResource
                                          ] ;
                          rdfs:comment "A Caliper ResourceManagementEvent models a Person managing an Entity."@en ;
                          rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
@@ -2819,7 +2819,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/actions/Archived
 <http://purl.imsglobal.org/actions/Archived> rdf:type owl:NamedIndividual ,
                                                       :Action ;
-                                             rdfs:comment "Put into an archive. Inverse of Restored."@en ;
+                                             rdfs:comment "Put into an archive. The Archived action signals that a resource has been put into long-term storage. Inverse of Restored."@en ;
                                              rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201387292-v"^^xsd:string ;
                                              rdfs:label "Archived"@en .
 
@@ -2993,10 +2993,18 @@ xsd:duration rdf:type rdfs:Datatype .
                                                       rdfs:label "Completed"@en .
 
 
+###  http://purl.imsglobal.org/caliper/actions/Copied
+<http://purl.imsglobal.org/caliper/actions/Copied> rdf:type owl:NamedIndividual ,
+                                                            :Action ;
+                                                   rdfs:comment "Make a replica of. The Copied action signals that a resource has been duplicated."@en ;
+                                                   rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201697776-v"^^xsd:string ;
+                                                   rdfs:label "Copied"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/actions/Created
 <http://purl.imsglobal.org/caliper/actions/Created> rdf:type owl:NamedIndividual ,
                                                              :Action ;
-                                                    rdfs:comment "Make or cause to be or to become. Inverse of Deleted."@en ;
+                                                    rdfs:comment "Make or cause to be or to become. The Created action signals that a resource has been brought into existence. Inverse of Deleted."@en ;
                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201620211-v"^^xsd:string ;
                                                     rdfs:label "Created"@en .
 
@@ -3012,7 +3020,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/actions/Deleted
 <http://purl.imsglobal.org/caliper/actions/Deleted> rdf:type owl:NamedIndividual ,
                                                              :Action ;
-                                                    rdfs:comment "Wipe out digitally. Inverse of Created."@en ;
+                                                    rdfs:comment "Wipe out digitally. The Deleted action signals that a resource has been removed permanently from a system. Inverse of Created."@en ;
                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201001860-v"^^xsd:string ;
                                                     rdfs:label "Deleted"@en .
 
@@ -3020,7 +3028,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/actions/Described
 <http://purl.imsglobal.org/caliper/actions/Described> rdf:type owl:NamedIndividual ,
                                                                :Action ;
-                                                      rdfs:comment "Give a description of."@en ;
+                                                      rdfs:comment "Give a description of. The Described action signals that a description of a resource has been provided."@en ;
                                                       rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200989103-v"^^xsd:string ;
                                                       rdfs:label "Described"@en .
 
@@ -3040,6 +3048,14 @@ xsd:duration rdf:type rdfs:Datatype .
                                                      rdfs:comment "Have or feel a dislike or distaste for. Inverse of Liked."@en ;
                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201780648-v"^^xsd:string ;
                                                      rdfs:label "Disliked"@en .
+
+
+###  http://purl.imsglobal.org/caliper/actions/Downloaded
+<http://purl.imsglobal.org/caliper/actions/Downloaded> rdf:type owl:NamedIndividual ,
+                                                                :Action ;
+                                                       rdfs:comment "Transfer a file or program from a central computer to a smaller computer or to a computer at a remote location. The Downloaded action signals that a copy of the resource has been transferred from a central or primary system to a remote or secondary system. Inverse of Uploaded."@en ;
+                                                       rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/02233704-v"^^xsd:string ;
+                                                       rdfs:label "Downloaded"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/EnabledClosedCaptioning
@@ -3178,7 +3194,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/actions/Modified
 <http://purl.imsglobal.org/caliper/actions/Modified> rdf:type owl:NamedIndividual ,
                                                               :Action ;
-                                                     rdfs:comment "Cause to change; make different; cause a transformation."@en ;
+                                                     rdfs:comment "Cause to change; make different; cause a transformation. The Modified action signals that a resource has been altered or changed."@en ;
                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200126072-v"^^xsd:string ;
                                                      rdfs:label "Modified"@en .
 
@@ -3222,6 +3238,22 @@ xsd:duration rdf:type rdfs:Datatype .
                                                    rdfs:comment "To cause to be directed or transmitted to another place."@en ;
                                                    rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201033289-v"^^xsd:string ;
                                                    rdfs:label "Posted"@en .
+
+
+###  http://purl.imsglobal.org/caliper/actions/Printed
+<http://purl.imsglobal.org/caliper/actions/Printed> rdf:type owl:NamedIndividual ,
+                                                             :Action ;
+                                                    rdfs:comment "Reproduce by printing. The Printed action signals that a mechanical process has been invoked in order to produce a printed representation of a resource."@en ;
+                                                    rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/01747945-v"^^xsd:string ;
+                                                    rdfs:label "Printed"@en .
+
+
+###  http://purl.imsglobal.org/caliper/actions/Published
+<http://purl.imsglobal.org/caliper/actions/Published> rdf:type owl:NamedIndividual ,
+                                                               :Action ;
+                                                      rdfs:comment "Prepare and issue for public distribution or sale. The Published action signals that a resource is now available for public consumption. Inverse of Unpublished."@en ;
+                                                      rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200969657-v"^^xsd:string ;
+                                                      rdfs:label "Published"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/Questioned
@@ -3273,6 +3305,14 @@ xsd:duration rdf:type rdfs:Datatype .
                                                       rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/200350758-v"^^xsd:string .
 
 
+###  http://purl.imsglobal.org/caliper/actions/Restored
+<http://purl.imsglobal.org/caliper/actions/Restored> rdf:type owl:NamedIndividual ,
+                                                              :Action ;
+                                                     rdfs:comment "Return to its original or usable and functioning condition. The Restored action signals that an archived resource has been retrieved from long-term storage. Inverse of Archived."@en ;
+                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202558146-v"^^xsd:string ;
+                                                     rdfs:label "Restored"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/actions/Resumed
 <http://purl.imsglobal.org/caliper/actions/Resumed> rdf:type owl:NamedIndividual ,
                                                              :Action ;
@@ -3285,7 +3325,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/actions/Retrieved
 <http://purl.imsglobal.org/caliper/actions/Retrieved> rdf:type owl:NamedIndividual ,
                                                                :Action ;
-                                                      rdfs:comment "Obtain or retrieve from a storage device; as of information on a computer."@en ;
+                                                      rdfs:comment "Obtain or retrieve from a storage device; as of information on a computer. The Retrieved action signals that a resource has been accessed or obtained."@en ;
                                                       rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/202253616-v"^^xsd:string ;
                                                       rdfs:label "Retrieved"@en .
 
@@ -3304,6 +3344,14 @@ xsd:duration rdf:type rdfs:Datatype .
                                                     rdfs:comment "Wind up again."@en ;
                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/201524927-v"^^xsd:string ;
                                                     rdfs:label "Rewound"@en .
+
+
+###  http://purl.imsglobal.org/caliper/actions/Saved
+<http://purl.imsglobal.org/caliper/actions/Saved> rdf:type owl:NamedIndividual ,
+                                                           :Action ;
+                                                  rdfs:comment "Record data on a computer. The Saved action signals that the current state of a resource has been stored for future use."@en ;
+                                                  rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/00998886-v"^^xsd:string ;
+                                                  rdfs:label "Saved"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/Searched
@@ -3387,6 +3435,14 @@ xsd:duration rdf:type rdfs:Datatype .
                                                     rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/mute-v"^^xsd:string .
 
 
+###  http://purl.imsglobal.org/caliper/actions/Unpublished
+<http://purl.imsglobal.org/caliper/actions/Unpublished> rdf:type owl:NamedIndividual ,
+                                                                 :Action ;
+                                                        rdfs:comment "Remove from public distribution or sale. The Unpublished action signals that a published resource has been rendered unavailable for public consumption. Inverse of Published."@en ;
+                                                        rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/200969657-v"^^xsd:string ;
+                                                        rdfs:label "Unpublished"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/actions/Unsubscribed
 <http://purl.imsglobal.org/caliper/actions/Unsubscribed> rdf:type owl:NamedIndividual ,
                                                                   :Action ;
@@ -3394,6 +3450,14 @@ xsd:duration rdf:type rdfs:Datatype .
                                                          rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
                                                          rdfs:label "Unsubscribed"@en ;
                                                          rdfs:seeAlso "http://wordnet-rdf.princeton.edu/wn31/202214527-v"^^xsd:string .
+
+
+###  http://purl.imsglobal.org/caliper/actions/Uploaded
+<http://purl.imsglobal.org/caliper/actions/Uploaded> rdf:type owl:NamedIndividual ,
+                                                              :Action ;
+                                                     rdfs:comment "Transfer a file or program to a central computer from a smaller computer or a computer at a remote location. The Uploaded action signals that a copy of the resource has been transferred from a remote or secondary system to a central or primary system. Inverse of Downloaded."@en ;
+                                                     rdfs:isDefinedBy "http://wordnet-rdf.princeton.edu/wn31/02233898-v"^^xsd:string ;
+                                                     rdfs:label "Uploaded"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/actions/Used
@@ -4029,16 +4093,19 @@ xsd:duration rdf:type rdfs:Datatype .
                         <http://purl.imsglobal.org/caliper/actions/ClosedPopout>
                         <http://purl.imsglobal.org/caliper/actions/Commented>
                         <http://purl.imsglobal.org/caliper/actions/Completed>
+                        <http://purl.imsglobal.org/caliper/actions/Copied>
                         <http://purl.imsglobal.org/caliper/actions/Created>
                         <http://purl.imsglobal.org/caliper/actions/Deactivated>
                         <http://purl.imsglobal.org/caliper/actions/Deleted>
                         <http://purl.imsglobal.org/caliper/actions/Described>
                         <http://purl.imsglobal.org/caliper/actions/DisabledClosedCaptioning>
                         <http://purl.imsglobal.org/caliper/actions/Disliked>
+                        <http://purl.imsglobal.org/caliper/actions/Downloaded>
                         <http://purl.imsglobal.org/caliper/actions/EnabledClosedCaptioning>
                         <http://purl.imsglobal.org/caliper/actions/Ended>
                         <http://purl.imsglobal.org/caliper/actions/EnteredFullScreen>
                         <http://purl.imsglobal.org/caliper/actions/ExitedFullScreen>
+                        <http://purl.imsglobal.org/caliper/actions/ForwardedTo>
                         <http://purl.imsglobal.org/caliper/actions/Graded>
                         <http://purl.imsglobal.org/caliper/actions/Hid>
                         <http://purl.imsglobal.org/caliper/actions/Highlighted>
@@ -4056,16 +4123,20 @@ xsd:duration rdf:type rdfs:Datatype .
                         <http://purl.imsglobal.org/caliper/actions/OpenedPopout>
                         <http://purl.imsglobal.org/caliper/actions/Paused>
                         <http://purl.imsglobal.org/caliper/actions/Posted>
+                        <http://purl.imsglobal.org/caliper/actions/Printed>
+                        <http://purl.imsglobal.org/caliper/actions/Published>
                         <http://purl.imsglobal.org/caliper/actions/Questioned>
                         <http://purl.imsglobal.org/caliper/actions/Ranked>
                         <http://purl.imsglobal.org/caliper/actions/Recommended>
                         <http://purl.imsglobal.org/caliper/actions/Removed>
                         <http://purl.imsglobal.org/caliper/actions/Reset>
                         <http://purl.imsglobal.org/caliper/actions/Restarted>
+                        <http://purl.imsglobal.org/caliper/actions/Restored>
                         <http://purl.imsglobal.org/caliper/actions/Resumed>
                         <http://purl.imsglobal.org/caliper/actions/Retrieved>
                         <http://purl.imsglobal.org/caliper/actions/Reviewed>
                         <http://purl.imsglobal.org/caliper/actions/Rewound>
+                        <http://purl.imsglobal.org/caliper/actions/Saved>
                         <http://purl.imsglobal.org/caliper/actions/Searched>
                         <http://purl.imsglobal.org/caliper/actions/Shared>
                         <http://purl.imsglobal.org/caliper/actions/Showed>
@@ -4076,11 +4147,13 @@ xsd:duration rdf:type rdfs:Datatype .
                         <http://purl.imsglobal.org/caliper/actions/Tagged>
                         <http://purl.imsglobal.org/caliper/actions/TimedOut>
                         <http://purl.imsglobal.org/caliper/actions/Unmuted>
+                        <http://purl.imsglobal.org/caliper/actions/Unpublished>
                         <http://purl.imsglobal.org/caliper/actions/Unsubscribed>
+                        <http://purl.imsglobal.org/caliper/actions/Uploaded>
                         <http://purl.imsglobal.org/caliper/actions/Used>
                         <http://purl.imsglobal.org/caliper/actions/Viewed>
                       )
 ] .
 
 
-###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.7.2018-12-02T02:23:35Z) https://github.com/owlcs/owlapi
