@@ -299,7 +299,11 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/items
 :items rdf:type owl:ObjectProperty ;
-       rdfs:domain :DigitalResourceCollection ;
+       rdfs:domain [ rdf:type owl:Class ;
+                     owl:unionOf ( :AggregateMeasureCollection
+                                   :DigitalResourceCollection
+                                 )
+                   ] ;
        rdfs:range :Entity ;
        rdfs:comment "An ordered collection of resources that comprise the collection."@en ;
        rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
@@ -824,7 +828,8 @@ xsd:duration rdf:type rdfs:Datatype .
 :endedAtTime rdf:type owl:DatatypeProperty ,
                       owl:FunctionalProperty ;
              rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( :Attempt
+                           owl:unionOf ( :AggregateMeasure
+                                         :Attempt
                                          :Response
                                          :Session
                                        )
@@ -921,6 +926,15 @@ xsd:duration rdf:type rdfs:Datatype .
           rdfs:label "maxLabel"@en .
 
 
+###  http://purl.imsglobal.org/caliper/maxMetricValue
+:maxMetricValue rdf:type owl:DatatypeProperty ;
+                rdfs:domain :AggregateMeasure ;
+                rdfs:range xsd:integer ;
+                rdfs:comment "An integer value representing the total possible curricular progress the actor can make in the context of the application."@en ;
+                rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                rdfs:label "maxMetricValue"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/maxResultScore
 :maxResultScore rdf:type owl:DatatypeProperty ,
                          owl:FunctionalProperty ;
@@ -985,6 +999,25 @@ xsd:duration rdf:type rdfs:Datatype .
            rdfs:comment "A string value drawn from the list of IANA approved media types and subtypes that identifies the file format of a resource."@en ;
            rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
            rdfs:label "mediaType"@en .
+
+
+###  http://purl.imsglobal.org/caliper/metric
+:metric rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :AggregateMeasure ;
+        rdfs:comment "The standard of measurement associated with the progress value."@en ;
+        rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+        rdfs:label "metric"@en .
+
+
+###  http://purl.imsglobal.org/caliper/metricValue
+:metricValue rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :AggregateMeasure ;
+             rdfs:range xsd:integer ;
+             rdfs:comment "An integer value representing the total curricular progress the actor has made in the context of the application."@en ;
+             rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+             rdfs:label "metricValue"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/minLabel
@@ -1187,7 +1220,8 @@ xsd:duration rdf:type rdfs:Datatype .
 :startedAtTime rdf:type owl:DatatypeProperty ,
                         owl:FunctionalProperty ;
                rdfs:domain [ rdf:type owl:Class ;
-                             owl:unionOf ( :Attempt
+                             owl:unionOf ( :AggregateMeasure
+                                           :Attempt
                                            :Response
                                            :Session
                                          )
@@ -1333,6 +1367,22 @@ xsd:duration rdf:type rdfs:Datatype .
        rdfs:comment "A Caliper Agent is a generic type that represents an Entity that can initiate or perform an action.  Utilize Agent only if no suitable subtype exists to represent the actor being described."@en ;
        rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
        rdfs:label "Agent"@en .
+
+
+###  http://purl.imsglobal.org/caliper/AggregateMeasure
+:AggregateMeasure rdf:type owl:Class ;
+                  rdfs:subClassOf :Entity ;
+                  rdfs:comment "A Caliper AggregateMeasure represents an aggregated measure of a learner's use of a learning tool. For example, an AggregateMeasure may represent the total time on task a learner has spent on a learning tool over a period of time."@en ;
+                  rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                  rdfs:label "AggregateMeasure"@en .
+
+
+###  http://purl.imsglobal.org/caliper/AggregateMeasureCollection
+:AggregateMeasureCollection rdf:type owl:Class ;
+                            rdfs:subClassOf :Entity ;
+                            rdfs:comment "A Caliper AggregateMeasureCollection represents an unordered collection of AggregateMeasure entities."@en ;
+                            rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                            rdfs:label "AggregateMeasureCollection"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/Annotation
@@ -2224,6 +2274,13 @@ xsd:duration rdf:type rdfs:Datatype .
               rdfs:comment "A Caliper MessageEvent describes a Person posting a Message or marking a post as either read or unread."@en ;
               rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
               rdfs:label "MessageEvent"@en .
+
+
+###  http://purl.imsglobal.org/caliper/Metric
+:Metric rdf:type owl:Class ;
+        rdfs:comment "The AggregateMeasure entity includes a required metric property for denoting the metric related to the ToolUseEvent."@en ;
+        rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+        rdfs:label "Metric"@en .
 
 
 ###  http://purl.imsglobal.org/caliper/MultiSelectScale
@@ -3822,6 +3879,70 @@ xsd:duration rdf:type rdfs:Datatype .
                                                    rdfs:label "Viewed"@en .
 
 
+###  http://purl.imsglobal.org/caliper/metrics/AssessmentsPassed
+<http://purl.imsglobal.org/caliper/metrics/AssessmentsPassed> rdf:type owl:NamedIndividual ,
+                                                                       :Metric ;
+                                                              rdfs:comment "Count of assessments that have been passed by the learner."@en ;
+                                                              rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                                                              rdfs:label "AssessmentsPassed"@en .
+
+
+###  http://purl.imsglobal.org/caliper/metrics/AssessmentsSubmitted
+<http://purl.imsglobal.org/caliper/metrics/AssessmentsSubmitted> rdf:type owl:NamedIndividual ,
+                                                                          :Metric ;
+                                                                 rdfs:comment "Count of assessments that have been submitted by the learner."@en ;
+                                                                 rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                                                                 rdfs:label "AssessmentsSubmitted"@en .
+
+
+###  http://purl.imsglobal.org/caliper/metrics/MinutesOnTask
+<http://purl.imsglobal.org/caliper/metrics/MinutesOnTask> rdf:type owl:NamedIndividual ,
+                                                                   :Metric ;
+                                                          rdfs:comment "Active time spent by learner utilizing the tool."@en ;
+                                                          rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                                                          rdfs:label "MinutesOnTask"@en .
+
+
+###  http://purl.imsglobal.org/caliper/metrics/SkillsMastered
+<http://purl.imsglobal.org/caliper/metrics/SkillsMastered> rdf:type owl:NamedIndividual ,
+                                                                    :Metric ;
+                                                           rdfs:comment "Count of learning skills or targets for which the learner has demonstrated understanding."@en ;
+                                                           rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                                                           rdfs:label "SkillsMastered"@en .
+
+
+###  http://purl.imsglobal.org/caliper/metrics/StandardsMastered
+<http://purl.imsglobal.org/caliper/metrics/StandardsMastered> rdf:type owl:NamedIndividual ,
+                                                                       :Metric ;
+                                                              rdfs:comment "Count of learning standards or competencies for which the learner has demonstrated understanding."@en ;
+                                                              rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                                                              rdfs:label "StandardsMastered"@en .
+
+
+###  http://purl.imsglobal.org/caliper/metrics/UnitsCompleted
+<http://purl.imsglobal.org/caliper/metrics/UnitsCompleted> rdf:type owl:NamedIndividual ,
+                                                                    :Metric ;
+                                                           rdfs:comment "Count of instructional units completed by the learner."@en ;
+                                                           rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                                                           rdfs:label "UnitsCompleted"@en .
+
+
+###  http://purl.imsglobal.org/caliper/metrics/UnitsPassed
+<http://purl.imsglobal.org/caliper/metrics/UnitsPassed> rdf:type owl:NamedIndividual ,
+                                                                 :Metric ;
+                                                        rdfs:comment "Count of instructional units completed by the learner, submitted for evaluation, and scored with a passing mark."@en ;
+                                                        rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                                                        rdfs:label "UnitsPassed"@en .
+
+
+###  http://purl.imsglobal.org/caliper/metrics/WordsRead
+<http://purl.imsglobal.org/caliper/metrics/WordsRead> rdf:type owl:NamedIndividual ,
+                                                               :Metric ;
+                                                      rdfs:comment "Count of the number of words read by the learner."@en ;
+                                                      rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                                                      rdfs:label "WordsRead"@en .
+
+
 ###  http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Administrator
 <http://purl.imsglobal.org/vocab/lis/v2/membership/Administrator#Administrator> rdf:type owl:NamedIndividual ,
                                                                                          <http://purl.imsglobal.org/vocab/lis/v2/membership#Administrator> ;
@@ -4527,6 +4648,19 @@ xsd:duration rdf:type rdfs:Datatype .
                         <http://purl.imsglobal.org/caliper/actions/Uploaded>
                         <http://purl.imsglobal.org/caliper/actions/Used>
                         <http://purl.imsglobal.org/caliper/actions/Viewed>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://purl.imsglobal.org/caliper/metrics/AssessmentsPassed>
+                        <http://purl.imsglobal.org/caliper/metrics/AssessmentsSubmitted>
+                        <http://purl.imsglobal.org/caliper/metrics/MinutesOnTask>
+                        <http://purl.imsglobal.org/caliper/metrics/SkillsMastered>
+                        <http://purl.imsglobal.org/caliper/metrics/StandardsMastered>
+                        <http://purl.imsglobal.org/caliper/metrics/UnitsCompleted>
+                        <http://purl.imsglobal.org/caliper/metrics/UnitsPassed>
+                        <http://purl.imsglobal.org/caliper/metrics/WordsRead>
                       )
 ] .
 
