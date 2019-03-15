@@ -1,14 +1,13 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.imsglobal.org/caliper/"
      xml:base="http://purl.imsglobal.org/caliper/"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://purl.imsglobal.org/caliper/">
-        <terms:title xml:lang="en">Caliper Analytics® Ontology</terms:title>
         <terms:license xml:lang="en">Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the specification set forth in this document, and to provide supporting documentation.
 
 IMS takes no position regarding the validity or scope of any intellectual property or other rights that might be claimed to pertain to the implementation or use of the technology described in this document or the extent to which any license under such rights might or might not be available; neither does it represent that it has made any effort to identify any such rights. Information on IMS’s procedures with respect to rights in IMS specifications can be found at the IMS Intellectual Property Rights web page: http://www.imsglobal.org/ipr/imsipr_policyFinal.pdf.
@@ -22,13 +21,14 @@ Permission is granted to all parties to use excerpts from this document as neede
 The limited permissions granted above are perpetual and will not be revoked by IMS or its successors or assigns.
 
 THIS ONTOLOGY IS BEING OFFERED WITHOUT ANY WARRANTY WHATSOEVER, AND IN PARTICULAR, ANY WARRANTY OF NON INFRINGEMENT IS EXPRESSLY DISCLAIMED. ANY USE OF THIS ONTOLOGY SHALL BE MADE ENTIRELY AT THE IMPLEMENTER&apos;S OWN RISK, AND NEITHER THE CONSORTIUM, NOR ANY OF ITS MEMBERS OR SUBMITTERS, SHALL HAVE ANY LIABILITY WHATSOEVER TO ANY IMPLEMENTER OR THIRD PARTY FOR ANY DAMAGES OF ANY NATURE WHATSOEVER, DIRECTLY OR INDIRECTLY, ARISING FROM THE USE OF THIS ONTOLOGY.</terms:license>
+        <terms:title xml:lang="en">Caliper Analytics® Ontology</terms:title>
         <rdfs:comment xml:lang="en">The Caliper Analytics Specification provides a structured approach to describing, collecting and exchanging learning activity data at scale.  Establishing a common vocabulary for describing learning interactions is a central objective.  Promoting data interoperability, data sharing and data-informed decision making are also important goals.
 
 Caliper also defines an application programming interface (the Sensor API) for marshalling and transmitting event data from instrumented applications to target endpoints for storage, analysis and use.
 
 The Caliper ontology provides a machine-readable document that defines the concepts, relationships and constraints that together comprise the Caliper information model.</rdfs:comment>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/caliper</rdfs:seeAlso>
         <rdfs:label xml:lang="en">Caliper Analytics® Ontology</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.imsglobal.org/caliper</rdfs:seeAlso>
     </owl:Ontology>
     
 
@@ -2962,7 +2962,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/object"/>
-                <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+                <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A Caliper ResourceManagementEvent models a Person managing an Entity.</rdfs:comment>
@@ -3794,7 +3794,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/actions/Archived">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
-        <rdfs:comment xml:lang="en">Put into an archive. Inverse of Restored.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Put into an archive. The Archived action signals that a resource has been put into long-term storage. Inverse of Restored.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201387292-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Archived</rdfs:label>
     </owl:NamedIndividual>
@@ -4033,11 +4033,22 @@ The Caliper ontology provides a machine-readable document that defines the conce
     
 
 
+    <!-- http://purl.imsglobal.org/caliper/actions/Copied -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Copied">
+        <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
+        <rdfs:comment xml:lang="en">Make a replica of. The Copied action signals that a resource has been duplicated.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201697776-v</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Copied</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.imsglobal.org/caliper/actions/Created -->
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Created">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
-        <rdfs:comment xml:lang="en">Make or cause to be or to become. Inverse of Deleted.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Make or cause to be or to become. The Created action signals that a resource has been brought into existence. Inverse of Deleted.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201620211-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Created</rdfs:label>
     </owl:NamedIndividual>
@@ -4059,7 +4070,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Deleted">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
-        <rdfs:comment xml:lang="en">Wipe out digitally. Inverse of Created.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Wipe out digitally. The Deleted action signals that a resource has been removed permanently from a system. Inverse of Created.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201001860-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Deleted</rdfs:label>
     </owl:NamedIndividual>
@@ -4070,7 +4081,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Described">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
-        <rdfs:comment xml:lang="en">Give a description of.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Give a description of. The Described action signals that a description of a resource has been provided.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200989103-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Described</rdfs:label>
     </owl:NamedIndividual>
@@ -4096,6 +4107,17 @@ The Caliper ontology provides a machine-readable document that defines the conce
         <rdfs:comment xml:lang="en">Have or feel a dislike or distaste for. Inverse of Liked.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201780648-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Disliked</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/actions/Downloaded -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Downloaded">
+        <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
+        <rdfs:comment xml:lang="en">Transfer a file or program from a central computer to a smaller computer or to a computer at a remote location. The Downloaded action signals that a copy of the resource has been transferred from a central or primary system to a remote or secondary system. Inverse of Uploaded.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/02233704-v</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Downloaded</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4285,7 +4307,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Modified">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
-        <rdfs:comment xml:lang="en">Cause to change; make different; cause a transformation.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Cause to change; make different; cause a transformation. The Modified action signals that a resource has been altered or changed.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200126072-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Modified</rdfs:label>
     </owl:NamedIndividual>
@@ -4344,6 +4366,28 @@ The Caliper ontology provides a machine-readable document that defines the conce
         <rdfs:comment xml:lang="en">To cause to be directed or transmitted to another place.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201033289-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Posted</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/actions/Printed -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Printed">
+        <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
+        <rdfs:comment xml:lang="en">Reproduce by printing. The Printed action signals that a mechanical process has been invoked in order to produce a printed representation of a resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/01747945-v</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Printed</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/actions/Published -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Published">
+        <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
+        <rdfs:comment xml:lang="en">Prepare and issue for public distribution or sale. The Published action signals that a resource is now available for public consumption. Inverse of Unpublished.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200969657-v</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Published</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4415,6 +4459,17 @@ The Caliper ontology provides a machine-readable document that defines the conce
     
 
 
+    <!-- http://purl.imsglobal.org/caliper/actions/Restored -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Restored">
+        <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
+        <rdfs:comment xml:lang="en">Return to its original or usable and functioning condition. The Restored action signals that an archived resource has been retrieved from long-term storage. Inverse of Archived.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202558146-v</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Restored</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.imsglobal.org/caliper/actions/Resumed -->
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Resumed">
@@ -4431,7 +4486,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Retrieved">
         <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
-        <rdfs:comment xml:lang="en">Obtain or retrieve from a storage device; as of information on a computer.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Obtain or retrieve from a storage device; as of information on a computer. The Retrieved action signals that a resource has been accessed or obtained.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202253616-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Retrieved</rdfs:label>
     </owl:NamedIndividual>
@@ -4456,6 +4511,17 @@ The Caliper ontology provides a machine-readable document that defines the conce
         <rdfs:comment xml:lang="en">Wind up again.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/201524927-v</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Rewound</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/actions/Saved -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Saved">
+        <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
+        <rdfs:comment xml:lang="en">Record data on a computer. The Saved action signals that the current state of a resource has been stored for future use.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/00998886-v</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Saved</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4571,6 +4637,17 @@ The Caliper ontology provides a machine-readable document that defines the conce
     
 
 
+    <!-- http://purl.imsglobal.org/caliper/actions/Unpublished -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Unpublished">
+        <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
+        <rdfs:comment xml:lang="en">Remove from public distribution or sale. The Unpublished action signals that a published resource has been rendered unavailable for public consumption. Inverse of Published.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/200969657-v</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Unpublished</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.imsglobal.org/caliper/actions/Unsubscribed -->
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Unsubscribed">
@@ -4579,6 +4656,17 @@ The Caliper ontology provides a machine-readable document that defines the conce
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Unsubscribed</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/202214527-v</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/actions/Uploaded -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Uploaded">
+        <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/Action"/>
+        <rdfs:comment xml:lang="en">Transfer a file or program to a central computer from a smaller computer or a computer at a remote location. The Uploaded action signals that a copy of the resource has been transferred from a remote or secondary system to a central or primary system. Inverse of Downloaded.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://wordnet-rdf.princeton.edu/wn31/02233898-v</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Uploaded</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -5390,16 +5478,19 @@ The Caliper ontology provides a machine-readable document that defines the conce
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/ClosedPopout"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Commented"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Completed"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Copied"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Created"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Deactivated"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Deleted"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Described"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/DisabledClosedCaptioning"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Disliked"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Downloaded"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/EnabledClosedCaptioning"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Ended"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/EnteredFullScreen"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/ExitedFullScreen"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/ForwardedTo"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Graded"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Hid"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Highlighted"/>
@@ -5417,16 +5508,20 @@ The Caliper ontology provides a machine-readable document that defines the conce
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/OpenedPopout"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Paused"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Posted"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Printed"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Published"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Questioned"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Ranked"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Recommended"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Removed"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Reset"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Restarted"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Restored"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Resumed"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Retrieved"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Reviewed"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Rewound"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Saved"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Searched"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Shared"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Showed"/>
@@ -5437,7 +5532,9 @@ The Caliper ontology provides a machine-readable document that defines the conce
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Tagged"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/TimedOut"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Unmuted"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Unpublished"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Unsubscribed"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Uploaded"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Used"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Viewed"/>
         </owl:distinctMembers>
@@ -5446,5 +5543,5 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
 
 
-<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.7.2018-12-02T02:23:35Z) https://github.com/owlcs/owlapi -->
 
