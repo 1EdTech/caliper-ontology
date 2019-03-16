@@ -1981,14 +1981,20 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <!-- http://purl.imsglobal.org/caliper/Assessment -->
 
     <owl:Class rdf:about="http://purl.imsglobal.org/caliper/Assessment">
-        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
-        <rdfs:subClassOf rdf:resource="http://purl.imsglobal.org/caliper/DigitalResourceCollection"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
+                    <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/DigitalResourceCollection"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/items"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/items"/>
@@ -2052,7 +2058,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/object"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/object"/>
@@ -2083,7 +2089,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/isPartOf"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/Entity"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/isPartOf"/>
@@ -2144,7 +2150,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/object"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/DigitalResource"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/object"/>
@@ -2154,15 +2160,23 @@ The Caliper ontology provides a machine-readable document that defines the conce
             </owl:Class>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/generated"/>
-                <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/Response"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/referrer"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/referrer"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/AssessmentItem"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/referrer"/>
-                <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/AssessmentItem"/>
+                <owl:onProperty rdf:resource="http://purl.imsglobal.org/caliper/generated"/>
+                <owl:someValuesFrom rdf:resource="http://purl.imsglobal.org/caliper/Response"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A Caliper AssessmentItemEvent models a learner&apos;s interaction with an individual AssessmentItem.</rdfs:comment>
@@ -2585,6 +2599,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.imsglobal.org/caliper/Thread"/>
         <rdfs:comment xml:lang="en">A Caliper Forum represents a channel or virtual space in which group discussions take place.  A Forum typically comprises one or more threaded conversations to which members can subscribe, post messages and reply to other messages.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Forum</rdfs:label>
@@ -4405,28 +4420,6 @@ The Caliper ontology provides a machine-readable document that defines the conce
     
 
 
-    <!-- http://purl.imsglobal.org/caliper/LtiDeepLinkingRequest -->
-
-    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/LtiDeepLinkingRequest">
-        <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/LtiMessageType"/>
-        <rdfs:comment xml:lang="en">An LTI message type.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">LtiDeepLinkingRequest</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.imsglobal.org/caliper/LtiResourceLinkRequest -->
-
-    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/LtiResourceLinkRequest">
-        <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/LtiMessageType"/>
-        <rdfs:comment xml:lang="en">An LTI message type.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">LtiResourceLinkRequest</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://purl.imsglobal.org/caliper/actions/Abandoned -->
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/actions/Abandoned">
@@ -5235,6 +5228,28 @@ The Caliper ontology provides a machine-readable document that defines the conce
     
 
 
+    <!-- http://purl.imsglobal.org/caliper/lti/LtiDeepLinkingRequest -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/lti/LtiDeepLinkingRequest">
+        <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/LtiMessageType"/>
+        <rdfs:comment xml:lang="en">An LTI message type.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">LtiDeepLinkingRequest</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.imsglobal.org/caliper/lti/LtiResourceLinkRequest -->
+
+    <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/lti/LtiResourceLinkRequest">
+        <rdf:type rdf:resource="http://purl.imsglobal.org/caliper/LtiMessageType"/>
+        <rdfs:comment xml:lang="en">An LTI message type.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">LtiResourceLinkRequest</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.imsglobal.org/caliper/metrics/AssessmentsPassed -->
 
     <owl:NamedIndividual rdf:about="http://purl.imsglobal.org/caliper/metrics/AssessmentsPassed">
@@ -6002,13 +6017,19 @@ The Caliper ontology provides a machine-readable document that defines the conce
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/AssessmentEvent"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/AssessmentItemEvent"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/AssignableEvent"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/FeedbackEvent"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/ForumEvent"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/GradeEvent"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/MediaEvent"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/MessageEvent"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/NavigationEvent"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/OutcomeEvent"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/ReadingEvent"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/ResourceManagementEvent"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/SearchEvent"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/SessionEvent"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/ThreadEvent"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/ToolLaunchEvent"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/ToolUseEvent"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/ViewEvent"/>
         </owl:members>
@@ -6016,18 +6037,8 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Assessment"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/AssessmentItem"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Forum"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Thread"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Chapter"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/DigitalResourceCollection"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Document"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Frame"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/LtiLink"/>
@@ -6036,26 +6047,6 @@ The Caliper ontology provides a machine-readable document that defines the conce
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Message"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Page"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/WebPage"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/AssignableDigitalResource"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Chapter"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/DigitalResourceCollection"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Document"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Frame"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/MediaLocation"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/MediaObject"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Message"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Page"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/Reading"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/WebPage"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/epubChapter"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/epubPart"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/epubSubChapter"/>
-            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/epubVolume"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -6196,6 +6187,13 @@ The Caliper ontology provides a machine-readable document that defines the conce
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Uploaded"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Used"/>
             <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/actions/Viewed"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/lti/LtiDeepLinkingRequest"/>
+            <rdf:Description rdf:about="http://purl.imsglobal.org/caliper/lti/LtiResourceLinkRequest"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
