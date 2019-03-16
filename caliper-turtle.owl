@@ -1472,11 +1472,14 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://purl.imsglobal.org/caliper/Assessment
 :Assessment rdf:type owl:Class ;
-            rdfs:subClassOf :AssignableDigitalResource ,
-                            :DigitalResourceCollection ,
+            rdfs:subClassOf [ owl:intersectionOf ( :AssignableDigitalResource
+                                                   :DigitalResourceCollection
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ,
                             [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                      owl:onProperty :items ;
-                                                     owl:someValuesFrom :Entity
+                                                     owl:someValuesFrom :AssignableDigitalResource
                                                    ]
                                                    [ rdf:type owl:Restriction ;
                                                      owl:onProperty :items ;
@@ -1525,7 +1528,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                  ] ,
                                  [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                           owl:onProperty :object ;
-                                                          owl:someValuesFrom :DigitalResource
+                                                          owl:someValuesFrom :AssignableDigitalResource
                                                         ]
                                                         [ rdf:type owl:Restriction ;
                                                           owl:onProperty :object ;
@@ -1548,7 +1551,7 @@ xsd:duration rdf:type rdfs:Datatype .
                 rdfs:subClassOf :AssignableDigitalResource ,
                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                          owl:onProperty :isPartOf ;
-                                                         owl:someValuesFrom :Entity
+                                                         owl:someValuesFrom :AssignableDigitalResource
                                                        ]
                                                        [ rdf:type owl:Restriction ;
                                                          owl:onProperty :isPartOf ;
@@ -1594,7 +1597,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                      ] ,
                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                               owl:onProperty :object ;
-                                                              owl:someValuesFrom :DigitalResource
+                                                              owl:someValuesFrom :AssignableDigitalResource
                                                             ]
                                                             [ rdf:type owl:Restriction ;
                                                               owl:onProperty :object ;
@@ -1603,13 +1606,20 @@ xsd:duration rdf:type rdfs:Datatype .
                                                           ) ;
                                        rdf:type owl:Class
                                      ] ,
+                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :referrer ;
+                                                              owl:someValuesFrom :AssignableDigitalResource
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :referrer ;
+                                                              owl:allValuesFrom :AssessmentItem
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty :generated ;
                                        owl:someValuesFrom :Response
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty :referrer ;
-                                       owl:someValuesFrom :AssessmentItem
                                      ] ;
                      rdfs:comment "A Caliper AssessmentItemEvent models a learner's interaction with an individual AssessmentItem."@en ;
                      rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
@@ -1922,6 +1932,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                             ) ;
                          rdf:type owl:Class
                        ] ;
+       owl:disjointWith :Thread ;
        rdfs:comment "A Caliper Forum represents a channel or virtual space in which group discussions take place.  A Forum typically comprises one or more threaded conversations to which members can subscribe, post messages and reply to other messages."@en ;
        rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
        rdfs:label "Forum"@en .
@@ -3271,22 +3282,6 @@ xsd:duration rdf:type rdfs:Datatype .
                                                 rdfs:label "Unpublished"@en .
 
 
-###  http://purl.imsglobal.org/caliper/LtiDeepLinkingRequest
-:LtiDeepLinkingRequest rdf:type owl:NamedIndividual ,
-                                :LtiMessageType ;
-                       rdfs:comment "An LTI message type."@en ;
-                       rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
-                       rdfs:label "LtiDeepLinkingRequest"@en .
-
-
-###  http://purl.imsglobal.org/caliper/LtiResourceLinkRequest
-:LtiResourceLinkRequest rdf:type owl:NamedIndividual ,
-                                 :LtiMessageType ;
-                        rdfs:comment "An LTI message type."@en ;
-                        rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
-                        rdfs:label "LtiResourceLinkRequest"@en .
-
-
 ###  http://purl.imsglobal.org/caliper/actions/Abandoned
 <http://purl.imsglobal.org/caliper/actions/Abandoned> rdf:type owl:NamedIndividual ,
                                                                :Action ;
@@ -3879,6 +3874,22 @@ xsd:duration rdf:type rdfs:Datatype .
                                                    rdfs:label "Viewed"@en .
 
 
+###  http://purl.imsglobal.org/caliper/lti/LtiDeepLinkingRequest
+<http://purl.imsglobal.org/caliper/lti/LtiDeepLinkingRequest> rdf:type owl:NamedIndividual ,
+                                                                       :LtiMessageType ;
+                                                              rdfs:comment "An LTI message type."@en ;
+                                                              rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                                                              rdfs:label "LtiDeepLinkingRequest"@en .
+
+
+###  http://purl.imsglobal.org/caliper/lti/LtiResourceLinkRequest
+<http://purl.imsglobal.org/caliper/lti/LtiResourceLinkRequest> rdf:type owl:NamedIndividual ,
+                                                                        :LtiMessageType ;
+                                                               rdfs:comment "An LTI message type."@en ;
+                                                               rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+                                                               rdfs:label "LtiResourceLinkRequest"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/metrics/AssessmentsPassed
 <http://purl.imsglobal.org/caliper/metrics/AssessmentsPassed> rdf:type owl:NamedIndividual ,
                                                                        :Metric ;
@@ -4454,13 +4465,19 @@ xsd:duration rdf:type rdfs:Datatype .
                 :AssessmentEvent
                 :AssessmentItemEvent
                 :AssignableEvent
+                :FeedbackEvent
                 :ForumEvent
+                :GradeEvent
                 :MediaEvent
                 :MessageEvent
                 :NavigationEvent
+                :OutcomeEvent
                 :ReadingEvent
+                :ResourceManagementEvent
+                :SearchEvent
                 :SessionEvent
                 :ThreadEvent
+                :ToolLaunchEvent
                 :ToolUseEvent
                 :ViewEvent
               )
@@ -4468,18 +4485,8 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Assessment
-                :AssessmentItem
-                :Forum
-                :Thread
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :AssignableDigitalResource
                 :Chapter
-                :DigitalResourceCollection
                 :Document
                 :Frame
                 :LtiLink
@@ -4488,26 +4495,6 @@ xsd:duration rdf:type rdfs:Datatype .
                 :Message
                 :Page
                 :WebPage
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :AssignableDigitalResource
-                :Chapter
-                :DigitalResourceCollection
-                :Document
-                :Frame
-                :MediaLocation
-                :MediaObject
-                :Message
-                :Page
-                :Reading
-                :WebPage
-                :epubChapter
-                :epubPart
-                :epubSubChapter
-                :epubVolume
               )
 ] .
 
@@ -4648,6 +4635,13 @@ xsd:duration rdf:type rdfs:Datatype .
                         <http://purl.imsglobal.org/caliper/actions/Uploaded>
                         <http://purl.imsglobal.org/caliper/actions/Used>
                         <http://purl.imsglobal.org/caliper/actions/Viewed>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://purl.imsglobal.org/caliper/lti/LtiDeepLinkingRequest>
+                        <http://purl.imsglobal.org/caliper/lti/LtiResourceLinkRequest>
                       )
 ] .
 
