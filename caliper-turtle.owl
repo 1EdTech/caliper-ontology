@@ -1238,6 +1238,16 @@ xsd:duration rdf:type rdfs:Datatype .
       rdfs:label "step"@en .
 
 
+###  http://purl.imsglobal.org/caliper/storageName
+:storageName rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :DigitalResource ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The name of resource when stored in a file system."@en ;
+             rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
+             rdfs:label "storageName"@en .
+
+
 ###  http://purl.imsglobal.org/caliper/tags
 :tags rdf:type owl:DatatypeProperty ,
                owl:FunctionalProperty ;
