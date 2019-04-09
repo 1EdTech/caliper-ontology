@@ -7511,7 +7511,7 @@
     "@value" : "maxMetricValue"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/maxResultScore",
@@ -7763,7 +7763,7 @@
     "@value" : "metricValue"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
   } ]
 }, {
   "@id" : "http://purl.imsglobal.org/caliper/metrics/AssessmentsPassed",
