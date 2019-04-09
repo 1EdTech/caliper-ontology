@@ -1246,7 +1246,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
 
     <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/maxMetricValue">
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/AggregateMeasure"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">An integer value representing the total possible curricular progress the actor can make in the context of the application.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">maxMetricValue</rdfs:label>
@@ -1358,7 +1358,7 @@ The Caliper ontology provides a machine-readable document that defines the conce
     <owl:DatatypeProperty rdf:about="http://purl.imsglobal.org/caliper/metricValue">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.imsglobal.org/caliper/AggregateMeasure"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">An integer value representing the total curricular progress the actor has made in the context of the application.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.imsglobal.org/caliper</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">metricValue</rdfs:label>

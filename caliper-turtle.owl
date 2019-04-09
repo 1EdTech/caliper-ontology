@@ -925,7 +925,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://purl.imsglobal.org/caliper/maxMetricValue
 :maxMetricValue rdf:type owl:DatatypeProperty ;
                 rdfs:domain :AggregateMeasure ;
-                rdfs:range xsd:integer ;
+                rdfs:range xsd:decimal ;
                 rdfs:comment "An integer value representing the total possible curricular progress the actor can make in the context of the application."@en ;
                 rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
                 rdfs:label "maxMetricValue"@en .
@@ -1010,7 +1010,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :metricValue rdf:type owl:DatatypeProperty ,
                       owl:FunctionalProperty ;
              rdfs:domain :AggregateMeasure ;
-             rdfs:range xsd:integer ;
+             rdfs:range xsd:decimal ;
              rdfs:comment "An integer value representing the total curricular progress the actor has made in the context of the application."@en ;
              rdfs:isDefinedBy "http://purl.imsglobal.org/caliper"^^xsd:string ;
              rdfs:label "metricValue"@en .
